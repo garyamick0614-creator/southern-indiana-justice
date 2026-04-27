@@ -6,4 +6,6 @@
 <url><loc>https://southern-indiana-justice.netlify.app/predictions.html</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 <url><loc>https://southern-indiana-justice.netlify.app/methodology.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://southern-indiana-justice.netlify.app/sources.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://southern-indiana-justice.netlify.app/correlations.html</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+<url><loc>https://southern-indiana-justice.netlify.app/county-action.html</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
 </urlset>

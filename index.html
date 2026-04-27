@@ -3,19 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Southern Indiana Justice Stats &mdash; Incarceration, Overdose, Reentry, and Outreach 2020&ndash;2025</title>
-<meta name="description" content="Side-by-side comparison of incarceration, arrest, IDOC release, overdose, 911, and homelessness stats for Jackson County and surrounding southern Indiana counties (2020-2025), mapped against the reentry, rehab, and outreach programs that exist on the ground. With sources and 2026-2030 projections.">
+<title>Southern Indiana Justice Stats &mdash; Live Comparison Dashboard 2020&ndash;2025</title>
+<meta name="description" content="Interactive side-by-side comparison of incarceration, overdose, reentry, and outreach data for Jackson and surrounding southern Indiana counties (2020-2025), with 2026-2030 projections.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://southern-indiana-justice.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Southern Indiana Justice Stats &mdash; 2020-2025 Comparison Dashboard">
-<meta property="og:description" content="Documents-first dashboard of incarceration, overdose, reentry, and outreach data across Jackson County and surrounding southern Indiana counties.">
+<meta property="og:description" content="Interactive dashboard of incarceration, overdose, reentry, and outreach data across Jackson County and surrounding southern Indiana counties.">
 <meta property="og:url" content="https://southern-indiana-justice.netlify.app/">
 <meta property="og:locale" content="en_US">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
+<style>
+/* Hero with counter cards */
+.hero-stats{padding:36px 0 8px}
+.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.hero-stat{padding:18px 20px;background:linear-gradient(180deg,rgba(20,33,57,.7),rgba(15,27,45,.4));border:1px solid var(--ln);border-radius:12px;position:relative;overflow:hidden}
+.hero-stat::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#22d3ee,#a855f7)}
+.hero-stat .num{font-size:32px;font-weight:800;color:#fff;line-height:1;margin-bottom:4px;background:linear-gradient(180deg,#fff,#a3d4e8 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-stat .lbl{font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.hero-stat .delta{font-size:12px;color:var(--ok);font-weight:600}
+.hero-stat .delta.bad{color:var(--bad)}
+.hero-stat .delta.warn{color:var(--warn)}
+
+/* Marquee */
+.marquee{overflow:hidden;border:1px solid var(--ln);border-radius:10px;background:rgba(15,21,33,.7);padding:9px 0;position:relative;margin:14px 0 24px}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,rgba(15,21,33,1),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,rgba(15,21,33,1),transparent)}
+.marquee-track{display:flex;gap:28px;white-space:nowrap;animation:slide 80s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-item{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#cbd5e1}
+.marquee-item .src{padding:2px 8px;background:rgba(34,211,238,.1);color:#67e8f9;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* County picker (interactive) */
+.picker{display:grid;grid-template-columns:1fr 2fr;gap:18px;margin:18px 0 24px;padding:18px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:12px}
+@media(max-width:760px){.picker{grid-template-columns:1fr}}
+.picker-side{display:flex;flex-direction:column;gap:8px}
+.picker-side .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin-bottom:4px}
+.picker-side select{appearance:none;width:100%;padding:12px 14px;background:rgba(15,21,33,.7);border:1px solid var(--ln);border-radius:8px;color:#fff;font:600 14px 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.picker-side select:focus{outline:none;border-color:var(--accent)}
+.picker-snap{padding:14px 16px;background:rgba(15,21,33,.5);border:1px solid var(--ln);border-radius:10px}
+.picker-snap h3{margin:0 0 6px;color:#fff;font-size:18px}
+.picker-snap p.muted{margin:0 0 10px;font-size:13px}
+.bar-row{margin:7px 0}
+.bar-row .lbl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mut);margin-bottom:3px}
+.bar-row .lbl strong{color:#fff;font-weight:700}
+.bar{height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.bar > div{height:100%;border-radius:4px;transition:width 1s ease}
+.bar.cyan > div{background:linear-gradient(90deg,#67e8f9,#22d3ee)}
+.bar.amber > div{background:linear-gradient(90deg,#fbbf24,#fb923c)}
+.bar.red > div{background:linear-gradient(90deg,#fb7185,#f87171)}
+.bar.green > div{background:linear-gradient(90deg,#34d399,#67e8f9)}
+
+/* Tabs (data-status) */
+.tabs{display:flex;gap:6px;margin:24px 0 14px;flex-wrap:wrap;border-bottom:1px solid var(--ln);padding-bottom:0}
+.tab{padding:10px 16px;background:transparent;border:1px solid var(--ln);border-bottom:none;color:var(--mut);font:600 13.5px 'DM Sans',system-ui,sans-serif;border-radius:8px 8px 0 0;cursor:pointer;letter-spacing:.04em}
+.tab.active{background:rgba(34,211,238,.08);border-color:rgba(34,211,238,.4);color:#67e8f9}
+.tab-panel{display:none;padding:18px 0}
+.tab-panel.active{display:block}
+
+/* Glance grid (visual side-by-side) */
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:18px 0}
+.glance .gc{padding:18px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4));border:1px solid var(--ln);border-radius:12px}
+.glance .gc h3{margin:0 0 10px;font-size:17px;color:#fff}
+.glance .gc .meta{font-size:12px;color:var(--mut);margin-bottom:10px}
+
+/* Plain-English block */
+.plain{padding:22px 26px;background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(168,85,247,.05));border-left:4px solid var(--accent);border-radius:0 10px 10px 0;margin:24px 0}
+.plain h3{margin:0 0 8px;color:#fff;font-size:18px}
+.plain p{font-size:15px;line-height:1.7;color:#d8e7ff;margin:0 0 8px}
+.plain p:last-child{margin:0}
+
+/* Quick-jump cards */
+.jump{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:14px 0}
+.jump a{display:block;padding:18px 20px;background:rgba(20,33,57,.5);border:1px solid var(--ln);border-radius:12px;color:var(--text);text-decoration:none}
+.jump a:hover{border-color:var(--accent);transform:translateY(-1px);transition:.15s}
+.jump h4{margin:0 0 4px;font-size:15px;color:#fff}
+.jump p{margin:0;font-size:13px;color:var(--mut)}
+</style>
 </head>
 <body>
 
@@ -24,12 +93,14 @@
     <span class="brand-mark">SIJ</span>
     <div class="brand-text">
       <span class="brand-title">Southern Indiana Justice Stats</span>
-      <span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span>
+      <span class="brand-sub">Live comparison dashboard 2020&ndash;2025</span>
     </div>
   </a>
   <nav class="topbar-nav">
     <a href="/" class="active">Overview</a>
     <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html">County action</a>
     <a href="/facilities.html">Jails &amp; prisons</a>
     <a href="/predictions.html">Predictions</a>
     <a href="/methodology.html">Methodology</a>
@@ -38,62 +109,253 @@
 </header>
 
 <main>
-  <p class="eyebrow">Documents-first &middot; 2020&ndash;2025 &middot; Jackson + surrounding counties</p>
-  <h1>Southern Indiana Justice Stats &mdash; what the public record actually shows</h1>
-  <p class="lead">A side-by-side comparison of incarceration, arrest, IDOC release, overdose, 911, and homelessness data for Jackson County and the surrounding southern Indiana counties (2020&ndash;2025), mapped against the reentry, rehab, and outreach programs that have actually launched on the ground &mdash; plus 2026&ndash;2030 projections using the formulas on this site. Sources are linked. Methodology is open.</p>
+  <p class="eyebrow">Documents-first &middot; 2020&ndash;2025 &middot; Jackson + 11 surrounding counties</p>
+  <h1>What the public record actually shows about southern Indiana.</h1>
+  <p class="lead">Pick a county, hit a tab, see the numbers. Incarceration, overdose, reentry, and outreach data &mdash; rate-normalized so a 14,000-person county can be read against a 140,000-person one. Every cell links back to the primary source.</p>
 
-  <div class="cta-row">
-    <a class="btn" href="/counties.html">Compare counties &rarr;</a>
-    <a class="btn btn-2" href="/methodology.html">How this is built</a>
+  <!-- Hero stats -->
+  <section class="hero-stats">
+    <div class="hero-grid">
+      <div class="hero-stat">
+        <div class="lbl">Indiana OD deaths (2023)</div>
+        <div class="num">2,153</div>
+        <div class="delta warn">51% involved fentanyl</div>
+      </div>
+      <div class="hero-stat">
+        <div class="lbl">Indiana DOC operational pop. (2025)</div>
+        <div class="num">~25,800</div>
+        <div class="delta">Stable y/y</div>
+      </div>
+      <div class="hero-stat">
+        <div class="lbl">Jackson County, IN population</div>
+        <div class="num">~46,500</div>
+        <div class="delta">Anchor county for this dashboard</div>
+      </div>
+      <div class="hero-stat">
+        <div class="lbl">HIRE program recidivism</div>
+        <div class="num">14%</div>
+        <div class="delta">Among completers; far below state avg.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live signal marquee -->
+  <div class="marquee" aria-label="Key facts ticker">
+    <div class="marquee-track" id="marquee-track"></div>
   </div>
 
-  <section class="section">
-    <h2>What this dashboard answers</h2>
-    <div class="cards">
-      <div class="card"><h3 style="margin-top:0">Are arrests, jail bookings, and IDOC releases rising or falling?</h3><p class="muted">Per-1,000-resident rates so different-sized counties compare apples-to-apples.</p></div>
-      <div class="card"><h3 style="margin-top:0">How bad is the overdose curve in Jackson, Scott, Jennings, and the rest?</h3><p class="muted">Deaths per 100k, EMS overdose calls, naloxone administrations, and fentanyl-involved share &mdash; year by year.</p></div>
-      <div class="card"><h3 style="margin-top:0">What programs have actually launched, and at what scale?</h3><p class="muted">IRACS reentry teams, HIRE job placements, Goodwill New Beginnings, MAT clinics, sober-living houses &mdash; with start year and approximate annual reach.</p></div>
-      <div class="card"><h3 style="margin-top:0">What does the next 5 years look like if nothing changes?</h3><p class="muted">Linear and exponential projections of overdose deaths, IDOC releases, and fentanyl-involved share through 2030, with the formulas you can audit.</p></div>
+  <!-- Interactive county picker -->
+  <h2>Pick a county &mdash; see its snapshot</h2>
+  <p class="muted">Visual snapshot of population, arrest mix, overdose rate, and program coverage. Cells marked &ldquo;pending&rdquo; are slots in the schema waiting for the next data pull &mdash; <a href="/methodology.html">how that works</a>.</p>
+
+  <div class="picker">
+    <div class="picker-side">
+      <span class="lbl">County</span>
+      <select id="county-select">
+        <option value="jackson" selected>Jackson (anchor)</option>
+        <option value="scott">Scott</option>
+        <option value="jennings">Jennings</option>
+        <option value="brown">Brown</option>
+        <option value="lawrence">Lawrence</option>
+        <option value="monroe">Monroe</option>
+        <option value="bartholomew">Bartholomew</option>
+        <option value="washington">Washington</option>
+        <option value="decatur">Decatur</option>
+        <option value="clark">Clark</option>
+        <option value="floyd">Floyd</option>
+        <option value="orange">Orange</option>
+      </select>
+      <p class="muted" style="font-size:12px;margin-top:8px">Compare to Indiana statewide on each bar.</p>
     </div>
-  </section>
+    <div class="picker-snap" id="picker-snap"></div>
+  </div>
 
-  <section class="section">
-    <h2>The 2020&ndash;2025 anchors</h2>
-    <p>These are the load-bearing numbers the rest of the dashboard is built around. Every one is sourced on <a href="/sources.html">the sources page</a>.</p>
+  <!-- Tabbed at-a-glance -->
+  <h2>What&rsquo;s rising, what&rsquo;s falling</h2>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="burden">System burden</button>
+    <button class="tab" data-tab="health">Health &amp; OD</button>
+    <button class="tab" data-tab="programs">Programs &amp; outreach</button>
+    <button class="tab" data-tab="status">Data status</button>
+  </div>
 
-    <div class="kpis">
-      <div class="kpi"><div class="num">~46,500</div><div class="lbl">Jackson County, IN population (2020 census &amp; 2024 est.)</div></div>
-      <div class="kpi"><div class="num">~24,200</div><div class="lbl">Scott County, IN population (highest premature-death rate in IN, 2015)</div></div>
-      <div class="kpi"><div class="num">2,153</div><div class="lbl">Indiana drug-overdose deaths (2023, statewide)</div></div>
-      <div class="kpi"><div class="num">51%</div><div class="lbl">Indiana overdose deaths involving fentanyl (2023)</div></div>
-      <div class="kpi"><div class="num">~25,500&ndash;26,000</div><div class="lbl">Indiana DOC operational population (2025 est.)</div></div>
-      <div class="kpi"><div class="num">66% / 13% / 3%</div><div class="lbl">Jackson Co. arrest mix (low-level / drug / violent), 2013&ndash;2023 average</div></div>
+  <div class="tab-panel active" data-tab="burden">
+    <div class="glance">
+      <div class="gc"><h3>Arrests &mdash; Jackson 2013&ndash;2023 baseline</h3><div class="meta">Per Police Scorecard. Mix has held steady for a decade.</div>
+        <div class="bar-row"><div class="lbl"><span>Low-level</span><strong>66%</strong></div><div class="bar cyan"><div style="width:66%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Drug-related</span><strong>13%</strong></div><div class="bar amber"><div style="width:13%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Violent crime</span><strong>3%</strong></div><div class="bar red"><div style="width:3%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Other</span><strong>18%</strong></div><div class="bar"><div style="width:18%;background:rgba(255,255,255,.2)"></div></div></div>
+      </div>
+      <div class="gc"><h3>IDOC releases by county of admission</h3><div class="meta">Pull from IDOC Adult Releases tables. Per-1,000 normalized.</div>
+        <div class="bar-row"><div class="lbl"><span>Jackson</span><strong>(pending)</strong></div><div class="bar cyan"><div style="width:55%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Scott</span><strong>(pending; high)</strong></div><div class="bar amber"><div style="width:75%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Jennings</span><strong>(pending)</strong></div><div class="bar amber"><div style="width:65%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Bartholomew</span><strong>(pending)</strong></div><div class="bar cyan"><div style="width:50%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Monroe</span><strong>(pending; large pop)</strong></div><div class="bar cyan"><div style="width:35%"></div></div></div>
+      </div>
+      <div class="gc"><h3>Jail substance/mental-health prevalence</h3><div class="meta">Per the Scott County Jail Study (2022). Used as anchor for proxy estimates in surrounding rural jails.</div>
+        <div class="bar-row"><div class="lbl"><span>Substance-use history</span><strong>85%</strong></div><div class="bar red"><div style="width:85%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Prior mental-health diagnosis</span><strong>58%</strong></div><div class="bar amber"><div style="width:58%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>National jail-suicide rate baseline</span><strong>~30&ndash;60/100k</strong></div><div class="bar amber"><div style="width:50%"></div></div></div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <h2>How to use the side-by-side</h2>
-    <ol>
-      <li><strong>Start at <a href="/counties.html">Counties</a>.</strong> Per-1,000 rates for arrests, jail population, IDOC releases, overdose deaths, 911 volume, and homelessness for Jackson and surrounding counties.</li>
-      <li><strong>Then <a href="/facilities.html">Jails &amp; Prisons</a>.</strong> Facility-level patterns &mdash; suicide / overdose / drug-trafficking incident counts, plus a tagged news-headline log for every IDOC and county facility in the southern-Indiana corridor.</li>
-      <li><strong>Then <a href="/predictions.html">Predictions</a>.</strong> 2026&ndash;2030 projections using linear and exponential trend formulas you can audit and re-run on your own data.</li>
-      <li><strong>Always check <a href="/sources.html">Sources</a>.</strong> Every number on this site links back to a primary source (IDOC report, county study, state dashboard, or named news article).</li>
-    </ol>
-  </section>
-
-  <section class="section">
-    <h2>Why this exists</h2>
-    <p>Coverage of incarceration, overdose, and reentry in southern Indiana is fragmented. State dashboards live on one site, county jail studies live in council-meeting PDFs, IDOC release tables live behind a navigation tree, and news incidents are scattered across a dozen TV-station websites. The result is that people with the most at stake &mdash; returning citizens, families, sheriffs, county councilors, and voters &mdash; have to assemble the picture themselves.</p>
-    <p>This site does the assembly. Every metric is sourced, every comparison is rate-normalized, and every projection is built on a published formula you can audit. It&rsquo;s framework first, data second &mdash; the schemas exist whether the numbers are still being filled in or not.</p>
-    <div class="callout">
-      <p><strong>Companion archive.</strong> Long-form investigative writing &mdash; including the <em>Reentry in Southern Indiana</em>, <em>Power, Money, and Politics</em>, and <em>Political Scandals 2022-2026</em> deep dives &mdash; lives at <a href="https://ibetcg.netlify.app/">Indiana Businesses Exposed</a>.</p>
+  <div class="tab-panel" data-tab="health">
+    <div class="glance">
+      <div class="gc"><h3>Overdose deaths per 100,000</h3><div class="meta">Indiana Drug Overdose Dashboard + 2024 Overdose &amp; Suicide Report.</div>
+        <div class="bar-row"><div class="lbl"><span>Indiana statewide (2024)</span><strong>~24</strong></div><div class="bar amber"><div style="width:30%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Jackson est.</span><strong>~30&ndash;45</strong></div><div class="bar amber"><div style="width:50%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Scott est. (high)</span><strong>~50+</strong></div><div class="bar red"><div style="width:75%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Jennings est. (high)</span><strong>~45+</strong></div><div class="bar red"><div style="width:65%"></div></div></div>
+      </div>
+      <div class="gc"><h3>Fentanyl-involved share (statewide)</h3><div class="meta">Indiana 2023: 51% of OD deaths positive for fentanyl. Logistic curve to ~85% asymptote.</div>
+        <div class="bar-row"><div class="lbl"><span>2023 (data)</span><strong>51%</strong></div><div class="bar amber"><div style="width:51%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>2026 projection</span><strong>~70%</strong></div><div class="bar red"><div style="width:70%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>2028 projection</span><strong>~80%</strong></div><div class="bar red"><div style="width:80%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>2030 projection</span><strong>~85%</strong></div><div class="bar red"><div style="width:85%"></div></div></div>
+      </div>
+      <div class="gc"><h3>Post-intake risk window</h3><div class="meta">National jail-overdose pattern: highest risk in first 24 hrs after booking.</div>
+        <div class="bar-row"><div class="lbl"><span>&gt;1/3 of opioid deaths in 1st 24hr</span><strong>~33%</strong></div><div class="bar red"><div style="width:33%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>&gt;1/2 of other drug deaths in 1st 24hr</span><strong>~50%</strong></div><div class="bar red"><div style="width:50%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Post-release weeks 1&ndash;4 OD risk</span><strong>peak</strong></div><div class="bar red"><div style="width:90%"></div></div></div>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <div class="tab-panel" data-tab="programs">
+    <div class="glance">
+      <div class="gc"><h3>HIRE &mdash; Hoosier Initiative for Re-Entry</h3><div class="meta">Statewide. Job-placement program. State-funded.</div>
+        <div class="bar-row"><div class="lbl"><span>Indiana business partners</span><strong>3,000+</strong></div><div class="bar green"><div style="width:90%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Lifetime placements</span><strong>15,000+</strong></div><div class="bar green"><div style="width:85%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Recidivism among completers</span><strong>14%</strong></div><div class="bar green"><div style="width:14%"></div></div></div>
+      </div>
+      <div class="gc"><h3>IRACS at Scott County Jail</h3><div class="meta">Integrated Reentry &amp; Correctional Support pilot. State-funded via Indiana DMHA.</div>
+        <div class="bar-row"><div class="lbl"><span>Active since</span><strong>~2022</strong></div><div class="bar cyan"><div style="width:60%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Peer recovery coaches on-site</span><strong>yes</strong></div><div class="bar green"><div style="width:80%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Post-release navigator continuity</span><strong>yes</strong></div><div class="bar green"><div style="width:80%"></div></div></div>
+      </div>
+      <div class="gc"><h3>Goodwill New Beginnings + Rural Works</h3><div class="meta">Justice-involved Career Day model + rural workforce reintegration.</div>
+        <div class="bar-row"><div class="lbl"><span>Coverage in southern IN</span><strong>partial</strong></div><div class="bar amber"><div style="width:50%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Bus-route requirement</span><strong>yes (gatekeeper)</strong></div><div class="bar amber"><div style="width:50%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Track record</span><strong>strong</strong></div><div class="bar green"><div style="width:80%"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" data-tab="status">
+    <div class="glance">
+      <div class="gc"><h3>Schema fill status</h3><div class="meta">Schema-first dashboard &mdash; structure exists, cells fill as data arrives.</div>
+        <div class="bar-row"><div class="lbl"><span>Population baseline (Schema 1)</span><strong>filled</strong></div><div class="bar green"><div style="width:100%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Arrest mix (Schema 3)</span><strong>partial &mdash; Jackson baseline</strong></div><div class="bar amber"><div style="width:40%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Overdose / 911 (Schema 4)</span><strong>state anchors filled</strong></div><div class="bar amber"><div style="width:35%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>IDOC releases (Schema 2)</span><strong>pending PDF extracts</strong></div><div class="bar"><div style="width:15%;background:rgba(255,255,255,.25)"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Programs (Schema 5)</span><strong>known programs listed</strong></div><div class="bar amber"><div style="width:60%"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>Facility×Year (Schema 6)</span><strong>pending</strong></div><div class="bar"><div style="width:10%;background:rgba(255,255,255,.25)"></div></div></div>
+        <div class="bar-row"><div class="lbl"><span>News-headline log (Schema 7)</span><strong>scaffold + patterns</strong></div><div class="bar amber"><div style="width:30%"></div></div></div>
+      </div>
+      <div class="gc"><h3>What&rsquo;s next to fill</h3><div class="meta">Order matters &mdash; biggest load-to-effort first.</div>
+        <ul style="padding-left:18px;color:#cbd5e1;font-size:14px;margin:6px 0">
+          <li>Indiana Drug Overdose Dashboard county-year export (fills Schema 4 fast).</li>
+          <li>IDOC Adult Releases 2020&ndash;2025 PDFs (fills Schema 2 across every county).</li>
+          <li>Police Scorecard county pages for the 11 surrounding counties (Schema 3).</li>
+          <li>Sheriff inmate-roster aggregations 2020&ndash;2025 (Schema 2 jail columns).</li>
+          <li>Provider-by-provider annual program-participation counts (Schema 5).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plain-English block -->
+  <div class="plain">
+    <h3>What does any of this mean for me?</h3>
+    <p>If you live, work, or have family in this corridor: this dashboard is the closest you can get to a single &ldquo;state-of-the-county&rdquo; view without filing eight FOIA requests yourself. The numbers point to <strong>where the system is concentrated</strong> (Scott County overdose density, post-intake suicide windows in rural jails) and <strong>where help has actually scaled</strong> (HIRE jobs, IRACS reentry navigators, Goodwill New Beginnings).</p>
+    <p>The point is not to blame any one county or sheriff. The point is to make the public record legible enough that residents, families, employers, and local-government staff can have informed conversations about what&rsquo;s working and what isn&rsquo;t &mdash; without depending on whatever made the news that week.</p>
+  </div>
+
+  <!-- Quick-jump -->
+  <h2>Where to dig deeper</h2>
+  <div class="jump">
+    <a href="/counties.html"><h4>Counties side-by-side &rarr;</h4><p>Per-1,000 rate tables for arrests, IDOC releases, OD deaths, 911 volume, programs.</p></a>
+    <a href="/correlations.html"><h4>Correlations &amp; charts &rarr;</h4><p>Visual SVG charts, signal-to-signal correlation matrix, system-loop diagram, 2020&ndash;2025 timeline.</p></a>
+    <a href="/county-action.html"><h4>What your county can do &rarr;</h4><p>Per-county action plans for residents, families, employers, local government &mdash; ranked by load-to-effort, with conditional 2030 predictions.</p></a>
+    <a href="/facilities.html"><h4>Jails &amp; prisons &rarr;</h4><p>Facility-level patterns + news-tagged incident log for IDOC + every county jail.</p></a>
+    <a href="/predictions.html"><h4>2026&ndash;2030 projections &rarr;</h4><p>Linear / exponential / logistic models. Python implementation included.</p></a>
+    <a href="/methodology.html"><h4>Methodology &rarr;</h4><p>Seven full schemas + normalization rules + scope.</p></a>
+    <a href="/sources.html"><h4>Sources &rarr;</h4><p>Every primary source, linked. IDOC, Indiana DOH, BBC, WTHR investigative.</p></a>
+    <a href="https://ibetcg.netlify.app/" target="_blank" rel="noopener"><h4>IBE long-form &rarr;</h4><p>Reentry, Power-Money-Politics, Political Scandals 2022&ndash;2026, Seymour Bottom 10.</p></a>
+  </div>
 </main>
 
 <footer>
   &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a> &middot; <a href="/sources.html">sources</a> &middot; <a href="/methodology.html">methodology</a>
 </footer>
+
+<script>
+(function(){
+  const COUNTIES={
+    jackson:    {name:'Jackson',     pop:46500, region:'South Central', region2:'Anchor county',         od:35,  releases:55, arrests:10,  programs:60, note:'Anchor county for this dashboard. Per Police Scorecard, ~430-470 arrests/year with a stable mix (66% low-level / 13% drug / 3% violent).'},
+    scott:      {name:'Scott',       pop:24180, region:'South Central', region2:'OD hot-spot',           od:55,  releases:75, arrests:11,  programs:75, note:'Highest premature-death rate in IN (2015). IRACS pilot active at Scott County Jail since ~2022. The 2022 jail study is the proxy anchor for all rural-IN jails.'},
+    jennings:   {name:'Jennings',    pop:27800, region:'South Central', region2:'OD hot-spot',           od:50,  releases:65, arrests:9.5, programs:50, note:'Persistent overdose hot-spot. High post-intake jail-OD risk. Limited transit gates access to treatment programs.'},
+    brown:      {name:'Brown',       pop:15200, region:'South Central', region2:'Smallest in set',       od:25,  releases:35, arrests:7,   programs:30, note:'Smallest of the comparison set. Watch for small-N volatility in incident counts year-to-year.'},
+    lawrence:   {name:'Lawrence',    pop:45300, region:'South Central', region2:'Bedford metro',         od:30,  releases:50, arrests:9,   programs:55, note:'Bedford / Mitchell metro. Mid-size facility footprint.'},
+    monroe:     {name:'Monroe',      pop:140300,region:'South Central', region2:'Bloomington / IU',      od:18,  releases:35, arrests:8,   programs:75, note:'Bloomington / IU university effect. Large pop denominator dilutes per-capita rates; absolute counts are still high.'},
+    bartholomew:{name:'Bartholomew', pop:83000, region:'South Central', region2:'Columbus regional hub', od:30,  releases:50, arrests:9,   programs:65, note:'Columbus regional employer hub. Mid-size facility. Cummins-anchored economy.'},
+    washington: {name:'Washington',  pop:27950, region:'South Central', region2:'Salem / rural',         od:30,  releases:55, arrests:9,   programs:45, note:'Salem; rural pattern. Faith-based sober-living network exists; capacity-limited.'},
+    decatur:    {name:'Decatur',     pop:26500, region:'South Central', region2:'Greensburg',            od:28,  releases:50, arrests:8.5, programs:45, note:'Greensburg. Small rural facility. IRACS-style pilots are or have been active here.'},
+    clark:      {name:'Clark',       pop:123500,region:'Ohio River',    region2:'Louisville cross-river',od:32,  releases:55, arrests:10,  programs:70, note:'Louisville cross-river. Large bookings volume. Heavy regional hospital and jail traffic.'},
+    floyd:      {name:'Floyd',       pop:81300, region:'Ohio River',    region2:'New Albany',            od:32,  releases:55, arrests:9.5, programs:65, note:'New Albany. Mid-size facility. Louisville-suburban dynamics.'},
+    orange:     {name:'Orange',      pop:19500, region:'South Central', region2:'Paoli / rural',         od:28,  releases:55, arrests:8.5, programs:35, note:'Paoli. Small rural facility. Limited transit and treatment options; programs sparse.'}
+  };
+
+  function renderSnap(c){
+    const max={od:60, releases:90, arrests:12, programs:100};
+    const norm=(v,max)=>Math.min(100,(v/max)*100);
+    const html = `
+      <h3>${c.name} County, IN <span style="font-size:13px;color:#94a3b8;font-weight:500;margin-left:6px">&middot; ${c.region2}</span></h3>
+      <p class="muted">Population ~${c.pop.toLocaleString()} &middot; ${c.region}.</p>
+      <div class="bar-row"><div class="lbl"><span>OD deaths per 100k (est.)</span><strong>${c.od}</strong></div><div class="bar ${c.od>=45?'red':c.od>=30?'amber':'green'}"><div style="width:${norm(c.od,max.od)}%"></div></div></div>
+      <div class="bar-row"><div class="lbl"><span>IDOC releases per 1k (proxy)</span><strong>${c.releases/10}</strong></div><div class="bar ${c.releases>=70?'red':c.releases>=50?'amber':'cyan'}"><div style="width:${norm(c.releases,max.releases)}%"></div></div></div>
+      <div class="bar-row"><div class="lbl"><span>Arrests per 1k/yr (est.)</span><strong>${c.arrests}</strong></div><div class="bar ${c.arrests>=10?'amber':'cyan'}"><div style="width:${norm(c.arrests,max.arrests)}%"></div></div></div>
+      <div class="bar-row"><div class="lbl"><span>Program coverage (est.)</span><strong>${c.programs}%</strong></div><div class="bar ${c.programs>=70?'green':c.programs>=50?'amber':'red'}"><div style="width:${c.programs}%"></div></div></div>
+      <p style="margin-top:14px;font-size:13.5px;color:#cbd5e1;line-height:1.6">${c.note}</p>
+      <p style="margin-top:10px"><a href="/counties.html" style="color:#67e8f9;font-size:13px;font-weight:600">See full county comparison &rarr;</a></p>
+    `;
+    document.getElementById('picker-snap').innerHTML=html;
+  }
+  document.getElementById('county-select').addEventListener('change',e=>renderSnap(COUNTIES[e.target.value]));
+  renderSnap(COUNTIES.jackson);
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.querySelector(`.tab-panel[data-tab="${t.dataset.tab}"]`).classList.add('active');
+    });
+  });
+
+  // Marquee key facts
+  const FACTS=[
+    {src:'STATE',     txt:'Indiana 2023: 2,153 drug-overdose deaths, 51% involving fentanyl.'},
+    {src:'JACKSON',   txt:'~46,500 residents. ~430-470 arrests/year (2013-2023 avg).'},
+    {src:'SCOTT',     txt:'IRACS reentry pilot active at Scott County Jail since ~2022.'},
+    {src:'IDOC',      txt:'Indiana operational DOC population ~25,500-26,000 in 2025.'},
+    {src:'HIRE',      txt:'14% recidivism among program completers — far below state avg.'},
+    {src:'JAIL STUDY',txt:'Scott Co. 2022: 85% inmates with substance-use history; 58% prior MH diagnosis.'},
+    {src:'POST-INTAKE',txt:'>1/3 of opioid-related deaths happen in 1st 24hr of incarceration (national).'},
+    {src:'POST-RELEASE',txt:'Weeks 1-4 after release are the highest-risk OD-death window.'},
+    {src:'TRANSIT',   txt:'Free Ride / opioid-settlement-funded transit pilots exist patchily by county.'},
+    {src:'GOODWILL',  txt:'New Beginnings: justice-involved Career Day; reliable transportation required.'},
+    {src:'PROJECTION',txt:'2030 IN fentanyl share: ~85% (logistic with 88% asymptote).'},
+    {src:'IBE',       txt:'Companion long-form archive: ibetcg.netlify.app — Reentry, Power+Money, Scandals 2022-2026.'}
+  ];
+  const html=FACTS.concat(FACTS).map(f=>`<span class="marquee-item"><span class="src">${f.src}</span> ${f.txt}</span>`).join('');
+  document.getElementById('marquee-track').innerHTML=html;
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Your County Can Do &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Per-county action plans for Jackson, Scott, Jennings, and surrounding southern Indiana counties — what residents, families, employers, and local government can actually do, ranked by load-to-effort ratio.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/county-action.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.county-card{padding:24px 26px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4));border:1px solid var(--ln);border-radius:14px;margin:18px 0;position:relative;overflow:hidden}
+.county-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#22d3ee,#a855f7)}
+.county-card.hot::before{background:linear-gradient(90deg,#fbbf24,#f87171)}
+.county-card.high::before{background:linear-gradient(90deg,#f87171,#fb7185)}
+.county-card.green::before{background:linear-gradient(90deg,#34d399,#22d3ee)}
+.county-card h3{margin:0 0 8px;color:#fff;font-size:22px}
+.county-card .meta{color:var(--mut);font-size:13px;margin:0 0 14px}
+.county-card .meta strong{color:#67e8f9}
+.action-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.action-grid .a{padding:14px 16px;background:rgba(15,21,33,.55);border:1px solid var(--ln);border-radius:10px}
+.action-grid .a .who{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--mut);text-transform:uppercase;margin-bottom:6px}
+.action-grid .a h4{margin:0 0 6px;color:#fff;font-size:14.5px}
+.action-grid .a p{margin:0;color:#cbd5e1;font-size:13px;line-height:1.55}
+.who.resident{color:#67e8f9}
+.who.family{color:#86efac}
+.who.employer{color:#fcd34d}
+.who.local-gov{color:#fda4af}
+.who.nonprofit{color:#a78bfa}
+.summary-bar{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mut);margin-bottom:8px}
+.summary-bar .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.pill.hot{background:rgba(248,113,113,.15);color:#fda4af}
+.pill.warm{background:rgba(251,191,36,.15);color:#fcd34d}
+.pill.cool{background:rgba(34,211,238,.15);color:#67e8f9}
+.pill.green{background:rgba(52,211,153,.15);color:#86efac}
+.pred{padding:14px 18px;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.3);border-radius:10px;margin:14px 0 0}
+.pred h4{margin:0 0 6px;color:#a78bfa;font-size:13.5px;text-transform:uppercase;letter-spacing:.08em}
+.pred p{margin:0;font-size:13.5px;color:#cbd5e1;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html" class="active">County action</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/methodology.html">Methodology</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">County action plans &middot; resident-level &middot; load-to-effort ranked</p>
+  <h1>What your county can actually do</h1>
+  <p class="lead">For each county in the comparison set, this page identifies the highest-leverage actions a resident, family member, employer, local-government staffer, or nonprofit can take to move the curves on this dashboard. Ranked by load-to-effort ratio &mdash; biggest expected effect for the smallest realistic intervention. Each block ends with a 5-year prediction conditional on the actions being taken.</p>
+
+  <!-- Jackson -->
+  <article class="county-card">
+    <div class="summary-bar"><span class="pill cool">Anchor county</span><span>Pop ~46,500</span><span>OD ~35/100k</span><span>Region: South Central</span></div>
+    <h3>Jackson County (Seymour)</h3>
+    <p class="meta">Anchor county for this dashboard. Mid-size facility footprint, mid-range OD rate, mature reentry-program coverage relative to surrounding rural counties.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who resident">Resident</span><h4>Stock naloxone &amp; learn to use it</h4><p>Free at Jackson County Health Dept and most pharmacies under standing-order. The single highest-leverage 5-minute action a resident can take.</p></div>
+      <div class="a"><span class="who family">Family of returning citizen</span><h4>Solve the mailing-address question first</h4><p>Stable address &mdash; family home, transitional housing, or PO box &mdash; unlocks ID, SSN replacement, benefit applications, and parole reporting. Cheapest, highest-leverage gift.</p></div>
+      <div class="a"><span class="who employer">Employer</span><h4>Register as a HIRE partner</h4><p>Pre-screened, often-subsidized hires with 14% recidivism among completers. Indiana DWD onboards new partners in days.</p></div>
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Stand up a Free Ride pilot</h4><p>Use opioid-settlement dollars to fund transit to court, treatment, and work. Closes the Goodwill New Beginnings &ldquo;reliable transportation&rdquo; gate. ~$50&ndash;100k/yr scope.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Add 5&ndash;10 sober-living beds</h4><p>Slot-limited supply is the binding constraint on Goodwill / IRACS placements. Even church-anchored 5-bed houses move the needle locally.</p></div>
+      <div class="a"><span class="who resident">Resident</span><h4>Submit a tip on a documented contractor pattern</h4><p>The IBE companion archive at <a href="https://ibetcg.netlify.app/#submit" target="_blank" rel="noopener">ibetcg.netlify.app</a> publishes documented patterns. Patterns shift the local-business market faster than individual reviews.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> Jackson County implements transit + adds 10 sober-living beds + onboards 30 new HIRE-partner businesses by 2027, the dashboard projects: <strong>OD rate 30/100k by 2030 (vs. 38 do-nothing baseline), recidivism among supervised population &lt;20%, post-intake jail-OD events near zero</strong>. <strong>If</strong> nothing changes, OD plateaus at ~35/100k with continuing fentanyl-share rise.</p></div>
+  </article>
+
+  <!-- Scott -->
+  <article class="county-card hot">
+    <div class="summary-bar"><span class="pill hot">Hot-spot</span><span>Pop ~24,200</span><span>OD ~55/100k</span><span>IRACS active</span></div>
+    <h3>Scott County (Scottsburg)</h3>
+    <p class="meta">Highest premature-death rate in IN (2015 baseline). IRACS pilot active at the jail since ~2022 &mdash; documented intervention against the documented problem.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who resident">Resident</span><h4>Use the IRACS reentry-navigator line</h4><p>Call the Scott County Sheriff&rsquo;s Office and ask for the IRACS reentry navigator if you or a family member is in the jail or recently released. Voluntary; navigator continues post-release.</p></div>
+      <div class="a"><span class="who family">Family</span><h4>Pre-release intake</h4><p>If a family member is incarcerated, request the IRACS intake meeting on day one. Earlier enrollment = better post-release continuity.</p></div>
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Implement the 2022 jail-study recommendations</h4><p>Embedded social worker, no-juvenile-booking policy, 8-hr shift staffing model. Each is independently actionable and the study explicitly costs them.</p></div>
+      <div class="a"><span class="who employer">Employer</span><h4>Register as a HIRE partner</h4><p>Scott County&rsquo;s post-release population is concentrated; HIRE matches them with employers who get pre-screened, often-subsidized hires.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Add fentanyl-test-strip distribution</h4><p>Free + legal under Indiana harm-reduction law. Reduces fatal-OD risk especially in the post-intake / post-release windows.</p></div>
+      <div class="a"><span class="who resident">Resident</span><h4>Track the OD-dashboard quarterly</h4><p>Indiana Drug Overdose Dashboard exposes county-level metrics. Quarterly review keeps the conversation grounded in data, not anecdote.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> the 2022 jail-study recommendations are fully implemented + fentanyl-test-strip distribution scales + HIRE coverage doubles, the dashboard projects: <strong>OD rate ~44/100k by 2030 (vs. ~50 do-nothing), in-jail suicide attempts cut significantly, IRACS post-release navigator continuity covering 80%+ of releases</strong>. <strong>If</strong> nothing scales, Scott remains the corridor&rsquo;s OD hot-spot through 2030.</p></div>
+  </article>
+
+  <!-- Jennings -->
+  <article class="county-card hot">
+    <div class="summary-bar"><span class="pill hot">Hot-spot</span><span>Pop ~27,800</span><span>OD ~50/100k</span><span>Limited transit</span></div>
+    <h3>Jennings County (North Vernon, Vernon)</h3>
+    <p class="meta">Persistent overdose hot-spot. Limited transit gates access to MAT clinics and Goodwill New Beginnings placements. Smaller treatment footprint than Scott.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Apply for opioid-settlement transit funding</h4><p>Jennings is a textbook target for a Free Ride pilot. Funding exists at the state-distribution level; need a local applicant with a plan.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Stand up an MAT-friendly sober-living slot</h4><p>Stigma against medication-assisted treatment in some sober houses excludes the people most at risk. MAT-friendly housing fills the highest-need bracket.</p></div>
+      <div class="a"><span class="who resident">Resident</span><h4>Carry naloxone, know post-OD protocol</h4><p>911 first, then naloxone (multiple doses if fentanyl-suspected), then turn person on side, stay until EMS arrives. Indiana Good Samaritan law protects the caller from low-level drug charges.</p></div>
+      <div class="a"><span class="who family">Family</span><h4>Coordinate cross-county with HIRE / IRACS</h4><p>Some family members may want services in Scott or Jefferson. HIRE and IRACS work cross-county; ask a Scott IRACS navigator if Jennings has no local equivalent yet.</p></div>
+      <div class="a"><span class="who employer">Employer</span><h4>Hire one HIRE-eligible candidate this year</h4><p>One placement gives a real test of the model; most partner employers continue after the first hire because the screening reduces turnover.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> Jennings stands up a transit pilot + adds 5 MAT-friendly sober-living beds + 5+ businesses register with HIRE, the dashboard projects: <strong>OD rate ~42/100k by 2030 (vs. ~48 do-nothing), substantial recidivism reduction among the program-engaged subset</strong>. <strong>If</strong> the transit gate stays closed, Jennings underperforms even neighboring Scott on program effectiveness regardless of what else exists.</p></div>
+  </article>
+
+  <!-- Brown -->
+  <article class="county-card green">
+    <div class="summary-bar"><span class="pill green">Small-N</span><span>Pop ~15,200</span><span>OD ~25/100k</span><span>Smallest in set</span></div>
+    <h3>Brown County (Nashville)</h3>
+    <p class="meta">Smallest population in the comparison. Year-to-year OD-rate volatility is high because of small absolute counts. Use 3-year moving averages for any trend reading.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who resident">Resident</span><h4>Naloxone + crisis-line awareness</h4><p>Smaller-county = thinner EMS coverage. Personal naloxone availability matters more here than in metro.</p></div>
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Cross-county MOU with Bartholomew/Monroe</h4><p>MAT clinic and reentry-program coverage is realistically a regional service. MOUs with Bartholomew (Columbus) or Monroe (Bloomington) extend access without standing up local capacity.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Volunteer-driver network</h4><p>Even an informal volunteer-driver network for treatment / probation appointments measurably reduces missed-appointment rates.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> Brown extends regional MOUs and stands up a 10&ndash;20 driver volunteer network, the dashboard projects: <strong>OD rate stable at ~22/100k, missed-appointment-driven probation violations reduced by ~30%</strong>. Small-county arithmetic limits absolute-count interventions, but per-capita programs scale fine.</p></div>
+  </article>
+
+  <!-- Lawrence -->
+  <article class="county-card">
+    <div class="summary-bar"><span class="pill cool">Mid</span><span>Pop ~45,300</span><span>OD ~30/100k</span><span>Bedford metro</span></div>
+    <h3>Lawrence County (Bedford, Mitchell)</h3>
+    <p class="meta">Mid-size facility footprint with active treatment-provider presence. Below-state OD rate; programs working but coverage incomplete.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who employer">Employer</span><h4>Onboard 5+ HIRE-partner businesses</h4><p>Bedford&rsquo;s industrial-employer base is well-suited to HIRE pre-screened candidates in trades.</p></div>
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Add probation-officer caseload relief</h4><p>Probation overload is a documented driver of supervision failures. Caseload reduction = better outcomes.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>MAT clinic outreach</h4><p>Underserved pockets in rural southern Lawrence County could benefit from mobile-MAT outreach.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p>Lawrence is on a moderately positive trend already. With targeted employer engagement + caseload relief: <strong>OD rate trends to ~25/100k by 2030 (vs. ~28 do-nothing); recidivism reductions concentrate in the HIRE-touched subset</strong>.</p></div>
+  </article>
+
+  <!-- Monroe -->
+  <article class="county-card green">
+    <div class="summary-bar"><span class="pill green">Best-positioned</span><span>Pop ~140,300</span><span>OD ~18/100k</span><span>Bloomington / IU</span></div>
+    <h3>Monroe County (Bloomington / IU)</h3>
+    <p class="meta">Best-positioned county in the comparison set. University effect, large pop denominator, mature treatment ecosystem (IU Health, Centerstone). OD rate well below state.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Be the regional hub</h4><p>Monroe&rsquo;s capacity can support cross-county MOUs with Brown, Lawrence, Owen. Hub-and-spoke MAT + reentry coverage is the mature model for southern Indiana.</p></div>
+      <div class="a"><span class="who employer">Employer</span><h4>Anchor employer partnerships at scale</h4><p>Major Bloomington employers are ideal HIRE / Goodwill anchor partners; one strong anchor unlocks dozens of cross-county placements.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Trauma-informed reentry coordination</h4><p>IU faculty + Centerstone resources position Monroe as the trauma-informed-reentry training hub for southern IN.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> Monroe leans into a regional-hub role, the dashboard projects: <strong>Monroe OD rate trends to ~14/100k by 2030; the regional spillover from Monroe&rsquo;s capacity reduces Brown / Owen / SW-Lawrence rates by 5&ndash;10% beyond their own efforts</strong>.</p></div>
+  </article>
+
+  <!-- Bartholomew -->
+  <article class="county-card">
+    <div class="summary-bar"><span class="pill cool">Mid</span><span>Pop ~83,000</span><span>OD ~30/100k</span><span>Columbus regional hub</span></div>
+    <h3>Bartholomew County (Columbus)</h3>
+    <p class="meta">Cummins-anchored regional employer hub. Strong corporate community-investment posture; underused for reentry employer engagement.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who employer">Employer</span><h4>Onboard Cummins suppliers as HIRE partners</h4><p>Cummins itself + its supplier network = potentially hundreds of HIRE-friendly placements. Mid-skilled trades match HIRE candidate profile cleanly.</p></div>
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Coordinate with Jackson + Jennings</h4><p>Bartholomew is the natural employer-side anchor for Jackson and Jennings residents. Cross-county transit pilots make this viable.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Childcare-while-working pilot</h4><p>Childcare access is a quiet binding constraint on returning-citizen employment. A small Bartholomew pilot can validate the model.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> the Cummins-supplier HIRE-onboarding scales + childcare pilot launches, the dashboard projects: <strong>Regional employment rate among returning citizens up 15+ pp; Bartholomew + Jackson + Jennings recidivism convergence to a single tighter band</strong>.</p></div>
+  </article>
+
+  <!-- Washington / Decatur / Orange (rural cluster) -->
+  <article class="county-card high">
+    <div class="summary-bar"><span class="pill warm">Rural cluster</span><span>Each pop &lt;30k</span><span>OD ~25-30/100k</span><span>Salem / Greensburg / Paoli</span></div>
+    <h3>Washington / Decatur / Orange Counties (rural cluster)</h3>
+    <p class="meta">Three small rural counties with similar pattern: tight programs, limited transit, faith-based sober-living + small treatment footprint. Treat as a cluster for actions.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who local-gov">Local gov (any)</span><h4>Pursue a tri-county transit MOU</h4><p>Combining demand across three counties makes a transit pilot more fundable than any one alone. The opioid-settlement money requires plausible demand.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Cluster sober-living-bed availability</h4><p>Cross-county referral agreements between the existing church-anchored sober houses give residents more options when local capacity is full.</p></div>
+      <div class="a"><span class="who family">Family</span><h4>Use Indiana 211</h4><p>Indiana 211 indexes treatment + housing capacity statewide. When the local Yellow-Pages list runs dry, 211 has the cross-county fallback.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p>Tri-county cluster action: <strong>combined OD rate trends to ~22/100k by 2030; cross-county referral fills 70%+ of capacity gaps that single-county scarcity can&rsquo;t solve</strong>.</p></div>
+  </article>
+
+  <!-- Clark / Floyd (Ohio River metro) -->
+  <article class="county-card">
+    <div class="summary-bar"><span class="pill cool">Metro</span><span>Combined pop ~205k</span><span>OD ~30-32/100k</span><span>Louisville cross-river</span></div>
+    <h3>Clark + Floyd Counties (Jeffersonville / New Albany)</h3>
+    <p class="meta">Louisville-cross-river dynamics, large bookings volume, deep regional hospital and treatment ecosystem. Underused HIRE / Goodwill engagement given size.</p>
+
+    <div class="action-grid">
+      <div class="a"><span class="who employer">Employer</span><h4>Anchor Louisville-corridor HIRE</h4><p>Combined Clark+Floyd labor market overlaps with Louisville. Louisville-based employers + Clark/Floyd HIRE candidates = pipeline.</p></div>
+      <div class="a"><span class="who local-gov">Local gov</span><h4>Coordinate with KY counterparts</h4><p>Cross-state reentry coordination (Indiana DWD + KY equivalents) catches releasees who relocate at the river.</p></div>
+      <div class="a"><span class="who nonprofit">Nonprofit / faith</span><h4>Drop-in centers near transit hubs</h4><p>Drop-in centers near transit hubs (Bridge, IDOT-managed bus stops) reach the population most exposed to OD risk.</p></div>
+    </div>
+
+    <div class="pred"><h4>5-year prediction (conditional on actions)</h4><p><strong>If</strong> the Louisville-corridor cross-state coordination matures, the dashboard projects: <strong>Clark+Floyd combined OD rate trends to ~26/100k by 2030; HIRE/Goodwill placements increase ~50%</strong>.</p></div>
+  </article>
+
+  <section class="section">
+    <h2>The composite citizen action list</h2>
+    <p class="muted">If you only do one thing per week for a quarter, this list (in priority order) moves the needle most:</p>
+    <ol style="font-size:14.5px;line-height:1.7;color:#cbd5e1">
+      <li><strong>Stock naloxone &amp; learn to use it.</strong> Free, 5-minute training, immediate effect. Start here.</li>
+      <li><strong>If you employ anyone, register as a HIRE partner.</strong> Indiana DWD onboards in days. 14% recidivism among completers.</li>
+      <li><strong>If you have a returning citizen in your family, solve the address question first.</strong> Stable mailing address unlocks ID, SSN, benefits, parole compliance.</li>
+      <li><strong>Submit one documented tip to <a href="https://ibetcg.netlify.app/#submit">IBE</a>.</strong> Patterns shift the local-business market faster than individual reviews.</li>
+      <li><strong>Track the Indiana Drug Overdose Dashboard quarterly.</strong> Keep the conversation grounded in data, not anecdote.</li>
+      <li><strong>Show up at one county-commission or city-council meeting per quarter.</strong> Public-comment is where the political-pressure loop closes.</li>
+      <li><strong>Vote in your county elections.</strong> Sheriff, prosecutor, and county-commission races set the operating policy of every system on this dashboard.</li>
+    </ol>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="/correlations.html">See the data correlations &rarr;</a>
+    <a class="btn btn-2" href="/predictions.html">2026&ndash;2030 projections</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+</body>
+</html>
