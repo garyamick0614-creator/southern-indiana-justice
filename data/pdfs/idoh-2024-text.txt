@@ -1,0 +1,1097 @@
+ 
+ 
+ 
+  
+Division of Trauma and Injury Prevention   December 2025 
+Fatal Overdose and 
+Suicide Report, 2024 
+Indiana Overdose and Suicide Report, 2024 | 2 
+ 
+Table of Contents 
+Executive Summary ........................................................................................................................................................ 4 
+Background and Methods ........................................................................................................................................... 6 
+Key Findings – Overdose Deaths............................................................................................................................... 7 
+Key Findings – Suicide Deaths ................................................................................................................................... 9 
+Conclusions .................................................................................................................................................................... 10 
+Acknowledgements ..................................................................................................................................................... 11 
+Appendices ..................................................................................................................................................................... 12 
+ 
+  
+Indiana Overdose and Suicide Report, 2024 | 3 
+ 
+Dedication 
+This report is dedicated to the men, women and children who died due to suicide and overdose 
+in 2024. Each figure in this report represents a fellow Hoosier and the grief experienced by the 
+family and friends who lost a loved one. It is through comprehensive surveillance that we 
+develop a better understanding of this critical public health issue. Local health departments 
+through Health First Indiana and other agencies at the local, county, and state levels continue to 
+work together to implement data-driven initiatives to prevent deaths due to suicide and 
+overdose in Indiana. 
+If you or someone you know is thinking about suicide or experiencing a mental health or 
+substance use crisis, please call 988 to reach the Suicide & Crisis Lifeline. Trained crisis specialists 
+are available 24/7 to provide free, confidential support.  
+Indiana Overdose and Suicide Report, 2024 | 4 
+ 
+Executive Summary 
+Overdose and suicide are among the leading causes of death nationally and in Indiana, ranking 
+among the top 15 causes of death.1 To inform prevention efforts, this report describes the 
+burden of overdose and suicide in Indiana in 2024 by (1) county; (2) incident month; (3) sex, age, 
+race and ethnicity; (4) mechanism or drug type; and (5) veteran status. 
+Statewide Trends 
+• Overdose trends: In 2024, 1,618 Indiana residents (24.1 per 100,000) died by 
+unintentional or undetermined intent drug overdose,2 a decline from 2,130 deaths (32.5 
+per 100,000) in 2023. This marked the third consecutive year of declining overdose rates 
+and the lowest fatal overdose rate since 2016 (Appendix A). Declines in overdose rates 
+were observed across most demographic groups, with the exception that overdose rates 
+increased slightly among people aged 65-74 years (Appendix B). 
+• Suicide trends: Similar to overdose deaths, the number and age-adjusted rate of suicide 
+deaths decreased slightly to 1,168 deaths (16.6 per 100,000) in 2024, down from 1,184 
+deaths (16.9 per 100,000) in 2023. This marked the first time since 2019 that Indiana’s 
+suicide rate decreased from the previous year (Appendix A). Across most demographic 
+groups, suicide rates decreased slightly or remained stable from 2023 to 2024, although 
+there were some slight increases in suicide rates among youth and young adults ages 
+15-24 (Appendix E). 
+• National comparisons: In 2024, Indiana’s age-adjusted rates of suicide (16.6 per 
+100,000) and fatal overdose (24.1 per 100,000) remained above provisional national rates 
+(14.0 and 22.1 per 100,000, respectively),1 and the goals outlined in Healthy People 2030 
+(12.8 and 20.7 per 100,000, respectively).3 
+Geographic Distribution 
+Compared to urban counties, rural counties in Indiana in 2024 generally had higher rates of 
+suicide deaths (17.8 per 100,000 in rural counties vs. 16.2 per 100,000 in urban counties) and 
+lower rates of overdose deaths (20.7 per 100,000 in rural counties vs. 25.1 per 100,000 in urban 
+counties). 
+ 
+1 Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics System, 
+Provisional Mortality on CDC WONDER Online Database. Data are from the final Multiple Cause of Death Files, 2018-
+2023, and from provisional data for years 2024-2025, as compiled from data provided by the 57 vital statistics 
+jurisdictions through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10-
+provisional.html on Nov 17, 2025. 
+2 Overdose deaths in this report include only overdoses that were classified as unintentional or were of undetermined 
+intent. In 2024, 87 Indiana residents’ deaths were classified as intentional self-poisoning. For the purposes of this 
+report, these deaths are counted as suicides. Because the IDOH Drug Overdose Dashboard includes all overdose 
+deaths regardless of intent, the overdose data in this report may differ slightly from the overdose dashboard.  
+3 U.S. Department of Health and Human Services, Office of Disease Prevention and Health Promotion. Healthy People 
+2030. https://odphp.health.gov/healthypeople. Accessed October 9, 2025. 
+Indiana Overdose and Suicide Report, 2024 | 5 
+ 
+Overdose Deaths 
+• Substances: The overdose crisis in Indiana is primarily driven by illicit fentanyl, its 
+analogs, and methamphetamine. In 2024, opioids were the most common drug involved 
+in fatal overdoses (approximately 69%), followed by psychostimulants excluding cocaine 
+(approximately 38%). 
+• Demographics: Overdose affects people of all ages, sexes, races, ethnicities, and 
+backgrounds, though rates of fatal overdose in 2024 were higher among males than 
+females, among people ages 35 to 44 compared to people of other age groups, and 
+among Black or African American people than those of other races (Appendix B). 
+• Veteran status: 5.2% of all overdose deaths in Indiana in 2024 were among people who 
+had served in the armed forces, according to Vital Records data. 
+Suicide Deaths 
+• Mechanism: Consistent with prior years, firearms remained the leading mechanism of 
+deaths due to suicide in 2024, accounting for 65.3% of suicide deaths. This was a slight 
+increase from 2023, in which 63.8% of suicide deaths were due to firearms. 
+• Demographics: In 2024, the rate of suicide among males in Indiana (27.6 per 100,000) 
+was more than four times higher than among females (6.0 per 100,000). White persons 
+had the highest rate of suicide in Indiana in 2024 (17.8 per 100,000) compared to 
+persons of other races. Additionally, suicide rates were higher among adults ages 35 to 
+44 than among other age groups. 
+• Veteran status: In 2024, 14% of suicide deaths in Indiana were among people who had 
+served in the armed forces, according to Vital Records data. 
+Suicide and Overdose Prevention Efforts 
+Indiana continues to implement several prevention initiatives focused on reducing suicide and 
+overdose, including the following: 
+• Through Health First Indiana, several local health departments have identified reducing 
+suicide and/or overdose deaths as a key prevention priority in their communities. 
+• Through implementation of the Centers for Disease Control and Prevention (CDC) 
+Overdose Data to Action (OD2A) cooperative agreement, Indiana continues to educate 
+healthcare providers on evidence-based clinical guidelines to address pain management 
+and substance use disorder (SUD), conduct outreach and education among law 
+enforcement, and partner with local communities to link people with SUD to care and 
+services. 
+• In 2024, 35 local health departments actively participated in suicide and overdose fatality 
+review teams, which seek to identify risk factors contributing to suicide and overdose 
+and use this data to inform local prevention efforts. 
+Indiana Overdose and Suicide Report, 2024 | 6 
+ 
+Continued implementation and expansion of prevention efforts, treatment and interventions, 
+surveillance, and cross-sector partnerships in Indiana will be critical to reducing the impact of 
+suicide and overdose among Hoosiers. 
+ 
+Background and Methods 
+Statutory Requirements 
+Indiana Code (IC) 16-37-5 requires that the Indiana Department of Health prepare an annual 
+report concerning all fatalities in Indiana that are the result of suicide or overdose during the 
+preceding calendar year. This report is intended to fulfill this requirement for deaths occurring in 
+calendar year 2024. 
+Methods 
+Surveillance data on suicide and overdose deaths are derived from Indiana vital records, 
+according to the underlying cause of death listed on the decedent’s death certificate. Underlying 
+cause of death is classified by International Classification of Diseases 10th Revision (ICD-10) 
+codes, with suicide and overdose deaths analyzed according to established guidelines from the 
+National Center for Health Statistics.4 Deaths by county are grouped by the decedent’s county of 
+residence and may or may not be where the death occurred. Additional information on 
+methods, including a list of ICD-10 codes used for this report, is available in Appendix H. 
+Data Interpretation 
+All rates presented in this report are per 100,000 population. Statewide rates and rates by 
+county, sex, race, and ethnicity are age-adjusted using the direct method based on the U.S. 2000 
+standard population. When only a small number of deaths (fewer than 20) occur in a community 
+or demographic group, even small changes in the number of deaths over time can result in wide 
+fluctuations in death rates. Therefore, rates based on counts fewer than 20 are considered 
+unstable and should be interpreted with caution. In this report, unstable rates are denoted with 
+a “U.”  
+ 
+4 National Center for Health Statistics. Health, United States. Cause of death. Updated June 9, 2025. 
+https://www.cdc.gov/nchs/hus/sources-definitions/cause-of-death.htm. Accessed October 9, 2025. 
+Indiana Overdose and Suicide Report, 2024 | 7 
+ 
+Key Findings – Overdose Deaths 
+Statewide Overdose Death Trends 
+The statewide overdose death rate decreased to 24.1 per 100,000 in 2024, a 25.8% decline from 
+32.5 per 100,000 in 2023. Furthermore, the overdose death rate in 2024 was the lowest of the 
+last five years (Figure 1). 
+Figure 1. Indiana overdose deaths, 2020-2024 
+ 
+Overdose Fatalities by Drug Type 
+In 2024, synthetic opioids (including fentanyl) remained the leading substance detected among 
+overdose decedents, followed by psychostimulants (including methamphetamine but excluding 
+cocaine) (Figure 2). The percentage of deaths involving synthetic opioids decreased compared 
+to 2023, while other drug classes (such as benzodiazepines and psychostimulants) accounted for 
+a greater share of overdose deaths. 
+Figure 2. Substance trends in overdose decedents, 2023-2024 
+ 
+2,235
+2,718 2,567
+2,130
+1,618
+35.0
+41.7 39.2
+32.5
+24.1
+2020 2021 2022 2023 2024
+Count of Deaths
+Age-adjusted
+Rate per 100,000
+Syntethic 
+Opioids, 69.9% 63.7%
+Psychostimulants, 
+35.4%
+37.8%
+Cocaine, 20.6% 21.3%
+Benzodiazepines, 
+8.1% 8.5%
+Heroin, 1.1% 1.5%
+2023 2024
+Indiana Overdose and Suicide Report, 2024 | 8 
+ 
+Overdose Fatalities by Sex, Age, Race, and Ethnicity 
+Overdose Fatalities by County of Residence 
+• In 2024, the five counties with the highest stable rate of overdose deaths were Wayne 
+(67.1 per 100,000), Delaware (47.6), Floyd (44.7), Marion (40.6), and Madison (38.2). 
+• In 2024, overdose rates were higher in urban counties (25.1) than rural counties (20.7). 
+Overdose rates declined in both urban and rural counties compared to 2023 (34.1 and 
+28.0, respectively). 
+• Between 2023 and 2024, the number of overdose deaths increased in 17 counties and 
+decreased in 62 counties. Thirteen of the 17 counties that showed an increase had fewer 
+than 10 total overdose deaths for the year. Another 13 counties had no change 
+(Appendix C). 
+Overdose Fatalities by Month of Death 
+In 2024, the highest number of overdose deaths occurred in January (162). The lowest number 
+of overdose deaths was in December (105). There was a general downward trend in monthly 
+overdose deaths as the year progressed (Appendix D). 
+Overdose Fatalities by Veteran Status 
+In 2024, 84 overdose decedents (5.2%) were identified as veterans, a decrease from 124 in 2023.5 
+Among veterans who died by unintentional or undetermined overdose, 95.2% were male, 34.5% 
+were adults aged 55-64, and 82.1% were white. 
+ 
+5 Veteran status is denoted on death certificates as Armed Forces. Due to this being self -reported, the 
+actual number of veteran deaths may be undercounted. The Indiana Department of Veterans Affairs has 
+confirmed 8 of the 84 (9.5%) veteran overdose deaths. 
+32.6
+15.6
+Male
+Female
+Sex 
+0.23
+5.9
+13.6
+36.8
+49.8
+41.2
+32.7
+15.9
+2.8
+0-14
+15-19
+20-24
+25-34
+35-44
+45-54
+55-64
+65-74
+75+
+Age Group (Years) 
+39.0
+22.8
+16.2
+Black
+White
+Other/
+Multiple
+Race 
+Figure 3. Overdose death rates (per 100,000) by sex, age group, race, and ethnicity, 2024 
+ 
+Ethnicity 
+10.7
+25.3
+Hispanic
+Not Hispanic
+Indiana Overdose and Suicide Report, 2024 | 9 
+ 
+Key Findings – Suicide Deaths 
+Statewide Suicide Trends 
+The statewide suicide rate decreased 1.8% between 2023 and 2024 (16.9 to 16.6 per 100,000), 
+the first year-to-year decrease over the last five years (Figure 4). 
+Figure 4. Indiana suicide deaths, 2020-2024 
+ 
+Suicide Fatalities by County of Residence 
+• In 2024, the five counties with the highest stable rate of suicide were Morgan (26.0), 
+Vanderburgh (25.3), Vigo (22.8), Madison (22.2), and Delaware (21.7). 
+• Rural and urban counties had suicide rates of 17.8 and 16.2 per 100,000, respectively. 
+• Between 2023 and 2024, the number of suicide deaths increased in 39 counties and 
+decreased in 43 counties. Of the 39 counties that showed an increase, 22 had fewer than 
+10 suicide deaths in 2024. Ten counties had no change (Appendix F). 
+Suicide Fatalities by 
+Mechanism of Injury 
+Most suicide deaths in 2024 were due to 
+firearms (65.3%). However, mechanism of 
+suicide varied somewhat between males and 
+females. While firearms were the leading 
+cause of suicide deaths among both sexes, 
+firearms accounted for a higher proportion of 
+suicide deaths among males than females, 
+and poisoning accounted for a higher 
+proportion of suicide deaths among females 
+than among males (Figure 5).  
+ 
+ 
+1,017 1,124 1,149 1,184 1,168
+14.9 16.3 16.3 16.9 16.6
+2020 2021 2022 2023 2024
+Count of Deaths
+Age-adjusted
+Rate per 100,000
+Figure 5. Mechanism of suicide deaths, 2024 
+69.3%
+21.0%
+5.8%
+3.9%
+Firearm
+Suffocation
+Poisoning
+Other
+Males 
+46.9%
+24.4%
+22.5%
+6.2%
+Firearm
+Poisoning
+Suffocation
+Other
+Females 
+Indiana Overdose and Suicide Report, 2024 | 10 
+ 
+Suicide Fatalities by Sex, Age Group, Race, and Ethnicity 
+Suicide Fatalities by Month of Death 
+In 2024, August had the highest number of suicide deaths (112), while February had the lowest 
+(78). There was no clear seasonal trend in suicide deaths by month (Appendix G). 
+Suicide Fatalities by Veteran Status 
+In 2024, 163 persons who died by suicide were identified as veterans (14%), compared to 186 in 
+2023.6 Firearms accounted for 79.8% of veteran suicide deaths compared to 81.7% in 2023. 
+Among veterans who died by suicide, 95.1% were male, 24% were 75 and older, and 93.3% were 
+white. 
+Conclusions 
+In 2024, Indiana experienced a significant continued decline in overdose deaths compared to 
+the preceding five years. While declines occurred across most demographic groups, 
+demographic and geographic disparities in overdose rates persist. Additionally, Indiana 
+experienced a slight decrease in suicide rates for the first time since 2019. Additional ongoing 
+collaboration, surveillance, prevention, and intervention are essential to reduce the impact of 
+overdose and suicide in Indiana and promote the health and safety of all Hoosiers. 
+ 
+6 Veteran status is denoted on death certificates as Armed Forces. Due to this being self -reported, the 
+actual number of veteran deaths may be undercounted. The Indiana Department of Veterans Affairs 
+confirmed 69 of the 163 (42.3%) veteran suicide deaths.  
+Figure 6. Suicide death rates (per 100,000) by sex, age group, race, and ethnicity, 2024 
+27.6
+6.0
+Male
+Female
+Sex 
+0.5
+12.4
+21.8
+22.0
+24.3
+23.0
+21.8
+15.5
+19.9
+0-14
+15-19
+20-24
+25-34
+35-44
+45-54
+55-64
+65-74
+75+
+Age Group (Years) 
+9.8
+17.8
+8.6
+Black
+White
+Other/
+Multiple
+Race 
+Ethnicity 
+6.7
+17.5
+Hispanic
+Not Hispanic
+Indiana Overdose and Suicide Report, 2024 | 11 
+ 
+Acknowledgements 
+Lindsay Weaver, MD, FACEP – Indiana State Health Commissioner 
+Eldon Whetstone, JD – Assistant Commissioner, Health and Human Services  
+Brian Busching, MPH – Director, Division of Trauma and Injury Prevention  
+Robert Davis – Chief Data Officer, Office of Data and Analytics  
+Jamie Smith, MS, MPH – Director, Division of Family Health Data and Fatality Prevention 
+Peter Krombach, MPH – Director, Office of Data and Analytics 
+Lauren Milroy, MPH – Surveillance Director, Division of Trauma and Injury Prevention 
+Morgan Sprecher, MPH – Epidemiologist, Division of Trauma and Injury Prevention  
+Allison Martin, MPH, CHES – Epidemiologist, Division of Trauma and Injury Prevention 
+Emily Pham – Epidemiologist, Division of Trauma and Injury Prevention 
+Sahaj Parekh – Data Analyst, Division of Trauma and Injury Prevention 
+Annika Barce, MPH – Epidemiologist, Division of Trauma and Injury Prevention 
+Abigail DeSantis – Data Visualization Lead, Office of Data and Analytics 
+Rachel Kuria, MPH – Epidemiologist, Vital Records 
+ 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 12 
+ 
+Appendices 
+Appendix A: Ten-year Trends in Overdose and Suicide Deaths, 
+Statewide7 
+Table A.1 Count and Age-Adjusted Rate of Overdose Deaths by Year, 2015-2024 
+(Unintentional/undetermined intent overdoses only) 
+Overdose 
+Deaths 
+2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 
+Indiana Count 1,149 1,423 1,732 1,533 1,616 2,235 2,718 2,567 2,130 1,618 
+Indiana Rate 18.0 22.4 27.5 24.2 25.3 35.0 41.7 39.2 32.5 24.1 
+ 
+Table A.2 Count and Age-Adjusted Rate of Suicide Deaths by Year, 2015-2024 
+Suicide Deaths 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 
+Indiana Count 959 1,034 1,083 1,075 969 1,017 1,124 1,149 1,184 1,168 
+Indiana Rate 14.3 15.3 16.2 15.9 14.1 14.9 16.3 16.3 16.9 16.6 
+ 
+  
+ 
+7 Ten-year statewide trends are provided for added historical context. For brevity, the following 
+appendices with trends by sex, age, race, and ethnicity include only five-year trends. 
+ 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 13 
+ 
+Appendix B: Overdose Deaths by Sex, Age, Race, and Ethnicity 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by Sex, 2020-2024 
+(Unintentional/undetermined intent overdoses only) 
+Sex 2020 2021 2022 2023 2024 
+Male Count 1,556 1,813 1,741 1,430 1,098 
+Male Rate 48.8 55.2 52.8 43.7 32.6 
+Female Count 679 905 826 700 520 
+Female Rate 21.2 27.9 25.4 21.3 15.6 
+ 
+Table B.2 Count and Rate of Overdose Deaths by Age Group (Years), 2020-2024 
+(Unintentional/undetermined intent overdoses only) 
+Age Group 2020 2021 2022 2023 2024 
+0-14 Count 2 7 9 5 3 
+0-14 Rate U U U U U 
+15-19 Count 20 44 54 53 28 
+15-19 Rate 4.3 9.5 11.7 11.2 5.9 
+20-24 Count 170 178 149 115 66 
+20-24 Rate 36.2 37.5 30.1 24.1 13.6 
+25-34 Count 651 692 623 463 336 
+25-34 Rate 73.3 77.4 69.4 51.4 36.8 
+35-44 Count 640 726 682 577 439 
+35-44 Rate 75.4 84.6 79.3 66.3 49.8 
+45-54 Count 407 522 512 469 339 
+45-54 Rate 49.2 63.7 62.8 57.3 41.2 
+55-64 Count 281 429 420 328 273 
+55-64 Rate 31.8 49.1 49.0 38.8 32.7 
+65-74 Count 55 102 105 107 114 
+65-74 Rate 8.3 15.0 15.3 15.2 15.9 
+75+ Count 9 18 13 13 14 
+75+ Rate U U U U U 
+ 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 14 
+ 
+Table B.3 Count and Age-Adjusted Rate of Overdose Deaths by Race, 2022-20248 
+(Unintentional/undetermined intent overdoses only) 
+ 
+Table B.4 Count and Age-Adjusted Rate of Overdose Deaths by Ethnicity, 2020-
+2024 (Unintentional/undetermined intent overdoses only) 
+Ethnicity 2020 2021 2022 2023 2024 
+Hispanic or Latino Count 68 113 89 130 63 
+Hispanic or Latino Rate 13.8 22.5 17.0 23.4 10.7 
+Not Hispanic or Latino Count 2,166 2,604 2,478 2,000 1,548 
+Not Hispanic or Latino Rate 36.8 43.2 41.0 33.4 25.3 
+  
+ 
+8 Vital records data in 2022 and later use single race categories, with those who were identified as being 
+of multiple races noted as being of more than one race. Prior to 2022, vital records data used bridged race 
+categories and are not comparable to data in 2022 and later. 
+Race 2022 2023 2024 
+Black or African American 
+Count 
+441 380 
+282 
+Black or African American Rate 64.1 55.3 39.0 
+White Count 2,058 1,670 1,263 
+White Rate 37.9 30.6 22.8 
+Other or multiple races Count 68 80 73 
+Other or multiple races Rate 18.2 20.7 16.2 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 15 
+ 
+Appendix C: Overdose Deaths by County of Residence 
+ 
+ 
+ 
+Figure C.1. Overdose death rate by county, 2024 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 16 
+ 
+Table C.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2020-2024 
+(Unintentional/undetermined intent overdoses only) 
+County Name 2020 2021 2022 2023 2024 
+Adams Count 7 3 6 6 2 
+Adams Rate U U U U U 
+Allen Count 115 145 132 89 57 
+Allen Rate 31.6 39.6 35.3 24.2 14.7 
+Bartholomew Count 26 28 46 28 18 
+Bartholomew Rate 33.3 34.3 58.9 34.4 U 
+Benton Count 1 2 0 1 0 
+Benton Rate U U U U U 
+Blackford Count 7 4 4 4 4 
+Blackford Rate U U U U U 
+Boone Count 21 23 13 18 10 
+Boone Rate 31.5 32.8 U U U 
+Brown Count 5 10 6 8 5 
+Brown Rate U U U U U 
+Carroll Count 5 5 3 5 0 
+Carroll Rate U U U U U 
+Cass Count 10 5 16 9 1 
+Cass Rate U U U U U 
+Clark Count 62 67 61 65 51 
+Clark Rate 53.1 56.6 47.9 52.3 38.1 
+Clay Count 0 4 3 8 6 
+Clay Rate U U U U U 
+Clinton Count 11 12 15 10 8 
+Clinton Rate U U U U U 
+Crawford Count 6 5 8 1 2 
+Crawford Rate U U U U U 
+Daviess Count 0 4 4 5 0 
+Daviess Rate U U U U U 
+Dearborn Count 17 12 17 10 10 
+Dearborn Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 17 
+ 
+County Name 2020 2021 2022 2023 2024 
+Decatur Count 11 9 8 5 5 
+Decatur Rate U U U U U 
+DeKalb Count 13 4 3 4 7 
+DeKalb Rate U U U U U 
+Delaware Count 59 86 58 59 47 
+Delaware Rate 60.7 86.5 59.7 58.5 47.6 
+Dubois Count 5 7 2 0 2 
+Dubois Rate U U U U U 
+Elkhart Count 27 37 31 30 30 
+Elkhart Rate 15.6 19.4 16 16.5 15.6 
+Fayette Count 21 19 14 12 7 
+Fayette Rate 96.6 U U U U 
+Floyd Count 32 44 41 36 35 
+Floyd Rate 44.2 56.9 52.8 45.5 44.7 
+Fountain Count 5 4 2 3 3 
+Fountain Rate U U U U U 
+Franklin Count 10 9 3 7 4 
+Franklin Rate U U U U U 
+Fulton Count 6 9 1 4 2 
+Fulton Rate U U U U U 
+Gibson Count 2 2 3 3 4 
+Gibson Rate U U U U U 
+Grant Count 30 53 46 39 22 
+Grant Rate 53.6 96 80.7 68.2 33.4 
+Greene Count 4 11 6 7 3 
+Greene Rate U U U U U 
+Hamilton Count 43 46 52 51 31 
+Hamilton Rate 13.4 13.6 14.8 13.9 8.2 
+Hancock Count 22 24 21 19 18 
+Hancock Rate 30.6 31 28.6 U U 
+Harrison Count 16 17 19 17 12 
+Harrison Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 18 
+ 
+County Name 2020 2021 2022 2023 2024 
+Hendricks Count 50 47 37 36 18 
+Hendricks Rate 29.7 26.3 20.1 19.3 U 
+Henry Count 9 16 11 16 12 
+Henry Rate U U U U U 
+Howard Count 39 44 41 34 29 
+Howard Rate 52.7 58.1 52.6 43.6 36.4 
+Huntington Count 11 19 12 4 4 
+Huntington Rate U U U U U 
+Jackson Count 20 18 18 10 12 
+Jackson Rate 47.6 U U U U 
+Jasper Count 7 13 8 3 8 
+Jasper Rate U U U U U 
+Jay Count 5 12 8 12 1 
+Jay Rate U U U U U 
+Jefferson Count 9 13 9 11 11 
+Jefferson Rate U U U U U 
+Jennings Count 8 12 19 17 9 
+Jennings Rate U U U U U 
+Johnson Count 59 57 60 39 42 
+Johnson Rate 37.6 34.3 37.6 24.0 24.7 
+Knox Count 4 4 4 3 1 
+Knox Rate U U U U U 
+Kosciusko Count 12 22 23 19 8 
+Kosciusko Rate U 30.0 31.8 U U 
+LaGrange Count 5 5 4 2 0 
+LaGrange Rate U U U U U 
+Lake Count 166 217 187 170 120 
+Lake Rate 35.6 45.3 38.8 35.2 23.5 
+LaPorte Count 47 51 52 34 34 
+LaPorte Rate 45.1 46.7 51.2 32.9 32.9 
+Lawrence Count 10 17 14 18 13 
+Lawrence Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 19 
+ 
+County Name 2020 2021 2022 2023 2024 
+Madison Count 51 51 76 56 51 
+Madison Rate 42.0 38.7 57.4 44.4 38.2 
+Marion Count 572 699 677 555 397 
+Marion Rate 58.4 72.4 69.9 59.2 40.6 
+Marshall Count 10 13 16 14 7 
+Marshall Rate U U U U U 
+Martin Count 2 1 0 2 1 
+Martin Rate U U U U U 
+Miami Count 6 13 14 8 11 
+Miami Rate U U U U U 
+Monroe Count 43 48 58 56 42 
+Monroe Rate 34.3 39.1 48.9 46.2 34.6 
+Montgomery Count 9 16 11 8 6 
+Montgomery Rate U U U U U 
+Morgan Count 20 24 32 19 11 
+Morgan Rate 29.9 36.5 48.7 U U 
+Newton Count 4 9 3 5 5 
+Newton Rate U U U U U 
+Noble Count 6 12 11 9 3 
+Noble Rate U U U U U 
+Ohio Count 0 0 2 4 0 
+Ohio Rate U U U U U 
+Orange Count 3 6 4 3 5 
+Orange Rate U U U U U 
+Owen Count 6 5 7 7 5 
+Owen Rate U U U U U 
+Parke Count 2 5 3 1 1 
+Parke Rate U U U U U 
+Perry Count 2 3 2 2 1 
+Perry Rate U U U U U 
+Pike Count 2 1 1 0 2 
+Pike Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 20 
+ 
+County Name 2020 2021 2022 2023 2024 
+Porter Count 43 50 43 41 31 
+Porter Rate 27.4 31.0 25.8 23.4 18.1 
+Posey Count 2 3 8 2 0 
+Posey Rate U U U U U 
+Pulaski Count 6 6 8 2 6 
+Pulaski Rate U U U U U 
+Putnam Count 8 11 4 5 8 
+Putnam Rate U U U U U 
+Randolph Count 10 21 13 10 7 
+Randolph Rate U 93.2 U U U 
+Ripley Count 11 8 8 3 1 
+Ripley Rate U U U U U 
+Rush Count 3 5 1 1 2 
+Rush Rate U U U U U 
+St. Joseph Count 88 93 92 82 71 
+St. Joseph Rate 34.2 37.4 35.8 31.6 28.4 
+Scott Count 24 15 14 16 13 
+Scott Rate 103.2 U U U U 
+Shelby Count 16 16 20 14 13 
+Shelby Rate U U 47.5 U U 
+Spencer Count 2 3 4 4 1 
+Spencer Rate U U U U U 
+Starke Count 11 14 17 10 8 
+Starke Rate U U U U U 
+Steuben Count 2 4 5 3 5 
+Steuben Rate U U U U U 
+Sullivan Count 1 1 3 3 3 
+Sullivan Rate U U U U U 
+Switzerland Count 3 5 5 2 1 
+Switzerland Rate U U U U U 
+Tippecanoe Count 34 40 48 39 32 
+Tippecanoe Rate 21.0 22.6 29.7 22.8 18.9 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 21 
+ 
+County Name 2020 2021 2022 2023 2024 
+Tipton Count 1 1 6 1 1 
+Tipton Rate U U U U U 
+Union Count 2 2 4 2 3 
+Union Rate U U U U U 
+Vanderburgh Count 46 82 67 39 33 
+Vanderburgh Rate 26.7 47.1 37.2 23.2 19.9 
+Vermillion Count 3 3 2 5 3 
+Vermillion Rate U U U U U 
+Vigo Count 17 29 29 26 23 
+Vigo Rate U 29.0 28.1 24.7 21.6 
+Wabash Count 9 9 10 6 3 
+Wabash Rate U U U U U 
+Warren Count 1 0 1 4 0 
+Warren Rate U U U U U 
+Warrick Count 16 17 9 7 6 
+Warrick Rate U U U U U 
+Washington Count 13 13 14 8 2 
+Washington Rate U U U U U 
+Wayne Count 45 56 44 32 38 
+Wayne Rate 80.3 83.8 69.3 54.0 67.1 
+Wells Count 4 6 5 4 4 
+Wells Rate U U U U U 
+White Count 10 6 3 2 6 
+White Rate U U U U U 
+Whitley Count 6 8 8 9 0 
+Whitley Rate U U U U U 
+Indiana Count 2,235 2,718 2,567 2,130 1,618 
+Indiana Rate 35.0 41.7 39.2 32.5 24.1 
+ 
+ 
+ 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 22 
+ 
+Appendix D. Overdose Deaths by Month of Death, 2024 
+Figure D.1 Count of overdose deaths by month of death, Indiana, 2024 
+ 
+  
+162
+147 149 147
+130 137 136 132
+117
+136
+120
+105
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 23 
+ 
+Appendix E: Suicide Deaths by Sex, Age, Race, and Ethnicity 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by Sex, 2020-2024 
+Sex 2020 2021 2022 2023 2024 
+Male Count 823 921 941 985 959 
+Male Rate 24.4 27.2 27.2 28.5 27.6 
+Female Count 194 203 208 199 209 
+Female Rate 5.9 6.0 6.0 5.8 6.0 
+ 
+Table E.2 Count and Rate of Suicide Deaths by Age Group (Years), 2020-2024 
+Age Group 2020 2021 2022 2023 2024 
+0-14 Count 21 18 14 18 7 
+0-14 Rate 1.6 U U U U 
+15-19 Count 62 65 42 47 59 
+15-19 Rate 13.3 14.0 9.1 9.9 12.4 
+20-24 Count 87 107 87 87 106 
+20-24 Rate 18.5 22.6 17.6 18.2 21.8 
+25-34 Count 201 212 216 202 201 
+25-34 Rate 22.6 23.7 24.1 22.4 22.0 
+35-44 Count 161 200 171 216 214 
+35-44 Rate 19.0 23.3 19.9 24.8 24.3 
+45-54 Count 160 152 196 196 189 
+45-54 Rate 19.4 18.6 24.0 23.9 23.0 
+55-64 Count 140 162 190 181 182 
+55-64 Rate 15.9 18.5 22.2 21.4 21.8 
+65-74 Count 95 113 126 137 111 
+65-74 Rate 14.4 16.6 18.3 19.5 15.5 
+75+ Count 90 95 107 100 99 
+75+ Rate 20.9 21.9 22.8 21.0 19.9 
+ 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 24 
+ 
+Table E.3 Count and Age-Adjusted Rate of Suicide Deaths by Race, 2022-20249 
+ 
+Table E.4 Count and Age-Adjusted Rate of Suicide Deaths by Ethnicity, 2020-2024 
+Ethnicity 2020 2021 2022 2023 2024 
+Hispanic or Latino Count 34 35 40 48 43 
+Hispanic or Latino Rate 6.3 6.5 7.5 8.2 6.7 
+Not Hispanic or Latino Count 983 1,089 1,108 1,136 1,124 
+Not Hispanic or Latino Rate 15.5 17.0 16.9 17.7 17.5 
+  
+ 
+9 Vital records data in 2022 and later use single race categories, with those who were identified as being 
+of multiple races noted as being of more than one race. Prior to 2022, vital records data used bridged race 
+categories and are not comparable to data in 2022 and later. 
+Race 2022 2023 2024 
+Black or African American Count 72 80 73 
+Black or African American Rate 10.1 11.5 9.8 
+White Count 1,026 1,051 1,056 
+White Rate 17.0 17.7 17.8 
+Other or multiple races Count 51 53 39 
+Other or multiple races Rate 13.0 14.1 8.6 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 25 
+ 
+Appendix F: Suicide Deaths by County of Residence 
+ 
+ 
+ 
+Figure F.1. Suicide death rate by county, 2024 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 26 
+ 
+Table F.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2020-2024 
+County Name 2020 2021 2022 2023 2024 
+Adams Count 2 4 1 2 4 
+Adams Rate U U U U U 
+Allen Count 44 74 64 64 62 
+Allen Rate 11.2 19.2 17.1 16.5 15.8 
+Bartholomew Count 12 13 5 10 17 
+Bartholomew Rate U U U U U 
+Benton Count 5 1 1 2 2 
+Benton Rate U U U U U 
+Blackford Count 2 2 6 1 4 
+Blackford Rate U U U U U 
+Boone Count 8 11 8 16 6 
+Boone Rate U U U U U 
+Brown Count 4 4 10 5 3 
+Brown Rate U U U U U 
+Carroll Count 1 1 4 4 1 
+Carroll Rate U U U U U 
+Cass Count 5 5 10 6 9 
+Cass Rate U U U U U 
+Clark Count 16 22 25 21 26 
+Clark Rate U 18.2 18.6 16.5 19.3 
+Clay Count 4 7 7 6 5 
+Clay Rate U U U U U 
+Clinton Count 4 6 6 4 3 
+Clinton Rate U U U U U 
+Crawford Count 3 1 2 4 0 
+Crawford Rate U U U U U 
+Daviess Count 6 4 3 3 3 
+Daviess Rate U U U U U 
+Dearborn Count 10 11 10 4 7 
+Dearborn Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 27 
+ 
+County Name 2020 2021 2022 2023 2024 
+Decatur Count 2 4 6 4 3 
+Decatur Rate U U U U U 
+DeKalb Count 4 9 9 8 12 
+DeKalb Rate U U U U U 
+Delaware Count 19 16 25 26 23 
+Delaware Rate U U 23.9 22.1 21.7 
+Dubois Count 5 7 8 3 4 
+Dubois Rate U U U U U 
+Elkhart Count 16 21 29 34 17 
+Elkhart Rate U 10.6 14.0 16.9 U 
+Fayette Count 2 8 5 5 5 
+Fayette Rate U U U U U 
+Floyd Count 16 8 16 12 17 
+Floyd Rate U U U U U 
+Fountain Count 1 1 5 4 3 
+Fountain Rate U U U U U 
+Franklin Count 8 4 5 7 5 
+Franklin Rate U U U U U 
+Fulton Count 3 4 8 4 6 
+Fulton Rate U U U U U 
+Gibson Count 4 7 10 11 10 
+Gibson Rate U U U U U 
+Grant Count 9 16 8 24 10 
+Grant Rate U U U 35.2 U 
+Greene Count 5 4 6 9 6 
+Greene Rate U U U U U 
+Hamilton Count 32 43 40 43 36 
+Hamilton Rate 9.1 12.1 11.1 11.5 8.8 
+Hancock Count 11 11 13 10 18 
+Hancock Rate U U U U U 
+Harrison Count 10 9 13 3 7 
+Harrison Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 28 
+ 
+County Name 2020 2021 2022 2023 2024 
+Hendricks Count 25 22 24 34 28 
+Hendricks Rate 14.7 12.1 12.5 18.4 14.3 
+Henry Count 13 8 7 7 11 
+Henry Rate U U U U U 
+Howard Count 18 13 25 20 17 
+Howard Rate U U 31.7 26.4 U 
+Huntington Count 3 7 6 7 6 
+Huntington Rate U U U U U 
+Jackson Count 6 4 8 9 11 
+Jackson Rate U U U U U 
+Jasper Count 7 6 9 12 2 
+Jasper Rate U U U U U 
+Jay Count 2 7 4 4 4 
+Jay Rate U U U U U 
+Jefferson Count 3 6 2 5 5 
+Jefferson Rate U U U U U 
+Jennings Count 12 8 2 4 7 
+Jennings Rate U U U U U 
+Johnson Count 27 28 24 34 24 
+Johnson Rate 16.1 16.5 14.9 20.6 14.3 
+Knox Count 7 8 6 7 14 
+Knox Rate U U U U U 
+Kosciusko Count 12 12 6 11 16 
+Kosciusko Rate U U U U U 
+LaGrange Count 4 8 2 4 4 
+LaGrange Rate U U U U U 
+Lake Count 55 70 75 88 78 
+Lake Rate 10.6 13.5 13.7 18.3 15.1 
+LaPorte Count 22 32 21 32 17 
+LaPorte Rate 19.5 28.2 18.3 27.3 U 
+Lawrence Count 7 11 7 8 4 
+Lawrence Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 29 
+ 
+County Name 2020 2021 2022 2023 2024 
+Madison Count 23 28 23 34 29 
+Madison Rate 18.2 21.6 17.9 24.9 22.2 
+Marion Count 144 144 151 129 178 
+Marion Rate 14.7 14.6 15.6 13.1 17.9 
+Marshall Count 8 7 10 6 7 
+Marshall Rate U U U U U 
+Martin Count 2 3 1 4 4 
+Martin Rate U U U U U 
+Miami Count 10 5 9 4 7 
+Miami Rate U U U U U 
+Monroe Count 17 17 18 20 26 
+Monroe Rate U U U 14.7 20.6 
+Montgomery Count 11 5 6 6 8 
+Montgomery Rate U U U U U 
+Morgan Count 14 14 11 10 20 
+Morgan Rate U U U U 26.0 
+Newton Count 1 3 4 4 2 
+Newton Rate U U U U U 
+Noble Count 7 5 14 6 10 
+Noble Rate U U U U U 
+Ohio Count 1 1 0 2 0 
+Ohio Rate U U U U U 
+Orange Count 2 2 5 3 4 
+Orange Rate U U U U U 
+Owen Count 4 4 7 8 5 
+Owen Rate U U U U U 
+Parke Count 1 2 1 1 5 
+Parke Rate U U U U U 
+Perry Count 2 2 3 5 3 
+Perry Rate U U U U U 
+Pike Count 1 2 4 3 2 
+Pike Rate U U U U U 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 30 
+ 
+County Name 2020 2021 2022 2023 2024 
+Porter Count 27 31 28 27 31 
+Porter Rate 15.0 16.9 15.5 14.0 16.5 
+Posey Count 5 5 8 5 7 
+Posey Rate U U U U U 
+Pulaski Count 2 3 2 3 5 
+Pulaski Rate U U U U U 
+Putnam Count 13 9 8 15 6 
+Putnam Rate U U U U U 
+Randolph Count 5 5 6 4 3 
+Randolph Rate U U U U U 
+Ripley Count 6 3 7 2 6 
+Ripley Rate U U U U U 
+Rush Count 4 3 1 1 6 
+Rush Rate U U U U U 
+St. Joseph Count 44 31 43 40 35 
+St. Joseph Rate 16.1 11.1 16.0 14.8 12.1 
+Scott Count 1 7 5 5 1 
+Scott Rate U U U U U 
+Shelby Count 8 9 8 8 9 
+Shelby Rate U U U U U 
+Spencer Count 7 5 6 0 2 
+Spencer Rate U U U U U 
+Starke Count 3 3 5 7 6 
+Starke Rate U U U U U 
+Steuben Count 11 4 8 9 2 
+Steuben Rate U U U U U 
+Sullivan Count 4 6 6 3 6 
+Sullivan Rate U U U U U 
+Switzerland Count 1 1 1 0 3 
+Switzerland Rate U U U U U 
+Tippecanoe Count 23 34 23 25 27 
+Tippecanoe Rate 13.5 19 12.4 14.9 14.5 
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 31 
+ 
+County Name 2020 2021 2022 2023 2024 
+Tipton Count 3 6 5 3 2 
+Tipton Rate U U U U U 
+Union Count 1 4 1 0 2 
+Union Rate U U U U U 
+Vanderburgh Count 36 40 38 44 45 
+Vanderburgh Rate 19.3 20.8 20.9 23.6 25.3 
+Vermillion Count 6 6 5 6 5 
+Vermillion Rate U U U U U 
+Vigo Count 20 21 27 24 24 
+Vigo Rate 17.7 20.1 25.5 20.8 22.8 
+Wabash Count 3 8 9 5 5 
+Wabash Rate U U U U U 
+Warren Count 2 0 0 1 1 
+Warren Rate U U U U U 
+Warrick Count 10 13 9 9 10 
+Warrick Rate U U U U U 
+Washington Count 2 8 7 9 3 
+Washington Rate U U U U U 
+Wayne Count 9 11 11 18 10 
+Wayne Rate U U U U U 
+Wells Count 4 7 1 5 4 
+Wells Rate U U U U U 
+White Count 6 9 6 8 2 
+White Rate U U U U U 
+Whitley Count 7 0 1 8 5 
+Whitley Rate U U U U U 
+Indiana Count 1,017 1,124 1,149 1,184 1,168 
+Indiana Rate 14.9 16.3 16.3 16.9 16.6 
+ 
+ 
+  
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 32 
+ 
+Appendix G. Suicide Deaths by Month of Death, 2024 
+ 
+Figure G.1 Count of suicide deaths by month of death, Indiana, 2024 
+ 
+ 
+ 
+  
+88
+78
+95
+104 111
+98 94
+112
+92
+108
+96 92
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+All rates are per 100,000 population. Rates by age group and within county-level maps are crude rates. All 
+other rates are age-adjusted to the 2000 U.S. standard population according to the direct method. Rates 
+based on fewer than 20 cases are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2024 | 33 
+ 
+Appendix H: Methods 
+Cause of death throughout this report is determined based on the International Classification of 
+Diseases 10th revision (ICD-10) codes listed as the underlying cause of death on decedents’ 
+death certificates. ICD-10 codes for suicide and drug poisoning (overdose) are listed in table H.1. 
+Table H.1 Standardized definition of suicide and drug poisoning (overdose) deaths, by ICD-10 
+code of the decedent’s underlying cause of death 
+Definition Underlying Cause of Death ICD-10 
+Codes 
+Suicide U03, X60-X84, Y87.0 
+Poisoning X60-X69 
+Suffocation X70 
+Drowning X71 
+Firearm X72-X74 
+Other Specified, Classifiable X75, X81 
+Fire or Hot Object/Substance X76-X77 
+Cut or Pierce X78 
+Struck By or Against X79 
+Fall X80 
+All Transport X82 
+Other Specified, Not Elsewhere Classified X83, Y87.0 
+Unspecified X84 
+Unintentional Overdose/Poisoning X40-X44, Y10-Y14 
+Accidental poisoning by drugs X40-X44 
+Drug poisoning of undetermined intent Y10-Y14 
+ 
+Urban/Rural Classification 
+Urban and rural classifications in this report were based on the Health Resources and Services 
+Administration (HRSA) Federal Office of Rural Health Policy data files as of September 2025. 
+(https://www.hrsa.gov/rural-health/about-us/what-is-rural/data-files). 
