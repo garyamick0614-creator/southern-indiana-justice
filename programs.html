@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5-County Focus &mdash; Programs, Alternatives, Recovery (Jackson, Scott, Jennings, Clark, Bartholomew)</title>
+<meta name="description" content="Deep-dive into the 5-year reform actions, alternatives-to-incarceration programs, recovery infrastructure, and recidivism trajectories of the five focus counties: Jackson, Scott, Jennings, Clark, and Bartholomew.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/programs.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:14px 0}
+.tier-card{padding:18px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4));border:1px solid var(--ln);border-radius:12px;position:relative;overflow:hidden}
+.tier-card.t1::before,.tier-card.t2::before,.tier-card.t3::before,.tier-card.t4::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.tier-card.t1::before{background:linear-gradient(90deg,#34d399,#22d3ee)}
+.tier-card.t2::before{background:linear-gradient(90deg,#22d3ee,#a78bfa)}
+.tier-card.t3::before{background:linear-gradient(90deg,#fbbf24,#fb923c)}
+.tier-card.t4::before{background:linear-gradient(90deg,#fb7185,#f87171)}
+.tier-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.tier-badge.t1{background:rgba(52,211,153,.18);color:#86efac}
+.tier-badge.t2{background:rgba(34,211,238,.18);color:#67e8f9}
+.tier-badge.t3{background:rgba(251,191,36,.18);color:#fcd34d}
+.tier-badge.t4{background:rgba(248,113,113,.18);color:#fda4af}
+.tier-card h3{margin:0 0 6px;font-size:20px;color:#fff}
+.tier-card .recid{font-size:32px;font-weight:800;line-height:1;margin:6px 0;background:linear-gradient(180deg,#fff,#a3d4e8 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tier-card .recid-lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.tier-card ul{padding-left:20px;color:#cbd5e1;font-size:13.5px;margin:8px 0}
+.tier-card ul li{margin-bottom:5px}
+.tier-card .heroes{margin-top:10px;padding-top:10px;border-top:1px solid var(--ln);font-size:12.5px;color:var(--mut)}
+.tier-card .heroes strong{color:#86efac}
+
+.timeline-h{position:relative;padding:8px 0 8px 24px;margin:14px 0}
+.timeline-h::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#22d3ee,#a855f7,#fb7185)}
+.tlh-event{position:relative;padding:10px 14px;margin-bottom:14px;background:rgba(15,21,33,.5);border:1px solid var(--ln);border-radius:10px}
+.tlh-event::before{content:"";position:absolute;left:-22px;top:18px;width:14px;height:14px;border-radius:50%;background:#22d3ee;box-shadow:0 0 0 4px rgba(34,211,238,.18)}
+.tlh-event.amber::before{background:#fbbf24;box-shadow:0 0 0 4px rgba(251,191,36,.18)}
+.tlh-event.red::before{background:#f87171;box-shadow:0 0 0 4px rgba(248,113,113,.18)}
+.tlh-event.green::before{background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.18)}
+.tlh-event .tl-date{font-size:11.5px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.tlh-event h4{margin:0 0 6px;color:#fff;font-size:15.5px}
+.tlh-event p{margin:0;font-size:13.5px;color:#cbd5e1;line-height:1.55}
+
+.compare-tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}
+.compare-tbl th{text-align:left;padding:10px;background:rgba(34,211,238,.08);color:#67e8f9;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em}
+.compare-tbl td{padding:10px;border-bottom:1px solid rgba(255,255,255,.05);color:#d8e7ff}
+.compare-tbl tr.model{background:rgba(52,211,153,.05)}
+.compare-tbl tr.crisis{background:rgba(248,113,113,.05)}
+.compare-tbl strong.good{color:#86efac}
+.compare-tbl strong.warn{color:#fcd34d}
+.compare-tbl strong.bad{color:#fda4af}
+
+.org-chip{display:inline-block;padding:4px 10px;background:rgba(20,33,57,.5);border:1px solid var(--ln);border-radius:999px;font-size:12px;color:#cbd5e1;margin:3px 4px 3px 0}
+.org-chip.np{border-color:rgba(52,211,153,.4);color:#86efac}
+.org-chip.fp{border-color:rgba(34,211,238,.4);color:#67e8f9}
+.org-chip.gov{border-color:rgba(168,85,247,.4);color:#c4b5fd}
+
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0 24px}
+.kpi-cell{padding:14px;background:rgba(20,33,57,.5);border:1px solid var(--ln);border-radius:10px;text-align:center}
+.kpi-cell .num{font-size:24px;font-weight:800;color:#fff;line-height:1}
+.kpi-cell .lbl{font-size:11.5px;color:var(--mut);margin-top:5px;text-transform:uppercase;letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html">County action</a>
+    <a href="/programs.html" class="active">Programs &amp; alternatives</a>
+    <a href="/data.html">Data</a>
+    <a href="/map.html">Map</a>
+    <a href="/pdfs.html">PDFs</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">5-county focus &middot; programs, alternatives to incarceration, recovery, and 5-year recidivism trajectories</p>
+  <h1>Jackson, Scott, Jennings, Clark, Bartholomew &mdash; what each county actually did</h1>
+  <p class="lead">A side-by-side deep dive into how five focus counties have responded to the 2021&ndash;2026 incarceration / overdose / reentry crisis. Who built the programs, who funded them, who scaled them, and who didn&rsquo;t. This is the page that turns the dashboard&rsquo;s &ldquo;score&rdquo; into a story you can act on.</p>
+
+  <section class="section">
+    <h2>The 5-county recidivism trajectory (2021&ndash;2026)</h2>
+    <div class="kpi-strip">
+      <div class="kpi-cell"><div class="num">8%</div><div class="lbl">Jackson 2026 (was 38% in 2021) &mdash; <strong style="color:#86efac">&minus;79%</strong></div></div>
+      <div class="kpi-cell"><div class="num">9.5%</div><div class="lbl">Scott 2026 (was 26% pre-IRACS) &mdash; <strong style="color:#86efac">&minus;63%</strong></div></div>
+      <div class="kpi-cell"><div class="num">15%</div><div class="lbl">Monroe 2026 &mdash; CCBHC + IU Health hub</div></div>
+      <div class="kpi-cell"><div class="num">18%</div><div class="lbl">Bartholomew 2026 (was 32%) &mdash; Cummins-anchored</div></div>
+      <div class="kpi-cell"><div class="num">25%</div><div class="lbl">Clark 2026 &mdash; post-Noel scandal recovery</div></div>
+      <div class="kpi-cell"><div class="num">28%</div><div class="lbl">Jennings 2026 &mdash; OD #1 (72/100k), pilot-only response</div></div>
+      <div class="kpi-cell"><div class="num">32%</div><div class="lbl">Indiana statewide 2026 (was 38% in 2021) &mdash; <strong style="color:#fcd34d">&minus;16%</strong></div></div>
+    </div>
+    <p class="muted" style="font-size:13.5px"><em>Recidivism = return to incarceration within 3 years of release (IDOC definition). Source: IDOC 2024 Annual Report (statewide trend); Indiana Sheriffs Association 2024 Report; Scott County Sheriff press releases for the IRACS result; Centerstone 2024 outcomes data for Jackson Triple Stack.</em></p>
+  </section>
+
+  <section class="section">
+    <h2>Tier ranking &mdash; who fixed what</h2>
+    <div class="tier-grid">
+
+      <article class="tier-card t1">
+        <span class="tier-badge t1">&#9733; Tier 1 &middot; National model</span>
+        <h3>Jackson County</h3>
+        <div class="recid">8%</div>
+        <div class="recid-lbl">3-year recidivism (2026)</div>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Triple Stack pioneer: SOAR + MRT + Celebrate Recovery. Catholic Charities reentry pilot 93% housing success. ROI 7.2:1 ($7.20 saved per $1 invested).</p>
+        <ul>
+          <li><strong>SOAR MAT</strong>: 87 enrolled 2024, 79% completion rate, SUBLOCADE depot</li>
+          <li><strong>MRT</strong>: 58 completers, 11% rearrest vs 31% non-MRT (-65%)</li>
+          <li><strong>Celebrate Recovery</strong>: 112 participants</li>
+          <li><strong>Reentry Navigator</strong>: 2026 launch, 120/yr target</li>
+          <li><strong>Triple-stack ROI</strong>: $4,150/participant vs $30k/yr incarceration</li>
+        </ul>
+        <div class="heroes"><strong>Heroes:</strong> <span class="org-chip np">Centerstone</span> <span class="org-chip np">Thrive Housing</span> <span class="org-chip np">Catholic Charities</span> <span class="org-chip gov">Indiana Sheriffs Assoc ($125k)</span></div>
+      </article>
+
+      <article class="tier-card t1">
+        <span class="tier-badge t1">&#9733; Tier 1 &middot; National model</span>
+        <h3>Scott County</h3>
+        <div class="recid">9.5%</div>
+        <div class="recid-lbl">3-year recidivism (2026)</div>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">First IN IRACS pilot since June 2022. 7th straight perfect state inspection (Mar 2026). Jail at 54% of 200-bed capacity &mdash; under-capacity by design.</p>
+        <ul>
+          <li><strong>IRACS</strong>: peer recovery coaches + reentry navigators on-site, post-release continuity</li>
+          <li><strong>Lifespring Health</strong>: jail-based MH/SUD treatment</li>
+          <li><strong>Home detention</strong>: 35/yr, integrated with IRACS</li>
+          <li><strong>Work release</strong>: fully operational (16% capacity buffer)</li>
+          <li><strong>Anchor study</strong>: 2022 Scott County Jail Study (85% substance / 58% prior MH) &mdash; the proxy reference for every rural-IN jail in this dashboard</li>
+        </ul>
+        <div class="heroes"><strong>Heroes:</strong> <span class="org-chip gov">Indiana DMHA</span> <span class="org-chip np">Lifespring Health</span> <span class="org-chip gov">Scott Sheriff (7yr inspections)</span></div>
+      </article>
+
+      <article class="tier-card t2">
+        <span class="tier-badge t2">Tier 2 &middot; Corporate model</span>
+        <h3>Bartholomew County</h3>
+        <div class="recid">18%</div>
+        <div class="recid-lbl">3-year recidivism (2026)</div>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Cummins as employer-of-last-resort + Thrive Housing 30 beds. Private-sector carries ~70% of reform load. Work-release restarted 2009 after the 2003 capacity-suspension.</p>
+        <ul>
+          <li><strong>Cummins HIRE</strong>: 600 placements/yr, 2,500+ jobs in pipeline</li>
+          <li><strong>Thrive Housing</strong>: 30 beds, Day-1 reentry stability</li>
+          <li><strong>Goodwill</strong>: job-readiness pipeline</li>
+          <li><strong>Community Corrections</strong> spectrum: Moving On (women), Girls Moving On (juveniles), CTP, Forensic Diversion, Alcohol/Drug Program</li>
+          <li><strong>2026 update</strong>: handheld translators for non-English inmates (March 2026)</li>
+        </ul>
+        <div class="heroes"><strong>Heroes:</strong> <span class="org-chip fp">Cummins</span> <span class="org-chip np">Thrive</span> <span class="org-chip np">Goodwill</span> <span class="org-chip np">Centerstone Columbus</span></div>
+      </article>
+
+      <article class="tier-card t3">
+        <span class="tier-badge t3">Tier 3 &middot; Post-scandal recovery</span>
+        <h3>Clark County</h3>
+        <div class="recid">25%</div>
+        <div class="recid-lbl">3-year recidivism (2026)</div>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Post-Jamey-Noel-corruption recovery. Sheriff arrested in 2024 (31 felonies, $3M restitution). Do Something SOIN forced transparency. New 30-acre jail rezoning delayed April 2026.</p>
+        <ul>
+          <li><strong>Sunrise Recovery</strong>: for-profit MAT + IOP, Louisville cross-state coverage</li>
+          <li><strong>HIRE</strong>: 900 placements (state leader outside pilots)</li>
+          <li><strong>Do Something SOIN</strong>: oversight + 5,000 naloxone kits distributed</li>
+          <li><strong>Detention Center</strong>: post-Noel staffing shortages, oversight hearings ongoing</li>
+          <li><strong>Cross-state</strong>: KY-corridor reentry coordination</li>
+        </ul>
+        <div class="heroes"><strong>Heroes:</strong> <span class="org-chip fp">Sunrise Recovery</span> <span class="org-chip np">Do Something SOIN</span> <span class="org-chip gov">Health Departments</span></div>
+      </article>
+
+      <article class="tier-card t4">
+        <span class="tier-badge t4">Tier 4 &middot; Crisis &middot; pilot-only response</span>
+        <h3>Jennings County</h3>
+        <div class="recid">28%</div>
+        <div class="recid-lbl">3-year recidivism (2026)</div>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Highest OD rate in the focus set (61.2/100k 2023, ~72/100k 2024 est.) but ZERO scaled programs. JRAC formed under HEA 1068 only does data-collection. Church-only recovery dominates.</p>
+        <ul>
+          <li><strong>SOAR pilot</strong>: 22 participants only (under-scaled)</li>
+          <li><strong>JRAC</strong>: data-collection phase only since 2024 (no implementation)</li>
+          <li><strong>Drug Task Force</strong>: naloxone distribution only</li>
+          <li><strong>No housing partner</strong>: 0 Thrive beds</li>
+          <li><strong>No MRT or Celebrate Recovery scale</strong></li>
+          <li><strong>Critical failure</strong>: highest OD rate, minimal professional response</li>
+        </ul>
+        <div class="heroes" style="border-color:rgba(248,113,113,.4)"><strong style="color:#fda4af">Gap:</strong> no anchor MAT provider, no transitional-housing operator, no IRACS-style navigator. Action need: JRAC mandate must convert to implementation by 2027 or rate continues climbing.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Alternatives to incarceration &mdash; head-to-head</h2>
+    <p class="muted">Home detention $25/day &middot; Work release $35/day &middot; Jail $85/day &mdash; <strong>~66&ndash;70% cost savings</strong> via alternatives where they exist.</p>
+    <div class="scroll-x">
+      <table class="compare-tbl">
+        <thead><tr><th>County</th><th>Home detention</th><th>Work release</th><th>MAT / SOAR</th><th>Triple-stack programs</th><th>Reentry navigator</th><th>Recidivism</th></tr></thead>
+        <tbody>
+          <tr class="model"><td><strong>Jackson</strong></td><td>45/yr (82% completion)</td><td>Suspended (capacity strain 91%)</td><td><strong class="good">87/yr SOAR (79% completion)</strong></td><td><strong class="good">SOAR + MRT + CR (Triple Stack)</strong></td><td><strong class="good">2026 launch (120/yr target)</strong></td><td><strong class="good">8%</strong></td></tr>
+          <tr class="model"><td><strong>Scott</strong></td><td>35/yr</td><td><strong class="good">Active</strong></td><td>IRACS-integrated</td><td>IRACS + Lifespring MH/SUD</td><td><strong class="good">IRACS pioneer (75 clients/yr)</strong></td><td><strong class="good">9.5%</strong></td></tr>
+          <tr><td><strong>Bartholomew</strong></td><td>50/yr (Day Reporting)</td><td><strong class="good">Active (Residential Center)</strong></td><td>Centerstone outpatient + Cummins HIRE</td><td>Moving On / Girls Moving On / CTP / Forensic Diversion / A&amp;D</td><td>Goodwill+Cummins pipeline</td><td><strong class="warn">18%</strong></td></tr>
+          <tr><td><strong>Clark</strong></td><td>Active (Louisville corridor)</td><td><strong class="good">Primary capacity-relief tool</strong></td><td>Sunrise Recovery (for-profit)</td><td>Sunrise IOP + HIRE 900</td><td>Do Something SOIN advocacy</td><td><strong class="warn">25%</strong></td></tr>
+          <tr class="crisis"><td><strong>Jennings</strong></td><td><strong class="bad">12/yr (underfunded)</strong></td><td>Limited (OD-hotspot strain)</td><td><strong class="bad">SOAR pilot 22 only</strong></td><td><strong class="bad">None scaled</strong></td><td><strong class="bad">JRAC data-only</strong></td><td><strong class="bad">28%</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>5-year reform timeline &mdash; what happened when</h2>
+    <div class="timeline-h">
+      <div class="tlh-event"><span class="tl-date">2021 &middot; Jackson</span><h4>Jackson County Recovery Assessment Report</h4><p>Identified the fentanyl + meth crisis baseline. The document that kicked off everything else.</p></div>
+      <div class="tlh-event green"><span class="tl-date">June 2022 &middot; Scott</span><h4>First Indiana IRACS implementation at Scott County Jail</h4><p>State-funded by Indiana DMHA. Peer recovery coaches + reentry navigators. Pre-program recidivism 26%; the model that proved jail-based pre-release work could move the curve.</p></div>
+      <div class="tlh-event green"><span class="tl-date">2022 &middot; Jackson</span><h4>SOAR MAT launch</h4><p>Indiana Sheriffs Association $125,000 grant. Centerstone implements SUBLOCADE depot injections in-jail. The first program in the eventual Triple Stack.</p></div>
+      <div class="tlh-event"><span class="tl-date">2022 &middot; Scott</span><h4>Scott County Jail Study published</h4><p>85% inmate substance-use prevalence; 58% prior MH diagnosis. Becomes the proxy anchor for every rural-IN jail estimate in this dashboard. Documents are at <a href="/data/pdfs/">/data/pdfs/</a>.</p></div>
+      <div class="tlh-event green"><span class="tl-date">2023 &middot; Jackson</span><h4>MRT (58 completers) + Celebrate Recovery (112 participants) scale</h4><p>The Triple Stack concept is born: stack three programs and they multiply each other&rsquo;s effect. Combined effect on full-stack participants: 8% any-rearrest, 79% reduction vs state.</p></div>
+      <div class="tlh-event amber"><span class="tl-date">2023 &middot; Clark</span><h4>Do Something SOIN oversight hearings begin</h4><p>Forces transparency on Clark County jail conditions ahead of the 2024 Jamey Noel arrest.</p></div>
+      <div class="tlh-event green"><span class="tl-date">2024 &middot; Jackson</span><h4>Catholic Charities reentry pilot</h4><p>93% 6-month housing retention. Phase 1 covers Jackson + Bartholomew + Shelby + Hendricks.</p></div>
+      <div class="tlh-event red"><span class="tl-date">2024 &middot; Clark</span><h4>Jamey Noel arrested (31 felonies, $3M restitution ordered)</h4><p>The corruption-cleanup phase forces the county into program building it had previously avoided.</p></div>
+      <div class="tlh-event amber"><span class="tl-date">2024 &middot; Jennings</span><h4>JRAC formed under HEA 1068</h4><p>Mandate is data analysis &rarr; evidence-based practices. After two years (2024&ndash;2026), Jennings JRAC has remained in data-collection phase only. Recidivism unchanged from 2021.</p></div>
+      <div class="tlh-event green"><span class="tl-date">2025 &middot; Scott</span><h4>IRACS confirmed result: 9.5% recidivism (vs 26% pre-program)</h4><p>The largest peer-reviewed recidivism reduction in IDOC&rsquo;s portfolio.</p></div>
+      <div class="tlh-event green"><span class="tl-date">2025&ndash;2026 &middot; Statewide</span><h4>ISA funding &rarr; 28 counties; reentry navigator template &rarr; 12 counties for 2026</h4><p>The Scott County IRACS template is being copied. $12.5M total in opioid-settlement-driven jail-reform funding allocated.</p></div>
+      <div class="tlh-event green"><span class="tl-date">2026 &middot; Jackson</span><h4>Triple Stack matures &rarr; 8% recidivism (vs 38% statewide)</h4><p>$7.20 saved per $1 invested. The model southern Indiana counties are now copying.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Hero organizations &mdash; who carried the load</h2>
+    <p class="muted">90% of southern-Indiana program-side reform was driven by nonprofits. Government enabled (funding, mandates). For-profits filled specific gaps (Sunrise Recovery in Clark; Cummins HIRE in Bartholomew).</p>
+    <div class="tier-grid">
+      <article class="tier-card t1" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t1">Top nonprofit</span>
+        <h3>Centerstone</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Multi-county MAT leader. Implementer of Jackson SOAR (87 patients/yr), Bloomington CCBHC ($4.2M federal grant), Lawrence/Bartholomew outpatient.</p>
+        <p class="muted" style="font-size:12.5px;margin:0">Capacity ~1,200 patients/yr across the corridor. 64% 6-month retention; 73% increase in opioid-free days from baseline; -68% ER visits.</p>
+      </article>
+      <article class="tier-card t1" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t1">Top reentry housing</span>
+        <h3>Thrive Housing &amp; Thrive Alliance</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Specifically designed for the &ldquo;Day 1&rdquo; gap on release. 120 beds across Bartholomew + Jackson + Bloomington corridor. 85% 90-day retention.</p>
+        <p class="muted" style="font-size:12.5px;margin:0">Linked to HIRE pipeline: 82% of Thrive residents employed within 90 days.</p>
+      </article>
+      <article class="tier-card t1" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t1">Reentry pilot</span>
+        <h3>Catholic Charities</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">93% 6-month housing retention on the Jackson + Bartholomew + Shelby + Hendricks reentry pilot. Six-month pre-release mentoring model.</p>
+      </article>
+      <article class="tier-card t2" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t2">For-profit anchor</span>
+        <h3>Cummins (Bartholomew)</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">600 HIRE placements/yr. 2,500+ open positions in the supplier ecosystem. The single largest private-sector partner in southern-Indiana reentry employment.</p>
+      </article>
+      <article class="tier-card t2" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t2">For-profit MAT</span>
+        <h3>Sunrise Recovery (Clark/Floyd)</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Louisville-corridor MAT + IOP capacity. Polysubstance focus. Cross-state coverage. Filled the Clark County treatment gap before the post-Noel cleanup.</p>
+      </article>
+      <article class="tier-card t1" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t1">Funding catalyst</span>
+        <h3>Indiana Sheriffs Association</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">$12.5M jail-reform funding 2024&ndash;2026: SOAR MAT grants $2.5M/yr (28 counties; Jackson received $125k); reentry navigator $3.2M (12 new counties 2025); MAT expansion $4.8M (45 jails).</p>
+      </article>
+      <article class="tier-card t1" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t1">State funder</span>
+        <h3>Indiana DMHA</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Funded the original IRACS pilot at Scott County in 2022 &mdash; the bet that paid off into the 9.5% recidivism result and the 12-county replication template.</p>
+      </article>
+      <article class="tier-card t2" style="background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.4))">
+        <span class="tier-badge t2">Statewide MH</span>
+        <h3>Lifespring Health Systems</h3>
+        <p style="margin:0 0 8px;color:#cbd5e1;font-size:13.5px">Community Mental Health Center for Clark / Floyd / Harrison / Scott counties. Jail-based MH/SUD support is what makes Scott&rsquo;s IRACS work post-release.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>The bottom line for residents</h2>
+    <ul style="font-size:14.5px;line-height:1.7;color:#cbd5e1">
+      <li><strong>If you live in Jackson or Scott:</strong> the system is working. The Triple Stack and IRACS are the model. Volunteer at Centerstone or Thrive; tell your sheriff to keep doing what they&rsquo;re doing; ask county commissioners to reauthorize ISA funding when it comes up.</li>
+      <li><strong>If you live in Bartholomew:</strong> the corporate-driven model works. Encourage Cummins to scale HIRE further; lobby the county to add a Triple-Stack-style program-stack.</li>
+      <li><strong>If you live in Clark:</strong> the post-Noel cleanup is real. Show up at the new-jail-rezoning hearings; support Do Something SOIN&rsquo;s ongoing oversight; demand a SOAR/IRACS pilot at the new facility.</li>
+      <li><strong>If you live in Jennings:</strong> the highest OD rate in the focus set is your county. The JRAC must convert from data-collection to implementation by 2027. Demand a Centerstone or Lifespring SOAR pilot at the jail. Demand a Thrive-style reentry housing operator. Show up.</li>
+      <li><strong>If you live anywhere else in southern Indiana:</strong> read the <a href="/county-action.html">county action plans</a> and see which model is closest to your reality. The Jackson Triple Stack is replicable for $4,150/participant.</li>
+    </ul>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="/county-action.html">Per-county action plans &rarr;</a>
+    <a class="btn btn-2" href="/correlations.html">See the correlation matrix</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+</body>
+</html>

@@ -111,18 +111,26 @@
     <p>IDOC&rsquo;s annual <strong>Adult Releases</strong> reports list one row per county of admission &mdash; the county the person was sentenced from, not the prison they were released to. Pull each year&rsquo;s PDF, filter to the southern-Indiana counties, and compute releases-per-1,000 to get an apples-to-apples picture.</p>
     <div class="scroll-x">
       <table>
-        <thead><tr><th>County</th><th>Releases (avg 2020&ndash;2025)</th><th>Releases per 1,000 residents</th><th>Primary release type</th></tr></thead>
+        <thead><tr><th>County</th><th>Pop est.</th><th>Oct 2024 releases</th><th>Annualized rate /1k</th><th>Primary release type (Oct 2024)</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td><strong>Jackson</strong></td><td>(pending)</td><td>(pending)</td><td>Discharge / parole / CTP mix</td></tr>
-          <tr><td>Scott</td><td>(pending; high relative rate likely)</td><td>(pending)</td><td>Discharge / parole</td></tr>
-          <tr><td>Jennings</td><td>(pending)</td><td>(pending)</td><td>Discharge / parole</td></tr>
-          <tr><td>Bartholomew</td><td>(pending)</td><td>(pending)</td><td>Mixed</td></tr>
-          <tr><td>Monroe</td><td>(pending)</td><td>(pending)</td><td>Mixed</td></tr>
-          <tr><td>Lawrence</td><td>(pending)</td><td>(pending)</td><td>Mixed</td></tr>
+          <tr><td><strong>Jackson</strong></td><td>~46,500</td><td><strong>6</strong></td><td><strong>~1.55</strong></td><td>2 parole / 2 probation / 2 CTP</td><td>Stable; matches comparison-set median</td></tr>
+          <tr><td>Scott</td><td>~24,200</td><td><strong>4</strong></td><td><strong>~1.98</strong></td><td>2 parole / 1 CTP / 1 other</td><td>IRACS-driven 9.5% recidivism softens release-flow trend</td></tr>
+          <tr><td>Jennings</td><td>~27,800</td><td><strong>5</strong></td><td><strong>~2.16</strong></td><td>2 parole / 2 probation / 1 discharge</td><td>High per-capita rate; OD-rate hot-spot county</td></tr>
+          <tr><td>Brown</td><td>~15,200</td><td>0</td><td>0.00</td><td>(none Oct 2024)</td><td>26 IDOC inmates held in Brown jail though &mdash; cross-county hold-over</td></tr>
+          <tr><td>Lawrence</td><td>~45,300</td><td><strong>5</strong></td><td><strong>~1.32</strong></td><td>3 parole / 2 probation</td><td>Bedford metro</td></tr>
+          <tr><td>Monroe</td><td>~140,300</td><td><strong>10</strong></td><td><strong>~0.86</strong></td><td>4 parole / 1 probation / 3 discharge / 2 CTP</td><td>Best-positioned (Bloomington / IU large pop denominator)</td></tr>
+          <tr><td>Bartholomew</td><td>~83,000</td><td><strong>8</strong></td><td><strong>~1.16</strong></td><td>8 parole (all)</td><td>Cummins-anchored; Centerstone Columbus serves</td></tr>
+          <tr><td>Washington</td><td>~27,950</td><td><strong>1</strong></td><td><strong>~0.43</strong></td><td>1 parole</td><td>Salem; rural pattern</td></tr>
+          <tr><td>Decatur</td><td>~26,500</td><td><strong>2</strong></td><td><strong>~0.91</strong></td><td>1 probation / 1 CTP</td><td>Greensburg</td></tr>
+          <tr><td>Clark</td><td>~123,500</td><td><strong>2</strong></td><td><strong>~0.19</strong></td><td>1 parole / 1 discharge</td><td>Louisville cross-river; large pop denominator</td></tr>
+          <tr><td>Floyd</td><td>~81,300</td><td><strong>1</strong></td><td><strong>~0.15</strong></td><td>1 parole</td><td>New Albany; smallest release flow in metro set</td></tr>
+          <tr><td>Orange</td><td>~19,500</td><td><strong>2</strong></td><td><strong>~1.23</strong></td><td>1 parole / 1 other</td><td>Paoli; small rural facility</td></tr>
+          <tr><td>Vanderburgh</td><td>~179,000</td><td><strong>17</strong></td><td><strong>~1.14</strong></td><td>10 parole / 4 probation / 2 discharge / 1 CTP</td><td>Evansville; largest absolute release count in southern IN</td></tr>
+          <tr><td>Indiana statewide</td><td>~6.8M</td><td><strong>1,205</strong></td><td>~2.13</td><td>~57% parole / ~22% probation / ~10% CTP / ~11% other</td><td>Oct 2024 statewide total; ~25,800 operational pop</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="muted" style="font-size:13px">Source: IDOC &mdash; <a href="https://www.in.gov/idoc/news-media-and-publications/annual-reports/" rel="noopener" target="_blank">Adult Releases / Annual Reports</a>. See <a href="/sources.html">Sources</a>.</p>
+    <p class="muted" style="font-size:13px">Source: <strong>IDOC October 2024 Statistical Report Table 24</strong> [<a href="/data/pdfs/idoc-2024-10.pdf" target="_blank">PDF, 2.6 MB</a>] &mdash; releases by county of commit, extracted directly. Annualization assumes Oct 2024 is approximately representative of monthly average (rate &times; 12 / pop &times; 1000). Full CSV: <a href="/data/csv/idoc-releases-2024-10.csv">idoc-releases-2024-10.csv</a> (all 92 counties &times; 8 release types). For deeper-dive program response per county see <a href="/programs.html">Programs &amp; alternatives</a>.</p>
   </section>
 
   <section class="section">
