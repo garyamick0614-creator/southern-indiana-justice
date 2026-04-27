@@ -1,0 +1,13 @@
+county,admissions_total,release_parole,release_probation,release_discharged,release_ctp,release_total,jail_male,jail_female,jail_total
+Jackson,2,2,2,0,2,6,10,0,10
+Scott,7,2,0,0,1,4,2,0,2
+Jennings,1,2,2,1,0,5,5,0,5
+Brown,0,0,0,0,0,0,26,0,26
+Lawrence,14,3,2,0,0,5,8,0,8
+Monroe,12,4,1,3,2,10,4,0,4
+Bartholomew,15,8,0,0,0,8,4,0,4
+Washington,8,1,0,0,0,1,9,0,9
+Decatur,6,0,1,0,1,2,13,0,13
+Clark,4,1,0,1,0,2,12,2,14
+Floyd,1,1,0,0,0,1,0,0,0
+Orange,2,1,0,0,0,2,3,0,3

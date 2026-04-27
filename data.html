@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live Stats &amp; Data Downloads &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Real numbers extracted from IDOC October 2024 statistical report and 2024 Annual Report — county-level admissions, releases, jail populations, CTP trend, HIRE placements, recidivism, and downloadable CSVs.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/data.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0}
+.dl{padding:14px 16px;background:rgba(15,21,33,.55);border:1px solid var(--ln);border-radius:10px}
+.dl h4{margin:0 0 4px;font-size:14.5px;color:#fff}
+.dl p{margin:0 0 8px;color:var(--mut);font-size:12.5px;line-height:1.5}
+.dl a.csv{display:inline-block;padding:5px 10px;background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.4);color:#67e8f9;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none}
+.dl a.csv:hover{background:rgba(34,211,238,.2);color:#fff}
+.dl a.pdf{background:rgba(248,113,113,.12);border-color:rgba(248,113,113,.4);color:#fda4af}
+.kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0 24px}
+.kpi-cell{padding:14px;background:rgba(20,33,57,.5);border:1px solid var(--ln);border-radius:10px;text-align:center}
+.kpi-cell .num{font-size:24px;font-weight:800;color:#fff;line-height:1}
+.kpi-cell .lbl{font-size:11.5px;color:var(--mut);margin-top:5px;text-transform:uppercase;letter-spacing:.06em}
+.kpi-cell.ok .num{background:linear-gradient(180deg,#fff,#86efac);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi-cell.warn .num{background:linear-gradient(180deg,#fff,#fcd34d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi-cell.bad .num{background:linear-gradient(180deg,#fff,#fda4af);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+.tag.fresh{background:rgba(52,211,153,.18);color:#86efac}
+.tag.pdf{background:rgba(248,113,113,.18);color:#fda4af}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html">County action</a>
+    <a href="/data.html" class="active">Data</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/methodology.html">Methodology</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live stats &middot; extracted from primary PDFs &middot; downloadable CSVs</p>
+  <h1>Real numbers, traceable to the source</h1>
+  <p class="lead">Every stat below was extracted directly from the IDOC October 2024 Offender Population Statistical Report (82 pages, 2.6MB) and the 2024 IDOC Annual Report (36 pages, 9.3MB). Every CSV is downloadable. Every source PDF is mirrored on this site so you can audit the extraction yourself.</p>
+
+  <!-- Headline KPIs from the actual PDFs -->
+  <section class="section">
+    <h2>October 2024 IDOC headline numbers</h2>
+    <p class="muted">Source: <a href="/data/pdfs/idoc-2024-10.pdf" target="_blank" rel="noopener">IDOC Offender Population Statistical Report &mdash; October 2024 [PDF, 2.6 MB]</a></p>
+    <div class="kpi-strip">
+      <div class="kpi-cell"><div class="num">967</div><div class="lbl">Total adult admissions (Oct 2024)</div></div>
+      <div class="kpi-cell"><div class="num">801 / 166</div><div class="lbl">Male / female admissions</div></div>
+      <div class="kpi-cell"><div class="num">1,205</div><div class="lbl">Total adult releases</div></div>
+      <div class="kpi-cell warn"><div class="num">219</div><div class="lbl">CTP avg pop (Nov 2024)</div></div>
+      <div class="kpi-cell"><div class="num">759</div><div class="lbl">Total IDOC inmates held in county jails</div></div>
+    </div>
+  </section>
+
+  <!-- Focus-county snapshot -->
+  <section class="section">
+    <h2>Focus counties &mdash; October 2024 IDOC activity</h2>
+    <p class="muted">Extracted from Tables 23 (Admissions), 24 (Release Type), and 25 (County Jails) of the October 2024 statistical report.</p>
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr>
+            <th>County</th>
+            <th>Admissions</th>
+            <th>Parole release</th>
+            <th>Probation</th>
+            <th>Discharged</th>
+            <th>CTP</th>
+            <th>Total releases</th>
+            <th>Jail held (M+F)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Jackson</strong></td><td>2</td><td>2</td><td>2</td><td>0</td><td>2</td><td>6</td><td>10</td></tr>
+          <tr><td><strong>Scott</strong></td><td>7</td><td>2</td><td>0</td><td>0</td><td>1</td><td>4</td><td>2</td></tr>
+          <tr><td><strong>Jennings</strong></td><td>1</td><td>2</td><td>2</td><td>1</td><td>0</td><td>5</td><td>5</td></tr>
+          <tr><td><strong>Brown</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td><span style="color:#fda4af">26</span></td></tr>
+          <tr><td><strong>Lawrence</strong></td><td>14</td><td>3</td><td>2</td><td>0</td><td>0</td><td>5</td><td>8</td></tr>
+          <tr><td><strong>Monroe</strong></td><td>12</td><td>4</td><td>1</td><td>3</td><td>2</td><td>10</td><td>4</td></tr>
+          <tr><td><strong>Bartholomew</strong></td><td>15</td><td>8</td><td>0</td><td>0</td><td>0</td><td>8</td><td>4</td></tr>
+          <tr><td><strong>Washington</strong></td><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>9</td></tr>
+          <tr><td><strong>Decatur</strong></td><td>6</td><td>0</td><td>1</td><td>0</td><td>1</td><td>2</td><td>13</td></tr>
+          <tr><td><strong>Clark</strong></td><td>4</td><td>1</td><td>0</td><td>1</td><td>0</td><td>2</td><td>14</td></tr>
+          <tr><td><strong>Floyd</strong></td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+          <tr><td><strong>Orange</strong></td><td>2</td><td>1</td><td>0</td><td>0</td><td>0</td><td>2</td><td>3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-warn"><p><strong>Brown County jail anomaly.</strong> Brown logged zero IDOC admissions/releases for October but is holding <strong>26 IDOC offenders</strong> in its county jail &mdash; an unusually high count for a population of ~15,200. Worth examining whether this reflects an inter-county hold-over arrangement or a data-collection variance.</p></div>
+  </section>
+
+  <!-- 2024 Annual Report stats -->
+  <section class="section">
+    <h2>2024 IDOC Annual Report &mdash; Reentry &amp; HIRE</h2>
+    <p class="muted">Source: <a href="/data/pdfs/idoc-2024-annual.pdf" target="_blank" rel="noopener">IDOC 2024 Annual Report [PDF, 9.3 MB]</a></p>
+    <div class="kpi-strip">
+      <div class="kpi-cell ok"><div class="num">1,808</div><div class="lbl">HIRE placements 2024 (more than 2x 2023)</div></div>
+      <div class="kpi-cell ok"><div class="num">594</div><div class="lbl">HIRE employer partnerships</div></div>
+      <div class="kpi-cell ok"><div class="num">$15.84</div><div class="lbl">HIRE average wage</div></div>
+      <div class="kpi-cell ok"><div class="num">2,668</div><div class="lbl">Certifications earned (vocational)</div></div>
+      <div class="kpi-cell warn"><div class="num">2.14M</div><div class="lbl">CPCT credit-time days awarded ($26M savings)</div></div>
+      <div class="kpi-cell"><div class="num">1,373</div><div class="lbl">Individuals issued certifications</div></div>
+    </div>
+  </section>
+
+  <!-- Statewide recidivism trend -->
+  <section class="section">
+    <h2>Statewide recidivism trend (IDOC)</h2>
+    <p class="muted">Per IDOC, recidivism is defined as a return to incarceration within 3 years of release from a state correctional facility. Extracted from the 2024 Annual Report Year-to-Year Recidivism chart.</p>
+    <div class="kpi-strip">
+      <div class="kpi-cell warn"><div class="num">38.17%</div><div class="lbl">2019</div></div>
+      <div class="kpi-cell warn"><div class="num">36.99%</div><div class="lbl">2020</div></div>
+      <div class="kpi-cell ok"><div class="num">33.87%</div><div class="lbl">2021</div></div>
+      <div class="kpi-cell ok"><div class="num">33.78%</div><div class="lbl">2022 (low)</div></div>
+      <div class="kpi-cell warn"><div class="num">36.95%</div><div class="lbl">2023</div></div>
+      <div class="kpi-cell warn"><div class="num">38.16%</div><div class="lbl">2024 (back up)</div></div>
+    </div>
+    <div class="callout callout-warn"><p><strong>The 2024 reversal matters.</strong> Indiana&rsquo;s statewide recidivism dropped to 33.78% in 2022 (the post-pandemic low), then climbed back to 38.16% in 2024 &mdash; nearly the 2019 baseline. Read against this, the IRACS Scott County result (<strong>9.5% recidivism after 2 years</strong>, vs. Scott&rsquo;s pre-program 26%) is even more striking: the program is moving the curve in the opposite direction of the state trend.</p></div>
+  </section>
+
+  <!-- IRACS spotlight -->
+  <section class="section">
+    <h2>IRACS at Scott County Jail &mdash; the documented win</h2>
+    <p class="muted">Source: Scott County Sheriff&rsquo;s Office press releases + WAVE-3 News coverage (2022). First state-funded IRACS pilot in Indiana.</p>
+    <div class="kpi-strip">
+      <div class="kpi-cell bad"><div class="num">48%</div><div class="lbl">National recidivism (2019&ndash;22 baseline)</div></div>
+      <div class="kpi-cell warn"><div class="num">36%</div><div class="lbl">Indiana statewide (pre-IRACS)</div></div>
+      <div class="kpi-cell warn"><div class="num">26%</div><div class="lbl">Scott County pre-IRACS</div></div>
+      <div class="kpi-cell ok"><div class="num">9.5%</div><div class="lbl">Scott County post-IRACS (2 yrs in)</div></div>
+    </div>
+  </section>
+
+  <!-- THRIVE / Recovery Networks -->
+  <section class="section">
+    <h2>Southern Indiana recovery networks &amp; transitional housing</h2>
+    <p class="muted">Operating providers across the comparison-set counties as of 2026. Capacity numbers are slot-counts where published; otherwise &ldquo;variable&rdquo; means the provider operates without a single fixed bed-count.</p>
+
+    <div class="dl-grid">
+      <div class="dl"><h4>Thrive Alliance</h4><p>Indiana human-services nonprofit; housing, social, and caregiving services across southern Indiana. Bartholomew, Brown, Decatur, Jackson, Jennings counties.</p><a class="csv" href="https://thrive-alliance.org/" target="_blank" rel="noopener">thrive-alliance.org &rarr;</a></div>
+
+      <div class="dl"><h4>THRIVE RCO (Recovery Community Organization)</h4><p>Peer-led recovery support; ROCSI / ROSC-aligned. Plays the &ldquo;people who&rsquo;ve been there&rdquo; role that paid case-managers can&rsquo;t fully replicate.</p><a class="csv" href="https://indianarecoverynetwork.org/resources/resources-home/" target="_blank" rel="noopener">Indiana Recovery Network &rarr;</a></div>
+
+      <div class="dl"><h4>THRIVE Transitional Housing</h4><p>Specifically designed for individuals leaving incarceration; addresses the &ldquo;soft landing&rdquo; gap on Day 1 that is the single biggest leverage point in rural-IN reentry.</p><a class="csv" href="https://thrivetransitionalhousing.com/" target="_blank" rel="noopener">thrivetransitionalhousing.com &rarr;</a></div>
+
+      <div class="dl"><h4>Centerstone</h4><p>Major behavioral-health provider serving Monroe (Bloomington), Lawrence, Bartholomew, Jackson, Jennings, Brown counties. MAT, outpatient SUD, mental-health crisis services. The dominant treatment-capacity anchor for the Bloomington-corridor counties.</p><a class="csv" href="https://centerstone.org/" target="_blank" rel="noopener">centerstone.org &rarr;</a></div>
+
+      <div class="dl"><h4>Sunrise Recovery</h4><p>SUD treatment center; outpatient and intensive outpatient programming. Clark / Floyd / Scott / Washington counties (cross-state-line Louisville-corridor coverage).</p><a class="csv" href="https://sunriserecoveryinc.com/" target="_blank" rel="noopener">sunriserecoveryinc.com &rarr;</a></div>
+
+      <div class="dl"><h4>Volunteers of America Ohio &amp; Indiana</h4><p>Residential reentry, criminal-justice support programs; southern Indiana coverage including Theodora House and Brandon Hall (Indianapolis), with referrals from southern-IN counties.</p><a class="csv" href="https://www.voaohin.org/" target="_blank" rel="noopener">voaohin.org &rarr;</a></div>
+
+      <div class="dl"><h4>Safe Haven Transitional Housing (Evansville)</h4><p>Recovery housing in Evansville and southern Indiana, partnered with NOW Counseling Services. Reaches Vanderburgh, Posey, Warrick, Gibson counties.</p><a class="csv" href="https://soberhousedirectory.com/operators/safe-haven-transitional-housing-services/" target="_blank" rel="noopener">Listing &rarr;</a></div>
+
+      <div class="dl"><h4>Indiana Reentry Housing Directory (OACRA)</h4><p>Statewide directory of transitional and affordable housing options for people leaving incarceration. The single most useful starting list for a returning citizen or family.</p><a class="csv" href="https://www.oacra.com/find-services/indiana-housing" target="_blank" rel="noopener">oacra.com &rarr;</a></div>
+
+      <div class="dl"><h4>Dismas House of Indiana (South Bend)</h4><p>Reentry support residence in South Bend; statewide referrals. Includes work-program integration and 6&ndash;12 month residential stays.</p><a class="csv" href="https://www.dismashouseofindiana.org/" target="_blank" rel="noopener">dismashouseofindiana.org &rarr;</a></div>
+
+      <div class="dl"><h4>T.H.O.R. Directory (Transitional Housing for Offender Reentry)</h4><p>National directory of reentry-friendly transitional housing &mdash; useful when local options are full or unavailable.</p><a class="csv" href="https://www.fairshake.net/service/download.php?c=reentry_directories&reentry_directories_id=88" target="_blank" rel="noopener">Fair Shake &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section class="section">
+    <h2>Downloadable CSV exports</h2>
+    <p class="muted">All extracted directly from the cited PDFs. Schemas align with <a href="/methodology.html">/methodology.html</a>.</p>
+
+    <div class="dl-grid">
+      <div class="dl"><span class="tag fresh">CSV</span><h4>Focus counties summary &mdash; Oct 2024</h4><p>12-county snapshot: admissions, parole/probation/discharged/CTP releases, jail-held population. The most useful single-file export.</p><a class="csv" href="/data/csv/focus-counties-summary-2024-10.csv" download>focus-counties-summary-2024-10.csv</a></div>
+
+      <div class="dl"><span class="tag fresh">CSV</span><h4>IDOC admissions by county &mdash; Oct 2024</h4><p>All 92 counties &times; 12 offense levels (F1&ndash;F6, FA&ndash;FD, Misdemeanor) + total. Per Table 23.</p><a class="csv" href="/data/csv/idoc-admissions-2024-10.csv" download>idoc-admissions-2024-10.csv</a></div>
+
+      <div class="dl"><span class="tag fresh">CSV</span><h4>IDOC release type by county &mdash; Oct 2024</h4><p>All 92 counties &times; release type (Parole / Probation / Discharged / Other / CTP / Community Corrections / Unknown / Total). Per Table 24.</p><a class="csv" href="/data/csv/idoc-releases-2024-10.csv" download>idoc-releases-2024-10.csv</a></div>
+
+      <div class="dl"><span class="tag fresh">CSV</span><h4>IDOC inmates held in county jails &mdash; Oct 2024</h4><p>All 92 counties &times; (male / female / total). Per Table 25.</p><a class="csv" href="/data/csv/idoc-county-jail-pop-2024-10.csv" download>idoc-county-jail-pop-2024-10.csv</a></div>
+
+      <div class="dl"><span class="tag fresh">CSV</span><h4>CTP monthly average daily population 2021&ndash;2024</h4><p>Community Transition Program statewide ADP, monthly &mdash; the long-form trend. Shows the post-pandemic dip and 2024 recovery.</p><a class="csv" href="/data/csv/idoc-ctp-monthly-2021-2024.csv" download>idoc-ctp-monthly-2021-2024.csv</a></div>
+
+      <div class="dl"><span class="tag fresh">JSON</span><h4>Focus counties (machine-readable JSON)</h4><p>Same as the focus-counties-summary CSV but JSON-shaped for direct embedding in dashboards.</p><a class="csv" href="/data/csv/focus-counties-summary-2024-10.json" download>focus-counties-summary-2024-10.json</a></div>
+    </div>
+  </section>
+
+  <!-- Source PDFs -->
+  <section class="section">
+    <h2>Source PDFs (mirrored for audit)</h2>
+    <div class="dl-grid">
+      <div class="dl"><span class="tag pdf">PDF 2.6 MB</span><h4>IDOC Oct 2024 Statistical Report</h4><p>82 pages. Contains all county-level admission, release, jail-population, CTP, and offense-level data for October 2024. The single most useful operational PDF.</p><a class="csv pdf" href="/data/pdfs/idoc-2024-10.pdf" target="_blank" rel="noopener">Open PDF &rarr;</a></div>
+
+      <div class="dl"><span class="tag pdf">PDF 1.3 MB</span><h4>IDOC Jan 2025 Statistical Report</h4><p>55 pages. Same structure as Oct 2024 with January 2025 data &mdash; useful for month-to-month deltas.</p><a class="csv pdf" href="/data/pdfs/idoc-2025-01.pdf" target="_blank" rel="noopener">Open PDF &rarr;</a></div>
+
+      <div class="dl"><span class="tag pdf">PDF 9.3 MB</span><h4>IDOC 2024 Annual Report</h4><p>36 pages. HIRE / Reentry stats, recidivism trend, Community Corrections funding, facility highlights. Source for the year-to-year recidivism numbers above.</p><a class="csv pdf" href="/data/pdfs/idoc-2024-annual.pdf" target="_blank" rel="noopener">Open PDF &rarr;</a></div>
+    </div>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="/correlations.html">See data correlations &rarr;</a>
+    <a class="btn btn-2" href="/county-action.html">County action plans</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a> &middot; data extracted from public IDOC PDFs cited above
+</footer>
+
+</body>
+</html>

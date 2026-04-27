@@ -8,4 +8,5 @@
 <url><loc>https://southern-indiana-justice.netlify.app/sources.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://southern-indiana-justice.netlify.app/correlations.html</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
 <url><loc>https://southern-indiana-justice.netlify.app/county-action.html</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+<url><loc>https://southern-indiana-justice.netlify.app/data.html</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
 </urlset>

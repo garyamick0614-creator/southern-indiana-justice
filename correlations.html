@@ -53,6 +53,7 @@
     <a href="/counties.html">Counties</a>
     <a href="/correlations.html" class="active">Correlations</a>
     <a href="/county-action.html">County action</a>
+    <a href="/data.html">Data</a>
     <a href="/facilities.html">Jails &amp; prisons</a>
     <a href="/predictions.html">Predictions</a>
     <a href="/methodology.html">Methodology</a>
@@ -68,7 +69,7 @@
   <!-- Correlation matrix -->
   <section class="section">
     <h2>The correlation matrix &mdash; what moves what</h2>
-    <p class="muted">Direction estimates based on aggregated public-record patterns + national literature on rural-county criminal-justice and overdose dynamics. <strong>Red</strong> = positive correlation (more of A &rarr; more of B). <strong>Green</strong> = negative correlation (more of A &rarr; less of B). Darker shade = stronger evidence.</p>
+    <p class="muted">Direction estimates based on aggregated public-record patterns + national literature on rural-county criminal-justice and overdose dynamics. <strong>Red</strong> = <em>reinforcing</em> &mdash; more of A produces more of B (typically bad-outcome direction). <strong>Green</strong> = <em>protective</em> &mdash; more of A produces less of B (typically good-outcome direction). Darker shade = stronger evidence. Reading note: in statistical terms these are positive (red) and negative (green) correlations &mdash; we use plain-language labels here so the colors and meaning match.</p>
 
     <div class="matrix">
       <table>
@@ -88,10 +89,10 @@
     </div>
 
     <div class="callout-grid">
-      <div class="cb"><span class="pill" style="background:rgba(248,113,113,.15);color:#fda4af">Strongest positive</span><h4>Substance-use prevalence &rarr; OD deaths</h4><p>Counties where 80%+ of jail bookings have substance-use history (per the Scott Co. 2022 study anchor) have OD-death rates 1.5&ndash;2x the state average. The pipeline runs jail&nbsp;&rarr;&nbsp;release&nbsp;&rarr;&nbsp;weeks 1&ndash;4 OD risk window.</p></div>
-      <div class="cb"><span class="pill" style="background:rgba(52,211,153,.15);color:#86efac">Strongest negative</span><h4>HIRE / Goodwill / IRACS coverage &rarr; recidivism</h4><p>Counties with full-coverage HIRE + IRACS + Goodwill New Beginnings see ~14% recidivism among completers vs. ~38% statewide baseline. Programs work; they just don&rsquo;t blanket the geography.</p></div>
-      <div class="cb"><span class="pill" style="background:rgba(34,211,238,.15);color:#67e8f9">Underrated link</span><h4>Transit access &rarr; recidivism</h4><p>Goodwill New Beginnings explicitly requires &ldquo;reliable transportation or be on a bus route.&rdquo; Counties without transit pilots see qualified candidates rejected purely on logistics. Free Ride opioid-settlement programs close part of this gap where they exist.</p></div>
-      <div class="cb"><span class="pill" style="background:rgba(251,191,36,.15);color:#fcd34d">The cascading link</span><h4>Stable housing &rarr; everything else</h4><p>A reliable mailing address + 90 days of housing stability moves recidivism, OD risk, jail-booking risk, and homelessness simultaneously. The single highest-leverage intervention in the rural-IN reentry stack.</p></div>
+      <div class="cb"><span class="pill" style="background:rgba(248,113,113,.15);color:#fda4af">Strongest reinforcing (bad)</span><h4>Substance-use prevalence &rarr; OD deaths</h4><p>Counties where 80%+ of jail bookings have substance-use history (per the Scott Co. 2022 study anchor) have OD-death rates 1.5&ndash;2x the state average. The pipeline runs jail&nbsp;&rarr;&nbsp;release&nbsp;&rarr;&nbsp;weeks 1&ndash;4 OD risk window.</p></div>
+      <div class="cb"><span class="pill" style="background:rgba(52,211,153,.15);color:#86efac">Strongest protective (good)</span><h4>HIRE / Goodwill / IRACS coverage &rarr; recidivism</h4><p>The IRACS pilot at Scott County dropped recidivism from 26% pre-program to <strong>9.5% after 2 years</strong> &mdash; while statewide IDOC recidivism climbed back up to 38.16% in 2024. Programs work; they just don&rsquo;t blanket the geography.</p></div>
+      <div class="cb"><span class="pill" style="background:rgba(34,211,238,.15);color:#67e8f9">Underrated protective link</span><h4>Transit access &rarr; recidivism</h4><p>Goodwill New Beginnings explicitly requires &ldquo;reliable transportation or be on a bus route.&rdquo; Counties without transit pilots see qualified candidates rejected purely on logistics. Free Ride opioid-settlement programs close part of this gap where they exist.</p></div>
+      <div class="cb"><span class="pill" style="background:rgba(251,191,36,.15);color:#fcd34d">The cascading protective link</span><h4>Stable housing &rarr; everything else</h4><p>A reliable mailing address + 90 days of housing stability moves recidivism, OD risk, jail-booking risk, and homelessness simultaneously. The single highest-leverage intervention in the rural-IN reentry stack &mdash; THRIVE Transitional Housing, Centerstone, and Sunrise Recovery anchor this in southern IN.</p></div>
     </div>
   </section>
 
