@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Interactive Map &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Interactive Leaflet map of southern Indiana — IDOC prisons, county jails, halfway houses, recovery complexes, inpatient + outpatient treatment, work-release, group homes, homeless shelters, mental-health centers, with OD-rate overlays and IDOC release-count circles by county.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/map.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin defer></script>
+<style>
+.map-page main{max-width:1280px}
+.map-wrap{display:grid;grid-template-columns:280px 1fr;gap:14px;margin:14px 0}
+@media(max-width:880px){.map-wrap{grid-template-columns:1fr}}
+.map-side{padding:14px 16px;background:rgba(15,21,33,.55);border:1px solid var(--ln);border-radius:12px;height:fit-content;max-height:80vh;overflow-y:auto}
+.map-side h3{margin:0 0 8px;color:#fff;font-size:14.5px}
+.map-side .grp{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--ln)}
+.map-side .grp:last-child{border-bottom:none}
+.map-side label{display:flex;align-items:center;gap:8px;font-size:13px;color:#cbd5e1;margin:5px 0;cursor:pointer}
+.map-side label input{accent-color:var(--accent)}
+.map-side label .dot{display:inline-block;width:10px;height:10px;border-radius:50%}
+.map-side select{appearance:none;width:100%;padding:8px 10px;background:rgba(15,21,33,.7);border:1px solid var(--ln);border-radius:6px;color:#fff;font:13px 'DM Sans',system-ui,sans-serif;cursor:pointer;margin-bottom:10px}
+#map{height:74vh;min-height:540px;border-radius:12px;border:1px solid var(--ln);background:#0a0e14}
+.leaflet-popup-content{font:13px/1.5 'DM Sans',sans-serif;color:#0a0e14}
+.leaflet-popup-content strong{color:#0a0e14}
+.scorecard{margin-top:18px;padding:18px;background:rgba(15,21,33,.5);border:1px solid var(--ln);border-radius:12px}
+.scorecard h3{margin-top:0}
+.score-tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.score-tbl th{text-align:left;padding:8px;background:rgba(34,211,238,.08);color:#67e8f9;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em}
+.score-tbl td{padding:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+.score-tbl tr.strong{background:rgba(52,211,153,.06)}
+.score-tbl tr.weak{background:rgba(248,113,113,.06)}
+.legend-row{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0;font-size:12.5px;color:var(--mut)}
+.legend-row span{display:inline-flex;align-items:center;gap:6px}
+.legend-row i{display:inline-block;width:14px;height:14px;border-radius:50%}
+</style>
+</head>
+<body class="map-page">
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html">County action</a>
+    <a href="/data.html">Data</a>
+    <a href="/map.html" class="active">Map</a>
+    <a href="/pdfs.html">PDFs</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Interactive map &middot; facilities + OD overlays + IDOC flow</p>
+  <h1>Where the system actually lives, on a map</h1>
+  <p class="lead">Every IDOC prison, county jail, work-release, halfway house, recovery complex, inpatient + outpatient treatment center, group home, homeless shelter, recovery hub, and mental-health office we have public coordinates for &mdash; layered against IDOC October 2024 admission &amp; release flow per county and the OD-death-rate gradient. Toggle layers in the sidebar; pick a county to zoom and see a strongest/weakest scorecard.</p>
+
+  <div class="legend-row">
+    <span><i style="background:#a855f7"></i> IDOC prison</span>
+    <span><i style="background:#f87171"></i> County jail</span>
+    <span><i style="background:#22d3ee"></i> Treatment / inpatient</span>
+    <span><i style="background:#67e8f9"></i> Outpatient / mental-health</span>
+    <span><i style="background:#34d399"></i> Halfway house / sober living</span>
+    <span><i style="background:#86efac"></i> Recovery hub / RCO</span>
+    <span><i style="background:#fbbf24"></i> Homeless shelter / group home</span>
+    <span><i style="background:#fb7185"></i> OD hot-spot county</span>
+  </div>
+
+  <div class="map-wrap">
+    <aside class="map-side">
+      <div class="grp">
+        <h3>Filter by county</h3>
+        <select id="county-filter">
+          <option value="">All southern Indiana</option>
+        </select>
+        <h3 style="margin-top:12px">Region</h3>
+        <select id="region-filter">
+          <option value="">Show all</option>
+          <option value="South Central">South Central</option>
+          <option value="Ohio River">Ohio River corridor</option>
+          <option value="Southwest">Southwest</option>
+          <option value="Southeast">Southeast</option>
+        </select>
+      </div>
+
+      <div class="grp">
+        <h3>Layers</h3>
+        <label><input type="checkbox" data-layer="prison" checked><span class="dot" style="background:#a855f7"></span> IDOC prisons</label>
+        <label><input type="checkbox" data-layer="jail" checked><span class="dot" style="background:#f87171"></span> County jails</label>
+        <label><input type="checkbox" data-layer="treatment" checked><span class="dot" style="background:#22d3ee"></span> Inpatient treatment</label>
+        <label><input type="checkbox" data-layer="outpatient" checked><span class="dot" style="background:#67e8f9"></span> Outpatient / MH</label>
+        <label><input type="checkbox" data-layer="halfway" checked><span class="dot" style="background:#34d399"></span> Halfway / sober living</label>
+        <label><input type="checkbox" data-layer="hub" checked><span class="dot" style="background:#86efac"></span> Recovery hubs / RCO</label>
+        <label><input type="checkbox" data-layer="shelter" checked><span class="dot" style="background:#fbbf24"></span> Shelter / group home</label>
+        <label><input type="checkbox" data-layer="workrelease" checked><span class="dot" style="background:#a78bfa"></span> Work release / CTP</label>
+        <label><input type="checkbox" data-layer="release" checked><span class="dot" style="background:#22d3ee;border:2px dashed #22d3ee;background:transparent"></span> IDOC release flow (Oct 2024)</label>
+        <label><input type="checkbox" data-layer="od" checked><span class="dot" style="background:#fb7185"></span> OD-rate gradient</label>
+      </div>
+
+      <div class="grp">
+        <h3>Score legend</h3>
+        <p class="muted" style="font-size:12px;margin:0 0 6px">Composite score = (treatment density &times; reentry coverage) &minus; (OD rate &times; weakness penalties).</p>
+        <div style="display:flex;gap:6px;font-size:11.5px;color:#cbd5e1">
+          <span style="padding:3px 8px;background:rgba(52,211,153,.18);color:#86efac;border-radius:4px">Strong</span>
+          <span style="padding:3px 8px;background:rgba(251,191,36,.18);color:#fcd34d;border-radius:4px">Mid</span>
+          <span style="padding:3px 8px;background:rgba(248,113,113,.18);color:#fda4af;border-radius:4px">Weak</span>
+        </div>
+      </div>
+    </aside>
+
+    <div id="map"></div>
+  </div>
+
+  <section class="scorecard">
+    <h3 id="scorecard-title">Strongest &amp; weakest counties (overall, all southern IN)</h3>
+    <p class="muted" style="font-size:13.5px">Composite score combines IDOC admissions/releases (Oct 2024 actual), county-jail population (Oct 2024 actual), an OD-rate proxy, and the count of treatment / reentry / housing facilities listed on this map. Higher = stronger system; lower = weaker.</p>
+    <div style="overflow-x:auto"><table class="score-tbl" id="score-tbl">
+      <thead><tr><th>County</th><th>OD rate (proxy)</th><th>IDOC adm Oct 2024</th><th>IDOC rel Oct 2024</th><th>Jail held</th><th># Facilities mapped</th><th>Score</th><th>Verdict</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section class="scorecard" style="margin-top:14px">
+    <h3>What the map shows that the tables don&rsquo;t</h3>
+    <ul style="font-size:14px;line-height:1.7;color:#cbd5e1;padding-left:20px">
+      <li><strong>Treatment / housing deserts.</strong> Counties with high IDOC release counts but no nearby treatment or housing pin are the structural at-risk zones &mdash; visible at a glance only on a map.</li>
+      <li><strong>Cross-county dependency.</strong> When a small county has zero treatment but sits 25 miles from a Centerstone or THRIVE pin, the system is functionally regional &mdash; the map shows whether that 25-mile commute is realistic.</li>
+      <li><strong>OD-rate vs. facility coverage mismatch.</strong> The OD-rate gradient color across counties, contrasted with the facility-pin density, shows you exactly where the gap between need and capacity is widest.</li>
+      <li><strong>IDOC release flow.</strong> Each county&rsquo;s release-flow circle is sized to its October 2024 release count (data extracted from IDOC PDF). Bigger circle = more people coming home that month, needing the very services pinned around them.</li>
+    </ul>
+  </section>
+
+  <p class="muted" style="font-size:12.5px;margin-top:18px"><em>Coordinate accuracy note: facility points are the published address centroid for each named operator. For multi-location providers (Centerstone, Sunrise Recovery), the largest regional location is shown; the operator typically serves a wider area. If you spot an error, <a href="https://ibetcg.netlify.app/#submit">submit a tip</a>.</em></p>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script defer>
+window.addEventListener('load', function(){
+  var counties = [
+    {n:'Jackson',     pop:46500, lat:38.9592, lon:-85.8911, region:'South Central',  od:35, adm:2,  rel:6,  jail:10, hot:false},
+    {n:'Scott',       pop:24180, lat:38.6850, lon:-85.7700, region:'South Central',  od:55, adm:7,  rel:4,  jail:2,  hot:true },
+    {n:'Jennings',    pop:27800, lat:39.0011, lon:-85.6300, region:'Southeast',      od:50, adm:1,  rel:5,  jail:5,  hot:true },
+    {n:'Brown',       pop:15200, lat:39.1972, lon:-86.2270, region:'South Central',  od:25, adm:0,  rel:0,  jail:26, hot:false},
+    {n:'Lawrence',    pop:45300, lat:38.8409, lon:-86.4838, region:'South Central',  od:30, adm:14, rel:5,  jail:8,  hot:false},
+    {n:'Monroe',      pop:140300,lat:39.1625, lon:-86.5264, region:'South Central',  od:18, adm:12, rel:10, jail:4,  hot:false},
+    {n:'Bartholomew', pop:83000, lat:39.2014, lon:-85.9214, region:'South Central',  od:30, adm:15, rel:8,  jail:4,  hot:false},
+    {n:'Washington',  pop:27950, lat:38.6000, lon:-86.1000, region:'South Central',  od:28, adm:8,  rel:1,  jail:9,  hot:false},
+    {n:'Decatur',     pop:26500, lat:39.3050, lon:-85.4970, region:'Southeast',      od:28, adm:6,  rel:2,  jail:13, hot:false},
+    {n:'Clark',       pop:123500,lat:38.4783, lon:-85.7050, region:'Ohio River',     od:32, adm:4,  rel:2,  jail:14, hot:false},
+    {n:'Floyd',       pop:81300, lat:38.3187, lon:-85.9011, region:'Ohio River',     od:32, adm:1,  rel:1,  jail:0,  hot:false},
+    {n:'Orange',      pop:19500, lat:38.5408, lon:-86.4983, region:'South Central',  od:28, adm:2,  rel:2,  jail:3,  hot:false},
+    {n:'Vanderburgh', pop:179000,lat:37.9716, lon:-87.5710, region:'Southwest',      od:34, adm:63, rel:17, jail:26, hot:true },
+    {n:'Harrison',    pop:39800, lat:38.1953, lon:-86.1100, region:'Ohio River',     od:25, adm:0,  rel:3,  jail:29, hot:false},
+    {n:'Jefferson',   pop:32400, lat:38.7700, lon:-85.4000, region:'Ohio River',     od:30, adm:21, rel:1,  jail:14, hot:false},
+    {n:'Dubois',      pop:43500, lat:38.3631, lon:-86.8800, region:'Southwest',      od:22, adm:5,  rel:5,  jail:1,  hot:false},
+    {n:'Perry',       pop:19000, lat:37.8800, lon:-86.6300, region:'Ohio River',     od:24, adm:5,  rel:0,  jail:1,  hot:false},
+    {n:'Spencer',     pop:19400, lat:38.0166, lon:-87.0080, region:'Southwest',      od:22, adm:2,  rel:0,  jail:1,  hot:false},
+    {n:'Posey',       pop:25800, lat:38.0200, lon:-87.7500, region:'Southwest',      od:24, adm:5,  rel:2,  jail:8,  hot:false},
+    {n:'Warrick',     pop:64500, lat:38.0900, lon:-87.2700, region:'Southwest',      od:24, adm:0,  rel:0,  jail:0,  hot:false},
+    {n:'Gibson',      pop:33500, lat:38.3100, lon:-87.5800, region:'Southwest',      od:24, adm:4,  rel:6,  jail:3,  hot:false},
+    {n:'Switzerland', pop:9800,  lat:38.7700, lon:-85.0500, region:'Ohio River',     od:24, adm:3,  rel:2,  jail:0,  hot:false},
+    {n:'Ripley',      pop:28700, lat:39.1000, lon:-85.2500, region:'Southeast',      od:26, adm:2,  rel:5,  jail:2,  hot:false},
+    {n:'Crawford',    pop:10400, lat:38.2900, lon:-86.4700, region:'South Central',  od:25, adm:0,  rel:0,  jail:0,  hot:false},
+    {n:'Martin',      pop:10200, lat:38.7000, lon:-86.8000, region:'Southwest',      od:24, adm:1,  rel:1,  jail:3,  hot:false}
+  ];
+
+  var facilities = [
+    // IDOC prisons
+    {t:'prison', n:'Indiana State Prison',          lat:41.7090, lon:-86.8910, county:'LaPorte',    note:'Maximum security; cell-fire epidemic 2023-2025 (multiple inmates burned).'},
+    {t:'prison', n:'Westville Correctional Facility',lat:41.5400, lon:-86.9100, county:'LaPorte',   note:'Medium/min; recurring contraband cases.'},
+    {t:'prison', n:'Plainfield Correctional Facility',lat:39.7100, lon:-86.4000,county:'Hendricks', note:'Medium; reentry programs (vocational, GED, MAT).'},
+    {t:'prison', n:'Putnamville Correctional Facility',lat:39.7000,lon:-86.8500,county:'Putnam',    note:'Medium; vocational training pipeline (welding, automotive).'},
+    {t:'prison', n:'Branchville Correctional Facility',lat:38.1700,lon:-86.5800,county:'Perry',     note:'Medium/min; true-southern IN facility.'},
+    {t:'prison', n:'Edinburgh Correctional Facility',  lat:39.3500,lon:-85.9700,county:'Bartholomew/Johnson',note:'Minimum; reentry-friendly programming.'},
+    {t:'prison', n:'Madison Correctional Facility',    lat:38.7610,lon:-85.3940,county:'Jefferson', note:'Minimum; therapeutic / SUD-focused.'},
+    {t:'prison', n:'Wabash Valley Correctional Facility',lat:38.6300,lon:-87.4800,county:'Sullivan', note:'Maximum/Med; SE-IN intake-region.'},
+    {t:'prison', n:'Pendleton Correctional Facility',  lat:40.0000,lon:-85.7800, county:'Madison',  note:'Maximum/Med.'},
+    {t:'prison', n:'Rockville Correctional Facility',  lat:39.7700,lon:-87.2200, county:'Parke',    note:'Female; vocational + SUD programming.'},
+    // County jails (focus + nearby)
+    {t:'jail', n:'Jackson County Jail',         lat:38.9592, lon:-85.8911, county:'Jackson',     note:'Holding 10 IDOC inmates Oct 2024.'},
+    {t:'jail', n:'Scott County Jail',           lat:38.6850, lon:-85.7700, county:'Scott',       note:'IRACS pilot since 2022. Recidivism 26% → 9.5% after 2 years.'},
+    {t:'jail', n:'Jennings County Jail',        lat:39.0011, lon:-85.6300, county:'Jennings',    note:'5 IDOC inmates held Oct 2024.'},
+    {t:'jail', n:'Brown County Jail',           lat:39.1972, lon:-86.2270, county:'Brown',       note:'26 IDOC inmates held — anomalously high for pop ~15k.'},
+    {t:'jail', n:'Lawrence County Jail',        lat:38.8409, lon:-86.4838, county:'Lawrence',    note:'Bedford. 8 IDOC inmates held.'},
+    {t:'jail', n:'Monroe County Jail',          lat:39.1625, lon:-86.5264, county:'Monroe',      note:'Bloomington. Pop denominator dilutes per-capita rate.'},
+    {t:'jail', n:'Bartholomew County Jail',     lat:39.2014, lon:-85.9214, county:'Bartholomew', note:'Columbus. 4 IDOC inmates held.'},
+    {t:'jail', n:'Washington County Jail',      lat:38.6000, lon:-86.1000, county:'Washington',  note:'Salem. 9 IDOC inmates held.'},
+    {t:'jail', n:'Decatur County Jail',         lat:39.3050, lon:-85.4970, county:'Decatur',     note:'Greensburg. 13 IDOC inmates held.'},
+    {t:'jail', n:'Clark County Jail',           lat:38.4783, lon:-85.7050, county:'Clark',       note:'14 IDOC inmates held.'},
+    {t:'jail', n:'Floyd County Jail',           lat:38.3187, lon:-85.9011, county:'Floyd',       note:'New Albany. 0 IDOC inmates held Oct 2024.'},
+    {t:'jail', n:'Orange County Jail',          lat:38.5408, lon:-86.4983, county:'Orange',      note:'Paoli. 3 IDOC inmates held.'},
+    {t:'jail', n:'Vanderburgh County Jail',     lat:37.9716, lon:-87.5710, county:'Vanderburgh', note:'Evansville. 26 IDOC inmates held.'},
+    {t:'jail', n:'Harrison County Jail',        lat:38.1953, lon:-86.1100, county:'Harrison',    note:'29 IDOC inmates held.'},
+    {t:'jail', n:'Jefferson County Jail',       lat:38.7700, lon:-85.4000, county:'Jefferson',   note:'Madison. 14 IDOC inmates held.'},
+    // Treatment — inpatient / SUD
+    {t:'treatment', n:'Centerstone (Bloomington)',     lat:39.1625, lon:-86.5264, county:'Monroe',      note:'Major behavioral-health anchor for Bloomington corridor; serves Monroe + Lawrence + Brown + Bartholomew + Jackson + Jennings.'},
+    {t:'treatment', n:'Centerstone (Columbus)',        lat:39.2014, lon:-85.9214, county:'Bartholomew', note:'Cummins-region anchor; cross-county SUD + MH.'},
+    {t:'treatment', n:'Sunrise Recovery (Jeffersonville)',lat:38.2790,lon:-85.7370,county:'Clark',      note:'SUD treatment; outpatient + IOP. Louisville-corridor coverage.'},
+    {t:'treatment', n:'Hamilton Center (Bedford)',     lat:38.8409, lon:-86.4838, county:'Lawrence',    note:'Behavioral-health + SUD provider serving SW IN.'},
+    {t:'treatment', n:'Lifespring Health Systems',     lat:38.3187, lon:-85.9011, county:'Floyd',       note:'CMHC for Clark/Floyd/Harrison/Scott. SUD + MH.'},
+    {t:'treatment', n:'Stepping Stones (Evansville)',  lat:37.9716, lon:-87.5710, county:'Vanderburgh', note:'Residential SUD + women\'s + men\'s programs.'},
+    // Outpatient + Mental Health
+    {t:'outpatient', n:'Centerstone Outpatient (Seymour)', lat:38.9592, lon:-85.8911, county:'Jackson',  note:'Outpatient SUD + MH. Closest treatment to Jackson Co. Jail.'},
+    {t:'outpatient', n:'Centerstone Outpatient (Salem)',   lat:38.6000, lon:-86.1000, county:'Washington',note:'Outpatient SUD + MH. Salem community center.'},
+    {t:'outpatient', n:'Lifespring Outpatient (Scottsburg)',lat:38.6850,lon:-85.7700,county:'Scott',      note:'Outpatient SUD + MH; works with IRACS at Scott jail.'},
+    {t:'outpatient', n:'Mental Health America of South Central IN',lat:39.2014,lon:-85.9214,county:'Bartholomew',note:'Crisis line, peer-support, MH advocacy.'},
+    {t:'outpatient', n:'Choices Coordinated Care Solutions',lat:39.7000,lon:-86.0700,county:'Marion',    note:'IRACS contractor; reentry-coordination support across 5 IN sheriffs.'},
+    // Halfway / sober living
+    {t:'halfway', n:'THRIVE Transitional Housing',     lat:39.2014, lon:-85.9214, county:'Bartholomew', note:'Soft-landing post-incarceration housing. Specifically designed for the reentry-Day-1 gap.'},
+    {t:'halfway', n:'THRIVE Alliance HQ',              lat:39.2014, lon:-85.9214, county:'Bartholomew', note:'Indiana human-services nonprofit; serves Bartholomew + Brown + Decatur + Jackson + Jennings.'},
+    {t:'halfway', n:'Safe Haven Transitional (Evansville)',lat:37.9716,lon:-87.5710,county:'Vanderburgh',note:'Recovery housing; partnered with NOW Counseling. SW IN coverage.'},
+    {t:'halfway', n:'Volunteers of America Theodora House',lat:39.7700,lon:-86.1700,county:'Marion',    note:'Residential reentry; statewide referrals incl. southern IN.'},
+    // Recovery hubs / RCO
+    {t:'hub', n:'THRIVE RCO (Recovery Community Organization)',lat:39.2014,lon:-85.9214,county:'Bartholomew',note:'Peer-led recovery support; ROCSI/ROSC-aligned.'},
+    {t:'hub', n:'Indiana Recovery Network hub',        lat:39.2014, lon:-85.9214, county:'Bartholomew', note:'Statewide directory of recovery-friendly providers.'},
+    {t:'hub', n:'Bloomington Recovery Engagement Center',lat:39.1625,lon:-86.5264,county:'Monroe',     note:'Drop-in recovery center; peer support.'},
+    {t:'hub', n:'Recovery Cafe Jackson Co.',           lat:38.9592, lon:-85.8911, county:'Jackson',     note:'Faith-anchored peer-recovery hub.'},
+    // Shelters / group homes
+    {t:'shelter', n:'Anchor House (Seymour)',          lat:38.9592, lon:-85.8911, county:'Jackson',     note:'Family + individual emergency shelter.'},
+    {t:'shelter', n:'New Hope of Madison',             lat:38.7700, lon:-85.4000, county:'Jefferson',   note:'Family shelter; case-management services.'},
+    {t:'shelter', n:'United Caring Services (Evansville)',lat:37.9716,lon:-87.5710,county:'Vanderburgh',note:'Day-shelter + emergency overnight; SUD-friendly.'},
+    {t:'shelter', n:'Salvation Army Bloomington',      lat:39.1625, lon:-86.5264, county:'Monroe',      note:'Emergency shelter + case management.'},
+    {t:'shelter', n:'Hope Center (Bedford)',           lat:38.8409, lon:-86.4838, county:'Lawrence',    note:'Family shelter; reentry referrals.'},
+    // Work release / CTP
+    {t:'workrelease', n:'Bartholomew Co. Work Release',lat:39.2014, lon:-85.9214, county:'Bartholomew', note:'Community Corrections work-release program.'},
+    {t:'workrelease', n:'Monroe Co. Work Release',     lat:39.1625, lon:-86.5264, county:'Monroe',      note:'CTP-eligible; Centerstone partnered.'},
+    {t:'workrelease', n:'Vanderburgh Co. Therapeutic CTP',lat:37.9716,lon:-87.5710,county:'Vanderburgh',note:'CTP for SW IN releases.'}
+  ];
+
+  // Layer groups
+  var typeColor = {prison:'#a855f7', jail:'#f87171', treatment:'#22d3ee', outpatient:'#67e8f9', halfway:'#34d399', hub:'#86efac', shelter:'#fbbf24', workrelease:'#a78bfa'};
+  var typeRadius = {prison:9, jail:8, treatment:7, outpatient:6, halfway:6, hub:6, shelter:6, workrelease:6};
+
+  var map = L.map('map', {minZoom:6, maxZoom:14, scrollWheelZoom:true}).setView([38.9, -86.3], 8);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
+  var layers = {prison:L.layerGroup().addTo(map), jail:L.layerGroup().addTo(map),
+                treatment:L.layerGroup().addTo(map), outpatient:L.layerGroup().addTo(map),
+                halfway:L.layerGroup().addTo(map), hub:L.layerGroup().addTo(map),
+                shelter:L.layerGroup().addTo(map), workrelease:L.layerGroup().addTo(map),
+                release:L.layerGroup().addTo(map), od:L.layerGroup().addTo(map)};
+
+  // Plot facilities
+  facilities.forEach(function(f){
+    var m = L.circleMarker([f.lat, f.lon], {
+      radius: typeRadius[f.t]||6,
+      fillColor: typeColor[f.t]||'#67e8f9',
+      color: '#fff', weight:1, opacity:0.9, fillOpacity:0.8
+    });
+    m.bindPopup('<strong>'+f.n+'</strong><br><span style="color:#6b7280;font-size:11px">'+f.t.toUpperCase()+' &middot; '+f.county+'</span><br>'+f.note);
+    layers[f.t].addLayer(m);
+  });
+
+  // Plot county OD-rate gradient + IDOC release flow circles
+  function colorForOD(od){
+    if (od >= 50) return '#fb7185';
+    if (od >= 35) return '#fbbf24';
+    if (od >= 25) return '#facc15';
+    return '#86efac';
+  }
+  counties.forEach(function(c){
+    // OD gradient — wide low-opacity circle for the county
+    var odCircle = L.circle([c.lat, c.lon], {
+      radius: 14000, // ~14km
+      fillColor: colorForOD(c.od),
+      color: colorForOD(c.od),
+      weight: 1, opacity: 0.4, fillOpacity: 0.10
+    });
+    odCircle.bindPopup('<strong>'+c.n+' County</strong><br>OD rate (proxy): '+c.od+'/100k<br>Pop: ~'+c.pop.toLocaleString()+'<br>Region: '+c.region);
+    layers.od.addLayer(odCircle);
+
+    // IDOC release flow — sized by Oct 2024 release count
+    if (c.rel > 0) {
+      var rel = L.circle([c.lat, c.lon], {
+        radius: 1200 + c.rel*220,
+        fillColor:'#22d3ee', color:'#22d3ee', weight:2, opacity:0.85, fillOpacity:0.18, dashArray:'4 4'
+      });
+      rel.bindPopup('<strong>'+c.n+' IDOC release flow (Oct 2024)</strong><br>'+c.rel+' people released to this county.<br>'+c.adm+' admissions same month.<br>Holding '+c.jail+' IDOC inmates in jail.');
+      layers.release.addLayer(rel);
+    }
+  });
+
+  // Layer toggle
+  document.querySelectorAll('.map-side input[type=checkbox]').forEach(function(cb){
+    cb.addEventListener('change', function(){
+      var L_ = layers[cb.dataset.layer];
+      if (cb.checked) map.addLayer(L_); else map.removeLayer(L_);
+    });
+  });
+
+  // County filter
+  var sel = document.getElementById('county-filter');
+  counties.slice().sort(function(a,b){return a.n.localeCompare(b.n)}).forEach(function(c){
+    var o = document.createElement('option'); o.value = c.n; o.textContent = c.n + ' (~'+c.pop.toLocaleString()+')';
+    sel.appendChild(o);
+  });
+  sel.addEventListener('change', function(e){
+    var n = e.target.value;
+    if (!n) { map.setView([38.9, -86.3], 8); document.getElementById('scorecard-title').textContent = 'Strongest & weakest counties (overall, all southern IN)'; renderScores(counties); return; }
+    var c = counties.find(function(x){return x.n===n});
+    if (c) {
+      map.setView([c.lat, c.lon], 10);
+      document.getElementById('scorecard-title').textContent = n + ' County focus — score breakdown';
+      renderScores([c]);
+    }
+  });
+  document.getElementById('region-filter').addEventListener('change', function(e){
+    var r = e.target.value;
+    var subset = r ? counties.filter(function(c){return c.region===r}) : counties;
+    document.getElementById('scorecard-title').textContent = r ? r+' region — strongest & weakest' : 'Strongest & weakest counties (overall, all southern IN)';
+    renderScores(subset);
+  });
+
+  // Composite score
+  function score(c){
+    // Treatment density proxy: count facilities in county
+    var fac = facilities.filter(function(f){return f.county===c.n}).length;
+    // Score: weighted: facilities (+5 ea), reentry (+1 per release CTP), penalty: OD (-2 each above 25), jail-overload (Brown anomaly -)
+    var s = fac*5;
+    s -= Math.max(0, c.od-25)*2;
+    s += Math.min(5, c.rel)*1.5;  // reasonable release flow = good
+    s -= Math.max(0, c.jail-15)*0.5;
+    return Math.round(s*10)/10;
+  }
+
+  function renderScores(subset){
+    var rows = subset.map(function(c){return [c, score(c)]});
+    rows.sort(function(a,b){return b[1]-a[1]});
+    var tbody = document.querySelector('#score-tbl tbody'); tbody.innerHTML = '';
+    var n = rows.length;
+    rows.forEach(function(p, i){
+      var c = p[0], s = p[1];
+      var verdict, cls = '';
+      if (i < 2) { verdict = 'Strongest'; cls = 'strong'; }
+      else if (i >= n-2) { verdict = 'Weakest'; cls = 'weak'; }
+      else { verdict = 'Mid'; }
+      var fac = facilities.filter(function(f){return f.county===c.n}).length;
+      var tr = document.createElement('tr'); tr.className = cls;
+      tr.innerHTML = '<td><strong>'+c.n+'</strong></td><td>'+c.od+'</td><td>'+c.adm+'</td><td>'+c.rel+'</td><td>'+c.jail+'</td><td>'+fac+'</td><td><strong>'+s+'</strong></td><td>'+verdict+'</td>';
+      tbody.appendChild(tr);
+    });
+  }
+  renderScores(counties);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1296 @@
+
+=== PAGE 1 ===
+ 
+ 
+ 
+ 
+  
+Division of Trauma and Injury Prevention   December 2024  
+Fatal Overdose and 
+Suicide Report, 2023 
+=== PAGE 2 ===
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Eric J. Holcomb 
+Governor 
+Lindsay M. Weaver, MD, FACEP 
+State Health Commissioner 
+2 North Meridian Street  ●  Indianapolis, Indiana  46204  ●  317-233-1325  ●  health.in.gov 
+An equal opportunity employer. 
+The Indiana Department of Health is accredited by the Public Health Accreditation Board. 
+To promote, protect, and improve the health and safety of all Hoosiers. 
+Nov. 28, 2024  
+ 
+Dear Public Health Partner:  
+ 
+Reducing the overall burden of overdose and suicide continues to be a priority for the State of Indiana. 
+We are pleased that Indiana experienced a decline in overdose deaths in 2023, and early interpretation 
+of 2024 overdose data indicates a continued decline; however, suicide deaths have increased slightly 
+each year throughout the last five years. 
+ 
+The state is addressing overdose and suicide concerns on multiple fronts by fostering collaboration to 
+create a network of support to aid individuals on their path to recovery and address the crisis 
+comprehensively. Prevention, treatment, and enforcement efforts will continue to require a collaborative 
+approach among multiple partners including state agencies, first responders, health care and community 
+organizations, all with a shared mission of connecting Hoosiers to prevention and treatment services. 
+ 
+Through investment of Health First Indiana funding, local health departments are actively collaborating 
+with community partners to expand harm reduction programming, peer recovery pathways, linkages to 
+substance use disorder treatment, wraparound services, and mental health care. Relying on data, as 
+outlined in this report, while amplifying harm reduction efforts, ensuring access to life-saving naloxone, 
+and expanding community outreach to serve areas of greatest need has led to the signs of progress 
+encapsulated in this report. 
+ 
+Key highlights include: 
+ 
+• Investment in a broader crisis response system including text and chat enhancements for crisis 
+response centers, expansion of mobile crisis teams, and improving receiving and stabilization 
+services in community mental health centers 
+• Launch of a statewide public awareness campaign to educate and encourage those 
+experiencing a crisis to contact the 988 Suicide and Crisis Lifeline with an in-state answer rate 
+of more than 90% 
+• Implementing the Certified Community Behavioral Health Clinic Medicaid Demonstration 
+Program to provide a comprehensive range of mental health and addiction services, and to 
+serve all people, regardless of their diagnosis, insurance status, place of residence, or age. 
+• Support participation of 35 counties in the Indiana Local Outreach to Suicide Survivor Team 
+Network and 17 counties that host Alternatives to Suicide peer support groups 
+=== PAGE 3 ===
+ 
+Overdose and Suicide   ●   2023 
+Page 2 
+• Continued distribution of naloxone and provision of training and education to enable first 
+responders, local health departments and grassroots organizations to effectively administer 
+life-saving medication 
+• Expansion of suicide and overdose fatality review teams to build partnerships and inform local 
+prevention efforts by implementing best practices in communities  
+• Expansion of efforts with coroner offices and harm reduction programs to examine drug 
+paraphernalia to determine the prevalence of substances and inform community prevention 
+efforts 
+• Engagement in community partnership for the Governor’s Challenge to Prevent Suicide 
+Among Service Members, Veterans, and their Families with focus on prevention, intervention, 
+and postvention 
+• Data analysis of unintentional drug overdose and suicide deaths to provide insight into the 
+circumstances, such as life stressors and mental health diagnoses, which informs local 
+prevention efforts 
+• Launch of Treatment Atlas, a free, confidential tool for Hoosiers seeking treatment for 
+substance use disorder to search for and compare treatment programs 
+• Overdose response and prevention coordination through the implementation of 16 harm 
+reduction street outreach teams 
+ 
+It is crucial to continue monitoring overdose and suicide trends and build on existing partnerships to 
+raise awareness, reduce stigma, and support those impacted by substance use disorder and at risk for 
+suicide. A continued focus on evidence-based education, engagement, and linkage to care and support 
+will require all of us working together to help Hoosiers access the treatment they need to find recovery 
+and ultimately make Indiana a better place for all. 
+ 
+Sincerely, 
+ 
+ 
+Lindsay Weaver, M.D., FACEP  
+State Health Commissioner  
+ 
+ 
+ 
+Douglas W. Huntsinger  
+Executive Director for Drug Treatment, Prevention, and Enforcement  
+Chairman, Indiana Commission to Combat Substance Use Disorder 
+ 
+ 
+ 
+Daniel Rusyniak, M.D. 
+Secretary, Indiana Family and Social Services Administration 
+
+=== PAGE 4 ===
+Indiana Overdose and Suicide Report, 2023 | 4 
+ 
+Table of Contents 
+Executive Summary ........................................................................................................................................................ 7 
+Statewide Trends ........................................................................................................................................................ 7 
+Geographic Distribution........................................................................................................................................... 7 
+Overdose Deaths ........................................................................................................................................................ 8 
+Substances ................................................................................................................................................................ 8 
+Demographics ......................................................................................................................................................... 8 
+Veteran Status ......................................................................................................................................................... 8 
+Suicide Deaths ............................................................................................................................................................. 8 
+Mechanism ............................................................................................................................................................... 8 
+Demographics ......................................................................................................................................................... 8 
+Veteran Status ......................................................................................................................................................... 8 
+Background and Methods ........................................................................................................................................ 10 
+Statutory Requirements ........................................................................................................................................ 10 
+Methods ...................................................................................................................................................................... 10 
+Data Interpretation ................................................................................................................................................. 10 
+Key Findings – Overdose Deaths............................................................................................................................ 11 
+Statewide Overdose Death Trends ................................................................................................................... 11 
+Overdose Fatalities by Drug Type ..................................................................................................................... 11 
+Overdose Fatalities by Sex, Age, Race, and Ethnicity ................................................................................. 12 
+Overdose Fatalities by County of Residence ................................................................................................. 12 
+Overdose Fatalities by Month of Death .......................................................................................................... 13 
+Overdose Fatalities by Veteran Status ............................................................................................................. 13 
+Key Findings – Suicide Deaths ................................................................................................................................ 13 
+Statewide Suicide Trends...................................................................................................................................... 13 
+Suicide Fatalities by County of Residence ...................................................................................................... 13 
+Suicide Fatalities by Mechanism of Injury ...................................................................................................... 14 
+Suicide Fatalities by Sex, Age Group, Race, and Ethnicity ........................................................................ 14 
+Suicide Fatalities by Month of Death ............................................................................................................... 15 
+Suicide Fatalities by Veteran Status .................................................................................................................. 15 
+=== PAGE 5 ===
+Indiana Overdose and Suicide Report, 2023 | 5 
+Conclusions ................................................................................................................................................................ 15 
+Acknowledgements ..................................................................................................................................................... 16 
+Appendices ..................................................................................................................................................................... 17 
+Appendix A: Overdose Deaths by Sex, Age, Race, and Ethnicity ........................................................... 17 
+Appendix B: Overdose Deaths by County of Residence ........................................................................... 19 
+Appendix C. Overdose Deaths by Month of Death, 2023 ........................................................................ 26 
+Appendix D: Suicide Deaths by Sex, Age, and Race ................................................................................... 27 
+Appendix E: Suicide Deaths by County of Residence ................................................................................ 29 
+Appendix F. Suicide Deaths by Month of Death, 2023 ............................................................................. 36 
+Appendix G: Methods ............................................................................................................................................ 37 
+=== PAGE 6 ===
+Indiana Overdose and Suicide Report, 2023 | 6 
+Dedication 
+This report is dedicated to the men, women, and children who died due to overdose and 
+suicide in 2023. Each figure in this report represents a fellow Hoosier and the grief experienced 
+by the family and friends who lost a loved one. It is through comprehensive surveillance that we 
+develop a better understanding of this critical public health issue. Local health departments 
+through Health First Indiana and other agencies at the local, county, and state levels continue 
+to work together to implement data-driven initiatives to prevent deaths due to overdose and 
+suicide in Indiana. 
+=== PAGE 7 ===
+Indiana Overdose and Suicide Report, 2023 | 7 
+ 
+Executive Summary 
+Overdose and suicide are leading causes of death nationally and in Indiana, ranking among the 
+top 15 causes of death.1 To inform prevention efforts, this report describes the burden of 
+overdose and suicide in Indiana in 2023 by (1) county; (2) incident month; (3) sex, age, race, and 
+ethnicity; (4) mechanism or drug type; and (5) veteran status. 
+Statewide Trends 
+• Overdose trends: In 2023, 2,130 Indiana residents died by drug overdose,2 a decline 
+from 2,567 in 2022. This marked the second consecutive year of declining overdose rates 
+and the lowest fatal overdose rate since 2019. Declines in overdose rates were observed 
+across most demographic groups, with the exception that overdose rates increased 
+slightly among Hispanic persons and persons identified as being of multiple races or 
+races other than white or Black or African American (Appendix A). 
+• Suicide trends: In contrast to overdose deaths, the number of suicide deaths increased 
+slightly to 1,184 deaths in 2023, up from 1,149 in 2022. Furthermore, Indiana’s suicide 
+rate has been increasing slightly within the past five years. Across most demographic 
+groups, suicide rates increased slightly or remained stable during that timeframe, 
+although there were some declines in suicide rates among youth and young adults ages 
+15-24 compared to a peak in 2021 (Appendix D). 
+• National comparisons: In 2023, Indiana’s age-adjusted rates of suicide (16.9 per 
+100,000) and fatal overdose (32.5 per 100,000) remained above provisional national rates 
+(14.2 and 30.2 per 100,000, respectively),
+1 and the goals outlined in Healthy People 2030 
+(12.8 and 20.7 per 100,000, respectively).3 
+Geographic Distribution 
+Compared to urban counties, rural counties in Indiana in 2023 generally had higher rates of 
+suicide deaths (19.4 vs. 16.1 per 100,000) and lower rates of overdose deaths (27.5 vs. 34.1 per 
+100,000). 
+ 
+1 Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics System, 
+Provisional Mortality on CDC WONDER Online Database. Data are from the final Multiple Cause of Death Files, 2018-
+2022, and from provisional data for years 2023-2024, as compiled from data provided by the 57 vital statistics 
+jurisdictions through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/mcd-icd10-
+provisional.html on Oct 28, 2024 9:14:44 AM. 
+2 Overdose deaths in this report include only overdoses that were classified as unintentional or were of undetermined 
+intent. In 2023, 89 Indiana residents’ deaths were classified as suicide by drug poisoning. For the purposes of this 
+report, these deaths are counted as suicides. Because the IDOH Drug Overdose Dashboard includes all overdose 
+deaths regardless of intent, the overdose data in this report may differ slightly from the overdose dashboard.  
+3 U.S. Department of Health and Human Services, Office of Disease Prevention and Health Promotion. Healthy People 
+2030. https://odphp.health.gov/healthypeople. Accessed October 28, 2024. 
+=== PAGE 8 ===
+Indiana Overdose and Suicide Report, 2023 | 8 
+ 
+Overdose Deaths 
+• Substances: The overdose crisis in Indiana is primarily driven by illicit fentanyl, its 
+analogs, and methamphetamine. Nationally, fentanyl is the most common drug involved 
+in fatal overdoses (approximately 69%), followed by psychostimulants, including 
+methamphetamine (approximately 33%).4  
+• Demographics: Overdose affects people of all ages, genders, races, ethnicities, and 
+backgrounds, though rates of fatal overdose in 2023 were higher among males than 
+females, among persons ages 35 to 44 compared to people of other age groups, and 
+among Black or African American persons than persons of other races (Appendix A) 
+• Veteran Status: 5.8% of all overdose deaths in 2023 were among people who had 
+served in the armed forces, according to Vital Records data. 
+Suicide Deaths 
+• Mechanism: Consistent with prior years, firearms remained the leading mechanism of 
+deaths due to suicide in 2023, accounting for 63.8% of suicide deaths. This was a slight 
+increase from 2022, in which 59.9% of suicide deaths were due to firearms. 
+• Demographics: In 2023, the rate of suicide among males in Indiana (28.5 per 100,000) 
+was nearly five times higher than among females (5.8 per 100,000). White persons had 
+the highest rate of suicide in Indiana in 2023 (17.7 per 100,000) compared to persons of 
+other races. Additionally, suicide rates were higher among adults ages 35 to 44 than of 
+other age groups. 
+• Veteran Status: In 2023, 15.7% of suicide deaths in Indiana were among people who 
+had served in the armed forces, according to Vital Records data. 
+ 
+Trauma and injury prevention is a core preventive public health service. By identifying a leading 
+cause of injury or harm in communities, which can include overdose and suicide, local health 
+departments are implementing Health First Indiana to expand partnerships and programming to 
+prevent overdose and suicide, educate and reduce stigma, and link individuals to life-saving 
+services, including harm reduction, naloxone distribution, peer recovery, substance use disorder 
+treatment, wraparound services, and mental health care. Additionally, more local health 
+departments are actively participating in suicide and overdose fatality review teams to identify 
+risk factors contributing to suicide and overdose and then using this data to inform community-
+based programming. 
+ 
+While progress has been made in reducing Indiana’s rate of overdose deaths, suicide deaths 
+have slightly but consistently increased in recent years. Moreover, overdose and suicide rates 
+remain above national disease reduction targets, and some demographic groups remain 
+ 
+4 Centers for Disease Control and Prevention. U.S. overdose deaths decrease in 2023, first time since 2018. 
+https://www.cdc.gov/nchs/pressroom/nchs_press_releases/2024/20240515.htm. Accessed October 28, 2024. 
+=== PAGE 9 ===
+Indiana Overdose and Suicide Report, 2023 | 9 
+ 
+disproportionately impacted. Continued implementation and expansion of prevention efforts, 
+treatment and interventions, surveillance, and cross-sector partnerships in Indiana will be critical 
+to reducing the impact of suicide and overdose in Indiana. 
+  
+=== PAGE 10 ===
+Indiana Overdose and Suicide Report, 2023 | 10 
+ 
+Background and Methods 
+Statutory Requirements 
+Indiana Code (IC) 16-37-5 requires that the Indiana Department of Health prepare an annual 
+report concerning all fatalities in Indiana that are the result of suicide or overdose during the 
+preceding calendar year. This report is intended to fulfill this requirement for deaths occurring in 
+calendar year 2023. 
+Methods 
+Surveillance data on suicide and overdose deaths are derived from Indiana vital records, 
+according to the underlying cause of death listed on the decedent’s death certificate. Underlying 
+cause of death is classified by International Classification of Diseases 10th Revision (ICD-10) 
+codes, with suicide and overdose deaths analyzed according to established guidelines from the 
+National Center for Health Statistics.5 Deaths by county are grouped by the decedent’s county 
+of residence and may or may not be where the death occurred. Additional information on 
+methods, including a list of ICD-10 codes used for this report, is available in Appendix G. 
+Data Interpretation 
+All rates presented in this report are per 100,000 people. Statewide rates and rates by county, 
+gender, race, and ethnicity are age-adjusted using the direct method based on the U.S. 2000 
+standard population. When only a small number of deaths (fewer than 20) occur in a community 
+or demographic group, even small changes in the number of deaths over time can result in wide 
+fluctuations in death rates. Therefore, rates based on counts fewer than 20 are considered 
+unstable and should be interpreted with caution. In this report, unstable rates are denoted with 
+a “U.”  
+ 
+5 National Center for Health Statistics. Health, United States. Cause of death. Updated August 12, 2022. 
+https://www.cdc.gov/nchs/hus/sources-definitions/cause-of-death.htm. Accessed August 19, 2024. 
+=== PAGE 11 ===
+Indiana Overdose and Suicide Report, 2023 | 11 
+ 
+Key Findings –  Overdose Deaths 
+Statewide Overdose Death Trends 
+The statewide overdose death rate decreased 17.1% from 2022-2023; furthermore, the overdose 
+death rate in 2023 was lower than in the preceding three years (Figure 1). 
+Figure 1. Indiana overdose deaths, 2019-2023 
+ 
+Overdose Fatalities by Drug Type 
+In 2023, opioids (including fentanyl) 
+remained the leading substance detected in 
+post-mortem toxicology testing of overdose 
+decedents, followed by methamphetamine, 
+amphetamine, and cocaine (Figure 2).6 The 
+overall distribution of substances detected 
+has remained similar between 2020 and 
+2023. Additionally, overdose deaths 
+nationally and in Indiana continue to be 
+driven primarily by synthetic opioids, 
+including fentanyl. 
+ 
+  
+ 
+6 Data are from the State Unintentional Drug Overdose Reporting System (SUDORS), which records the 
+class and name of substances found in the victim at the time of death. Data presented are for 2,133 
+decedents. Substance percentages represent those decedents with positive results among those tested for 
+that substance. Not all decedents were tested for every substance listed. 
+1,616
+2,235
+2,718 2,567
+2,130
+25.3
+35.0
+41.7 39.2
+32.5
+2019 2020 2021 2022 2023
+Count of Deaths
+Age-adjusted
+Rate per 100,000
+80.5%
+37.7%
+27.1%
+26.3%
+17.8%
+15.4%
+16.0%
+15.7%
+14.3%
+4.1%
+2.4%
+0.2%
+Opioids
+Methamphetamine
+Amphetamine
+Cocaine
+Marijuana
+Benzodiazepines
+Alcohol
+Antidepressant
+Anticonvulsant
+Antipsychotic
+Muscle Relaxant
+Barbituates
+Figure 2. Substances detected in post-mortem 
+toxicology testing of overdose decedents, 2023 
+=== PAGE 12 ===
+Indiana Overdose and Suicide Report, 2023 | 12 
+ 
+Overdose Fatalities by Sex, Age, Race, and Ethnicity 
+• In 2023, the rate of overdose deaths among males (43.7) was more than twice the rate 
+among females (21.3) 
+• Overdose death rates in 2023 were highest among adults ages 35-44, followed by adults 
+ages 45-54 and 25-34. 
+• In 2023, Black or African American persons had a higher rate of overdose deaths (55.3) 
+than persons of other races. Hispanic persons had a lower rate of overdose deaths (23.4) 
+than non-Hispanic persons (33.4). 
+• Between 2022 and 2023, fatal overdose rates declined among both sexes, most age 
+groups, and among both Black and white persons and non-Hispanic persons. Notable 
+declines occurred among adults ages 20-24, 25-34, and 55-64, with each group 
+experiencing a decline of nearly 20% or more in the rate of overdose deaths. However, 
+the fatal overdose rate increased slightly for persons identified as being of other or 
+multiple races and Hispanic persons. Trend data for all demographic groups are 
+presented in Appendix A. 
+ 
+Overdose Fatalities by County of Residence 
+• In 2023, the five counties with the highest stable rate of overdose deaths were Grant 
+(68.2), Marion (59.2), Delaware (58.5), Wayne (54.0), and Clark (52.3) 
+• In 2023, overdose rates were higher in urban counties (34.1) than rural counties (27.5). 
+Overdose rates declined in both urban and rural counties compared to 2022 (41.1 and 
+33.5, respectively) 
+• Between 2022 and 2023, the number of overdose deaths increased in 25 counties and 
+decreased in 59 counties. Seventeen of the 25 counties that showed an increase had 
+43.7
+21.3
+Male
+Female
+Sex 
+0.39
+11.2
+24.1
+51.4
+66.3
+57.3
+38.8
+15.2
+2.7
+0-14
+15-19
+20-24
+25-34
+35-44
+45-54
+55-64
+65-74
+75+
+Age Group (Years) 
+55.3
+30.6
+20.7
+Black
+White
+Other/
+Multiple
+Race 
+Figure 3. Overdose death rates by sex, age group, race, and ethnicity, 2023 
+Ethnicity 
+23.4
+33.4
+Hispanic
+Not Hispanic
+=== PAGE 13 ===
+Indiana Overdose and Suicide Report, 2023 | 13 
+ 
+fewer than 10 total overdose deaths for the year. Eight counties had no change 
+(Appendix B). 
+Overdose Fatalities by Month of Death 
+In 2023, the highest number of overdose deaths occurred in July (206). The lowest number of 
+overdose deaths was in December (152). There was a general downward trend in monthly 
+overdose deaths as the year progressed (Appendix C). 
+Overdose Fatalities by Veteran Status 
+In 2023, 124 overdose decedents (5.8%) were identified as veterans, an increase from 116 in 
+2022.7 
+Key Findings –  Suicide Deaths 
+Statewide Suicide Trends 
+The statewide suicide rate increased 3.7% between 2022-2023 (16.3 to 16.9 per 100,000, 
+respectively) and has been increasing slightly throughout the past five years (Figure 4). 
+Figure 4. Indiana suicide deaths, 2019-2023 
+ 
+Suicide Fatalities by County of Residence 
+• In 2023, the five counties with the highest stable rate of suicide were Grant (35.2), 
+LaPorte (27.3), Howard (26.4), Madison (24.9), and Vanderburgh (23.6) 
+• Rural and urban counties had suicide rates of 19.4 and 16.1 per 100,000, respectively 
+• Between 2022 and 2023, the number of suicide deaths increased in 44 counties and 
+decreased in 35 counties. Fifteen counties had no change (Appendix E). 
+ 
+7 Veteran status is denoted on death certificates as Armed Forces. Due to this being self -reported, the 
+actual number of veteran deaths may be undercounted. The Indiana Department of Veterans Affairs has 
+confirmed 44 of the 124 (35%) veteran overdose deaths. 
+969 1,017 1,124 1,149 1,184
+14.1 14.9 16.3 16.3 16.9
+2019 2020 2021 2022 2023
+Count of Deaths
+Age-adjusted
+Rate per 100,000
+=== PAGE 14 ===
+Indiana Overdose and Suicide Report, 2023 | 14 
+ 
+Suicide Fatalities by 
+Mechanism of Injury 
+Most suicide deaths in 2023 were due to 
+firearms (63.8%). However, mechanism of 
+suicide varied somewhat between males and 
+females. While firearms were the leading 
+cause of suicide deaths among both sexes, 
+firearms accounted for a higher proportion 
+of suicide deaths among males than 
+females, and poisoning accounted for a 
+higher proportion of suicide deaths among 
+females than among males (Figure 5).  
+Suicide Fatalities by Sex, Age 
+Group, Race, and Ethnicity 
+• In 2023, the suicide rate among males (28.5) was nearly five times higher than among 
+females (5.8). Moreover, suicide rates among males increased slightly each year between 
+2019 and 2023, while rates among females were more stable over time (Appendix D). 
+• Suicide rates in 2023 were highest among adults ages 35-44 (24.8), although rates were 
+comparable among adults of other age groups. 
+• In 2023, suicide rates were higher among white persons than persons of other races and 
+higher among non-Hispanic persons than Hispanic persons. People of all races and 
+ethnicities experienced slight increases in suicide rates between 2022 and 2023 
+(Appendix D). 
+ 
+28.5
+5.8
+Male
+Female
+Figure 6. Suicide death rates by sex, age group, race, and ethnicity, 2023 
+Sex 
+1.4
+9.9
+18.2
+22.4
+24.8
+23.9
+21.4
+19.5
+21
+0-14
+15-19
+20-24
+25-34
+35-44
+45-54
+55-64
+65-74
+75+
+Age Group (Years) 
+11.5
+17.7
+14.1
+Black
+White
+Other/
+Multiple
+Race 
+Ethnicity 
+8.2
+17.7
+Hispanic
+Not Hispanic
+Figure 5. Mechanism of suicide deaths, 2023 
+66.6%
+22.0%
+7.3%
+4.1%
+Firearm
+Suffocation
+Poisoning
+Other
+Males 
+49.8%
+22.1%
+22.1%
+6.0%
+Firearm
+Suffocation
+Poisoning
+Other
+Females 
+=== PAGE 15 ===
+Indiana Overdose and Suicide Report, 2023 | 15 
+ 
+Suicide Fatalities by Month of Death 
+In 2023, October had the highest number of suicide deaths (109), while September had the 
+lowest (83). There was no clear seasonal trend in suicide deaths by month (Appendix F). 
+ 
+Suicide Fatalities by Veteran Status 
+In 2023, 186 persons who died by suicide were identified as veterans (15.7%), compared to 205 
+in 2022.8 Firearms accounted for 81.7% of veteran suicide deaths compared to 78.7% in 2022. 
+Among veterans who died by suicide, 98.9% were male, 28% were 75 and older, and 93.5% were 
+white. 
+Conclusions 
+In 2023, Indiana experienced a continued decline in overdose deaths compared to the preceding 
+three years. While declines occurred across most demographic groups, demographic and 
+geographic disparities in overdose rates persist. Additionally, challenges remain in reducing 
+suicide deaths, as Indiana experienced a slight but consistent increase in suicide rates annually 
+between 2019 and 2023. Additional ongoing collaboration, surveillance, prevention, and 
+intervention are essential to reduce the impact of overdose and suicide in Indiana and promote 
+the health and safety of all Hoosiers.  
+ 
+8 Veteran status is denoted on death certificates as Armed Forces. Due to this being self -reported, the 
+actual number of veteran deaths may be undercounted. The Indiana Department of Veterans Affairs 
+confirmed 66 of the 186 (35.4%) veteran suicide deaths.  
+=== PAGE 16 ===
+Indiana Overdose and Suicide Report, 2023 | 16 
+ 
+Acknowledgements 
+Lindsay Weaver, MD, FACEP – Indiana State Health Commissioner 
+Eldon Whetstone, JD – Assistant Commissioner, Health and Human Services  
+Brian Busching, MPH – Director, Division of Trauma and Injury Prevention  
+Robert Davis – Director, Office of Data and Analytics  
+Jamie Smith, MS, MPH – Director, Division of Fatality Review and Prevention 
+Peter Krombach, MPH – Director, Office of Data and Analytics 
+Lauren Milroy, MPH – Surveillance Director, Division of Trauma and Injury Prevention 
+Morgan Sprecher, MPH – Epidemiologist, Division of Trauma and Injury Prevention  
+Allison Lake, MPH, CHES – Epidemiologist, Division of Trauma and Injury Prevention 
+Emily Pham – Data Analyst, Division of Trauma and Injury Prevention 
+Annika Barce, MPH – Epidemiologist, Division of Trauma and Injury Prevention 
+Abigail DeSantis – Data Visualization Lead, Office of Data and Analytics 
+Rachel Kuria, MPH – Epidemiologist, Vital Records 
+ 
+ 
+ 
+=== PAGE 17 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 17 
+ 
+Appendices 
+Appendix A: Overdose Deaths by Sex, Age, Race, and Ethnicity 
+Table A.1 Count and Age-Adjusted Rate of Overdose Deaths by Sex, 2019-2023 
+ 2019 2020 2021 2022 2023 
+Males Count 1050 1556 1813 1741 1430 
+Rate 33.1 48.8 55.2 52.8 43.7 
+Females Count 566 679 905 826 700 
+Rate 17.6 21.2 27.9 25.4 21.3 
+ 
+Table A.2 Count and Rate of Overdose Deaths by Age Group (Years), 2019-2023 
+ 2019 2020 2021 2022 2023 
+0-14 Count 2 2 7 9 5 
+Rate U U U U U 
+15-19 Count 12 20 44 54 53 
+Rate U 4.3 9.5 11.7 11.2 
+20-24 Count 102 170 178 149 115 
+Rate 21.6 36.2 37.5 30.1 24.1 
+25-34 Count 426 651 692 623 463 
+Rate 47.8 73.3 77.4 69.4 51.4 
+35-44 Count 454 640 726 682 577 
+Rate 54.8 75.4 84.6 79.3 66.3 
+45-54 Count 312 407 522 512 469 
+Rate 37.9 49.2 63.7 62.8 57.3 
+55-64 Count 233 281 429 420 328 
+Rate 26.6 31.8 49.1 49 38.8 
+65-74 Count 61 55 102 105 107 
+Rate 9.6 8.3 15 15.3 15.2 
+75+ Count 14 9 18 13 13 
+Rate U U U U U 
+ 
+ 
+=== PAGE 18 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 18 
+ 
+Table A.3 Count and Age-Adjusted Rate of Overdose Deaths by Race, 2022-
+20239 
+ 2022 2023 
+Black or African 
+American 
+Count 441 380 
+Rate 64.1 55.3 
+White Count 2,058 1,670 
+Rate 37.9 30.6 
+Other or 
+multiple races 
+Count 68 80 
+Rate 18.2 20.7 
+ 
+Table A.4 Count and Age-Adjusted Rate of Overdose Deaths by Ethnicity, 2019-
+2023 
+ 2019 2020 2021 2022 2023 
+Hispanic or Latino Count 48 68 113 89 130 
+Rate 10.5 13.8 22.5 17.0 23.4 
+Not Hispanic or Latino Count 1,567 2,166 2,604 2,478 2,000 
+Rate 26.5 36.8 43.2 41.0 33.4 
+  
+ 
+9 Vital records data in 2022 and later use single race categories, with those who were identified as being 
+of multiple races noted as being of more than one race. Prior to 2022, vital records data used bridged race 
+categories and are not comparable to data in 2022 and later. 
+=== PAGE 19 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 19 
+ 
+Appendix B: Overdose Deaths by County of Residence 
+Figure B.1. Overdose death rates by county, 2023 
+
+=== PAGE 20 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 20 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Adams Count 7 7 3 6 6 
+Rate U U U U U 
+Allen Count 109 115 145 132 89 
+Rate 31.7 31.6 39.6 35.3 24.2 
+Bartholomew Count 18 26 28 46 28 
+Rate U 33.3 34.3 58.9 34.4 
+Benton Count 0 1 2 0 1 
+Rate U U U U U 
+Blackford Count 0 7 4 4 4 
+Rate U U U U U 
+Boone Count 19 21 23 13 18 
+Rate U 31.5 32.8 U U 
+Brown Count 0 5 10 6 8 
+Rate U U U U U 
+Carroll Count 2 5 5 3 5 
+Rate U U U U U 
+Cass Count 6 10 5 16 9 
+Rate U U U U U 
+Clark Count 42 62 67 61 65 
+Rate 36.3 53.1 56.6 47.9 52.3 
+Clay Count 4 0 4 3 8 
+Rate U U U U U 
+Clinton Count 8 11 12 15 10 
+Rate U U U U U 
+Crawford Count 3 6 5 8 1 
+Rate U U U U U 
+Daviess Count 2 0 4 4 5 
+Rate U U U U U 
+Dearborn Count 15 17 12 17 10 
+Rate U U U U U 
+=== PAGE 21 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 21 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Decatur Count 6 11 9 8 5 
+Rate U U U U U 
+DeKalb Count 11 13 4 3 4 
+Rate U U U U U 
+Delaware Count 42 59 86 58 59 
+Rate 40.8 60.7 86.5 59.7 58.5 
+Dubois Count 2 5 7 2 0 
+Rate U U U U U 
+Elkhart Count 21 27 37 31 30 
+Rate 11.1 15.6 19.4 16 16.5 
+Fayette Count 21 21 19 14 12 
+Rate 107 96.6 U U U 
+Floyd Count 38 32 44 41 36 
+Rate 50.1 44.2 56.9 52.8 45.5 
+Fountain Count 6 5 4 2 3 
+Rate U U U U U 
+Franklin Count 5 10 9 3 7 
+Rate U U U U U 
+Fulton Count 6 6 9 1 4 
+Rate U U U U U 
+Gibson Count 4 2 2 3 3 
+Rate U U U U U 
+Grant Count 13 30 53 46 39 
+Rate U 53.6 96 80.7 68.2 
+Greene Count 3 4 11 6 7 
+Rate U U U U U 
+Hamilton Count 37 43 46 52 51 
+Rate 11.6 13.4 13.6 14.8 13.9 
+Hancock Count 11 22 24 21 19 
+Rate U 30.6 31 28.6 U 
+=== PAGE 22 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 22 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Harrison Count 14 16 17 19 17 
+Rate U U U U U 
+Hendricks Count 25 50 47 37 36 
+Rate 14.6 29.7 26.3 20.1 19.3 
+Henry Count 8 9 16 11 16 
+Rate U U U U U 
+Howard Count 28 39 44 41 34 
+Rate 35.3 52.7 58.1 52.6 43.6 
+Huntington Count 5 11 19 12 4 
+Rate U U U U U 
+Jackson  Count 9 20 18 18 10 
+Rate U 47.6 U U U 
+Jasper Count 7 7 13 8 3 
+Rate U U U U U 
+Jay Count 9 5 12 8 12 
+Rate U U U U U 
+Jefferson Count 3 9 13 9 11 
+Rate U U U U U 
+Jennings Count 12 8 12 19 17 
+Rate U U U U U 
+Johnson Count 27 59 57 60 39 
+Rate 18.6 37.6 34.3 37.6 24 
+Knox Count 5 4 4 4 3 
+Rate U U U U U 
+Kosciusko Count 9 12 22 23 19 
+Rate U U 30 31.8 U 
+LaGrange Count 0 5 5 4 2 
+Rate U U U U U 
+Lake Count 147 166 217 187 170 
+Rate 31.5 35.6 45.3 38.8 35.2 
+=== PAGE 23 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 23 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+LaPorte Count 28 47 51 52 34 
+Rate 27.5 45.1 46.7 51.2 32.9 
+Lawrence Count 8 10 17 14 18 
+Rate U U U U U 
+Madison Count 51 51 51 76 56 
+Rate 37.7 42 38.7 57.4 44.4 
+Marion Count 362 572 699 677 555 
+Rate 38.2 58.4 72.4 69.9 59.2 
+Marshall Count 5 10 13 16 14 
+Rate U U U U U 
+Martin Count 2 2 1 0 2 
+Rate U U U U U 
+Miami Count 6 6 13 14 8 
+Rate U U U U U 
+Monroe Count 22 43 48 58 56 
+Rate 15.4 34.3 39.1 48.9 46.2 
+Montgomery Count 9 9 16 11 8 
+Rate U U U U U 
+Morgan Count 21 20 24 32 19 
+Rate 32.6 29.9 36.5 48.7 U 
+Newton Count 3 4 9 3 5 
+Rate U U U U U 
+Noble Count 6 6 12 11 9 
+Rate U U U U U 
+Ohio Count 2 0 0 2 4 
+Rate U U U U U 
+Orange Count 2 3 6 4 3 
+Rate U U U U U 
+Owen Count 5 6 5 7 7 
+Rate U U U U U 
+=== PAGE 24 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 24 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Parke Count 1 2 5 3 1 
+Rate U U U U U 
+Perry Count 0 2 3 2 2 
+Rate U U U U U 
+Pike Count 2 2 1 1 0 
+Rate U U U U U 
+Porter Count 38 43 50 43 41 
+Rate 23.9 27.4 31 25.8 23.4 
+Posey Count 3 2 3 8 2 
+Rate U U U U U 
+Pulaski Count 1 6 6 8 2 
+Rate U U U U U 
+Putnam Count 2 8 11 4 5 
+Rate U U U U U 
+Randolph Count 9 10 21 13 10 
+Rate U U 93.2 U U 
+Ripley Count 6 11 8 8 3 
+Rate U U U U U 
+Rush Count 3 3 5 1 1 
+Rate U U U U U 
+St. Joseph Count 6 24 15 14 16 
+Rate U 103.2 U U U 
+Scott Count 11 16 16 20 14 
+Rate U U U 47.5 U 
+Shelby Count 3 2 3 4 4 
+Rate U U U U U 
+Spencer Count 35 88 93 92 82 
+Rate 14.3 34.2 37.4 35.8 31.6 
+Starke Count 11 11 14 17 10 
+Rate U U U U U 
+=== PAGE 25 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 25 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Steuben Count 4 2 4 5 3 
+Rate U U U U U 
+Sullivan Count 3 1 1 3 3 
+Rate U U U U U 
+Switzerland Count 3 3 5 5 2 
+Rate U U U U U 
+Tippecanoe Count 38 34 40 48 39 
+Rate 23.4 21 22.6 29.7 22.8 
+Tipton Count 2 1 1 6 1 
+Rate U U U U U 
+Union Count 2 2 2 4 2 
+Rate U U U U U 
+Vanderburgh Count 30 46 82 67 39 
+Rate 15.8 26.7 47.1 37.2 23.2 
+Vermillion Count 5 3 3 2 5 
+Rate U U U U U 
+Vigo Count 15 17 29 29 26 
+Rate U U 29 28.1 24.7 
+Wabash Count 6 9 9 10 6 
+Rate U U U U U 
+Warren Count 1 1 0 1 4 
+Rate U U U U U 
+Warrick Count 7 16 17 9 7 
+Rate U U U U U 
+Washington Count 6 13 13 14 8 
+Rate U U U U U 
+Wayne Count 47 45 56 44 32 
+Rate 80.9 80.3 83.8 69.3 54.0 
+Wells Count 10 4 6 5 4 
+Rate U U U U U 
+=== PAGE 26 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 26 
+ 
+Table B.1 Count and Age-Adjusted Rate of Overdose Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+White Count 3 10 6 3 2 
+Rate U U U U U 
+Whitley Count 2 6 8 8 9 
+Rate U U U U U 
+INDIANA Count 1,616 2,235 2,718 2,567 2,130 
+Rate 25.3 35 41.7 39.2 32.5 
+ 
+ 
+Appendix C. Overdose Deaths by Month of Death, 2023 
+ 
+Figure C.1 Count of overdose deaths by month of death, Indiana, 2023 
+ 
+  
+201
+178 190 185 178 165
+206
+190
+162 167 156 152
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+=== PAGE 27 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 27 
+ 
+Appendix D: Suicide Deaths by Sex, Age, and Race 
+Table D.1 Count and Age-Adjusted Rate of Suicide Deaths by Sex, 2019-2023 
+ 2019 2020 2021 2022 2023 
+Males Count 793 823 921 941 985 
+Rate 23.6 24.4 27.2 27.2 28.5 
+Females Count 176 194 203 208 199 
+Rate 5.2 5.9 6.0 6.0 5.8 
+ 
+Table D.2 Count and Rate of Suicide Deaths by Age Group (Years), 2019-2023 
+ 2019 2020 2021 2022 2023 
+0-14 Count 17 21 18 14 18 
+Rate U 1.6 U U U 
+15-19 Count 31 62 65 42 47 
+Rate 6.8 13.3 14.0 9.1 9.9 
+20-24 Count 87 87 107 87 87 
+Rate 18.4 18.5 22.6 17.6 18.2 
+25-34 Count 181 201 212 216 202 
+Rate 20.3 22.6 23.7 24.1 22.4 
+35-44 Count 152 161 200 171 216 
+Rate 18.3 19 23.3 19.9 24.8 
+45-54 Count 164 160 152 196 196 
+Rate 19.9 19.4 18.6 24 23.9 
+55-64 Count 155 140 162 190 181 
+Rate 17.7 15.9 18.5 22.2 21.4 
+65-74 Count 99 95 113 126 137 
+Rate 15.5 14.4 16.6 18.3 19.5 
+75+ Count 83 90 95 107 100 
+Rate 18.5 20.9 21.9 22.8 21.0 
+ 
+=== PAGE 28 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 28 
+ 
+Table D.3 Count and Age-Adjusted Rate of Suicide Deaths by Race, 2022-202310 
+ 2022 2023 
+Black or African 
+American 
+Count 72 80 
+Rate 10.1 11.5 
+White Count 1,026 1,051 
+Rate 17.0 17.7 
+Other or 
+multiple races 
+Count 51 53 
+Rate 13.0 14.1 
+ 
+ 
+Table D.4 Count and Age-Adjusted Rate of Suicide Deaths by Ethnicity, 2019-
+2023 
+ 2019 2020 2021 2022 2023 
+Hispanic or Latino Count 27 34 35 40 48 
+Rate 5.6 6.3 6.5 7.5 8.2 
+Not Hispanic or Latino Count 942 983 1,089 1,108 1,136 
+Rate 14.6 15.5 17.0 16.9 17.7 
+  
+ 
+10 Vital records data in 2022 and later use single race categories, with those who were identified as being 
+of multiple races noted as being of more than one race. Prior to 2022, vital records data used bridged race 
+categories and are not comparable to data in 2022 and later. 
+=== PAGE 29 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 29 
+ 
+Appendix E: Suicide Deaths by County of Residence 
+Figure E.1. Suicide death rate by county, 2023 
+
+=== PAGE 30 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 30 
+ 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Adams Count 2 2 4 1 2 
+Rate U U U U U 
+Allen Count 41 44 74 64 64 
+Rate 11.4 11.2 19.2 17.1 16.5 
+Bartholomew Count 15 12 13 5 10 
+Rate U U U U U 
+Benton Count 0 5 1 1 2 
+Rate U U U U U 
+Blackford Count 4 2 2 6 1 
+Rate U U U U U 
+Boone Count 13 8 11 8 16 
+Rate U U U U U 
+Brown Count 6 4 4 10 5 
+Rate U U U U U 
+Carroll Count 4 1 1 4 4 
+Rate U U U U U 
+Cass Count 3 5 5 10 6 
+Rate U U U U U 
+Clark Count 19 16 22 25 21 
+Rate U U 18.2 18.6 16.5 
+Clay Count 0 4 7 7 6 
+Rate U U U U U 
+Clinton Count 10 4 6 6 4 
+Rate U U U U U 
+Crawford Count 2 3 1 2 4 
+Rate U U U U U 
+Daviess Count 0 6 4 3 3 
+Rate U U U U U 
+Dearborn Count 8 10 11 10 4 
+Rate U U U U U 
+Decatur Count 5 2 4 6 4 
+Rate U U U U U 
+=== PAGE 31 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 31 
+ 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+DeKalb Count 5 4 9 9 8 
+Rate U U U U U 
+Delaware Count 25 19 16 25 26 
+Rate 21.1 U U 23.9 22.1 
+Dubois Count 6 5 7 8 3 
+Rate U U U U U 
+Elkhart Count 30 16 21 29 34 
+Rate 14.2 U 10.6 14 16.9 
+Fayette Count 2 2 8 5 5 
+Rate U U U U U 
+Floyd Count 13 16 8 16 12 
+Rate U U U U U 
+Fountain Count 4 1 1 5 4 
+Rate U U U U U 
+Franklin Count 3 8 4 5 7 
+Rate U U U U U 
+Fulton Count 4 3 4 8 4 
+Rate U U U U U 
+Gibson Count 5 4 7 10 11 
+Rate U U U U U 
+Grant Count 6 9 16 8 24 
+Rate U U U U 35.2 
+Greene Count 7 5 4 6 9 
+Rate U U U U U 
+Hamilton Count 40 32 43 40 43 
+Rate 12.4 9.1 12.1 11.1 11.5 
+Hancock Count 13 11 11 13 10 
+Rate U U U U U 
+Harrison Count 5 10 9 13 3 
+Rate U U U U U 
+Hendricks Count 18 25 22 24 34 
+Rate U 14.7 12.1 12.5 18.4 
+=== PAGE 32 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 32 
+ 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Henry Count 10 13 8 7 7 
+Rate U U U U U 
+Howard Count 11 18 13 25 20 
+Rate U U U 31.7 26.4 
+Huntington Count 5 3 7 6 7 
+Rate U U U U U 
+Jackson  Count 6 6 4 8 9 
+Rate U U U U U 
+Jasper Count 3 7 6 9 12 
+Rate U U U U U 
+Jay Count 1 2 7 4 4 
+Rate U U U U U 
+Jefferson Count 4 3 6 2 5 
+Rate U U U U U 
+Jennings Count 4 12 8 2 4 
+Rate U U U U U 
+Johnson Count 24 27 28 24 34 
+Rate 14.7 16.1 16.5 14.9 20.6 
+Knox Count 3 7 8 6 7 
+Rate U U U U U 
+Kosciusko Count 9 12 12 6 11 
+Rate U U U U U 
+LaGrange Count 4 4 8 2 4 
+Rate U U U U U 
+Lake Count 49 55 70 75 88 
+Rate 9.8 10.6 13.5 13.7 18.3 
+LaPorte Count 21 22 32 21 32 
+Rate 16.6 19.5 28.2 18.3 27.3 
+Lawrence Count 3 7 11 7 8 
+Rate U U U U U 
+Madison Count 29 23 28 23 34 
+Rate 22.7 18.2 21.6 17.9 24.9 
+=== PAGE 33 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 33 
+ 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Marion Count 125 144 144 151 129 
+Rate 12.9 14.7 14.6 15.6 13.1 
+Marshall Count 9 8 7 10 6 
+Rate U U U U U 
+Martin Count 3 2 3 1 4 
+Rate U U U U U 
+Miami Count 6 10 5 9 4 
+Rate U U U U U 
+Monroe Count 19 17 17 18 20 
+Rate U U U U 14.7 
+Montgomery Count 3 11 5 6 6 
+Rate U U U U U 
+Morgan Count 17 14 14 11 10 
+Rate U U U U U 
+Newton Count 2 1 3 4 4 
+Rate U U U U U 
+Noble Count 9 7 5 14 6 
+Rate U U U U U 
+Ohio Count 1 1 1 0 2 
+Rate U U U U U 
+Orange Count 6 2 2 5 3 
+Rate U U U U U 
+Owen Count 6 4 4 7 8 
+Rate U U U U U 
+Parke Count 4 1 2 1 1 
+Rate U U U U U 
+Perry Count 4 2 2 3 5 
+Rate U U U U U 
+Pike Count 2 1 2 4 3 
+Rate U U U U U 
+Porter Count 27 27 31 28 27 
+Rate 14.4 15 16.9 15.5 14 
+=== PAGE 34 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 34 
+ 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Posey Count 1 5 5 8 5 
+Rate U U U U U 
+Pulaski Count 5 2 3 2 3 
+Rate U U U U U 
+Putnam Count 6 13 9 8 15 
+Rate U U U U U 
+Randolph Count 5 5 5 6 4 
+Rate U U U U U 
+Ripley Count 4 6 3 7 2 
+Rate U U U U U 
+Rush Count 1 4 3 1 1 
+Rate U U U U U 
+St. Joseph Count 8 1 7 5 5 
+Rate U U U U U 
+Scott Count 9 8 9 8 8 
+Rate U U U U U 
+Shelby Count 2 7 5 6 0 
+Rate U U U U U 
+Spencer Count 45 44 31 43 40 
+Rate 16.6 16.1 11.1 16 14.8 
+Starke Count 6 3 3 5 7 
+Rate U U U U U 
+Steuben Count 7 11 4 8 9 
+Rate U U U U U 
+Sullivan Count 1 4 6 6 3 
+Rate U U U U U 
+Switzerland Count 2 1 1 1 0 
+Rate U U U U U 
+Tippecanoe Count 26 23 34 23 25 
+Rate 11.6 13.5 19 12.4 14.9 
+Tipton Count 5 3 6 5 3 
+Rate U U U U U 
+=== PAGE 35 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 35 
+ 
+Table E.1 Count and Age-Adjusted Rate of Suicide Deaths by County, 2019-2023 
+County Name  2019 2020 2021 2022 2023 
+Union Count 2 1 4 1 0 
+Rate U U U U U 
+Vanderburgh Count 35 36 40 38 44 
+Rate 19.5 19.3 20.8 20.9 23.6 
+Vermillion Count 1 6 6 5 6 
+Rate U U U U U 
+Vigo Count 13 20 21 27 24 
+Rate U 17.7 20.1 25.5 20.8 
+Wabash Count 1 3 8 9 5 
+Rate U U U U U 
+Warren Count 0 2 0 0 1 
+Rate U U U U U 
+Warrick Count 10 10 13 9 9 
+Rate U U U U U 
+Washington Count 8 2 8 7 9 
+Rate U U U U U 
+Wayne Count 12 9 11 11 18 
+Rate U U U U U 
+Wells Count 2 4 7 1 5 
+Rate U U U U U 
+White Count 4 6 9 6 8 
+Rate U U U U U 
+Whitley Count 1 7 0 1 8 
+Rate U U U U U 
+INDIANA Count 969 1,017 1,124 1,149 1,184 
+Rate 14.1 14.9 16.3 16.3 16.9 
+ 
+  
+=== PAGE 36 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 36 
+ 
+Appendix F. Suicide Deaths by Month of Death, 2023 
+ 
+Figure F.1 Count of suicide deaths by month of death, Indiana, 2023 
+ 
+ 
+ 
+  
+94 94 96 100 106
+97 95
+107
+83
+109 104 99
+Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
+=== PAGE 37 ===
+All rates are per 100,000 population. Rates by age group are crude rates. All other rates are age -adjusted 
+to the 2000 U.S. standard population according to the direct method. Rates based on fewer than 20 cases 
+are considered unstable and denoted with a “U.” 
+ 
+Indiana Suicide and Overdose Report, 2023 | 37 
+ 
+Appendix G: Methods 
+Cause of death throughout this report is determined based on the International Classification of 
+Diseases 10th revision (ICD-10) codes listed as the underlying cause of death on decedents’ 
+death certificates. ICD-10 codes for suicide and drug poisoning (overdose) are listed in table G.1. 
+Table G.1 Standardized definition of suicide and drug poisoning (overdose) deaths, by ICD-10 
+code of the decedent’s underlying cause of death 
+Definition Underlying Cause of Death ICD-10 
+Codes 
+Suicide X60-X84, Y87.0 
+By Poisoning X60-X69 
+By Suffocation X70 
+By Drowning X71 
+By Firearm X72-X74 
+Other Specified, Classifiable X75, X81 
+By Fire or Hot Object/Substance X76-X77 
+By Cut or Pierce X78 
+By Struck By or Against X79 
+By Fall X80 
+By All Transport X82 
+Other Specified, Not Elsewhere Classified X83, Y87.0 
+Unspecified X84 
+Unintentional Overdose/Poisoning X40-X44, Y10-Y14 
+Accidental poisoning by drugs X40-X44 
+Drug poisoning of undetermined intent Y10-Y14 
+ 
+Urban/Rural Classification 
+Urban and rural classifications in this report were based on the Health Resources and Services 
+Administration (HRSA) Federal Office of Rural Health Policy data files as of June 2024 
+(https://www.hrsa.gov/rural-health/about-us/what-is-rural/data-files).  

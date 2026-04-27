@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Source PDFs &mdash; Browse &amp; View &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="In-browser PDF viewer for every primary-source document on the Southern Indiana Justice Stats dashboard — IDOC reports, IDOH overdose & suicide reports, FSSA drug fact sheet, PIT homelessness data, and more.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/pdfs.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.pdf-grid{display:grid;grid-template-columns:340px 1fr;gap:14px;margin:14px 0;min-height:80vh}
+@media(max-width:880px){.pdf-grid{grid-template-columns:1fr}}
+.pdf-list{padding:14px;background:rgba(15,21,33,.55);border:1px solid var(--ln);border-radius:12px;max-height:84vh;overflow-y:auto}
+.pdf-list h3{margin:0 0 10px;font-size:14px;color:#67e8f9;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--ln);padding-bottom:6px}
+.pdf-list .grp{margin-bottom:18px}
+.pdf-list a.pi{display:block;padding:10px 12px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:8px;color:var(--text);text-decoration:none;margin:6px 0;font-size:13px}
+.pdf-list a.pi:hover,.pdf-list a.pi.active{border-color:var(--accent);background:rgba(34,211,238,.1)}
+.pdf-list a.pi h4{margin:0 0 3px;font-size:13px;color:#fff}
+.pdf-list a.pi .meta{font-size:11px;color:var(--mut)}
+.pdf-viewer{background:rgba(10,14,20,.6);border:1px solid var(--ln);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.viewer-bar{padding:10px 14px;background:rgba(15,21,33,.7);border-bottom:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.viewer-bar h3{margin:0;font-size:14px;color:#fff}
+.viewer-bar .actions a{display:inline-block;padding:5px 12px;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.4);color:#67e8f9;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;margin-left:6px}
+.viewer-bar .actions a:hover{background:rgba(34,211,238,.25);color:#fff}
+#pdf-frame{flex:1;width:100%;border:none;background:#0a0e14;min-height:78vh}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html">County action</a>
+    <a href="/data.html">Data</a>
+    <a href="/map.html">Map</a>
+    <a href="/pdfs.html" class="active">PDFs</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main style="max-width:1380px">
+  <p class="eyebrow">Source PDF library &middot; in-browser viewer &middot; mirrored for audit</p>
+  <h1>Browse the source documents in your browser</h1>
+  <p class="lead">Every primary-source PDF behind the dashboard is mirrored on this site so you can read it without leaving. Click any document on the left; it opens in the embedded viewer on the right. Direct download and external-source links are above the viewer.</p>
+
+  <div class="pdf-grid">
+    <aside class="pdf-list">
+      <div class="grp">
+        <h3>IDOC (Indiana DOC)</h3>
+        <a class="pi" data-src="/data/pdfs/idoc-2024-10.pdf" data-title="IDOC Offender Population Statistical Report &mdash; October 2024" data-ext="https://www.in.gov/idoc/policies-and-statistics/statistical-data/"><h4>IDOC Oct 2024 Statistical Report</h4><div class="meta">82 pages &middot; 2.6 MB &middot; 92-county admissions, releases, jail-pop</div></a>
+        <a class="pi" data-src="/data/pdfs/idoc-2025-01.pdf" data-title="IDOC Offender Population Statistical Report &mdash; January 2025" data-ext="https://www.in.gov/idoc/policies-and-statistics/statistical-data/"><h4>IDOC Jan 2025 Statistical Report</h4><div class="meta">55 pages &middot; 1.3 MB</div></a>
+        <a class="pi" data-src="/data/pdfs/idoc-2024-annual.pdf" data-title="IDOC 2024 Annual Report" data-ext="https://www.in.gov/idoc/news-media-and-publications/annual-reports/"><h4>IDOC 2024 Annual Report</h4><div class="meta">36 pages &middot; 9.3 MB &middot; HIRE, recidivism, facility highlights</div></a>
+      </div>
+
+      <div class="grp">
+        <h3>IDOH overdose &amp; suicide</h3>
+        <a class="pi" data-src="/data/pdfs/idoh-2024-overdose-suicide.pdf" data-title="IDOH 2024 Indiana Overdose and Suicide Report" data-ext="https://www.in.gov/health/trauma-system/files/2024-Indiana-Overdose-and-Suicide-Report_Final_For_Web.pdf"><h4>IDOH 2024 Overdose &amp; Suicide</h4><div class="meta">Latest annual report &middot; 952 KB</div></a>
+        <a class="pi" data-src="/data/pdfs/idoh-2023-overdose-suicide.pdf" data-title="IDOH 2023 Fatal Overdose and Suicide Report" data-ext="https://www.in.gov/health/overdose-prevention/files/2023-Indiana-Overdose-and-Suicide-Report-_FINAL.pdf"><h4>IDOH 2023 Fatal OD &amp; Suicide</h4><div class="meta">37 pages &middot; 1.4 MB &middot; County-level 2019-2023 data table</div></a>
+        <a class="pi" data-src="/data/pdfs/idoh-2022-overdose-suicide.pdf" data-title="IDOH 2022 Overdose &amp; Suicide Fatality Report" data-ext="https://www.in.gov/health/trauma-system/files/22-Overdose-Suicide-Report.pdf"><h4>IDOH 2022 OD &amp; Suicide</h4><div class="meta">1.2 MB</div></a>
+        <a class="pi" data-src="/data/pdfs/sudors-rural-urban-2024.pdf" data-title="SUDORS &mdash; Rural &amp; Urban Indiana 2024" data-ext="https://www.in.gov/health/overdose-prevention/files/72_SUDORS-in-Rural-and-Urban-Counties-2024.pdf"><h4>SUDORS Rural/Urban 2024</h4><div class="meta">274 KB &middot; Rural-county OD pattern analysis</div></a>
+      </div>
+
+      <div class="grp">
+        <h3>FSSA / drug fact</h3>
+        <a class="pi" data-src="/data/pdfs/fssa-2024-drug-fact-sheet.pdf" data-title="FSSA Drug Fact Sheet &mdash; SFY 2024" data-ext="https://www.in.gov/fssa/dmha/files/2024-Drug-Fact-Sheet.pdf"><h4>FSSA 2024 Drug Fact Sheet</h4><div class="meta">44 KB &middot; DMHA-curated</div></a>
+      </div>
+
+      <div class="grp">
+        <h3>Homelessness / PIT</h3>
+        <a class="pi" data-src="/data/pdfs/chip-indy-2024-pit.pdf" data-title="CHIP Indianapolis 2024 PIT Count Report" data-ext="https://www.chipindy.org/wp-content/uploads/2024/06/2024-PIT-Report-FINAL.pdf"><h4>CHIP Indy 2024 PIT</h4><div class="meta">378 KB</div></a>
+        <a class="pi" data-src="/data/pdfs/ihcda-pit-2023-flyer.pdf" data-title="IHCDA 2023 PIT Count Flyer" data-ext="https://www.in.gov/ihcda/files/ihcda_CoC_PIT_FLYER_082423.pdf"><h4>IHCDA 2023 PIT Flyer</h4><div class="meta">765 KB</div></a>
+        <a class="pi" data-src="/data/pdfs/pit-basics.pdf" data-title="IHCDA Point-in-Time Basics" data-ext="https://www.in.gov/ihcda/files/PIT-Basics.pdf"><h4>IHCDA PIT Basics</h4><div class="meta">203 KB</div></a>
+        <a class="pi" data-src="/data/pdfs/iu-policy-homelessness.pdf" data-title="IU Policy Institute &mdash; Homelessness in Indiana" data-ext="https://policyinstitute.iu.edu/doc/homelessness.pdf"><h4>IU Policy &mdash; Homelessness in IN</h4><div class="meta">335 KB</div></a>
+      </div>
+    </aside>
+
+    <div class="pdf-viewer">
+      <div class="viewer-bar">
+        <h3 id="viewer-title">IDOC Offender Population Statistical Report &mdash; October 2024</h3>
+        <div class="actions">
+          <a href="/data/pdfs/idoc-2024-10.pdf" download id="dl-link">Download</a>
+          <a href="https://www.in.gov/idoc/policies-and-statistics/statistical-data/" target="_blank" rel="noopener" id="ext-link">Source &rarr;</a>
+        </div>
+      </div>
+      <iframe id="pdf-frame" src="/data/pdfs/idoc-2024-10.pdf#toolbar=1&view=FitH" title="PDF viewer" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <p class="muted" style="margin-top:14px;font-size:13px"><em>All PDFs above are mirrored from the cited primary sources for audit purposes. Original publishers retain all rights.</em></p>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script>
+document.querySelectorAll('.pi').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelectorAll('.pi').forEach(function(x){x.classList.remove('active')});
+    a.classList.add('active');
+    var src = a.dataset.src;
+    document.getElementById('pdf-frame').src = src + '#toolbar=1&view=FitH';
+    document.getElementById('viewer-title').textContent = a.dataset.title;
+    document.getElementById('dl-link').href = src;
+    document.getElementById('ext-link').href = a.dataset.ext;
+  });
+});
+</script>
+</body>
+</html>
