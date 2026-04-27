@@ -255,8 +255,11 @@ window.addEventListener('load', function(){
                 shelter:L.layerGroup().addTo(map), workrelease:L.layerGroup().addTo(map),
                 release:L.layerGroup().addTo(map), od:L.layerGroup().addTo(map)};
 
-  // Plot facilities
-  facilities.forEach(function(f){
+  // Plot facilities + load extended set from JSON (158 entries: 17 prisons, all 92 jails,
+  // work-release, treatment, halfway, hubs, shelters)
+  function plotFacility(f){
+    if (typeof f.lat !== 'number' || typeof f.lon !== 'number') return;
+    if (!layers[f.t]) return;
     var m = L.circleMarker([f.lat, f.lon], {
       radius: typeRadius[f.t]||6,
       fillColor: typeColor[f.t]||'#67e8f9',
@@ -264,7 +267,20 @@ window.addEventListener('load', function(){
     });
     m.bindPopup('<strong>'+f.n+'</strong><br><span style="color:#6b7280;font-size:11px">'+f.t.toUpperCase()+' &middot; '+f.county+'</span><br>'+f.note);
     layers[f.t].addLayer(m);
-  });
+  }
+  facilities.forEach(plotFacility);
+
+  // Load the master 158-facility set asynchronously (de-duped against hardcoded by name)
+  fetch('/data/json/facilities-master.json', {cache:'no-store'})
+    .then(function(r){return r.ok ? r.json() : []})
+    .then(function(extra){
+      var seen = {};
+      facilities.forEach(function(f){ seen[f.n] = 1; });
+      extra.forEach(function(f){
+        if (!seen[f.n]) plotFacility(f);
+      });
+      console.log('[map] loaded extra facilities:', extra.length);
+    }).catch(function(e){ console.warn('[map] master JSON load failed:', e); });
 
   // Plot county OD-rate gradient + IDOC release flow circles
   function colorForOD(od){
