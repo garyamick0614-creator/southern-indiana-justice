@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="The complete list of public sources behind every metric on the Southern Indiana Justice Stats dashboard — IDOC reports, Indiana overdose dashboards, county jail studies, sheriff records, news outlets.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/sources.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/methodology.html">Methodology</a>
+    <a href="/sources.html" class="active">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Sources &middot; Public records only</p>
+  <h1>Every number on this dashboard, traceable</h1>
+  <p class="lead">Each section below lists the primary public source, what data it provides, and which schema column(s) it fills. If you find a broken link or a more authoritative source, <a href="https://ibetcg.netlify.app/#submit">submit a tip</a> at the IBE companion site.</p>
+
+  <section class="section">
+    <h2>Demographics &amp; population</h2>
+    <div class="source-list">
+      <a href="https://www.census.gov/quickfacts/" target="_blank" rel="noopener">U.S. Census Bureau QuickFacts &mdash; County profiles<div class="src-meta">Population estimates per county per year. Fills <code>population_estimate</code>.</div></a>
+      <a href="https://www.stats.indiana.edu/" target="_blank" rel="noopener">STATS Indiana &mdash; County profiles<div class="src-meta">Indiana-specific population, demographics, and labor data. Fills <code>population_estimate</code>, <code>region</code>.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Indiana DOC (state prisons &amp; releases)</h2>
+    <div class="source-list">
+      <a href="https://www.in.gov/idoc/news-media-and-publications/annual-reports/" target="_blank" rel="noopener">IDOC Annual Reports (yearly PDFs)<div class="src-meta">Facility population, programs, incidents, releases. Fills Schema 6 (Facility&times;Year) population/program/incident columns.</div></a>
+      <a href="https://www.in.gov/idoc/" target="_blank" rel="noopener">IDOC &mdash; Adult Releases tables (annual)<div class="src-meta">Releases by county of admission. Fills Schema 2 <code>idoc_releases_from_county</code>.</div></a>
+      <a href="https://www.in.gov/idoc/" target="_blank" rel="noopener">IDOC &mdash; Total Population Summary Reports<div class="src-meta">Statewide DOC operational and contracted population. ~25,500&ndash;26,000 in 2025.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Arrests &amp; law enforcement</h2>
+    <div class="source-list">
+      <a href="https://policescorecard.org/in/" target="_blank" rel="noopener">Police Scorecard &mdash; Indiana county pages<div class="src-meta">Arrest counts, low-level/drug/violent breakdown 2013&ndash;2023. Fills Schema 3 (Arrest types).</div></a>
+      <a href="https://www.in.gov/cji/" target="_blank" rel="noopener">Indiana Criminal Justice Institute (ICJI)<div class="src-meta">State-level UCR-style reporting and grant-funded program tracking.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>County jails &amp; sheriff data</h2>
+    <div class="source-list">
+      <a href="https://www.jacksoncounty.in.gov/" target="_blank" rel="noopener">Jackson County, IN &mdash; Sheriff inmate roster &amp; 48-hour release page<div class="src-meta">Daily roster + booking/release counts. Aggregate by year for Schema 2 jail columns.</div></a>
+      <a href="https://www.scottcounty.in.gov/" target="_blank" rel="noopener">Scott County, IN &mdash; Jail page &amp; 2022 jail study<div class="src-meta">85% substance-use prevalence; 58% mental-health prevalence; recidivism context. Fills Schema 6 prevalence columns and serves as proxy anchor for surrounding rural jails.</div></a>
+      <a href="https://www.in.gov/idoc/news-media-and-publications/annual-reports/" target="_blank" rel="noopener">IDOC &mdash; County-jail population statistics<div class="src-meta">Where IDOC reports jail-of-admission data alongside facility data.</div></a>
+    </div>
+    <p class="muted" style="font-size:13.5px"><em>Each southern-Indiana county sheriff has a similar inmate-roster URL pattern (e.g., jenningscountysheriffin.gov, browncountysheriffin.org). Replicate the Jackson approach across all counties.</em></p>
+  </section>
+
+  <section class="section">
+    <h2>Overdose, EMS, &amp; naloxone</h2>
+    <div class="source-list">
+      <a href="https://www.in.gov/health/overdose-prevention/data-and-resources/" target="_blank" rel="noopener">Indiana Drug Overdose Dashboard (Indiana Dept. of Health)<div class="src-meta">Annual overdose deaths, ED overdose visits, EMS overdose incidents, naloxone administrations &mdash; by county. Fills Schema 4.</div></a>
+      <a href="https://www.in.gov/health/" target="_blank" rel="noopener">Indiana 2024 Overdose &amp; Suicide Report<div class="src-meta">2153 OD deaths, 1187 suicides, 957 alcohol-induced deaths (2023 statewide); 51% fentanyl-involved.</div></a>
+      <a href="https://nchs.cdc.gov/" target="_blank" rel="noopener">CDC NCHS &mdash; County-level overdose visualizations<div class="src-meta">Federal cross-check on Indiana state numbers.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>911 / emergency dispatch</h2>
+    <div class="source-list">
+      <a href="https://www.jacksoncounty.in.gov/" target="_blank" rel="noopener">Jackson County 911 / Emergency Dispatch budget documents<div class="src-meta">Total dispatched calls per year (police, fire, rescue) 2018&ndash;2025. Fills Schema 4 <code>911_calls_total</code>.</div></a>
+      <a href="https://www.in.gov/" target="_blank" rel="noopener">Indiana State 911 Board<div class="src-meta">Statewide 911 statistics; cross-walk for OD-related call estimation.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Reentry, rehab, MAT, outreach programs</h2>
+    <div class="source-list">
+      <a href="https://www.in.gov/fssa/dmha/" target="_blank" rel="noopener">Indiana Division of Mental Health and Addiction (DMHA)<div class="src-meta">IRACS pilot funding, MAT clinic registry, treatment-capacity reports. Fills Schema 5 program columns.</div></a>
+      <a href="https://www.in.gov/dwd/jobs/hire/" target="_blank" rel="noopener">HIRE &mdash; Hoosier Initiative for Re-Entry<div class="src-meta">Statewide job-placement program; 3,000+ business partners; 15,000+ placements; 14% recidivism among completers.</div></a>
+      <a href="https://www.goodwillindy.org/" target="_blank" rel="noopener">Goodwill Central &amp; Southern Indiana &mdash; New Beginnings<div class="src-meta">Justice-involved Career Day model; retail/warehouse/light-industrial placement.</div></a>
+      <a href="https://rivervalleyresources.com/" target="_blank" rel="noopener">River Valley Resources &mdash; Rural Works<div class="src-meta">Rural-county reentry workforce reintegration; mentoring, placement, stabilization.</div></a>
+      <a href="https://www.in.gov/idoc/programs/" target="_blank" rel="noopener">IDOC &mdash; Programs &amp; Vocational Training<div class="src-meta">In-prison welding, automotive, computer-coding, manufacturing pipelines.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Homelessness</h2>
+    <div class="source-list">
+      <a href="https://www.in.gov/ihcda/homelessness/" target="_blank" rel="noopener">Indiana Housing &amp; Community Development Authority &mdash; Heading Home<div class="src-meta">Annual Point-in-Time (PIT) counts by region. Region 10 covers most southern-Indiana non-metro counties.</div></a>
+      <a href="https://www.hudexchange.info/programs/coc/coc-homeless-populations-and-subpopulations-reports/" target="_blank" rel="noopener">HUD CoC dashboard<div class="src-meta">Federal continuum-of-care PIT data; cross-check with state-level numbers.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>News &amp; investigative coverage (facility incidents)</h2>
+    <div class="source-list">
+      <a href="https://www.wthr.com/" target="_blank" rel="noopener">WTHR-13 (Indianapolis) / 13 Investigates<div class="src-meta">Indiana State Prison cell-fire investigative series 2023&ndash;2025. Fills Schema 7 <code>fire</code> incident events.</div></a>
+      <a href="https://www.wave3.com/" target="_blank" rel="noopener">WAVE-3 (Louisville)<div class="src-meta">Coverage of Clark / Floyd / Scott County incidents.</div></a>
+      <a href="https://www.wdrb.com/" target="_blank" rel="noopener">WDRB (Louisville)<div class="src-meta">Southern Indiana sheriff and IDOC incident coverage.</div></a>
+      <a href="https://www.wsbt.com/" target="_blank" rel="noopener">WSBT (South Bend)<div class="src-meta">Coverage of LaPorte County (Indiana State Prison, Westville).</div></a>
+      <a href="https://www.therepublic.com/" target="_blank" rel="noopener">The Republic (Columbus, IN)<div class="src-meta">Bartholomew / Jackson / Decatur county coverage.</div></a>
+      <a href="https://www.tribtown.com/" target="_blank" rel="noopener">The Tribune (Seymour, IN)<div class="src-meta">Local Jackson County news + sheriff press releases.</div></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Companion archive (long-form)</h2>
+    <div class="source-list">
+      <a href="https://ibetcg.netlify.app/" target="_blank" rel="noopener">Indiana Businesses Exposed (IBE)<div class="src-meta">Long-form investigations: <em>Reentry in Southern Indiana</em>, <em>Power, Money, and Politics 2026</em>, <em>Political Scandals 2022-2026</em>, <em>Seymour Bottom 10</em>, <em>Anonymous</em>, <em>Epstein Files</em>.</div></a>
+      <a href="https://thatcomputerguy26.org/" target="_blank" rel="noopener">That Computer Guy 26 / TCG Solutions<div class="src-meta">The technical operator behind this dashboard. Free guides on backup verification, basement waterproofing, scam-link checks, ransomware response.</div></a>
+    </div>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="/">Back to overview</a>
+    <a class="btn btn-2" href="/methodology.html">Methodology</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+</body>
+</html>

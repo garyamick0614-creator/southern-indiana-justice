@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology &amp; Schemas &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="The full schemas and methodology behind the Southern Indiana Justice Stats dashboard — county-year tables, facility-year tables, headline schema, normalization rules, and scope.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/methodology.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/methodology.html" class="active">Methodology</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Methodology &middot; Schemas &middot; Open</p>
+  <h1>How this dashboard is built</h1>
+  <p class="lead">Every metric on this site is normalized, sourced, and stored in one of three schemas. They&rsquo;re reproducible: hand them to anyone with a CSV, SQLite, Airtable, or Excel skillset, and they can recreate the dashboard.</p>
+
+  <section class="section">
+    <h2>Geography &amp; time window</h2>
+    <ul>
+      <li><strong>Anchor county:</strong> Jackson County, IN.</li>
+      <li><strong>Surrounding (Phase 1):</strong> Scott, Jennings, Brown, Lawrence, Monroe, Decatur, Bartholomew, Washington, Clark, Floyd, Orange.</li>
+      <li><strong>Phase 2 expansion:</strong> all southern Indiana counties (Dubois, Daviess, Martin, Crawford, Perry, Spencer, Warrick, Gibson, Posey, Vanderburgh, etc.).</li>
+      <li><strong>Time window:</strong> 2020&ndash;2025 (six calendar years).</li>
+      <li><strong>Normalization:</strong> all counts converted to per-1,000 or per-100,000 residents using U.S. Census or STATS Indiana population estimates.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Schema 1 &mdash; County&times;Year base</h2>
+    <p>Parent table; all others join on <code>county_id</code> and <code>year</code>.</p>
+    <pre><code>county_id, county_name, state, region, year, population_estimate</code></pre>
+    <p>Example rows:</p>
+    <pre><code>18071, Jackson County, IN, Southern Indiana, 2020, 46428
+18159, Scott County, IN, Southern Indiana, 2020, 24180
+IND, Indiana, IN, , 2024, 6800000</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Schema 2 &mdash; Incarceration / IDOC</h2>
+    <pre><code>county_id, county_name, year,
+  idoc_releases_from_county, idoc_releases_per_1k,
+  idoc_releases_types_ctp_probation_parole_discharge,
+  avg_daily_jail_pop, avg_daily_jail_pop_per_1k,
+  total_bookings, total_bookings_drug, total_bookings_violent,
+  total_bookings_low_level, total_releases_from_local_jail</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Schema 3 &mdash; Arrest types</h2>
+    <pre><code>county_id, county_name, year,
+  total_arrests, total_arrests_per_1k,
+  arrests_drug, arrests_drug_per_1k,
+  arrests_violent, arrests_violent_per_1k,
+  arrests_low_level, arrests_low_level_per_1k,
+  arrests_property, arrests_property_per_1k,
+  arrests_other, arrests_other_per_1k</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Schema 4 &mdash; Overdose / EMS / 911</h2>
+    <pre><code>county_id, county_name, year,
+  overdose_deaths_count, overdose_deaths_per_100k,
+  overdose_deaths_unknown_intent, overdose_deaths_intentional,
+  ems_overdose_incidents, ems_overdose_incidents_per_100k,
+  naloxone_administrations, naloxone_administrations_per_100k,
+  911_calls_total, 911_calls_overdose_related,
+  911_calls_overdose_per_100k,
+  fentanyl_involved_overdose_deaths, fentanyl_involved_share,
+  suspected_fentanyl_overdose_incidents,
+  heroin_overdose_incidents, meth_overdose_incidents,
+  alcohol_overdose_incidents</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Schema 5 &mdash; Reentry / rehab / outreach programs</h2>
+    <pre><code>county_id, county_name, year,
+  program_id, program_name, program_type (reentry / rehab / MAT / outreach),
+  start_year, end_year,
+  approx_beds_or_slots, annual_clients_served,
+  hours_of_service_per_year,
+  housing_type (transitional / permanent / sober),
+  supervision_linkage (probation / parole / IDOC),
+  partnerships (sheriff / treatment / peer / faith)</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Schema 6 &mdash; Facility&times;Year (jails &amp; prisons)</h2>
+    <pre><code>facility_id, facility_name, county, type (state_prison / county_jail / federal),
+  year, quarter, report_source (IDOC / county_study / news_summarized),
+  inmates_total,
+  suicide_attempts, suicide_deaths, self_harm_incidents,
+  suicide_rate_per_100k,
+  drug_overdose_incidents, drug_overdose_deaths,
+  drug_overdose_rate_per_100k,
+  substance_use_prevalence, mental_health_prevalence,
+  drug_trafficking_incidents_reported, smuggling_attempts,
+  reentry_deaths_suspected_30d, reentry_deaths_90d, reentry_deaths_1y,
+  suicide_among_released_30d_90d_1y,
+  overdose_among_released_30d_90d_1y,
+  new_out_of_facility_charges_90d, 180d, 1y, 2y, 3y,
+  reincarceration_events_90d_1y_3y</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Schema 7 &mdash; News-headline log</h2>
+    <pre><code>headline_id, facility_id, facility_name, county,
+  year, date_published,
+  incident_type (drug_trafficking | suicide | overdose | escape_attempt
+                | abuse | poor_conditions | assault | riot | fire | staff_misconduct),
+  summary_short,
+  url, source_name,
+  has_legal_outcome (Y/N),
+  conviction_result (if any)</code></pre>
+  </section>
+
+  <section class="section">
+    <h2>Normalization rules</h2>
+    <ul>
+      <li>All count columns get a parallel <code>per_1k</code> or <code>per_100k</code> column using the same year&rsquo;s population estimate.</li>
+      <li><strong>Per-1,000:</strong> arrests, jail bookings, IDOC releases, total 911 calls, homelessness PIT counts.</li>
+      <li><strong>Per-100,000:</strong> overdose deaths, suicide deaths, naloxone administrations, EMS overdose incidents (these are typically rare-event metrics where 1k denominators look noisy).</li>
+      <li>For multi-year averages, use a 3-year moving window for small-county metrics (Brown, Orange) to dampen single-year volatility.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>How &ldquo;pending&rdquo; cells get filled</h2>
+    <p>This dashboard is built schema-first. Cells marked <em>(pending)</em> aren&rsquo;t guesses &mdash; they&rsquo;re slots in the schema waiting for the next data pull. The order of fill, by load-to-effort ratio:</p>
+    <ol>
+      <li><strong>State-level totals</strong> (Indiana statewide overdose, IDOC operational pop) &mdash; one PDF, fills several cells.</li>
+      <li><strong>IDOC Adult Releases tables</strong> &mdash; one PDF per year, fills the IDOC schema for every county.</li>
+      <li><strong>Indiana Drug Overdose Dashboard</strong> &mdash; web-portal export by county-year for OD deaths, EMS, naloxone.</li>
+      <li><strong>Jackson County Sheriff roster + 48-hr-release page</strong> &mdash; aggregate by year for booking volume + charge mix.</li>
+      <li><strong>Scott County Jail Study</strong> &mdash; published 2022 PDF; transcribe the substance-use, mental-health, and recidivism numbers as anchors for surrounding counties.</li>
+      <li><strong>Police Scorecard county pages</strong> &mdash; arrest mix per county.</li>
+      <li><strong>Per-program annual reports</strong> &mdash; request directly from IRACS, HIRE, Goodwill, Rural Works for client-served counts.</li>
+      <li><strong>News-headline harvest</strong> &mdash; one search query per facility per year (semi-automated).</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>Trend-fitting (predictions)</h2>
+    <p>See <a href="/predictions.html">Predictions</a> for the linear, exponential, and logistic formulas, plus a starter Python implementation. Default rule of thumb:</p>
+    <ul>
+      <li>Stable metrics &rarr; linear regression (least squares).</li>
+      <li>Fast-rising metrics &rarr; exponential, log-transformed.</li>
+      <li>Bounded metrics (shares, percentages) &rarr; logistic with capped asymptote.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>What this dashboard does not do</h2>
+    <ul>
+      <li><strong>Live-scrape protected sources.</strong> Some county clerk and sheriff systems require login or rate-limit aggressively. Where data are behind a wall, we cite the source and leave the cell pending.</li>
+      <li><strong>Name individual returning citizens.</strong> Aggregate, anonymized statistics only. Individual identification is reserved for court records and licensed journalism.</li>
+      <li><strong>Predict individual recidivism risk.</strong> The projections are county-aggregate. Individual risk-prediction has well-known fairness pitfalls and is out of scope.</li>
+      <li><strong>Replace county-level reporting.</strong> The dashboard is a normalization layer over public sources, not a replacement for primary records.</li>
+    </ul>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="/sources.html">See all sources &rarr;</a>
+    <a class="btn btn-2" href="/">Back to overview</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+</body>
+</html>

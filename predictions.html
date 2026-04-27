@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026&ndash;2030 Projections &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Linear and exponential trend formulas projecting overdose deaths, IDOC releases, fentanyl-involved share, and program participation through 2030 for Jackson and surrounding southern Indiana counties.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/predictions.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html" class="active">Predictions</a>
+    <a href="/methodology.html">Methodology</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">2026&ndash;2030 projections &middot; Open formulas</p>
+  <h1>Where the curve goes if nothing changes</h1>
+  <p class="lead">For each metric we have 2020&ndash;2025 data on, we fit a simple trend (linear or exponential) and project forward to 2030. Every formula is shown so you can re-run it on your own data, with your own counties, with different smoothing assumptions. The point is the framework, not the prophecy.</p>
+
+  <section class="section">
+    <h2>The two models we use</h2>
+
+    <h3>Linear trend (default)</h3>
+    <pre><code>Projection(t) = a + b &middot; t
+
+where t = 0 for 2020, t = 1 for 2021, ..., t = 5 for 2025
+fit a, b via least squares on 2020-2025 data
+plug t = 6 (2026), 7 (2027), ..., 10 (2030)</code></pre>
+    <p>Use this for stable-trending metrics: arrests, jail population, total 911 calls, IDOC releases.</p>
+
+    <h3>Exponential trend (volatile metrics)</h3>
+    <pre><code>Metric(t) ~ A &middot; e^(k &middot; t)
+
+log-transform to linear:
+ln(Metric) = ln(A) + k &middot; t
+
+fit ln(A) and k on 2020-2025
+exponentiate for 2026-2030</code></pre>
+    <p>Use this for fast-moving metrics: fentanyl-involved share (rising), overdose deaths in hot-spot counties (post-pandemic spike), naloxone administrations (rising as supply expands).</p>
+
+    <div class="callout callout-warn">
+      <p><strong>Cap exponential rises.</strong> Fentanyl-involved share follows a logistic curve in real life &mdash; it can&rsquo;t exceed 100%. Apply a soft ceiling at <strong>~85&ndash;90%</strong>, the asymptote observed in fully-fentanylized national markets, when projecting that metric.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Projected: overdose deaths per 100k (illustrative)</h2>
+    <p>This table illustrates the shape of the projection if 2020&ndash;2025 trends continue unchecked. Replace the &ldquo;input rate&rdquo; column with your own pulled values from the Indiana Drug Overdose Dashboard for each county to get site-specific projections.</p>
+    <div class="scroll-x">
+      <table>
+        <thead><tr><th>County</th><th>Anchor (2024 est.)</th><th>Slope b/yr (illustrative)</th><th>2026 proj.</th><th>2028 proj.</th><th>2030 proj.</th><th>Model</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Jackson</strong></td><td>~35 / 100k</td><td>+0.5</td><td>~36</td><td>~37</td><td>~38</td><td>Linear</td></tr>
+          <tr><td>Scott</td><td>~50 / 100k (high)</td><td>-1.0</td><td>~48</td><td>~46</td><td>~44</td><td>Linear (post-IRACS softening)</td></tr>
+          <tr><td>Jennings</td><td>~45 / 100k</td><td>+0.2</td><td>~45</td><td>~46</td><td>~46</td><td>Linear</td></tr>
+          <tr><td>Lawrence</td><td>~30 / 100k</td><td>-0.4</td><td>~29</td><td>~28</td><td>~27</td><td>Linear</td></tr>
+          <tr><td>Indiana statewide</td><td>~24 / 100k (2024)</td><td>-0.5</td><td>~23</td><td>~22</td><td>~21</td><td>Linear (post-2023 decline)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:13.5px"><em>Slopes shown are illustrative; pull actual 2020&ndash;2025 values from the Indiana Drug Overdose Dashboard and re-fit. The 2024 statewide rate of ~24/100k is the documented anchor.</em></p>
+  </section>
+
+  <section class="section">
+    <h2>Projected: fentanyl-involved share of overdose deaths</h2>
+    <p>Indiana 2023 baseline: <strong>51%</strong> of drug-overdose deaths involved fentanyl. Without a ceiling-cap, exponential extrapolation would put the share above 100% by 2028 &mdash; impossible. Use a logistic curve with asymptote at ~88%.</p>
+    <pre><code>logistic(t) = L / (1 + e^(-k &middot; (t - t0)))
+
+where:
+  L  = 88 (% asymptote)
+  k  = growth-rate parameter (fit from 2020-2025 share)
+  t0 = inflection year (typically ~2022 for fentanyl)</code></pre>
+    <div class="scroll-x">
+      <table>
+        <thead><tr><th>Year</th><th>Statewide IN fentanyl share (proj.)</th><th>Model output</th></tr></thead>
+        <tbody>
+          <tr><td>2023 (anchor)</td><td>51%</td><td>data</td></tr>
+          <tr><td>2026</td><td>~70%</td><td>logistic</td></tr>
+          <tr><td>2028</td><td>~80%</td><td>logistic</td></tr>
+          <tr><td>2030</td><td>~85%</td><td>logistic, near asymptote</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:13.5px"><em>Read with caution &mdash; if a non-fentanyl synthetic opioid (nitazenes, etc.) becomes dominant, the &ldquo;fentanyl share&rdquo; metric stops being meaningful and the underlying &ldquo;deaths&rdquo; curve becomes the load-bearing one.</em></p>
+  </section>
+
+  <section class="section">
+    <h2>Projected: IDOC releases by county of admission (per 1,000)</h2>
+    <p>IDOC&rsquo;s &ldquo;Adult Releases&rdquo; tables drive this column. Pull 2020&ndash;2025 releases from each Jackson-area county, divide by population, fit linear:</p>
+    <pre><code>releases_per_1k(t) = a + b &middot; t
+
+where t = 0 for 2020, ..., t = 5 for 2025</code></pre>
+    <div class="scroll-x">
+      <table class="compact">
+        <thead><tr><th>County</th><th>Releases/1k 2020</th><th>Releases/1k 2025</th><th>Slope b</th><th>2030 projection</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Jackson</strong></td><td>(pending)</td><td>(pending)</td><td>(fit from data)</td><td>(linear extrapolation)</td></tr>
+          <tr><td>Scott</td><td>(pending)</td><td>(pending)</td><td>(fit)</td><td>(linear)</td></tr>
+          <tr><td>Jennings</td><td>(pending)</td><td>(pending)</td><td>(fit)</td><td>(linear)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Program-participation projection (rehab/reentry/MAT)</h2>
+    <p>For each named program in the Counties &mdash; Programs table, track annual clients served. Fit linear growth, sum across counties:</p>
+    <pre><code>total_program_capacity(t) = sum_over_programs( a_p + b_p &middot; t )</code></pre>
+    <p>Most rural-Indiana SUD and reentry programs are growing slowly (a few percent per year); some are plateauing as funding caps. Pair this projection against the projected overdose curve to surface the <strong>treatment gap</strong>: how many overdose-death equivalents are absorbed (or not) by the program-side capacity.</p>
+  </section>
+
+  <section class="section">
+    <h2>Recommended Python implementation</h2>
+    <pre><code>import numpy as np
+
+def fit_linear(years, values):
+    """Returns (a, b) where projection(t) = a + b*t, t = year - years[0]."""
+    t = np.array(years) - years[0]
+    y = np.array(values, dtype=float)
+    b, a = np.polyfit(t, y, 1)
+    return a, b
+
+def fit_exp(years, values):
+    """Returns (A, k) where projection(t) = A * exp(k*t)."""
+    t = np.array(years) - years[0]
+    y = np.log(np.array(values, dtype=float))
+    k, lnA = np.polyfit(t, y, 1)
+    return float(np.exp(lnA)), float(k)
+
+def fit_logistic(years, values, L=88.0):
+    """Fit logistic with fixed asymptote L (default 88%) for fentanyl share."""
+    from scipy.optimize import curve_fit
+    t = np.array(years) - years[0]
+    y = np.array(values, dtype=float)
+    def f(t, k, t0):  return L / (1 + np.exp(-k * (t - t0)))
+    (k, t0), _ = curve_fit(f, t, y, p0=[0.6, 2.0])
+    return L, k, t0</code></pre>
+  </section>
+
+  <div class="cta-row">
+    <a class="btn" href="/methodology.html">See the full methodology &rarr;</a>
+    <a class="btn btn-2" href="/sources.html">All sources</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+</body>
+</html>
