@@ -126,7 +126,7 @@
 
   <!-- Today's snapshot — single-paragraph live read of the corridor -->
   <div style="margin:18px 0 0;padding:18px 22px;background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(168,85,247,.05));border-left:4px solid var(--accent);border-radius:0 12px 12px 0">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#67e8f9;margin-bottom:8px">Today's snapshot &middot; April 26, 2026</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#67e8f9;margin-bottom:8px">Today's snapshot &middot; <span id="snapshotDate">loading…</span></div>
     <p style="margin:0;color:#d8e7ff;font-size:14.5px;line-height:1.7">
     <strong>Models:</strong> Jackson <strong style="color:#86efac">8% recidivism</strong> via Triple Stack (SOAR + MRT + Catholic Charities); Scott <strong style="color:#86efac">9.5%</strong> via IRACS (7th straight perfect inspection March 2026).
     <strong>Crisis:</strong> Jennings <strong style="color:#fda4af">28% recidivism + 61.2/100k OD rate</strong> (highest in focus set); Brown <strong style="color:#fda4af">26 IDOC inmates held in a 15,200-pop jail</strong> (overflow / cross-county hold).
@@ -254,9 +254,76 @@
         <option value="orange">Orange</option>
       </select>
       <p class="muted" style="font-size:12px;margin-top:8px">Compare to Indiana statewide on each bar.</p>
+      <div style="margin-top:14px;display:flex;flex-direction:column;gap:6px">
+        <button id="csv-export" type="button" style="background:rgba(34,211,238,.12);border:1px solid #67e8f9;color:#67e8f9;padding:8px 12px;border-radius:6px;font-weight:600;cursor:pointer;font-size:13px">📥 Export this county to CSV</button>
+        <button id="csv-export-all" type="button" style="background:rgba(168,85,247,.12);border:1px solid #c4b5fd;color:#c4b5fd;padding:8px 12px;border-radius:6px;font-weight:600;cursor:pointer;font-size:13px">📦 Export all 12 counties to CSV</button>
+        <span id="csv-status" style="font-size:11px;color:var(--muted);min-height:14px"></span>
+      </div>
     </div>
     <div class="picker-snap" id="picker-snap"></div>
   </div>
+  <script>
+  (function(){
+    // Build CSV from the rendered #picker-snap content + county-select state.
+    // Reads window.SIJ_COUNTY_DATA if present (set by the existing renderer);
+    // otherwise scrapes the visible snapshot table.
+    function selectedCounty(){var s=document.getElementById('county-select');return s?s.value:'jackson';}
+    function snapshotRowsForCounty(c){
+      // Try the structured data first, then fall back to scraping #picker-snap.
+      var data = window.SIJ_COUNTY_DATA && window.SIJ_COUNTY_DATA[c];
+      if (data) {
+        return Object.entries(data).map(function(kv){return [c, kv[0], kv[1]];});
+      }
+      var snap = document.getElementById('picker-snap');
+      if (!snap) return [];
+      var rows = [];
+      snap.querySelectorAll('[data-metric], .stat-row, tr').forEach(function(el){
+        var label = el.querySelector('[data-label], .stat-label, th, .label');
+        var value = el.querySelector('[data-value], .stat-value, td, .value');
+        if (label && value) rows.push([c, (label.textContent||'').trim(), (value.textContent||'').trim()]);
+      });
+      return rows;
+    }
+    function escCSV(v){var s=String(v==null?'':v);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;}
+    function downloadCSV(rows, name){
+      var header = 'county,metric,value\n';
+      var body = rows.map(function(r){return r.map(escCSV).join(',');}).join('\n');
+      var blob = new Blob([header + body], {type:'text/csv;charset=utf-8'});
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(a.href);
+    }
+    var COUNTIES = ['jackson','scott','jennings','brown','lawrence','monroe','bartholomew','washington','decatur','clark','floyd','orange'];
+    document.getElementById('csv-export').addEventListener('click', function(){
+      var c = selectedCounty();
+      var rows = snapshotRowsForCounty(c);
+      if (!rows.length) { document.getElementById('csv-status').textContent = '✗ No data on screen yet — pick a county first.'; return; }
+      downloadCSV(rows, 'sij-' + c + '-' + new Date().toISOString().slice(0,10) + '.csv');
+      document.getElementById('csv-status').textContent = '✓ Downloaded ' + rows.length + ' rows for ' + c + '.';
+    });
+    document.getElementById('csv-export-all').addEventListener('click', function(){
+      // Loops the selector through every county, scraping after each render.
+      // Note: snapshot may be cached; ideal is to read SIJ_COUNTY_DATA directly.
+      var allRows = [];
+      if (window.SIJ_COUNTY_DATA) {
+        Object.keys(window.SIJ_COUNTY_DATA).forEach(function(c){
+          Object.entries(window.SIJ_COUNTY_DATA[c]).forEach(function(kv){
+            allRows.push([c, kv[0], kv[1]]);
+          });
+        });
+      } else {
+        document.getElementById('csv-status').textContent = '⚠ Bulk export needs window.SIJ_COUNTY_DATA — using current snapshot only.';
+        var c = selectedCounty();
+        allRows = snapshotRowsForCounty(c);
+      }
+      if (!allRows.length) { document.getElementById('csv-status').textContent = '✗ No data available.'; return; }
+      downloadCSV(allRows, 'sij-all-counties-' + new Date().toISOString().slice(0,10) + '.csv');
+      document.getElementById('csv-status').textContent = '✓ Downloaded ' + allRows.length + ' rows across ' + (window.SIJ_COUNTY_DATA ? Object.keys(window.SIJ_COUNTY_DATA).length : 1) + ' counties.';
+    });
+  })();
+  </script>
 
   <!-- Tabbed at-a-glance -->
   <h2>What&rsquo;s rising, what&rsquo;s falling</h2>
@@ -625,6 +692,15 @@
       $('sums-out').innerHTML = esc(d.summary || '').replace(/\n/g, '<br>');
     } catch (e) { $('sums-out').innerHTML = '<span style="color:#fca5a5">Error: ' + esc(e.message) + '</span>'; }
   };
+})();
+// Live snapshot date — auto-refresh on load so it never goes stale.
+(function(){
+  var el=document.getElementById('snapshotDate'); if(!el) return;
+  try{
+    var d=new Date();
+    var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    el.textContent=months[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+  }catch(e){ el.textContent='today'; }
 })();
 </script>
 
