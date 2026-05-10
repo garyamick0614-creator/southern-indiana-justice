@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Live justice feeds &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="240 live public-justice RSS feeds (HEAD-tested for real RSS payload): DOJ, FBI, every state Supreme Court via CourtListener, state AGs / DOCs / state police, Indiana sheriffs, legal trade press. Faceted by agency and state.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/feeds.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://api.thatcomputerguy26.org">
+<link rel="preconnect" href="https://api.thatcomputerguy26.org">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+  .feed-toolbar{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;padding:14px 18px;background:var(--surf);border:1px solid var(--ln);border-radius:14px;margin:18px 0 22px}
+  .feed-toolbar input[type="search"]{background:var(--bg);border:1px solid var(--ln);color:var(--text);padding:10px 14px;border-radius:10px;font:14px 'DM Sans',sans-serif;width:100%}
+  .feed-toolbar select{background:var(--bg);border:1px solid var(--ln);color:var(--text);padding:9px 14px;border-radius:10px;font:13px 'DM Sans',sans-serif}
+  .feed-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:0 0 22px}
+  .stat-tile{background:var(--surf);border:1px solid var(--ln);border-radius:12px;padding:14px 16px}
+  .stat-num{font-size:26px;font-weight:800;color:var(--accent)}
+  .stat-lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);font-weight:600;margin-top:2px}
+  .feed-cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:0 0 28px}
+  .feed-cat-card{background:var(--surf);border:1px solid var(--ln);border-radius:14px;padding:14px 16px;cursor:pointer;transition:transform .15s,border-color .15s}
+  .feed-cat-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .feed-cat-card.active{border-color:var(--accent);background:linear-gradient(180deg,rgba(34,211,238,.08),transparent)}
+  .feed-cat-name{font-weight:700;font-size:14px;color:var(--text)}
+  .feed-cat-count{font-size:11px;color:var(--mut);margin-top:3px}
+  .feed-table{background:var(--surf);border:1px solid var(--ln);border-radius:14px;padding:0;overflow:hidden}
+  .feed-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;padding:11px 16px;border-bottom:1px solid var(--ln);align-items:center}
+  .feed-row:last-child{border-bottom:none}
+  .feed-row:hover{background:rgba(34,211,238,.04)}
+  .feed-pill{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:999px;border:1px solid var(--ln);color:var(--mut)}
+  .feed-pill.doj{background:rgba(168,85,247,.12);color:#c4a3ff;border-color:rgba(168,85,247,.3)}
+  .feed-pill.fbi{background:rgba(248,113,113,.12);color:#fda4a4;border-color:rgba(248,113,113,.3)}
+  .feed-pill.state-court{background:rgba(34,211,238,.12);color:#67e8f9;border-color:rgba(34,211,238,.3)}
+  .feed-pill.state-ag{background:rgba(52,211,153,.12);color:#86efac;border-color:rgba(52,211,153,.3)}
+  .feed-pill.state-doc{background:rgba(251,191,36,.12);color:#fde68a;border-color:rgba(251,191,36,.3)}
+  .feed-pill.state-police{background:rgba(244,114,182,.12);color:#fbcfe8;border-color:rgba(244,114,182,.3)}
+  .feed-pill.in-county{background:rgba(34,197,94,.14);color:#bbf7d0;border-color:rgba(34,197,94,.3)}
+  .feed-pill.sheriff{background:rgba(99,102,241,.12);color:#c7d2fe;border-color:rgba(99,102,241,.3)}
+  .feed-pill.bjs{background:rgba(245,158,11,.12);color:#fcd34d;border-color:rgba(245,158,11,.3)}
+  .feed-pill.nonprofit{background:rgba(20,184,166,.12);color:#5eead4;border-color:rgba(20,184,166,.3)}
+  .feed-pill.legal-news{background:rgba(236,72,153,.12);color:#f9a8d4;border-color:rgba(236,72,153,.3)}
+  .feed-pill.legislature{background:rgba(124,58,237,.12);color:#c4b5fd;border-color:rgba(124,58,237,.3)}
+  .feed-pill.public-defender{background:rgba(14,165,233,.12);color:#7dd3fc;border-color:rgba(14,165,233,.3)}
+  .feed-source{font-size:14px;color:var(--text);font-weight:500}
+  .feed-source-url{font-size:11.5px;color:var(--mut);font-family:'JetBrains Mono',Consolas,monospace;margin-top:2px;word-break:break-all}
+  .feed-action{font-size:12px;color:var(--accent);text-decoration:none;padding:6px 12px;border:1px solid var(--ln);border-radius:8px;white-space:nowrap}
+  .feed-action:hover{border-color:var(--accent);background:rgba(34,211,238,.08);color:#fff}
+  .empty-state{padding:40px 20px;text-align:center;color:var(--mut)}
+  .live-headlines{margin:24px 0 28px}
+  .live-headlines h2{font-size:18px;margin:0 0 12px;font-weight:700}
+  .headline-list{display:grid;gap:10px}
+  .headline-item{background:var(--surf);border:1px solid var(--ln);border-radius:10px;padding:12px 16px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+  .headline-item a{color:var(--text);text-decoration:none;font-weight:500;font-size:14px}
+  .headline-item a:hover{color:var(--accent)}
+  .headline-meta{font-size:11px;color:var(--mut)}
+  .badge-live{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(52,211,153,.18);margin-right:6px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  @media (max-width:720px){.feed-toolbar{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Documents-first dashboard 2020&ndash;2025</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/correlations.html">Correlations</a>
+    <a href="/county-action.html">County action</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/data.html">Data</a>
+    <a href="/map.html">Map</a>
+    <a href="/feeds.html" class="active">Live feeds</a>
+    <a href="/facilities.html">Jails &amp; prisons</a>
+    <a href="/predictions.html">Predictions</a>
+    <a href="/sources.html">Sources</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow"><span class="badge-live"></span>Live feed registry &middot; Refreshed at page load</p>
+  <h1>Live justice feeds &mdash; <span id="totalCount">240</span> public sources</h1>
+  <p class="lead">Every entry below is a real public-justice RSS / JSON feed published by a federal agency, state court, state agency, or accredited legal news outlet. Backed by the TCG fabric's source registry: <a href="https://api.thatcomputerguy26.org/api/world/source-registry/justice" target="_blank" rel="noopener"><code>/api/world/source-registry/justice</code></a>. Stale or 404 endpoints get auto-filtered by the upstream sticky-cache layer; what you see here is the live wired set.</p>
+
+  <div class="feed-stats" id="feedStats"></div>
+
+  <div class="feed-cat-grid" id="catGrid"></div>
+
+  <div class="feed-toolbar">
+    <input type="search" id="feedSearch" placeholder="Search by source name (e.g. 'Indiana', 'FBI', 'Supreme', 'Marion')…" autocomplete="off">
+    <select id="catFilter">
+      <option value="">All categories</option>
+    </select>
+    <select id="sortBy">
+      <option value="source">Sort: A&ndash;Z</option>
+      <option value="category">Sort: Category</option>
+    </select>
+    <span class="muted" id="resultCount" style="font-size:13px;white-space:nowrap"></span>
+  </div>
+
+  <section class="live-headlines">
+    <h2>How the registry stays current</h2>
+    <div class="headline-list" id="headlineList"><div class="headline-item"><span style="font-size:13px;color:var(--mut)">The TCG fabric HEAD-tests every feed in the registry on a rolling cadence; stale or 404 endpoints are auto-filtered upstream. Click any feed below to read its live RSS in your reader of choice.</span><span class="headline-meta">tcg-source-registry-justice</span></div></div>
+  </section>
+
+  <div class="feed-table" id="feedTable"><div class="empty-state">Loading the registry…</div></div>
+
+  <p class="muted" style="font-size:12.5px;margin-top:30px">Operator note: the registry combines DOJ HQ + 94 USAO districts + 56 FBI Field Offices + 50-state high-court CourtListener feeds + every state AG / DOC / State Police + 30 Indiana sheriffs + legal trade press + federal stats + nonprofit watchdogs + state legislature bill feeds. This list is the source of truth for the homepage's <em>"sources covered"</em> stat &mdash; bookmarking any feed below subscribes you to the same live RSS the dashboard reads from.</p>
+</main>
+
+<footer style="border-top:1px solid var(--ln);padding:18px 28px;text-align:center;color:var(--mut);font-size:12px">
+  <span id="visitor-line">Loading visitor count&hellip;</span> &middot; Powered by TCG fabric
+</footer>
+
+<script>
+const API = 'https://api.thatcomputerguy26.org';
+
+const CAT_LABEL = {
+  'justice:doj':              'DOJ &amp; USAOs',
+  'justice:fbi':              'FBI &amp; Field Offices',
+  'justice:state-court':      'State Courts',
+  'justice:state-ag':         'State Attorneys General',
+  'justice:state-doc':        'State Corrections',
+  'justice:state-police':     'State Police',
+  'justice:in-county':        'Indiana Counties',
+  'justice:sheriff':          'Neighbor-State Sheriffs',
+  'justice:bjs':              'Federal Stats &amp; Research',
+  'justice:nonprofit':        'Nonprofit Watchdogs',
+  'justice:legal-news':       'Legal Trade Press',
+  'justice:legislature':      'Legislatures &amp; Bills',
+  'justice:public-defender':  'Public Defender / Bar / Wanted',
+};
+const CAT_PILL = {
+  'justice:doj':'doj','justice:fbi':'fbi','justice:state-court':'state-court',
+  'justice:state-ag':'state-ag','justice:state-doc':'state-doc',
+  'justice:state-police':'state-police','justice:in-county':'in-county',
+  'justice:sheriff':'sheriff','justice:bjs':'bjs','justice:nonprofit':'nonprofit',
+  'justice:legal-news':'legal-news','justice:legislature':'legislature',
+  'justice:public-defender':'public-defender',
+};
+
+let allFeeds = [];
+let activeCat = '';
+
+function esc(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+async function loadRegistry(){
+  try {
+    const r = await fetch(API + '/api/world/source-registry/justice?expand=1', { cache: 'no-cache' });
+    const d = await r.json();
+    if (!d || !d.ok || !d.feeds) throw new Error('bad payload');
+    const rss = (d.feeds.rss || []).map(f => ({...f, kind:'rss'}));
+    const api = (d.feeds.api || []).map(f => ({...f, kind:'api'}));
+    allFeeds = [...rss, ...api];
+    document.getElementById('totalCount').textContent = d.total || allFeeds.length;
+    renderStats(d.by_category || {}, d.total);
+    renderCatGrid(d.by_category || {});
+    populateCatFilter(d.by_category || {});
+    render();
+  } catch (e) {
+    document.getElementById('feedTable').innerHTML = '<div class="empty-state">Could not load registry: ' + esc(e.message) + '. Try reloading.</div>';
+  }
+}
+
+function renderStats(by, total){
+  const el = document.getElementById('feedStats');
+  const courts = (by['justice:state-court']||0);
+  const sheriffs = (by['justice:sheriff']||0) + (by['justice:in-county']||0);
+  const fed = (by['justice:doj']||0) + (by['justice:fbi']||0);
+  const stateLE = (by['justice:state-ag']||0) + (by['justice:state-doc']||0) + (by['justice:state-police']||0);
+  el.innerHTML = `
+    <div class="stat-tile"><div class="stat-num">${total}</div><div class="stat-lbl">Total live feeds</div></div>
+    <div class="stat-tile"><div class="stat-num">${fed}</div><div class="stat-lbl">Federal (DOJ + FBI)</div></div>
+    <div class="stat-tile"><div class="stat-num">${courts}</div><div class="stat-lbl">State / federal courts</div></div>
+    <div class="stat-tile"><div class="stat-num">${stateLE}</div><div class="stat-lbl">State AG / DOC / police</div></div>
+    <div class="stat-tile"><div class="stat-num">${sheriffs}</div><div class="stat-lbl">Sheriffs (IN + neighbors)</div></div>
+  `;
+}
+
+function renderCatGrid(by){
+  const el = document.getElementById('catGrid');
+  const cats = Object.keys(by).sort((a,b) => (by[b] - by[a]));
+  el.innerHTML = cats.map(c => `
+    <div class="feed-cat-card${activeCat===c?' active':''}" data-cat="${esc(c)}">
+      <div class="feed-cat-name">${CAT_LABEL[c] || esc(c)}</div>
+      <div class="feed-cat-count">${by[c]} feeds</div>
+    </div>
+  `).join('');
+  el.querySelectorAll('.feed-cat-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const c = card.dataset.cat;
+      activeCat = (activeCat === c) ? '' : c;
+      document.getElementById('catFilter').value = activeCat;
+      renderCatGrid(by);
+      render();
+    });
+  });
+}
+
+function populateCatFilter(by){
+  const sel = document.getElementById('catFilter');
+  Object.keys(by).sort().forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c;
+    opt.innerHTML = (CAT_LABEL[c] || esc(c)) + ' (' + by[c] + ')';
+    sel.appendChild(opt);
+  });
+  sel.addEventListener('change', () => { activeCat = sel.value; render(); renderCatGrid(buildByCat()); });
+}
+
+function buildByCat(){
+  const by = {};
+  for (const f of allFeeds) by[f.category] = (by[f.category]||0)+1;
+  return by;
+}
+
+function render(){
+  const q = document.getElementById('feedSearch').value.toLowerCase().trim();
+  const sortBy = document.getElementById('sortBy').value;
+  let rows = allFeeds.slice();
+  if (activeCat) rows = rows.filter(f => f.category === activeCat);
+  if (q) rows = rows.filter(f => (f.source || '').toLowerCase().includes(q) || (f.url || '').toLowerCase().includes(q));
+  if (sortBy === 'source') rows.sort((a,b) => (a.source||'').localeCompare(b.source||''));
+  else if (sortBy === 'category') rows.sort((a,b) => (a.category||'').localeCompare(b.category||'') || (a.source||'').localeCompare(b.source||''));
+  document.getElementById('resultCount').textContent = rows.length + ' result' + (rows.length===1?'':'s');
+  if (rows.length === 0){
+    document.getElementById('feedTable').innerHTML = '<div class="empty-state">No feeds match your filter.</div>';
+    return;
+  }
+  document.getElementById('feedTable').innerHTML = rows.slice(0, 1500).map(f => {
+    const pill = CAT_PILL[f.category] || '';
+    const label = (CAT_LABEL[f.category]||f.category).replace(/&amp;/g,'&').split(' ')[0];
+    return `
+    <div class="feed-row">
+      <span class="feed-pill ${pill}">${esc(label)}</span>
+      <div>
+        <div class="feed-source">${esc(f.source||'(unnamed)')}</div>
+        <div class="feed-source-url">${esc(f.url||'')}</div>
+      </div>
+      <a class="feed-action" href="${esc(f.url||'#')}" target="_blank" rel="noopener">Open feed &rarr;</a>
+    </div>`;
+  }).join('');
+}
+
+// loadHeadlines() removed 2026-05-10: the upstream /api/world/items endpoint
+// returned 404 in production. The registry below is the source of truth; the
+// "How the registry stays current" panel above is now static informational copy
+// rather than a dead fetch.
+
+document.getElementById('feedSearch').addEventListener('input', render);
+document.getElementById('sortBy').addEventListener('change', render);
+
+loadRegistry();
+</script>
+<script src="/assets/js/visitor.js"></script>
+</body>
+</html>
