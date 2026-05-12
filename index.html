@@ -207,7 +207,7 @@
       <span class="muted" id="sij-app-meta" style="font-size:11.5px;font-family:'JetBrains Mono',Consolas,monospace">loading&hellip;</span>
     </div>
     <p class="muted" style="font-size:12.5px;margin-bottom:12px">Indiana Court of Appeals + Indiana Supreme Court &mdash; merits opinions. Sourced from public.courts.in.gov, refreshed daily on the TCG home server. <strong>497 opinions</strong> currently indexed.</p>
-    <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap">
       <label style="font-size:12px;color:var(--mut)">Court:
         <select id="sij-app-court" style="margin-left:6px;padding:6px 10px;background:rgba(15,21,33,.7);border:1px solid var(--ln);border-radius:6px;color:#fff;font:600 12.5px 'DM Sans',system-ui,sans-serif;cursor:pointer">
           <option value="ALL">All</option>
@@ -215,16 +215,38 @@
           <option value="coa">Court of Appeals</option>
         </select>
       </label>
+      <label style="font-size:12px;color:var(--mut)">Category:
+        <select id="sij-app-cat" style="margin-left:6px;padding:6px 10px;background:rgba(15,21,33,.7);border:1px solid var(--ln);border-radius:6px;color:#fff;font:600 12.5px 'DM Sans',system-ui,sans-serif;cursor:pointer">
+          <option value="ALL">All</option>
+        </select>
+      </label>
       <span class="muted" style="font-size:11.5px" id="sij-app-counts">&mdash;</span>
     </div>
-    <div id="sij-app-list" style="display:grid;gap:8px"><div class="muted" style="font-size:13px">Loading opinions&hellip;</div></div>
+    <!-- 2026-05-12 wow-factor add: client-side full-text search across all 498 opinions. -->
+    <div style="position:relative;margin-bottom:12px">
+      <input id="sij-app-q" type="search" autocomplete="off" placeholder="Search opinions — case name, judge, case number, decision keyword…" style="width:100%;padding:11px 36px 11px 14px;background:rgba(15,21,33,.85);border:1px solid rgba(167,139,250,.35);border-radius:8px;color:#fff;font:500 13.5px 'DM Sans',system-ui,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+      <span id="sij-app-q-clear" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;color:#94a3b8;font-size:18px;line-height:1;user-select:none;padding:2px 6px;display:none">&times;</span>
+    </div>
+    <div id="sij-app-summary" class="muted" style="font-size:11.5px;margin:0 0 8px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"></div>
+    <div id="sij-app-list" style="display:grid;gap:8px;max-height:680px;overflow-y:auto;padding-right:4px"><div class="muted" style="font-size:13px">Loading opinions&hellip;</div></div>
     <p class="muted" style="font-size:11px;margin-top:10px">Source: Indiana Office of Court Services &middot; <code>/api/public/sij/appellate-opinions</code></p>
     <script>
+    /* 2026-05-12 wow-factor upgrade: fetch all 498 opinions once, build an in-memory
+       search index, render instantly on every keystroke. No FTS5 round-trip per query
+       — search index lives entirely in the browser. Falls back gracefully on slow
+       networks (chunked render, max 80 visible). */
     (function(){
       var API = 'https://api.thatcomputerguy26.org';
-      var REFRESH_MS = 300000; // 5 min
+      var REFRESH_MS = 300000; // 5 min — re-fetch the whole corpus
 
       function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+      function $(id){ return document.getElementById(id); }
+
+      var allItems = [];      // full corpus
+      var indexBag = [];      // parallel array of search strings (lowercased)
+      var categorySet = new Set();
+      var renderToken = 0;
+      var pendingTimer = null;
 
       var backoffUntil = 0;
       function inBackoff(){ return Date.now() < backoffUntil; }
@@ -232,7 +254,7 @@
         if(r && r.status === 429){
           var ra = parseInt(r.headers && r.headers.get('retry-after'), 10) || 30;
           backoffUntil = Date.now() + Math.min(300, ra + Math.random()*5) * 1000;
-          var meta = document.getElementById('sij-app-meta');
+          var meta = $('sij-app-meta');
           if(meta) meta.textContent = 'rate-limited; back in '+Math.ceil((backoffUntil-Date.now())/1000)+'s';
         }
       }
@@ -243,57 +265,157 @@
         return '<span style="display:inline-block;padding:2px 8px;border-radius:4px;background:'+color+'20;color:'+color+';font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-right:8px;flex-shrink:0">'+label+'</span>';
       }
 
-      function render(items){
-        var list = document.getElementById('sij-app-list');
+      function highlight(text, qTokens){
+        if(!qTokens.length) return text;
+        try {
+          var pattern = qTokens.map(function(t){ return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }).join('|');
+          var re = new RegExp('('+pattern+')', 'gi');
+          return text.replace(re, '<mark style="background:rgba(167,139,250,.35);color:#fff;padding:0 2px;border-radius:2px">$1</mark>');
+        } catch(_){ return text; }
+      }
+
+      function applyFilters(){
+        var court = ($('sij-app-court') || {}).value || 'ALL';
+        var cat   = ($('sij-app-cat')   || {}).value || 'ALL';
+        var q     = (($('sij-app-q')    || {}).value || '').trim().toLowerCase();
+        var qTokens = q ? q.split(/\s+/).filter(Boolean) : [];
+
+        var matches = [];
+        for (var i = 0; i < allItems.length; i++){
+          var it = allItems[i];
+          if (court !== 'ALL' && it.court !== court) continue;
+          if (cat !== 'ALL' && it.category !== cat) continue;
+          if (qTokens.length){
+            var bag = indexBag[i];
+            var allHit = true;
+            for (var t = 0; t < qTokens.length; t++){
+              if (bag.indexOf(qTokens[t]) === -1){ allHit = false; break; }
+            }
+            if (!allHit) continue;
+          }
+          matches.push(it);
+        }
+        return { matches: matches, qTokens: qTokens };
+      }
+
+      function render(){
+        var list = $('sij-app-list');
+        var sum  = $('sij-app-summary');
         if(!list) return;
-        if(!items || items.length === 0){
-          list.innerHTML = '<div class="muted" style="font-size:13px">No opinions match the current filter.</div>';
+        renderToken++;
+        var myToken = renderToken;
+        var result = applyFilters();
+        var items  = result.matches;
+        var qTokens = result.qTokens;
+
+        if(!items.length){
+          list.innerHTML = '<div class="muted" style="font-size:13px;padding:20px 0;text-align:center">No opinions match. Try a different search term or court filter.</div>';
+          if(sum) sum.innerHTML = '<span>0 matches of '+allItems.length+'</span>';
           return;
         }
-        list.innerHTML = items.map(function(it){
-          var name = esc(it.case_name || '(untitled)').replace(/\n+/g, ' &mdash; ');
+
+        var MAX_VISIBLE = 80;
+        var visible = items.slice(0, MAX_VISIBLE);
+        var html = visible.map(function(it){
+          if (myToken !== renderToken) return '';
+          var name = esc((it.case_name || '(untitled)').replace(/\n+/g, ' — '));
           var url = it.full_url || it.details_url || '';
           var dec = esc(it.decision || '');
           var judge = esc(it.author_judge || '');
           var dd = esc(it.date_decided || '');
           var cn = esc(it.case_number || '');
+          var cat = esc(it.category || '');
+          if (qTokens.length){
+            name = highlight(name, qTokens);
+            judge = highlight(judge, qTokens);
+            cn = highlight(cn, qTokens);
+            dec = highlight(dec, qTokens);
+            cat = highlight(cat, qTokens);
+          }
           var head = url ? '<a href="'+esc(url)+'" target="_blank" rel="noopener" style="color:#cbd5e1;text-decoration:none">'+name+'</a>' : '<span style="color:#cbd5e1">'+name+'</span>';
           return '<div style="padding:10px 12px;background:rgba(15,21,33,.4);border:1px solid rgba(255,255,255,.06);border-radius:8px">' +
                  '<div style="display:flex;align-items:flex-start;gap:6px">'+courtBadge(it.court)+'<div style="flex:1;min-width:0"><strong style="color:#fff;font-size:13.5px;line-height:1.4">'+head+'</strong></div></div>' +
                  '<div style="font-size:11.5px;color:var(--mut);margin-top:5px;line-height:1.5">'+
                    (dd ? '<span>'+dd+'</span>' : '') +
-                   (judge ? '<span> &middot; '+judge+'</span>' : '') +
-                   (cn ? '<span> &middot; <code style="color:#94a3b8">'+cn+'</code></span>' : '') +
-                   (dec ? '<span> &middot; <em style="color:#a3d4e8">'+dec+'</em></span>' : '') +
+                   (judge ? '<span> · '+judge+'</span>' : '') +
+                   (cn ? '<span> · <code style="color:#94a3b8">'+cn+'</code></span>' : '') +
+                   (cat ? '<span> · <span style="color:#a3d4e8">'+cat+'</span></span>' : '') +
+                   (dec ? '<div style="margin-top:4px;color:#a3d4e8"><em>'+dec+'</em></div>' : '') +
                  '</div></div>';
         }).join('');
+        list.innerHTML = html;
+        if(sum){
+          var shown = visible.length;
+          var more = items.length - shown;
+          sum.innerHTML = '<span><strong style="color:#fff">'+items.length+'</strong> match'+(items.length===1?'':'es')+' of '+allItems.length+' opinions</span>' +
+                          (more > 0 ? '<span style="color:#94a3b8">showing first '+shown+' (refine search to see more)</span>' : '');
+        }
+      }
+
+      function schedule(){
+        if (pendingTimer) clearTimeout(pendingTimer);
+        pendingTimer = setTimeout(render, 80);
       }
 
       function load(){
         if(inBackoff()) return;
-        var sel = document.getElementById('sij-app-court');
-        var court = sel ? sel.value : 'ALL';
-        var url = API + '/api/public/sij/appellate-opinions?limit=30' + (court !== 'ALL' ? '&court='+encodeURIComponent(court) : '');
-        var meta = document.getElementById('sij-app-meta');
-        if(meta) meta.textContent = 'loading&hellip;';
-        fetch(url, { cache: 'no-store' })
+        var meta = $('sij-app-meta');
+        if(meta) meta.textContent = 'loading 498 opinions…';
+        // Fetch the full corpus once (limit=500 is the upstream cap).
+        fetch(API + '/api/public/sij/appellate-opinions?limit=500', { cache: 'no-store' })
           .then(function(r){ noteResponse(r); if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
           .then(function(j){
             if(!j || !Array.isArray(j.items)) throw new Error('bad payload');
-            render(j.items);
-            if(meta) meta.textContent = j.items.length + ' shown';
-            var counts = document.getElementById('sij-app-counts');
-            if(counts && j.totals) counts.textContent = 'Total: '+j.totals.total_items+' (Supreme '+j.totals.supreme_count+' / COA '+j.totals.coa_count+'); latest '+j.totals.latest_decided;
+            allItems = j.items;
+            indexBag = allItems.map(function(it){
+              return [it.case_name, it.author_judge, it.case_number, it.decision, it.category, it.court, it.date_decided]
+                .filter(Boolean).join(' ').toLowerCase();
+            });
+            categorySet = new Set();
+            allItems.forEach(function(it){ if (it.category) categorySet.add(it.category); });
+            var catSel = $('sij-app-cat');
+            if (catSel){
+              var current = catSel.value;
+              // Preserve "ALL" as first option, then add sorted categories.
+              var cats = Array.from(categorySet).sort();
+              catSel.innerHTML = '<option value="ALL">All</option>' +
+                cats.map(function(c){ return '<option value="'+esc(c)+'">'+esc(c)+'</option>'; }).join('');
+              if (current && (current === 'ALL' || categorySet.has(current))) catSel.value = current;
+            }
+            var counts = $('sij-app-counts');
+            if(counts && j.totals) counts.textContent = 'Total: '+j.totals.total_items+' · Supreme '+j.totals.supreme_count+' · COA '+j.totals.coa_count+' · latest '+j.totals.latest_decided;
+            if(meta) meta.textContent = 'indexed ' + allItems.length + ' opinions';
+            render();
           })
           .catch(function(){
-            var list = document.getElementById('sij-app-list');
+            var list = $('sij-app-list');
             if(list) list.innerHTML = '<div style="color:#f87171;font-size:13px">Appellate-opinions feed temporarily unavailable.</div>';
             if(meta) meta.textContent = 'offline';
           });
       }
 
-      var sel = document.getElementById('sij-app-court');
-      if(sel) sel.addEventListener('change', load);
+      // Event wiring
+      var courtSel = $('sij-app-court'); if (courtSel) courtSel.addEventListener('change', render);
+      var catSel = $('sij-app-cat');     if (catSel)   catSel.addEventListener('change', render);
+      var q = $('sij-app-q');
+      var clear = $('sij-app-q-clear');
+      if (q){
+        q.addEventListener('input', function(){
+          if (clear) clear.style.display = q.value ? 'inline' : 'none';
+          schedule();
+        });
+        q.addEventListener('focus', function(){
+          q.style.borderColor = 'rgba(167,139,250,.7)';
+          q.style.boxShadow = '0 0 0 3px rgba(167,139,250,.15)';
+        });
+        q.addEventListener('blur', function(){
+          q.style.borderColor = 'rgba(167,139,250,.35)';
+          q.style.boxShadow = '';
+        });
+      }
+      if (clear){
+        clear.addEventListener('click', function(){ if (q) { q.value=''; q.focus(); clear.style.display='none'; render(); } });
+      }
       load();
       setInterval(function(){ if(!inBackoff()) load(); }, REFRESH_MS);
     })();

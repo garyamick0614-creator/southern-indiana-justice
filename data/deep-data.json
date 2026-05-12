@@ -1,0 +1,1891 @@
+{
+  "generated_at": "2026-05-11T20:02:00.364Z",
+  "counts": {
+    "cases": 39,
+    "news": 51,
+    "legislators": 150,
+    "bills": 742
+  },
+  "latest": {
+    "cases": [
+      {
+        "id": 1,
+        "source": "courtlistener",
+        "source_id": "73242221",
+        "court_id": "ind",
+        "case_name": "Kathryne Tillett v. State of Indiana",
+        "docket_number": "25S-CR-00231",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-04-24",
+        "html_url": "https://www.courtlistener.com/opinion/10847855/kathryne-tillett-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 2,
+        "source": "courtlistener",
+        "source_id": "73169648",
+        "court_id": "ind",
+        "case_name": "Tervarus L. Gary v. State of Indiana",
+        "docket_number": "25S-CR-00265",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-04-09",
+        "html_url": "https://www.courtlistener.com/opinion/10847856/tervarus-l-gary-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 4,
+        "source": "courtlistener",
+        "source_id": "73168046",
+        "court_id": "ind",
+        "case_name": "Keith D. Harper v. S&H Leasing LLC",
+        "docket_number": "26S-PL-00111",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-04-09",
+        "html_url": "https://www.courtlistener.com/opinion/10839825/keith-d-harper-v-sh-leasing-llc/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 5,
+        "source": "courtlistener",
+        "source_id": "73163329",
+        "court_id": "ind",
+        "case_name": "Yerano Martinez v. Jeffrey Smith",
+        "docket_number": "26S-CT-00112",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-04-08",
+        "html_url": "https://www.courtlistener.com/opinion/10839427/yerano-martinez-v-jeffrey-smith/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 6,
+        "source": "courtlistener",
+        "source_id": "73161879",
+        "court_id": "ind",
+        "case_name": "Regina Geels v. Lindsay Flottemesch",
+        "docket_number": "25S-PL-00225",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-04-08",
+        "html_url": "https://www.courtlistener.com/opinion/10839316/regina-geels-v-lindsay-flottemesch/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 7,
+        "source": "courtlistener",
+        "source_id": "72524118",
+        "court_id": "ind",
+        "case_name": "Marvin Moyers v. State of Indiana",
+        "docket_number": "26S-CR-00086",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-03-20",
+        "html_url": "https://www.courtlistener.com/opinion/10812401/marvin-moyers-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 8,
+        "source": "courtlistener",
+        "source_id": "72517563",
+        "court_id": "ind",
+        "case_name": "In the Matter of James Steven Cox",
+        "docket_number": "25S-JD-00080",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-03-19",
+        "html_url": "https://www.courtlistener.com/opinion/10811269/in-the-matter-of-james-steven-cox/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 9,
+        "source": "courtlistener",
+        "source_id": "72505447",
+        "court_id": "ind",
+        "case_name": "Indiana Compensation Rating Bureau v. Technology Insurance Company",
+        "docket_number": "26S-PL-00083",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-03-17",
+        "html_url": "https://www.courtlistener.com/opinion/10810009/indiana-compensation-rating-bureau-v-technology-insurance-company/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 10,
+        "source": "courtlistener",
+        "source_id": "72458023",
+        "court_id": "ind",
+        "case_name": "Steven Norris v. Jennifer Norris",
+        "docket_number": "25S-DR-00226",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-03-12",
+        "html_url": "https://www.courtlistener.com/opinion/10807994/steven-norris-v-jennifer-norris/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 11,
+        "source": "courtlistener",
+        "source_id": "72417303",
+        "court_id": "ind",
+        "case_name": "Caryl Rosen v. Community Healthcare System d/b/a Community Hospital",
+        "docket_number": "25S-CT-00217",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-03-11",
+        "html_url": "https://www.courtlistener.com/opinion/10807214/caryl-rosen-v-community-healthcare-system-dba-community-hospital/",
+        "fetched_at": "2026-05-11T20:01:54.552Z"
+      },
+      {
+        "id": 12,
+        "source": "courtlistener",
+        "source_id": "72363054",
+        "court_id": "ind",
+        "case_name": "Estate of Elmer Gordon Waggoner v. Anonymous Health System, Inc.",
+        "docket_number": "26S-CT-00071",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-03-04",
+        "html_url": "https://www.courtlistener.com/opinion/10803740/estate-of-elmer-gordon-waggoner-v-anonymous-health-system-inc/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 13,
+        "source": "courtlistener",
+        "source_id": "72342581",
+        "court_id": "ind",
+        "case_name": "Commitment of A D",
+        "docket_number": "26S-MH-00065",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-02-27",
+        "html_url": "https://www.courtlistener.com/opinion/10801633/commitment-of-a-d/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 14,
+        "source": "courtlistener",
+        "source_id": "72322522",
+        "court_id": "ind",
+        "case_name": "Michael Carr v. State of Indiana",
+        "docket_number": "23S-LW-00139",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-02-24",
+        "html_url": "https://www.courtlistener.com/opinion/10799836/michael-carr-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 15,
+        "source": "courtlistener",
+        "source_id": "72320913",
+        "court_id": "ind",
+        "case_name": "Indiana Land Trust 3082 v. Hammond Redevelopment Commission",
+        "docket_number": "25S-PL-00141",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-02-24",
+        "html_url": "https://www.courtlistener.com/opinion/10799722/indiana-land-trust-3082-v-hammond-redevelopment-commission/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 16,
+        "source": "courtlistener",
+        "source_id": "72314837",
+        "court_id": "ind",
+        "case_name": "Ajaylan M Shabazz v. State of Indiana",
+        "docket_number": "25S-CR-00183",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-02-23",
+        "html_url": "https://www.courtlistener.com/opinion/10797830/ajaylan-m-shabazz-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 17,
+        "source": "courtlistener",
+        "source_id": "72274449",
+        "court_id": "ind",
+        "case_name": "Lamenski Ewing v. State of Indiana",
+        "docket_number": "26S-CR-00043",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-02-12",
+        "html_url": "https://www.courtlistener.com/opinion/10792866/lamenski-ewing-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 18,
+        "source": "courtlistener",
+        "source_id": "72230450",
+        "court_id": "ind",
+        "case_name": "Anthony Wayne Carter v. State of Indiana",
+        "docket_number": "25S-LW-00050",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-02-04",
+        "html_url": "https://www.courtlistener.com/opinion/10784040/anthony-wayne-carter-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 19,
+        "source": "courtlistener",
+        "source_id": "72051165",
+        "court_id": "ind",
+        "case_name": "Ricky L Taylor v. State of Indiana",
+        "docket_number": "25S-CR-00349",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2025-12-17",
+        "html_url": "https://www.courtlistener.com/opinion/10760290/ricky-l-taylor-v-state-of-indiana/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 20,
+        "source": "courtlistener",
+        "source_id": "72049294",
+        "court_id": "ind",
+        "case_name": "Taliyah Brooks v. USA Track & Field, Inc.",
+        "docket_number": "25S-PL-00103",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2025-12-17",
+        "html_url": "https://www.courtlistener.com/opinion/10760177/taliyah-brooks-v-usa-track-field-inc/",
+        "fetched_at": "2026-05-11T20:01:54.553Z"
+      },
+      {
+        "id": 21,
+        "source": "courtlistener",
+        "source_id": "72022231",
+        "court_id": "ind",
+        "case_name": "In the Matter of Edgardo Javier Martinez Suarez",
+        "docket_number": "25S-DI-00026",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2025-12-11",
+        "html_url": "https://www.courtlistener.com/opinion/10753408/in-the-matter-of-edgardo-javier-martinez-suarez/",
+        "fetched_at": "2026-05-11T20:01:57.270Z"
+      }
+    ],
+    "news": [
+      {
+        "id": 45,
+        "headline": "Indiana Attorney General Todd Rokita has updated this web site.",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "You may need to update your bookmarks. To find the new location of a page, explore the site from the [home page](https://www.in.gov/attorneygeneral) or use the search function at top of the page."
+      },
+      {
+        "id": 46,
+        "headline": "Get Email Updates",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "To sign up or to access your subscriber preferences, please enter your contact information below.\n[Subscribe](https://cloud.subscription.in.gov/signup?depid=546006741)"
+      },
+      {
+        "id": 47,
+        "headline": "Latest News",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "[View More News](https://www.in.gov/attorneygeneral/newsroom)"
+      },
+      {
+        "id": 48,
+        "headline": "Top FAQs",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "- [Where can I find information on the opioid settlement?](https://faqs.in.gov/hc/en-us/articles/4412271518356-Where-can-I-find-information-on-the-opioid-settlement)\n- [Where can I learn about the Parents' Bill of Rights?](https://faqs.in.gov/hc/en-us/articles/4412271477652-Where-can-I-learn-about-the-Parents-Bill-of-Rights)\n- [How I sign up for office news?](https://faqs.in.gov/hc/en-us/articles/"
+      },
+      {
+        "id": 49,
+        "headline": "I Want To",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "- [Find Unclaimed Money](https://indianaunclaimed.gov/)\n- [Register for Do Not Call](https://www.indonotcall.org/registrations/new)\n- [Place a Credit Freeze](https://www.in.gov/attorneygeneral/consumer-protection-division/id-theft-prevention)\n- [Rules.IN.gov](https://www.in.gov/attorneygeneral/rulesingov)\n- [File a Complaint](https://www.in.gov/attorneygeneral/consumer-protection-division/file-a-c"
+      },
+      {
+        "id": 50,
+        "headline": "Resources",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "- [Medicaid Fraud Complaint](https://indianaattorneygeneral.secure.force.com/MedicaidFraudComplaints)\n- [Patient Abuse & Neglect](https://indianaattorneygeneral.secure.force.com/AbuseAndNeglectComplaints)\n- [Consumer Complaint](https://www.in.gov/attorneygeneral/consumer-protection-division/consumer-complaint)\n- [Do Not Call/Text Complaint](https://www.in.gov/attorneygeneral/consumer-protection-di"
+      },
+      {
+        "id": 51,
+        "headline": "Social Media",
+        "publisher": "IN Attorney General",
+        "source_url": "https://www.in.gov/attorneygeneral/press/",
+        "fetched_at": "2026-05-11T19:53:25.848Z",
+        "body_excerpt": "- [Facebook](https://www.facebook.com/inattygeneral/ \"Facebook\")\n- [Twitter](https://www.twitter.com/agtoddrokita \"Twitter/X\")\n- [YouTube](https://www.youtube.com/user/INAttorneyGeneral \"YouTube\")\n- [Email](https://cloud.subscription.in.gov/signup?depid=546006741 \"Email\")\n- [Truth Social](https://truthsocial.com/@AGToddRokita \"Truth Social\")\nOriginal text\nRate this translation\nYour feedback will b"
+      },
+      {
+        "id": 44,
+        "headline": "Social Media",
+        "publisher": "IN Judiciary",
+        "source_url": "https://www.in.gov/judiciary/news-and-publications/news/",
+        "fetched_at": "2026-05-11T19:53:02.046Z",
+        "body_excerpt": "- [Twitter](https://www.twitter.com/incourts \"Twitter/X\")\n- [YouTube](http://www.youtube.com/incourts \"YouTube\")\n- [LinkedIn](https://www.linkedin.com/company/indiana-supreme-court/ \"LinkedIn\")\n- [Flickr](http://www.flickr.com/photos/incourts/sets/ \"Flickr\")\n- [Email](https://www.in.gov/courts/subscribe \"Email\")\nOriginal text\nRate this translation\nYour feedback will be used to help improve Google "
+      },
+      {
+        "id": 41,
+        "headline": "Indiana Judicial Branch has updated this web site.",
+        "publisher": "IN Judiciary",
+        "source_url": "https://www.in.gov/judiciary/news-and-publications/news/",
+        "fetched_at": "2026-05-11T19:53:02.045Z",
+        "body_excerpt": "You may need to update your bookmarks. To find the new location of a page, explore the site from the [home page](https://www.in.gov/courts) or use the search function at top of the page.\nIndiana Judicial Branch"
+      },
+      {
+        "id": 42,
+        "headline": "Helpful Links",
+        "publisher": "IN Judiciary",
+        "source_url": "https://www.in.gov/judiciary/news-and-publications/news/",
+        "fetched_at": "2026-05-11T19:53:02.045Z",
+        "body_excerpt": "- [Jobs](https://workforindiana.in.gov/search/?searchby=location&createNewAlert=false&q=&optionsFacetsDD_customfield3=Supreme+Court+Administration&optionsFacetsDD_city=&optionsFacetsDD_customfield1=&locationsearch=&geolocation=)\n- [FAQs](https://courts-ingov.zendesk.com/hc/en-us/categories/115000874788-Judicial-System-Indiana)\n- [Calendar](https://events.in.gov/courts)\n- [Hours & Holidays](https:/"
+      },
+      {
+        "id": 43,
+        "headline": "Policies",
+        "publisher": "IN Judiciary",
+        "source_url": "https://www.in.gov/judiciary/news-and-publications/news/",
+        "fetched_at": "2026-05-11T19:53:02.045Z",
+        "body_excerpt": "- [ADA Accommodation](https://www.in.gov/courts/policies/ada)\n- [Language Access Plan](https://www.in.gov/courts/policies/lap)\n- [Data & Technology](https://www.in.gov/courts/policies)\n- [Privacy](http://www.in.gov/core/privacy.html)\n- [More Policies](https://www.in.gov/courts/policies)"
+      },
+      {
+        "id": 26,
+        "headline": "[Update Given on Hantavirus Outbreak](https://wibc.com/886512/update-given-on-hantavirus-outbreak/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "Update Given on Hantavirus Outbreak OMAHA, NE.–More than a dozen American passengers aboard the hantavirus infested cruise are now being monitored at a Nebraska facility after disembarking the ship. The Department of Health and Human Services say Americans should not panic about the virus that is typically transmitted from infested rodents. Department of Health and \\[…\\]\n[![A car filling up with g"
+      },
+      {
+        "id": 27,
+        "headline": "[GasBuddy Talks Indiana's Gas Tax Holiday, Possible Future Increases](https://wibc.com/886505/gasbuddy-talks-indianas-gas-tax-holiday-possible-future-increases/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "Indiana gas tax holiday benefits drivers, but refinery issues may drive up prices again soon.\n[![AUTO: JUL 27 NASCAR Cup Series Brickyard 400](https://wibc.com/wp-content/uploads/sites/99/2026/05/17785172069395.jpg?quality=80&strip=all&w=1024&crop=0,0,100,683px)](https://wibc.com/886492/race-team-investments-assisting-indiana-economy/)\n[Local](https://wibc.com/category/news/local/) \\| [Jake McDani"
+      },
+      {
+        "id": 28,
+        "headline": "[Race Team Investments Assisting Indiana Economy](https://wibc.com/886492/race-team-investments-assisting-indiana-economy/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "INDIANAPOLIS — Indiana’s racing industry is shifting into a higher gear as a wave of new team investments boosts the state’s economy. While Indianapolis is considered one of the world’s three global motorsports hubs, Indiana’s influence permeates the entire industry, spanning NHRA sports cars, grassroots racing, advanced engineering firms. Indiana Economic Development Corporation’s Motorsports Dir"
+      },
+      {
+        "id": 29,
+        "headline": "[From Foster Care to Author: Kat Perkins Shares Journey of Healing](https://wibc.com/886485/from-foster-care-to-author-kat-perkins-shares-journey-of-trauma-and-healing/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "INDIANAPOLIS — For many children who enter the Indiana Department of Child Services (DCS) system, the experience is a blur of unfamiliar faces and strange neighborhoods. For Kat Perkins, who is an Indianapolis native, it was the start of a decade-long battle to reclaim an identity that was nearly stripped away by trauma and systemic \\[…\\]\n[![Indiana Statehouse](https://wibc.com/wp-content/uploads/"
+      },
+      {
+        "id": 30,
+        "headline": "[Indiana Senate District 23 Race Remains Too Close to Call](https://wibc.com/886488/indiana-senate-district-23-race-remains-too-close-to-call/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "INDIANAPOLIS — A handful of votes are shaping the outcome of Indiana Senate District 23, where State Sen. Spencer Deery is claiming victory over Paula Copenhaver after early results showed him ahead by just three votes. Dr. Laura Wilson says races this tight highlight why accuracy matters more than speed when every ballot can change \\[…\\]\n[![NWS Indianapolis](https://wibc.com/wp-content/uploads/si"
+      },
+      {
+        "id": 31,
+        "headline": "[NWS: Storms Possible on Tuesday in Indiana Followed by Dry Weather](https://wibc.com/886473/nws-storms-possible-on-tuesday-in-indiana-followed-by-dry-weather/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "NWS: Storms Possible on Tuesday in Indiana Followed by Dry Weather STATEWIDE–Some rain is likely to move in to Indiana Tuesday night and last into Wednesday. “I wouldn’t say these will be rough storms. It looks like we’ll get some rain, though. There is a chance for thunder, but it doesn’t look like there will \\[…\\]\n[![2026 AAA Memorial DAY Travel](https://wibc.com/wp-content/uploads/sites/99/2026"
+      },
+      {
+        "id": 32,
+        "headline": "[Memorial Day Travel Set to Break Records Despite Higher Gas Prices](https://wibc.com/886468/aaa-memorial-day-travel-set-to-break-records-despite-higher-gas-prices/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "INDIANAPOLIS — Pack your patience alongside your sunscreen this Memorial Day. According to new projections from AAA, a record-breaking 45 million Americans are expected to travel for the holiday weekend, with nearly 968,000 of those travelers coming from Indiana. The forecast marks a new all-time high for the holiday, narrowly beating out the travel surge \\[…\\]\n[![Indiana State v Indiana](https://"
+      },
+      {
+        "id": 33,
+        "headline": "[IU Biology Lab Closed Following USDA Activity](https://wibc.com/886456/iu-biology-lab-closed-following-usda-activity/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "BLOOMINGTON, Ind. — A biology lab on Indiana University’s campus in Bloomington was closed following unspecified activity by the United States Department of Agriculture (USDA). “Rooms 302, 319, 309, 315, 316, and 062 in Myers Hall will be closed while that activity is underway,” IU Vice President for Research Russ Mumper wrote in a letter \\[…\\]\n[![College Football Playoff National Championship: Mi"
+      },
+      {
+        "id": 34,
+        "headline": "[IU Hoosiers Visiting the White House](https://wibc.com/886454/iu-hoosiers-visiting-the-white-house/)",
+        "publisher": "WIBC",
+        "source_url": "https://www.wibc.com/category/news/",
+        "fetched_at": "2026-05-11T19:52:59.346Z",
+        "body_excerpt": "WASHINGTON — The IU Hoosiers national champs are at the White House today. They went 16–0 last season to win the College Football Playoff. IU’s 1976 basketball team was the first undefeated men’s team honored at the White House. Head coach Curt Cignetti will also drive the Indy 500 pace car on May 24. It’s \\[…\\]\n[![Red Mill Drive Sunday Shooting](https://wibc.com/wp-content/uploads/sites/99/2026/0"
+      }
+    ],
+    "legislators": [
+      {
+        "id": 72,
+        "name": "Rep. Carolyn Jackson",
+        "role": "state-rep",
+        "district": "1",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_carolyn_jackson_1"
+      },
+      {
+        "id": 62,
+        "name": "Rep. Earl Harris",
+        "role": "state-rep",
+        "district": "2",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_earl_harris_1"
+      },
+      {
+        "id": 63,
+        "name": "Rep. Ragen Hatcher",
+        "role": "state-rep",
+        "district": "3",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ragen_hatcher_1"
+      },
+      {
+        "id": 134,
+        "name": "Rep. Edmond Soliday",
+        "role": "state-rep",
+        "district": "4",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_edmond_soliday_864"
+      },
+      {
+        "id": 39,
+        "name": "Rep. Dale DeVon",
+        "role": "state-rep",
+        "district": "5",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_dale_devon_1108"
+      },
+      {
+        "id": 13,
+        "name": "Rep. Maureen Bauer",
+        "role": "state-rep",
+        "district": "6",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_maureen_bauer_1"
+      },
+      {
+        "id": 140,
+        "name": "Rep. Jake Teshka",
+        "role": "state-rep",
+        "district": "7",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jake_teshka_1"
+      },
+      {
+        "id": 44,
+        "name": "Rep. Ryan Dvorak",
+        "role": "state-rep",
+        "district": "8",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ryan_dvorak_697"
+      },
+      {
+        "id": 107,
+        "name": "Rep. Randy Novak",
+        "role": "state-rep",
+        "district": "9",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_randy_novak_1"
+      },
+      {
+        "id": 104,
+        "name": "Rep. Chuck Moseley",
+        "role": "state-rep",
+        "district": "10",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_charles_moseley_973"
+      },
+      {
+        "id": 5,
+        "name": "Rep. Mike Aylesworth",
+        "role": "state-rep",
+        "district": "11",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mike_aylesworth_1"
+      },
+      {
+        "id": 4,
+        "name": "Rep. Mike Andrade",
+        "role": "state-rep",
+        "district": "12",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mike_andrade_1"
+      },
+      {
+        "id": 32,
+        "name": "Rep. Matt Commons",
+        "role": "state-rep",
+        "district": "13",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_matt_commons_1"
+      },
+      {
+        "id": 132,
+        "name": "Rep. Vernon Smith",
+        "role": "state-rep",
+        "district": "14",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_vernon_smith_230"
+      },
+      {
+        "id": 129,
+        "name": "Rep. Harold Slager",
+        "role": "state-rep",
+        "district": "15",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_harold_slager_1111"
+      },
+      {
+        "id": 35,
+        "name": "Rep. Kendell Culp",
+        "role": "state-rep",
+        "district": "16",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_kendell_culp_1"
+      },
+      {
+        "id": 77,
+        "name": "Rep. Jack Jordan",
+        "role": "state-rep",
+        "district": "17",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jack_jordan_1"
+      },
+      {
+        "id": 1,
+        "name": "Rep. David Abbott",
+        "role": "state-rep",
+        "district": "18",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_david_abbott_1"
+      },
+      {
+        "id": 109,
+        "name": "Rep. Julie Olthoff",
+        "role": "state-rep",
+        "district": "19",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_julie_olthoff_1"
+      },
+      {
+        "id": 119,
+        "name": "Rep. Jim Pressel",
+        "role": "state-rep",
+        "district": "20",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jim_pressel_1"
+      },
+      {
+        "id": 146,
+        "name": "Rep. Timothy Wesco",
+        "role": "state-rep",
+        "district": "21",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_timothy_wesco_1025"
+      },
+      {
+        "id": 133,
+        "name": "Rep. Craig Snow",
+        "role": "state-rep",
+        "district": "22",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_craig_snow_1"
+      },
+      {
+        "id": 91,
+        "name": "Rep. Ethan Manning",
+        "role": "state-rep",
+        "district": "23",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ethan_manning_1"
+      },
+      {
+        "id": 131,
+        "name": "Rep. Hunter Smith",
+        "role": "state-rep",
+        "district": "24",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_hunter_smith_1"
+      },
+      {
+        "id": 28,
+        "name": "Rep. Becky Cash",
+        "role": "state-rep",
+        "district": "25",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_becky_cash_1"
+      },
+      {
+        "id": 25,
+        "name": "Rep. Chris Campbell",
+        "role": "state-rep",
+        "district": "26",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_christine_campbell_1"
+      },
+      {
+        "id": 81,
+        "name": "Rep. Sheila Klinker",
+        "role": "state-rep",
+        "district": "27",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_sheila_klinker_212"
+      },
+      {
+        "id": 141,
+        "name": "Rep. Jeffrey Thompson",
+        "role": "state-rep",
+        "district": "28",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jeffrey_thompson_529"
+      },
+      {
+        "id": 128,
+        "name": "Rep. Alaina Shonkwiler",
+        "role": "state-rep",
+        "district": "29",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_alaina_shonkwiler_1"
+      },
+      {
+        "id": 79,
+        "name": "Rep. Michael Karickhoff",
+        "role": "state-rep",
+        "district": "30",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_michael_karickhoff_1027"
+      },
+      {
+        "id": 57,
+        "name": "Rep. Lori Goss-Reaves",
+        "role": "state-rep",
+        "district": "31",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_lori_goss_reaves_1"
+      },
+      {
+        "id": 49,
+        "name": "Rep. Victoria Garcia Wilburn",
+        "role": "state-rep",
+        "district": "32",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_victoria_garcia_wilburn_1"
+      },
+      {
+        "id": 118,
+        "name": "Rep. J.D. Prescott",
+        "role": "state-rep",
+        "district": "33",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_john_prescott_1"
+      },
+      {
+        "id": 46,
+        "name": "Rep. Sue Errington",
+        "role": "state-rep",
+        "district": "34",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_sue_errington_866"
+      },
+      {
+        "id": 125,
+        "name": "Rep. Elizabeth Rowray",
+        "role": "state-rep",
+        "district": "35",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_elizabeth_rowray_1"
+      },
+      {
+        "id": 114,
+        "name": "Rep. Kyle Pierce",
+        "role": "state-rep",
+        "district": "36",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_kyle_pierce_1"
+      },
+      {
+        "id": 69,
+        "name": "Rep. Todd Huston",
+        "role": "state-rep",
+        "district": "37",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_todd_huston_1114"
+      },
+      {
+        "id": 143,
+        "name": "Rep. Heath VanNatter",
+        "role": "state-rep",
+        "district": "38",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_heath_vannatter_956"
+      },
+      {
+        "id": 89,
+        "name": "Rep. Danny Lopez",
+        "role": "state-rep",
+        "district": "39",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_danny_lopez_1"
+      },
+      {
+        "id": 136,
+        "name": "Rep. Gregory Steuerwald",
+        "role": "state-rep",
+        "district": "40",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_gregory_steuerwald_927"
+      },
+      {
+        "id": 52,
+        "name": "Rep. Mark Genda",
+        "role": "state-rep",
+        "district": "41",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mark_genda_1"
+      },
+      {
+        "id": 147,
+        "name": "Rep. Tim Yocum",
+        "role": "state-rep",
+        "district": "42",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_tim_yocum_1"
+      },
+      {
+        "id": 113,
+        "name": "Rep. Tonya Pfaff",
+        "role": "state-rep",
+        "district": "43",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_tonya_pfaff_1"
+      },
+      {
+        "id": 6,
+        "name": "Rep. Beau Baird",
+        "role": "state-rep",
+        "district": "44",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_beau_baird_1"
+      },
+      {
+        "id": 17,
+        "name": "Rep. Bruce Borders",
+        "role": "state-rep",
+        "district": "45",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_bruce_borders_1"
+      },
+      {
+        "id": 64,
+        "name": "Rep. Robert Heaton",
+        "role": "state-rep",
+        "district": "46",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_robert_heaton_1030"
+      },
+      {
+        "id": 58,
+        "name": "Rep. Robb Greene",
+        "role": "state-rep",
+        "district": "47",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_robb_greene_1"
+      },
+      {
+        "id": 99,
+        "name": "Rep. Doug Miller",
+        "role": "state-rep",
+        "district": "48",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_doug_miller_1"
+      },
+      {
+        "id": 80,
+        "name": "Rep. Joanna King",
+        "role": "state-rep",
+        "district": "49",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_joanna_king_1"
+      },
+      {
+        "id": 138,
+        "name": "Rep. Lorissa Sweet",
+        "role": "state-rep",
+        "district": "50",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_lorissa_sweet_1"
+      },
+      {
+        "id": 71,
+        "name": "Rep. Tony Isa",
+        "role": "state-rep",
+        "district": "51",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_tony_isa_1"
+      },
+      {
+        "id": 130,
+        "name": "Rep. Ben Smaltz",
+        "role": "state-rep",
+        "district": "52",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ben_smaltz_1118"
+      },
+      {
+        "id": 84,
+        "name": "Rep. Ethan Lawson",
+        "role": "state-rep",
+        "district": "53",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ethan_lawson_1"
+      },
+      {
+        "id": 34,
+        "name": "Rep. Cory Criswell",
+        "role": "state-rep",
+        "district": "54",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_cory_criswell_1"
+      },
+      {
+        "id": 111,
+        "name": "Rep. Lindsay Patterson",
+        "role": "state-rep",
+        "district": "55",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_lindsay_patterson_1"
+      },
+      {
+        "id": 8,
+        "name": "Rep. Brad Barrett",
+        "role": "state-rep",
+        "district": "56",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_bradford_barrett_1"
+      },
+      {
+        "id": 59,
+        "name": "Rep. Craig Haggard",
+        "role": "state-rep",
+        "district": "57",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_craig_haggard_1"
+      },
+      {
+        "id": 37,
+        "name": "Rep. Michelle Davis",
+        "role": "state-rep",
+        "district": "58",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_michelle_davis_1"
+      },
+      {
+        "id": 83,
+        "name": "Rep. Ryan Lauer",
+        "role": "state-rep",
+        "district": "59",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ryan_lauer_1"
+      },
+      {
+        "id": 94,
+        "name": "Rep. Peggy Mayfield",
+        "role": "state-rep",
+        "district": "60",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_peggy_mayfield_1121"
+      },
+      {
+        "id": 115,
+        "name": "Rep. Matt Pierce",
+        "role": "state-rep",
+        "district": "61",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_matthew_pierce_708"
+      },
+      {
+        "id": 60,
+        "name": "Rep. Dave Hall",
+        "role": "state-rep",
+        "district": "62",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_david_hall_1"
+      },
+      {
+        "id": 88,
+        "name": "Rep. Shane Lindauer",
+        "role": "state-rep",
+        "district": "63",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_shane_lindauer_1"
+      },
+      {
+        "id": 67,
+        "name": "Rep. Matt Hostettler",
+        "role": "state-rep",
+        "district": "64",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_matthew_hostettler_1"
+      },
+      {
+        "id": 93,
+        "name": "Rep. Chris May",
+        "role": "state-rep",
+        "district": "65",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_chris_may_1"
+      },
+      {
+        "id": 112,
+        "name": "Rep. Zach Payne",
+        "role": "state-rep",
+        "district": "66",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_zach_payne_1"
+      },
+      {
+        "id": 150,
+        "name": "Rep. Alex Zimmerman",
+        "role": "state-rep",
+        "district": "67",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_alex_zimmerman_1"
+      },
+      {
+        "id": 11,
+        "name": "Rep. Garrett Bascom",
+        "role": "state-rep",
+        "district": "68",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_garrett_bascom_1"
+      },
+      {
+        "id": 90,
+        "name": "Rep. Jim Lucas",
+        "role": "state-rep",
+        "district": "69",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jim_lucas_1123"
+      },
+      {
+        "id": 45,
+        "name": "Rep. Karen Engleman",
+        "role": "state-rep",
+        "district": "70",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_karen_engleman_1"
+      },
+      {
+        "id": 36,
+        "name": "Rep. Wendy Dant Chesser",
+        "role": "state-rep",
+        "district": "71",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_wendy_dant_chesser_1"
+      },
+      {
+        "id": 31,
+        "name": "Rep. Edward Clere",
+        "role": "state-rep",
+        "district": "72",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_edward_clere_984"
+      },
+      {
+        "id": 98,
+        "name": "Rep. Jennifer Meltzer",
+        "role": "state-rep",
+        "district": "73",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jennifer_meltzer_1"
+      },
+      {
+        "id": 9,
+        "name": "Rep. Steve Bartels",
+        "role": "state-rep",
+        "district": "74",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_stephen_bartels_1"
+      },
+      {
+        "id": 85,
+        "name": "Rep. Cindy Ledbetter",
+        "role": "state-rep",
+        "district": "75",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_cindy_ledbetter_1"
+      },
+      {
+        "id": 97,
+        "name": "Rep. Wendy McNamara",
+        "role": "state-rep",
+        "district": "76",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_wendy_mcnamara_1046"
+      },
+      {
+        "id": 22,
+        "name": "Rep. Alex Burton",
+        "role": "state-rep",
+        "district": "77",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_alex_burton_1"
+      },
+      {
+        "id": 108,
+        "name": "Rep. Timothy O'Brien",
+        "role": "state-rep",
+        "district": "78",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_timothy_obrien_1"
+      },
+      {
+        "id": 86,
+        "name": "Rep. Matt Lehman",
+        "role": "state-rep",
+        "district": "79",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_matthew_lehman_987"
+      },
+      {
+        "id": 53,
+        "name": "Rep. Philip GiaQuinta",
+        "role": "state-rep",
+        "district": "80",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_philip_giaquinta_879"
+      },
+      {
+        "id": 26,
+        "name": "Rep. Martin Carbaugh",
+        "role": "state-rep",
+        "district": "81",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_martin_carbaugh_1125"
+      },
+      {
+        "id": 100,
+        "name": "Rep. Kyle Miller",
+        "role": "state-rep",
+        "district": "82",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_kyle_miller_1"
+      },
+      {
+        "id": 78,
+        "name": "Rep. Chris Judy",
+        "role": "state-rep",
+        "district": "83",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_christopher_judy_1"
+      },
+      {
+        "id": 103,
+        "name": "Rep. Robert Morris",
+        "role": "state-rep",
+        "district": "84",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_robert_morris_1021"
+      },
+      {
+        "id": 65,
+        "name": "Rep. Dave Heine",
+        "role": "state-rep",
+        "district": "85",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_dave_heine_1"
+      },
+      {
+        "id": 38,
+        "name": "Rep. Edward DeLaney",
+        "role": "state-rep",
+        "district": "86",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_edward_delaney_988"
+      },
+      {
+        "id": 61,
+        "name": "Rep. Carey Hamilton",
+        "role": "state-rep",
+        "district": "87",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_carey_hamilton_1"
+      },
+      {
+        "id": 74,
+        "name": "Rep. Chris Jeter",
+        "role": "state-rep",
+        "district": "88",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_chris_jeter_1"
+      },
+      {
+        "id": 56,
+        "name": "Rep. Mitch Gore",
+        "role": "state-rep",
+        "district": "89",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mitch_gore_1"
+      },
+      {
+        "id": 70,
+        "name": "Rep. Andrew Ireland",
+        "role": "state-rep",
+        "district": "90",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_andrew_ireland_1"
+      },
+      {
+        "id": 15,
+        "name": "Rep. Robert Behning",
+        "role": "state-rep",
+        "district": "91",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_robert_behning_187"
+      },
+      {
+        "id": 110,
+        "name": "Rep. Renee Pack",
+        "role": "state-rep",
+        "district": "92",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_renee_pack_1"
+      },
+      {
+        "id": 95,
+        "name": "Rep. Julie McGuire",
+        "role": "state-rep",
+        "district": "93",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_julie_mcguire_1"
+      },
+      {
+        "id": 120,
+        "name": "Rep. Cherrish Pryor",
+        "role": "state-rep",
+        "district": "94",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_cherrish_pryor_990"
+      },
+      {
+        "id": 10,
+        "name": "Rep. John Bartlett",
+        "role": "state-rep",
+        "district": "95",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_john_bartlett_942"
+      },
+      {
+        "id": 117,
+        "name": "Rep. Gregory Porter",
+        "role": "state-rep",
+        "district": "96",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_gregory_porter_115"
+      },
+      {
+        "id": 102,
+        "name": "Rep. Justin Moed",
+        "role": "state-rep",
+        "district": "97",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_justin_moed_908"
+      },
+      {
+        "id": 127,
+        "name": "Rep. Robin Shackleford",
+        "role": "state-rep",
+        "district": "98",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_robin_shackleford_1128"
+      },
+      {
+        "id": 137,
+        "name": "Rep. Vanessa Summers",
+        "role": "state-rep",
+        "district": "99",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_vanessa_summers_231"
+      },
+      {
+        "id": 75,
+        "name": "Rep. Blake Johnson",
+        "role": "state-rep",
+        "district": "100",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_blake_johnson_1"
+      },
+      {
+        "id": 41,
+        "name": "Sen. Dan Dernulc",
+        "role": "state-senator",
+        "district": "1",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_dan_dernulc_1"
+      },
+      {
+        "id": 123,
+        "name": "Sen. Lonnie Randolph",
+        "role": "state-senator",
+        "district": "2",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_lonnie_randolph_160"
+      },
+      {
+        "id": 135,
+        "name": "Sen. Mark Spencer",
+        "role": "state-senator",
+        "district": "3",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mark_spencer_1"
+      },
+      {
+        "id": 116,
+        "name": "Sen. Rodney Pol",
+        "role": "state-senator",
+        "district": "4",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_rodney_pol_1"
+      },
+      {
+        "id": 29,
+        "name": "Sen. Ed Charbonneau",
+        "role": "state-senator",
+        "district": "5",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ed_charbonneau_919"
+      },
+      {
+        "id": 105,
+        "name": "Sen. Rick Niemeyer",
+        "role": "state-senator",
+        "district": "6",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_rick_niemeyer_1109"
+      },
+      {
+        "id": 20,
+        "name": "Sen. Brian Buchanan",
+        "role": "state-senator",
+        "district": "7",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_brian_buchanan_1"
+      },
+      {
+        "id": 16,
+        "name": "Sen. Mike Bohacek",
+        "role": "state-senator",
+        "district": "8",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mike_bohacek_1"
+      },
+      {
+        "id": 101,
+        "name": "Sen. Ryan Mishler",
+        "role": "state-senator",
+        "district": "9",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ryan_mishler_801"
+      },
+      {
+        "id": 106,
+        "name": "Sen. David Niezgodski",
+        "role": "state-senator",
+        "district": "10",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_david_niezgodski_1"
+      },
+      {
+        "id": 124,
+        "name": "Sen. Linda Rogers",
+        "role": "state-senator",
+        "district": "11",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_linda_rogers_1"
+      },
+      {
+        "id": 43,
+        "name": "Sen. Blake Doriot",
+        "role": "state-senator",
+        "district": "12",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_blake_doriot_1"
+      },
+      {
+        "id": 54,
+        "name": "Sen. Susan Glick",
+        "role": "state-senator",
+        "district": "13",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_susan_glick_1048"
+      },
+      {
+        "id": 76,
+        "name": "Sen. Tyler Johnson",
+        "role": "state-senator",
+        "district": "14",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_tyler_johnson_1"
+      },
+      {
+        "id": 19,
+        "name": "Sen. Liz Brown",
+        "role": "state-senator",
+        "district": "15",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_liz_brown_1"
+      },
+      {
+        "id": 23,
+        "name": "Sen. Justin Busch",
+        "role": "state-senator",
+        "district": "16",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_justin_busch_1"
+      },
+      {
+        "id": 96,
+        "name": "Sen. Nick McKinley",
+        "role": "state-senator",
+        "district": "17",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_nick_mckinley_1"
+      },
+      {
+        "id": 42,
+        "name": "Sen. Stacey Donato",
+        "role": "state-senator",
+        "district": "18",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_stacey_donato_1"
+      },
+      {
+        "id": 66,
+        "name": "Sen. Travis Holdman",
+        "role": "state-senator",
+        "district": "19",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_travis_holdman_955"
+      },
+      {
+        "id": 7,
+        "name": "Sen. Scott Baldwin",
+        "role": "state-senator",
+        "district": "20",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_scott_baldwin_1"
+      },
+      {
+        "id": 21,
+        "name": "Sen. James Buck",
+        "role": "state-senator",
+        "district": "21",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_james_buck_124"
+      },
+      {
+        "id": 3,
+        "name": "Sen. Ron Alting",
+        "role": "state-senator",
+        "district": "22",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_ron_alting_538"
+      },
+      {
+        "id": 40,
+        "name": "Sen. Spencer Deery",
+        "role": "state-senator",
+        "district": "23",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_spencer_deery_1"
+      },
+      {
+        "id": 30,
+        "name": "Sen. Brett Clark",
+        "role": "state-senator",
+        "district": "24",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_brett_clark_1"
+      },
+      {
+        "id": 51,
+        "name": "Sen. Mike Gaskill",
+        "role": "state-senator",
+        "district": "25",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_mike_gaskill_1"
+      },
+      {
+        "id": 2,
+        "name": "Sen. Scott Alexander",
+        "role": "state-senator",
+        "district": "26",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_scott_alexander_1"
+      },
+      {
+        "id": 122,
+        "name": "Sen. Jeff Raatz",
+        "role": "state-senator",
+        "district": "27",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jeff_raatz_1"
+      },
+      {
+        "id": 33,
+        "name": "Sen. Michael Crider",
+        "role": "state-senator",
+        "district": "28",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_michael_crider_1130"
+      },
+      {
+        "id": 47,
+        "name": "Sen. J.D. Ford",
+        "role": "state-senator",
+        "district": "29",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jd_ford_1"
+      },
+      {
+        "id": 121,
+        "name": "Sen. Fady Qaddoura",
+        "role": "state-senator",
+        "district": "30",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_fady_qaddoura_1"
+      },
+      {
+        "id": 145,
+        "name": "Sen. Kyle Walker",
+        "role": "state-senator",
+        "district": "31",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_kyle_walker_1"
+      },
+      {
+        "id": 48,
+        "name": "Sen. Aaron Freeman",
+        "role": "state-senator",
+        "district": "32",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_aaron_freeman_1"
+      },
+      {
+        "id": 139,
+        "name": "Sen. Greg Taylor",
+        "role": "state-senator",
+        "district": "33",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_greg_taylor_976"
+      },
+      {
+        "id": 73,
+        "name": "Sen. La Keisha Jackson",
+        "role": "state-senator",
+        "district": "34",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_la_keisha_jackson_1"
+      },
+      {
+        "id": 149,
+        "name": "Sen. Michael Young",
+        "role": "state-senator",
+        "district": "35",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_r_michael_young_645"
+      },
+      {
+        "id": 27,
+        "name": "Sen. Cyndi Carrasco",
+        "role": "state-senator",
+        "district": "36",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_cyndi_carrasco_1"
+      },
+      {
+        "id": 18,
+        "name": "Sen. Rodric Bray",
+        "role": "state-senator",
+        "district": "37",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_rodric_bray_1106"
+      },
+      {
+        "id": 55,
+        "name": "Sen. Greg Goode",
+        "role": "state-senator",
+        "district": "38",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_greg_goode_1"
+      },
+      {
+        "id": 12,
+        "name": "Sen. Eric Bassler",
+        "role": "state-senator",
+        "district": "39",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_eric_bassler_1"
+      },
+      {
+        "id": 148,
+        "name": "Sen. Shelli Yoder",
+        "role": "state-senator",
+        "district": "40",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_shelli_yoder_1"
+      },
+      {
+        "id": 144,
+        "name": "Sen. Greg Walker",
+        "role": "state-senator",
+        "district": "41",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_greg_walker_867"
+      },
+      {
+        "id": 87,
+        "name": "Sen. Jean Leising",
+        "role": "state-senator",
+        "district": "42",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_jean_leising_136"
+      },
+      {
+        "id": 92,
+        "name": "Sen. Randy Maxwell",
+        "role": "state-senator",
+        "district": "43",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_randy_maxwell_1"
+      },
+      {
+        "id": 82,
+        "name": "Sen. Eric Koch",
+        "role": "state-senator",
+        "district": "44",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_eric_koch_1"
+      },
+      {
+        "id": 50,
+        "name": "Sen. Chris Garten",
+        "role": "state-senator",
+        "district": "45",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_chris_garten_1"
+      },
+      {
+        "id": 68,
+        "name": "Sen. Andrea Hunley",
+        "role": "state-senator",
+        "district": "46",
+        "party": "D",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_andrea_hunley_1"
+      },
+      {
+        "id": 24,
+        "name": "Sen. Gary Byrne",
+        "role": "state-senator",
+        "district": "47",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_gary_byrne_1"
+      },
+      {
+        "id": 126,
+        "name": "Sen. Daryl Schmitt",
+        "role": "state-senator",
+        "district": "48",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_daryl_schmitt_1"
+      },
+      {
+        "id": 142,
+        "name": "Sen. James Tomes",
+        "role": "state-senator",
+        "district": "49",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_james_tomes_1041"
+      },
+      {
+        "id": 14,
+        "name": "Sen. Vaneta Becker",
+        "role": "state-senator",
+        "district": "50",
+        "party": "R",
+        "source_url": "https://iga.in.gov/legislative/2026/legislators/legislator_vaneta_becker_228"
+      }
+    ],
+    "bills": [
+      {
+        "id": 738,
+        "session": "2026",
+        "number": "HB 1456",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1456",
+        "fetched_at": "2026-05-11T19:56:00.535Z"
+      },
+      {
+        "id": 739,
+        "session": "2026",
+        "number": "HB 1457",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1457",
+        "fetched_at": "2026-05-11T19:56:00.535Z"
+      },
+      {
+        "id": 740,
+        "session": "2026",
+        "number": "HB 1458",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1458",
+        "fetched_at": "2026-05-11T19:56:00.535Z"
+      },
+      {
+        "id": 741,
+        "session": "2026",
+        "number": "HB 1459",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1459",
+        "fetched_at": "2026-05-11T19:56:00.535Z"
+      },
+      {
+        "id": 742,
+        "session": "2026",
+        "number": "HB 1460",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1460",
+        "fetched_at": "2026-05-11T19:56:00.535Z"
+      },
+      {
+        "id": 611,
+        "session": "2026",
+        "number": "HB 1328",
+        "title": "Charges for hospital administered drugs.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1328",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 612,
+        "session": "2026",
+        "number": "HB 1329",
+        "title": "Real property assessment.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1329",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 613,
+        "session": "2026",
+        "number": "HB 1330",
+        "title": "Elimination of township assessors.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1330",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 614,
+        "session": "2026",
+        "number": "HB 1331",
+        "title": "School scholarship tax credits.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1331",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 615,
+        "session": "2026",
+        "number": "HB 1332",
+        "title": "Internal Revenue Code conformity.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1332",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 616,
+        "session": "2026",
+        "number": "HB 1333",
+        "title": "Land use and development.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1333",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 617,
+        "session": "2026",
+        "number": "HB 1334",
+        "title": "Directory of in network providers.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1334",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 618,
+        "session": "2026",
+        "number": "HB 1335",
+        "title": "Nonprofit hospitals.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1335",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 619,
+        "session": "2026",
+        "number": "HB 1336",
+        "title": "Securities and investment adviser representatives.",
+        "status": "active",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1336",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 620,
+        "session": "2026",
+        "number": "HB 1337",
+        "title": "Property and local income tax.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1337",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 621,
+        "session": "2026",
+        "number": "HB 1338",
+        "title": "Physician standards of practice.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1338",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 622,
+        "session": "2026",
+        "number": "HB 1339",
+        "title": "Voter identification.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1339",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 623,
+        "session": "2026",
+        "number": "HB 1340",
+        "title": "Sales tax exemption for utility service.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1340",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 624,
+        "session": "2026",
+        "number": "HB 1341",
+        "title": "Eminent domain.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1341",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      },
+      {
+        "id": 625,
+        "session": "2026",
+        "number": "HB 1342",
+        "title": "County commissioner districts.",
+        "status": "active",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1342",
+        "fetched_at": "2026-05-11T19:56:00.534Z"
+      }
+    ]
+  },
+  "recent_runs": [
+    {
+      "ts": "2026-05-11T20:02:00.362Z",
+      "source_kind": "courtlistener",
+      "target": "ij_cases",
+      "items_inserted": 39,
+      "items_skipped": 1,
+      "errors_text": "indctapp/o:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 10 seconds.\"} | indctapp/r:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 10 seconds.\"} | ca7/o:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 10 seconds.\"} | ca7/r:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 10 seconds.\"} | insd/o:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 9 seconds.\"} | insd/r:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 9 seconds.\"} | innd/o:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 9 seconds.\"} | innd/r:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 8 seconds.\"}",
+      "duration_ms": 7862
+    },
+    {
+      "ts": "2026-05-11T19:58:10.150Z",
+      "source_kind": "courtlistener",
+      "target": "ij_cases",
+      "items_inserted": 0,
+      "items_skipped": 0,
+      "errors_text": "ind:1 This operation was aborted | indctapp:1 This operation was aborted",
+      "duration_ms": 120031
+    },
+    {
+      "ts": "2026-05-11T19:56:01.357Z",
+      "source_kind": "in-gov",
+      "target": "ij_legislators",
+      "items_inserted": 150,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 568
+    },
+    {
+      "ts": "2026-05-11T19:56:00.789Z",
+      "source_kind": "in-gov",
+      "target": "ij_bills",
+      "items_inserted": 742,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 2557
+    },
+    {
+      "ts": "2026-05-11T19:53:54.146Z",
+      "source_kind": "in-gov",
+      "target": "ij_legislators",
+      "items_inserted": 0,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 15272
+    },
+    {
+      "ts": "2026-05-11T19:53:38.584Z",
+      "source_kind": "in-gov",
+      "target": "ij_bills",
+      "items_inserted": 0,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 4424
+    },
+    {
+      "ts": "2026-05-11T19:53:26.106Z",
+      "source_kind": "firecrawl",
+      "target": "ij_news",
+      "items_inserted": 51,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 45606
+    },
+    {
+      "ts": "2026-05-11T19:49:53.122Z",
+      "source_kind": "in-gov",
+      "target": "ij_legislators",
+      "items_inserted": 0,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 662
+    },
+    {
+      "ts": "2026-05-11T19:49:51.637Z",
+      "source_kind": "in-gov",
+      "target": "ij_bills",
+      "items_inserted": 0,
+      "items_skipped": 0,
+      "errors_text": null,
+      "duration_ms": 219
+    },
+    {
+      "ts": "2026-05-11T19:49:46.419Z",
+      "source_kind": "courtlistener",
+      "target": "ij_cases",
+      "items_inserted": 0,
+      "items_skipped": 0,
+      "errors_text": "ind:1 This operation was aborted | indctapp:1 This operation was aborted | ca7:1 HTTP 429 :: {\"detail\":\"Request was throttled. Rate limit exceeded: 5/min. Expected available in 1 second.\"}",
+      "duration_ms": 120264
+    }
+  ]
+}
