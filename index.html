@@ -200,6 +200,106 @@
     <p class="muted" style="font-size:11px;margin-top:10px">Source: CourtListener / Free Law Project &middot; <code>/api/public/civic/sij-recent</code></p>
   </section>
 
+  <!-- INDIANA APPELLATE OPINIONS (added 2026-05-11; iteration-4 specialized feed; 497 rows live) -->
+  <section id="sij-appellate-opinions-section" style="margin:24px 0;padding:18px 22px;border:1px solid rgba(167,139,250,.25);background:linear-gradient(180deg,rgba(167,139,250,.05),rgba(34,211,238,.03));border-radius:12px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+      <h2 style="margin:0">Indiana appellate opinions</h2>
+      <span class="muted" id="sij-app-meta" style="font-size:11.5px;font-family:'JetBrains Mono',Consolas,monospace">loading&hellip;</span>
+    </div>
+    <p class="muted" style="font-size:12.5px;margin-bottom:12px">Indiana Court of Appeals + Indiana Supreme Court &mdash; merits opinions. Sourced from public.courts.in.gov, refreshed daily on the TCG home server. <strong>497 opinions</strong> currently indexed.</p>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+      <label style="font-size:12px;color:var(--mut)">Court:
+        <select id="sij-app-court" style="margin-left:6px;padding:6px 10px;background:rgba(15,21,33,.7);border:1px solid var(--ln);border-radius:6px;color:#fff;font:600 12.5px 'DM Sans',system-ui,sans-serif;cursor:pointer">
+          <option value="ALL">All</option>
+          <option value="supreme">Supreme</option>
+          <option value="coa">Court of Appeals</option>
+        </select>
+      </label>
+      <span class="muted" style="font-size:11.5px" id="sij-app-counts">&mdash;</span>
+    </div>
+    <div id="sij-app-list" style="display:grid;gap:8px"><div class="muted" style="font-size:13px">Loading opinions&hellip;</div></div>
+    <p class="muted" style="font-size:11px;margin-top:10px">Source: Indiana Office of Court Services &middot; <code>/api/public/sij/appellate-opinions</code></p>
+    <script>
+    (function(){
+      var API = 'https://api.thatcomputerguy26.org';
+      var REFRESH_MS = 300000; // 5 min
+
+      function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];});}
+
+      var backoffUntil = 0;
+      function inBackoff(){ return Date.now() < backoffUntil; }
+      function noteResponse(r){
+        if(r && r.status === 429){
+          var ra = parseInt(r.headers && r.headers.get('retry-after'), 10) || 30;
+          backoffUntil = Date.now() + Math.min(300, ra + Math.random()*5) * 1000;
+          var meta = document.getElementById('sij-app-meta');
+          if(meta) meta.textContent = 'rate-limited; back in '+Math.ceil((backoffUntil-Date.now())/1000)+'s';
+        }
+      }
+
+      function courtBadge(c){
+        var label = c === 'supreme' ? 'Supreme' : (c === 'coa' ? 'COA' : esc(c||'?'));
+        var color = c === 'supreme' ? '#a78bfa' : '#67e8f9';
+        return '<span style="display:inline-block;padding:2px 8px;border-radius:4px;background:'+color+'20;color:'+color+';font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-right:8px;flex-shrink:0">'+label+'</span>';
+      }
+
+      function render(items){
+        var list = document.getElementById('sij-app-list');
+        if(!list) return;
+        if(!items || items.length === 0){
+          list.innerHTML = '<div class="muted" style="font-size:13px">No opinions match the current filter.</div>';
+          return;
+        }
+        list.innerHTML = items.map(function(it){
+          var name = esc(it.case_name || '(untitled)').replace(/\n+/g, ' &mdash; ');
+          var url = it.full_url || it.details_url || '';
+          var dec = esc(it.decision || '');
+          var judge = esc(it.author_judge || '');
+          var dd = esc(it.date_decided || '');
+          var cn = esc(it.case_number || '');
+          var head = url ? '<a href="'+esc(url)+'" target="_blank" rel="noopener" style="color:#cbd5e1;text-decoration:none">'+name+'</a>' : '<span style="color:#cbd5e1">'+name+'</span>';
+          return '<div style="padding:10px 12px;background:rgba(15,21,33,.4);border:1px solid rgba(255,255,255,.06);border-radius:8px">' +
+                 '<div style="display:flex;align-items:flex-start;gap:6px">'+courtBadge(it.court)+'<div style="flex:1;min-width:0"><strong style="color:#fff;font-size:13.5px;line-height:1.4">'+head+'</strong></div></div>' +
+                 '<div style="font-size:11.5px;color:var(--mut);margin-top:5px;line-height:1.5">'+
+                   (dd ? '<span>'+dd+'</span>' : '') +
+                   (judge ? '<span> &middot; '+judge+'</span>' : '') +
+                   (cn ? '<span> &middot; <code style="color:#94a3b8">'+cn+'</code></span>' : '') +
+                   (dec ? '<span> &middot; <em style="color:#a3d4e8">'+dec+'</em></span>' : '') +
+                 '</div></div>';
+        }).join('');
+      }
+
+      function load(){
+        if(inBackoff()) return;
+        var sel = document.getElementById('sij-app-court');
+        var court = sel ? sel.value : 'ALL';
+        var url = API + '/api/public/sij/appellate-opinions?limit=30' + (court !== 'ALL' ? '&court='+encodeURIComponent(court) : '');
+        var meta = document.getElementById('sij-app-meta');
+        if(meta) meta.textContent = 'loading&hellip;';
+        fetch(url, { cache: 'no-store' })
+          .then(function(r){ noteResponse(r); if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+          .then(function(j){
+            if(!j || !Array.isArray(j.items)) throw new Error('bad payload');
+            render(j.items);
+            if(meta) meta.textContent = j.items.length + ' shown';
+            var counts = document.getElementById('sij-app-counts');
+            if(counts && j.totals) counts.textContent = 'Total: '+j.totals.total_items+' (Supreme '+j.totals.supreme_count+' / COA '+j.totals.coa_count+'); latest '+j.totals.latest_decided;
+          })
+          .catch(function(){
+            var list = document.getElementById('sij-app-list');
+            if(list) list.innerHTML = '<div style="color:#f87171;font-size:13px">Appellate-opinions feed temporarily unavailable.</div>';
+            if(meta) meta.textContent = 'offline';
+          });
+      }
+
+      var sel = document.getElementById('sij-app-court');
+      if(sel) sel.addEventListener('change', load);
+      load();
+      setInterval(function(){ if(!inBackoff()) load(); }, REFRESH_MS);
+    })();
+    </script>
+  </section>
+
   <!-- AI JUSTICE HELPERS (added 2026-04-27) -->
   <section style="margin:24px 0;padding:20px 22px;border:1px solid rgba(167,139,250,.25);background:linear-gradient(180deg,rgba(167,139,250,.04),transparent);border-radius:12px">
     <h2 style="margin:0 0 6px">AI justice helpers</h2>
