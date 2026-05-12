@@ -82,9 +82,16 @@
 </header>
 
 <main>
-  <p class="eyebrow"><span class="badge-live"></span>Live feed registry &middot; Refreshed at page load</p>
+  <p class="eyebrow"><span class="badge-live"></span>Live feed registry &middot; <span id="lastRefreshed">Refreshed at page load</span></p>
   <h1>Live justice feeds &mdash; <span id="totalCount">240</span> public sources</h1>
   <p class="lead">Every entry below is a real public-justice RSS / JSON feed published by a federal agency, state court, state agency, or accredited legal news outlet. Backed by the TCG fabric's source registry: <a href="https://api.thatcomputerguy26.org/api/world/source-registry/justice" target="_blank" rel="noopener"><code>/api/world/source-registry/justice</code></a>. Stale or 404 endpoints get auto-filtered by the upstream sticky-cache layer; what you see here is the live wired set.</p>
+
+  <section class="live-headlines" style="margin-bottom:22px">
+    <h2 style="display:flex;align-items:center;gap:10px"><span class="badge-live"></span>Latest 2026 court opinions <span style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)">live from civic.db &middot; CourtListener mirror</span></h2>
+    <p class="muted" style="font-size:13px;margin:0 0 10px">Newest first. Pulled fresh on every page load from <code>/api/public/civic/opinions</code> (Indiana state + 7th Circuit + neighbor-state). Each link opens the original opinion on CourtListener. Use the date filter below to narrow the registry to feeds known to have shipped activity since that date.</p>
+    <div class="headline-list" id="recentOpinions"><div class="headline-item"><span style="font-size:13px;color:var(--mut)">Loading recent 2026 opinions&hellip;</span><span class="headline-meta">civic.db</span></div></div>
+    <div class="muted" style="font-size:12px;margin-top:8px"><span id="opinionsMeta">&hellip;</span> &middot; <a href="https://api.thatcomputerguy26.org/api/public/civic/opinions?limit=50" target="_blank" rel="noopener">raw JSON</a></div>
+  </section>
 
   <div class="feed-stats" id="feedStats"></div>
 
@@ -94,6 +101,10 @@
     <input type="search" id="feedSearch" placeholder="Search by source name (e.g. 'Indiana', 'FBI', 'Supreme', 'Marion')…" autocomplete="off">
     <select id="catFilter">
       <option value="">All categories</option>
+    </select>
+    <select id="dateFilter" title="Show only feeds known to publish 2026 content (CourtListener-backed)">
+      <option value="">All feeds</option>
+      <option value="recent">Recently active (2026 opinions present)</option>
     </select>
     <select id="sortBy">
       <option value="source">Sort: A&ndash;Z</option>
@@ -145,8 +156,52 @@ const CAT_PILL = {
 
 let allFeeds = [];
 let activeCat = '';
+// Court IDs known to have shipped 2026 opinions (populated from /api/public/civic/opinions).
+// Used by the "Recently active" date filter to highlight CourtListener feeds with confirmed
+// 2026 publication activity. Empty until loadRecentOpinions() completes.
+let recentCourtIds = new Set();
 
 function esc(s){ return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function fmtDate(iso){
+  try { const d = new Date(iso); return d.toLocaleString(undefined,{year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit'}); }
+  catch(_) { return iso || ''; }
+}
+
+async function loadRecentOpinions(){
+  const list = document.getElementById('recentOpinions');
+  const meta = document.getElementById('opinionsMeta');
+  try {
+    const r = await fetch(API + '/api/public/civic/opinions?limit=12', { cache: 'no-cache' });
+    const d = await r.json();
+    if (!d || !d.ok || !Array.isArray(d.items) || d.items.length === 0) {
+      list.innerHTML = '<div class="headline-item"><span style="font-size:13px;color:var(--mut)">No recent opinions in civic.db right now. Try the live registry below.</span><span class="headline-meta">civic.db</span></div>';
+      meta.textContent = 'civic.db returned 0 rows';
+      return;
+    }
+    // Build set of court_ids seen in the last 50 opinions (separate fetch, larger window) for the date filter.
+    fetch(API + '/api/public/civic/opinions?limit=200', { cache: 'no-cache' }).then(r2 => r2.json()).then(d2 => {
+      if (d2 && d2.ok && Array.isArray(d2.items)) {
+        const yr = new Date().getFullYear();
+        for (const it of d2.items) {
+          if (it.court_id && it.date_filed && it.date_filed.startsWith(String(yr))) {
+            recentCourtIds.add(it.court_id);
+          }
+        }
+        if (document.getElementById('dateFilter').value === 'recent') render();
+      }
+    }).catch(()=>{});
+    list.innerHTML = d.items.map(o => {
+      const date = (o.date_filed || '').slice(0,10);
+      const court = o.court_id || '';
+      return `<div class="headline-item"><a href="${esc(o.html_url||'#')}" target="_blank" rel="noopener">${esc(o.case_name||'(untitled)')}</a><span class="headline-meta">${esc(date)} &middot; <code>${esc(court)}</code></span></div>`;
+    }).join('');
+    const newest = d.items[0] && d.items[0].date_filed ? d.items[0].date_filed.slice(0,10) : '';
+    meta.textContent = `Showing ${d.items.length} newest opinions (newest: ${newest}). Total in civic.db: ${d.count}+ rows.`;
+  } catch (e) {
+    list.innerHTML = '<div class="headline-item"><span style="font-size:13px;color:var(--mut)">civic.db unreachable: ' + esc(e.message) + '</span><span class="headline-meta">err</span></div>';
+    meta.textContent = 'civic.db unreachable';
+  }
+}
 
 async function loadRegistry(){
   try {
@@ -157,6 +212,8 @@ async function loadRegistry(){
     const api = (d.feeds.api || []).map(f => ({...f, kind:'api'}));
     allFeeds = [...rss, ...api];
     document.getElementById('totalCount').textContent = d.total || allFeeds.length;
+    const lr = document.getElementById('lastRefreshed');
+    if (lr && d.fetchedAt) lr.textContent = 'Last refreshed: ' + fmtDate(d.fetchedAt);
     renderStats(d.by_category || {}, d.total);
     renderCatGrid(d.by_category || {});
     populateCatFilter(d.by_category || {});
@@ -218,12 +275,22 @@ function buildByCat(){
   return by;
 }
 
+function urlHasRecentCourtId(url){
+  // CourtListener feed URLs look like /feed/court/<court_id>/
+  const m = String(url||'').match(/\/feed\/court\/([a-z0-9]+)\/?$/i);
+  if (!m) return false;
+  return recentCourtIds.has(m[1]);
+}
+
 function render(){
   const q = document.getElementById('feedSearch').value.toLowerCase().trim();
   const sortBy = document.getElementById('sortBy').value;
+  const dateFilter = (document.getElementById('dateFilter')||{}).value || '';
   let rows = allFeeds.slice();
   if (activeCat) rows = rows.filter(f => f.category === activeCat);
   if (q) rows = rows.filter(f => (f.source || '').toLowerCase().includes(q) || (f.url || '').toLowerCase().includes(q));
+  if (dateFilter === 'recent') rows = rows.filter(f => urlHasRecentCourtId(f.url));
+  // Sort newest first when "recent" filter is on: CourtListener IDs known to have 2026 activity bubble up.
   if (sortBy === 'source') rows.sort((a,b) => (a.source||'').localeCompare(b.source||''));
   else if (sortBy === 'category') rows.sort((a,b) => (a.category||'').localeCompare(b.category||'') || (a.source||'').localeCompare(b.source||''));
   document.getElementById('resultCount').textContent = rows.length + ' result' + (rows.length===1?'':'s');
@@ -253,8 +320,10 @@ function render(){
 
 document.getElementById('feedSearch').addEventListener('input', render);
 document.getElementById('sortBy').addEventListener('change', render);
+document.getElementById('dateFilter').addEventListener('change', render);
 
 loadRegistry();
+loadRecentOpinions();
 </script>
 <script src="/assets/js/visitor.js"></script>
 </body>
