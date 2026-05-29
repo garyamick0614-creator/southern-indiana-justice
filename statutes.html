@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Statute Citations &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Most-cited Indiana Code provisions across published appellate opinions, extracted from full opinion text by the SIJ statute parser.">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/statutes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.stat-row{padding:12px 16px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:10px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.stat-row .cite{font-weight:700;color:#fff;font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.stat-row .count{font-size:22px;font-weight:800;color:var(--accent);text-align:right;line-height:1}
+.stat-row .count-lbl{font-size:11px;color:var(--mut);text-align:right;text-transform:uppercase;letter-spacing:.06em}
+.context-card{padding:12px 16px;background:rgba(20,33,57,.3);border-left:3px solid var(--info);border-radius:0 8px 8px 0;margin-bottom:8px}
+.context-card .ctx{color:#d8e7ff;font-size:13.5px;font-style:italic;margin-bottom:6px}
+.context-card .meta{color:var(--mut);font-size:12px}
+.context-card .meta a{color:var(--accent);text-decoration:none}
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:220px}
+.empty-state{padding:30px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">SIJ</span>
+    <div class="brand-text">
+      <span class="brand-title">Southern Indiana Justice Stats</span>
+      <span class="brand-sub">Statute citation index &middot; live</span>
+    </div>
+  </a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/opinions">Opinions</a>
+    <a href="/judges">Judges</a>
+    <a href="/bills">Bills</a>
+    <a href="/statutes" class="active">Statutes</a>
+    <a href="/disciplinary">Disciplinary</a>
+    <a href="/county-press">County press</a>
+    <a href="/data.html">Data</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live extraction &middot; updated daily</p>
+  <h1>The Indiana statutes courts cite most.</h1>
+  <p class="lead">Parsed from every full-text appellate opinion we have. Patterns recognized: <code>IC 35-42-1-1</code>, <code>Ind. Code &sect; 12-7-2</code>, federal cites <code>28 U.S.C. &sect; 1331</code>, and <code>Ind. Const. art. I, &sect; 13</code>. <span id="dataStatus" class="status-pill stale">checking</span></p>
+
+  <div class="kpis">
+    <div class="kpi"><div id="kpiTotal" class="num">—</div><div class="lbl">Unique citations</div></div>
+    <div class="kpi"><div id="kpiRecent" class="num">—</div><div class="lbl">Recent extractions</div></div>
+  </div>
+
+  <h2>Top-cited provisions</h2>
+  <div class="search-row">
+    <input id="search" type="text" placeholder="Filter by citation (e.g. IC 35-42 or USC)...">
+  </div>
+  <div id="topList"><div class="empty-state">Loading citation index&hellip;</div></div>
+
+  <h2>Most recent extractions</h2>
+  <p class="muted">Most recent rows the appellate-text worker pulled — useful for spot-checking the parser.</p>
+  <div id="recentList"><div class="empty-state">Loading recent rows&hellip;</div></div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+const API = "https://api.thatcomputerguy26.org/api/public/indiana-justice/deep";
+let topData = [];
+let recentData = [];
+
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+function setStatus(state){
+  const el = document.getElementById("dataStatus");
+  el.className = "status-pill " + state;
+  el.textContent = state === "live" ? "live" : state === "stale" ? "older than 24h" : "server offline";
+}
+
+async function load(){
+  try {
+    const r = await fetch(API + "/statutes?limit=300", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || "no data");
+    topData = data.top || [];
+    recentData = data.recent || [];
+    document.getElementById("kpiTotal").textContent = topData.length;
+    document.getElementById("kpiRecent").textContent = recentData.length;
+    setStatus("live");
+    renderTop();
+    renderRecent();
+  } catch (e) {
+    setStatus("offline");
+    document.getElementById("topList").innerHTML = '<div class="empty-state">Server offline. ' + esc(e.message) + '</div>';
+    document.getElementById("recentList").innerHTML = "";
+  }
+}
+
+function renderTop(){
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  let rows = topData.slice();
+  if (q) rows = rows.filter(s => (s.citation||"").toLowerCase().includes(q));
+  if (rows.length === 0) {
+    document.getElementById("topList").innerHTML = '<div class="empty-state">No citations match your filter.</div>';
+    return;
+  }
+  document.getElementById("topList").innerHTML = rows.slice(0, 200).map(s => `
+    <div class="stat-row">
+      <div class="cite">${esc(s.citation)}</div>
+      <div>
+        <div class="count">${esc(s.cite_count)}</div>
+        <div class="count-lbl">opinions</div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderRecent(){
+  if (recentData.length === 0) {
+    document.getElementById("recentList").innerHTML = '<div class="empty-state">No recent extractions yet — the appellate-text worker runs daily at 08:00 ET.</div>';
+    return;
+  }
+  document.getElementById("recentList").innerHTML = recentData.map(r => `
+    <div class="context-card">
+      <div class="ctx">&ldquo;${esc(r.context || "(no context captured)")}&rdquo;</div>
+      <div class="meta">
+        <strong>${esc(r.citation)}</strong> in
+        <a href="/opinions?search=${encodeURIComponent(r.case_number || "")}" target="_blank">${esc(r.case_number || "—")}</a>
+        ${r.source_url ? ' &middot; <a href="' + esc(r.source_url) + '" target="_blank" rel="noopener">opinion PDF</a>' : ""}
+      </div>
+    </div>
+  `).join("");
+}
+
+document.getElementById("search").addEventListener("input", renderTop);
+
+load();
+</script>
+</body>
+</html>

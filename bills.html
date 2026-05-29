@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana General Assembly Bills &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Searchable list of every Indiana General Assembly bill in the current session, with bill actions and roll-call votes pulled from the live SIJ dataset.">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/bills">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.bill-row{padding:14px 16px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:10px;margin-bottom:10px;cursor:pointer;transition:background .15s}
+.bill-row:hover{background:rgba(20,33,57,.7)}
+.bill-row .head{display:flex;justify-content:space-between;align-items:start;gap:14px}
+.bill-row .num{font-weight:800;color:#fff;font-size:15.5px}
+.bill-row .title{color:#cbe6ff;font-size:14px;margin-top:2px}
+.bill-row .status-tag{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.bill-row .status-tag.active{background:rgba(52,211,153,.18);color:#34d399}
+.bill-row .status-tag.inactive{background:rgba(148,163,184,.18);color:#94a3b8}
+.bill-row .status-tag.signed{background:rgba(34,211,238,.18);color:#22d3ee}
+.bill-detail{margin-top:12px;padding-top:12px;border-top:1px solid var(--ln);display:none}
+.bill-detail.open{display:block}
+.action-list{margin:8px 0;font-size:13px;color:#d8e7ff}
+.action-list .action{padding:6px 10px;background:rgba(15,27,45,.5);border-left:2px solid var(--accent);margin-bottom:4px;border-radius:0 6px 6px 0}
+.action-list .action .date{color:var(--mut);margin-right:8px;font-variant-numeric:tabular-nums}
+.vote-summary{display:inline-block;padding:2px 8px;border-radius:999px;background:rgba(168,85,247,.15);color:#c084fc;font-size:11.5px;font-weight:600;margin-right:6px}
+.vote-summary.passed{background:rgba(52,211,153,.18);color:#34d399}
+.vote-summary.failed{background:rgba(248,113,113,.18);color:#f87171}
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:220px}
+.empty-state{padding:30px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">SIJ</span>
+    <div class="brand-text">
+      <span class="brand-title">Southern Indiana Justice Stats</span>
+      <span class="brand-sub">Live bill tracker &middot; Indiana General Assembly</span>
+    </div>
+  </a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/opinions">Opinions</a>
+    <a href="/judges">Judges</a>
+    <a href="/bills" class="active">Bills</a>
+    <a href="/statutes">Statutes</a>
+    <a href="/disciplinary">Disciplinary</a>
+    <a href="/county-press">County press</a>
+    <a href="/data.html">Data</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live data &middot; iga.in.gov</p>
+  <h1>Indiana General Assembly bills.</h1>
+  <p class="lead">Click any bill to expand its actions history and roll-call votes. Actions refresh nightly at 18:30 ET; roll-call votes at 19:00 ET. <span id="dataStatus" class="status-pill stale">checking</span></p>
+
+  <div class="kpis">
+    <div class="kpi"><div id="kpiTotal" class="num">—</div><div class="lbl">Bills in dataset</div></div>
+    <div class="kpi"><div id="kpiActive" class="num">—</div><div class="lbl">Active</div></div>
+    <div class="kpi"><div id="kpiShown" class="num">—</div><div class="lbl">Showing now</div></div>
+  </div>
+
+  <div class="search-row">
+    <input id="search" type="text" placeholder="Filter by bill number or title...">
+    <select id="chamberFilter">
+      <option value="">Both chambers</option>
+      <option value="SB">Senate (SB)</option>
+      <option value="HB">House (HB)</option>
+    </select>
+    <select id="statusFilter">
+      <option value="">All statuses</option>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+  </div>
+
+  <div id="billsList"><div class="empty-state">Loading bills&hellip;</div></div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+const API = "https://api.thatcomputerguy26.org/api/public/indiana-justice/deep";
+let allBills = [];
+const detailCache = new Map();
+
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+function setStatus(state){
+  const el = document.getElementById("dataStatus");
+  el.className = "status-pill " + state;
+  el.textContent = state === "live" ? "live" : state === "stale" ? "older than 24h" : "server offline";
+}
+
+async function load(){
+  try {
+    const r = await fetch(API + "/bills?limit=500", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || "no data");
+    allBills = data.items || [];
+    document.getElementById("kpiTotal").textContent = allBills.length;
+    document.getElementById("kpiActive").textContent = allBills.filter(b => (b.status || "").toLowerCase() === "active").length;
+    setStatus("live");
+    render();
+  } catch (e) {
+    setStatus("offline");
+    document.getElementById("billsList").innerHTML = '<div class="empty-state">Server offline. ' + esc(e.message) + '</div>';
+  }
+}
+
+function render(){
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  const cf = document.getElementById("chamberFilter").value;
+  const sf = document.getElementById("statusFilter").value.toLowerCase();
+  let rows = allBills.slice();
+  if (cf) rows = rows.filter(b => (b.number || "").startsWith(cf));
+  if (sf) rows = rows.filter(b => (b.status || "").toLowerCase() === sf);
+  if (q) rows = rows.filter(b => (b.number||"").toLowerCase().includes(q) || (b.title||"").toLowerCase().includes(q));
+  document.getElementById("kpiShown").textContent = rows.length;
+  if (rows.length === 0){
+    document.getElementById("billsList").innerHTML = '<div class="empty-state">No bills match your filter.</div>';
+    return;
+  }
+  document.getElementById("billsList").innerHTML = rows.slice(0, 300).map(b => {
+    const statusClass = (b.status || "active").toLowerCase().includes("inactive") ? "inactive"
+                     : (b.status || "").toLowerCase().includes("signed") ? "signed" : "active";
+    return `
+      <div class="bill-row" data-bill="${esc(b.number)}" data-session="${esc(b.session)}">
+        <div class="head">
+          <div>
+            <div class="num">${esc(b.number)} <span class="muted" style="font-weight:500;font-size:13px;margin-left:6px">${esc(b.session || "")}</span></div>
+            <div class="title">${esc(b.title || "")}</div>
+          </div>
+          <span class="status-tag ${statusClass}">${esc(b.status || "active")}</span>
+        </div>
+        <div class="bill-detail" id="detail-${esc(b.number).replace(/\s+/g, "_")}"></div>
+      </div>
+    `;
+  }).join("");
+
+  document.querySelectorAll(".bill-row").forEach(el => el.addEventListener("click", () => toggleDetail(el)));
+}
+
+async function toggleDetail(billEl){
+  const billNum = billEl.dataset.bill;
+  const session = billEl.dataset.session;
+  const detailId = "detail-" + billNum.replace(/\s+/g, "_");
+  const detailEl = document.getElementById(detailId);
+  if (!detailEl) return;
+  if (detailEl.classList.contains("open")) {
+    detailEl.classList.remove("open");
+    return;
+  }
+  detailEl.classList.add("open");
+  if (detailCache.has(billNum)) {
+    detailEl.innerHTML = detailCache.get(billNum);
+    return;
+  }
+  detailEl.innerHTML = '<div class="muted">Loading actions and votes&hellip;</div>';
+  try {
+    const [actionsRes, votesRes] = await Promise.all([
+      fetch(API + "/bill-actions?session=" + encodeURIComponent(session) + "&number=" + encodeURIComponent(billNum) + "&limit=200", { cache: "no-store" }).then(r => r.json()),
+      fetch(API + "/bill-votes?session=" + encodeURIComponent(session) + "&number=" + encodeURIComponent(billNum) + "&limit=50", { cache: "no-store" }).then(r => r.json()),
+    ]);
+    const actions = (actionsRes && actionsRes.items) || [];
+    const votes = (votesRes && votesRes.items) || [];
+    let html = "";
+    if (actions.length === 0 && votes.length === 0) {
+      html = '<div class="muted">No actions or votes scraped yet. Workers run daily at 18:30 (actions) and 19:00 (votes).</div>';
+    } else {
+      if (actions.length > 0) {
+        html += '<h4 style="margin:6px 0 6px 0;color:#67e8f9;font-size:13px;text-transform:uppercase;letter-spacing:.06em">Actions (' + actions.length + ')</h4>';
+        html += '<div class="action-list">' + actions.map(a => `
+          <div class="action">
+            <span class="date">${esc(a.action_date || "—")}</span>
+            ${a.chamber ? '<span class="muted">' + esc(a.chamber) + '</span> · ' : ""}
+            ${esc(a.description || "")}
+          </div>
+        `).join("") + '</div>';
+      }
+      if (votes.length > 0) {
+        html += '<h4 style="margin:14px 0 6px 0;color:#c084fc;font-size:13px;text-transform:uppercase;letter-spacing:.06em">Roll-call votes (' + votes.length + ')</h4>';
+        html += '<div class="action-list">' + votes.map(v => `
+          <div class="action" style="border-left-color:#a855f7">
+            <span class="date">${esc(v.vote_date || "—")}</span>
+            <span class="vote-summary ${v.passed ? "passed" : "failed"}">${v.passed ? "Passed" : "Failed"} Y:${esc(v.yeas)} N:${esc(v.nays)}${v.excused != null ? " E:" + esc(v.excused) : ""}</span>
+            <span style="color:#d8e7ff">${esc(v.motion || "Roll call")}</span>
+          </div>
+        `).join("") + '</div>';
+      }
+    }
+    detailCache.set(billNum, html);
+    detailEl.innerHTML = html;
+  } catch (e) {
+    detailEl.innerHTML = '<div class="muted">Failed to load details: ' + esc(e.message) + '</div>';
+  }
+}
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("chamberFilter").addEventListener("change", render);
+document.getElementById("statusFilter").addEventListener("change", render);
+
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Appellate Opinions &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Searchable live list of every Indiana Supreme Court, Court of Appeals, and Tax Court opinion in the SIJ database, with statute-citation extraction.">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/opinions">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.opinion-row{padding:14px 16px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:10px;margin-bottom:10px}
+.opinion-row .title{font-weight:700;color:#fff;font-size:15px;margin-bottom:4px}
+.opinion-row .meta{color:var(--mut);font-size:13px;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.opinion-row .meta .pill{padding:2px 8px;border-radius:999px;background:rgba(34,211,238,.12);color:#67e8f9;font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.opinion-row .meta .pill.memo{background:rgba(168,85,247,.15);color:#c084fc}
+.opinion-row .meta .pill.cat{background:rgba(251,191,36,.12);color:#fbbf24}
+.opinion-row a.open{color:var(--accent);font-size:13px;font-weight:600;text-decoration:none}
+.opinion-row .actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.opinion-row button.tldr{background:linear-gradient(135deg,rgba(168,85,247,.25),rgba(34,211,238,.18));color:#e2d6ff;border:1px solid rgba(168,85,247,.55);border-radius:6px;padding:5px 11px;font:600 12px/1.3 inherit;cursor:pointer;letter-spacing:.02em}
+.opinion-row button.tldr:hover,.opinion-row button.tldr:focus{background:linear-gradient(135deg,rgba(168,85,247,.45),rgba(34,211,238,.32));outline:2px solid #c084fc;outline-offset:1px}
+.opinion-row button.tldr[disabled]{opacity:.6;cursor:not-allowed}
+.opinion-row .ai-summary{margin-top:10px;padding:11px 13px;background:linear-gradient(180deg,rgba(168,85,247,.10),rgba(34,211,238,.06));border:1px dashed rgba(168,85,247,.45);border-radius:8px;font-size:13.5px;line-height:1.55;color:#e6e0ff}
+.opinion-row .ai-summary .ai-eyebrow{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#c084fc;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.opinion-row .ai-summary .ai-eyebrow .ai-tag{padding:1px 7px;border-radius:999px;background:rgba(168,85,247,.22);color:#d8b4fe;letter-spacing:.05em}
+.opinion-row .ai-summary ol{margin:0;padding-left:20px}
+.opinion-row .ai-summary li{margin-bottom:4px}
+.opinion-row .ai-summary .ai-disclaimer{margin-top:8px;font-size:11.5px;color:#9aa3c2;font-style:italic}
+.opinion-row .ai-summary.empty{color:#9aa3c2;font-style:italic}
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:220px}
+.empty-state{padding:30px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">SIJ</span>
+    <div class="brand-text">
+      <span class="brand-title">Southern Indiana Justice Stats</span>
+      <span class="brand-sub">Live appellate opinions index</span>
+    </div>
+  </a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/opinions" class="active">Opinions</a>
+    <a href="/judges">Judges</a>
+    <a href="/bills">Bills</a>
+    <a href="/statutes">Statutes</a>
+    <a href="/disciplinary">Disciplinary</a>
+    <a href="/county-press">County press</a>
+    <a href="/data.html">Data</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live data &middot; updated daily 08:00 ET</p>
+  <h1>Every Indiana appellate opinion, searchable.</h1>
+  <p class="lead">Includes Supreme Court, Court of Appeals, and Tax Court. The <a href="/judges">judges page</a> drills in by author. <span id="dataStatus" class="status-pill stale">checking</span></p>
+
+  <div class="kpis">
+    <div class="kpi"><div id="kpiTotal" class="num">—</div><div class="lbl">Opinions in dataset</div></div>
+    <div class="kpi"><div id="kpiShown" class="num">—</div><div class="lbl">Showing now</div></div>
+    <div class="kpi"><div id="kpiMostRecent" class="num">—</div><div class="lbl">Most recent decided</div></div>
+  </div>
+
+  <div class="search-row">
+    <input id="search" type="text" placeholder="Filter by case name, docket, or judge...">
+    <select id="courtFilter">
+      <option value="">All courts</option>
+      <option>Supreme Court</option>
+      <option>Court of Appeals</option>
+      <option>Tax Court</option>
+    </select>
+  </div>
+
+  <div id="opinionsList"><div class="empty-state">Loading opinions&hellip;</div></div>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+const API = "https://api.thatcomputerguy26.org/api/public/indiana-justice/deep";
+let allOpinions = [];
+
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+function setStatus(state){
+  const el = document.getElementById("dataStatus");
+  el.className = "status-pill " + state;
+  el.textContent = state === "live" ? "live" : state === "stale" ? "older than 24h" : "server offline";
+}
+
+function getParam(name){
+  const u = new URL(location.href);
+  return u.searchParams.get(name);
+}
+
+async function load(){
+  try {
+    const r = await fetch(API + "/opinions?limit=500", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || "no data");
+    allOpinions = data.items || [];
+    document.getElementById("kpiTotal").textContent = allOpinions.length;
+    const recent = allOpinions[0];
+    document.getElementById("kpiMostRecent").textContent = recent ? (recent.date_decided || "—") : "—";
+    setStatus("live");
+    // Pre-fill from ?judge= or ?court=
+    const judgeParam = getParam("judge");
+    if (judgeParam) document.getElementById("search").value = judgeParam;
+    const courtParam = getParam("court");
+    if (courtParam) document.getElementById("courtFilter").value = courtParam;
+    render();
+  } catch (e) {
+    setStatus("offline");
+    document.getElementById("opinionsList").innerHTML = '<div class="empty-state">Server offline. ' + esc(e.message) + '</div>';
+  }
+}
+
+function render(){
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  const cf = document.getElementById("courtFilter").value.toLowerCase();
+  let rows = allOpinions.slice();
+  if (cf) rows = rows.filter(o => (o.court || "").toLowerCase().includes(cf));
+  if (q) rows = rows.filter(o =>
+    (o.case_name||"").toLowerCase().includes(q) ||
+    (o.case_number||"").toLowerCase().includes(q) ||
+    (o.author_judge||"").toLowerCase().includes(q));
+  document.getElementById("kpiShown").textContent = rows.length;
+  if (rows.length === 0){
+    document.getElementById("opinionsList").innerHTML = '<div class="empty-state">No opinions match your filter.</div>';
+    return;
+  }
+  document.getElementById("opinionsList").innerHTML = rows.slice(0, 300).map(o => `
+    <div class="opinion-row" data-opid="${o.id}">
+      <div class="title">${esc(o.case_name || o.case_number)}</div>
+      <div class="meta">
+        <span class="pill cat">${esc(o.court || "—")}</span>
+        ${o.is_memorandum ? '<span class="pill memo">memorandum</span>' : ""}
+        ${o.category ? '<span class="pill">' + esc(o.category) + '</span>' : ""}
+        <span>${esc(o.case_number || "")}</span>
+        <span>Decided ${esc(o.date_decided || "—")}</span>
+        <span>${esc(o.author_judge || "—")}</span>
+      </div>
+      <div class="actions">
+        ${o.full_url ? '<a class="open" href="' + esc(o.full_url) + '" target="_blank" rel="noopener">Open opinion PDF &rarr;</a>' : ""}
+        ${o.details_url && o.details_url !== o.full_url ? '<a class="open" href="' + esc(o.details_url) + '" target="_blank" rel="noopener">Court docket page</a>' : ""}
+        <button type="button" class="tldr" aria-expanded="false" data-tldr-for="${o.id}" title="5-bullet AI summary (local Ollama, not legal advice)">TL;DR</button>
+      </div>
+      <div class="ai-summary" id="ai-${o.id}" hidden></div>
+    </div>
+  `).join("");
+}
+
+// D6 (Phase D, 2026-05-20) — opinion-summary expander.
+// On click, hits /api/public/sij/opinion-summary?id=, renders 5-bullet TL;DR with
+// methodology + disclaimer. Honest fallback for full_text_not_yet_ingested.
+async function expandSummary(id, btn){
+  const panel = document.getElementById('ai-'+id);
+  if (!panel) return;
+  if (!panel.hidden){
+    panel.hidden = true;
+    btn.setAttribute('aria-expanded','false');
+    btn.textContent = 'TL;DR';
+    return;
+  }
+  panel.hidden = false;
+  btn.setAttribute('aria-expanded','true');
+  btn.textContent = 'Hide TL;DR';
+  btn.disabled = true;
+  panel.classList.remove('empty');
+  panel.innerHTML = '<div class="ai-eyebrow">AI Summary <span class="ai-tag">loading</span></div><p>Asking the local Ollama model to distill the full opinion. This can take a few seconds.</p>';
+  try {
+    const r = await fetch(API + '/../sij/opinion-summary?id=' + encodeURIComponent(id), { cache: 'no-store' });
+    const j = await r.json();
+    btn.disabled = false;
+    if (!j.ok){
+      panel.classList.add('empty');
+      panel.innerHTML = '<div class="ai-eyebrow">AI Summary <span class="ai-tag">error</span></div><p>Could not summarize: '+esc(j.error||'unknown')+'.</p>';
+      return;
+    }
+    if (j.deferred){
+      panel.classList.add('empty');
+      panel.innerHTML = '<div class="ai-eyebrow">AI Summary <span class="ai-tag">deferred</span></div><p>'+esc(j.reason||'server busy')+'. Try again shortly.</p>';
+      return;
+    }
+    if (j.empty || !j.bullets || j.bullets.length === 0){
+      panel.classList.add('empty');
+      panel.innerHTML = '<div class="ai-eyebrow">AI Summary <span class="ai-tag">no full text</span></div><p>'+esc(j.hint||'Full opinion text not yet ingested by the daily ingestor. Open the PDF above for now; the TL;DR will appear after the next 08:00 ET run.')+'</p>';
+      return;
+    }
+    const bullets = j.bullets.map(b => '<li>'+esc(b)+'</li>').join('');
+    const model = j.model_name || 'qwen2.5:3b';
+    const cached = j.cached ? '<span class="ai-tag">cached</span>' : '<span class="ai-tag">fresh</span>';
+    const ms = j.duration_ms != null ? ' · '+j.duration_ms+'ms' : '';
+    panel.innerHTML =
+      '<div class="ai-eyebrow">AI Summary '+cached+' · '+esc(model)+esc(ms)+'</div>'+
+      '<ol>'+bullets+'</ol>'+
+      '<div class="ai-disclaimer">'+esc(j.ai_disclaimer||'AI-generated summary; not legal advice. Verify against the full opinion.')+'</div>';
+  } catch(e){
+    btn.disabled = false;
+    panel.classList.add('empty');
+    panel.innerHTML = '<div class="ai-eyebrow">AI Summary <span class="ai-tag">error</span></div><p>Network error: '+esc(e.message||String(e))+'</p>';
+  }
+}
+
+document.getElementById('opinionsList').addEventListener('click', function(ev){
+  const btn = ev.target.closest('button.tldr');
+  if (!btn) return;
+  ev.preventDefault();
+  const id = btn.getAttribute('data-tldr-for');
+  if (id) expandSummary(id, btn);
+});
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("courtFilter").addEventListener("change", render);
+
+load();
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Attorney Disciplinary Actions &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Public record of Indiana attorney disciplinary actions (suspensions, reinstatements, disbarments) from the Indiana Supreme Court Disciplinary Commission.">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/disciplinary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.disc-row{padding:14px 16px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:10px;margin-bottom:10px}
+.disc-row .name{font-weight:700;color:#fff;font-size:15px;margin-bottom:4px}
+.disc-row .meta{color:var(--mut);font-size:13px;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.disc-row .action-tag{padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.disc-row .action-tag.suspension{background:rgba(251,191,36,.18);color:#fbbf24}
+.disc-row .action-tag.disbarment{background:rgba(248,113,113,.18);color:#f87171}
+.disc-row .action-tag.reinstatement{background:rgba(52,211,153,.18);color:#34d399}
+.disc-row .action-tag.reprimand{background:rgba(168,85,247,.15);color:#c084fc}
+.disc-row .action-tag.other{background:rgba(148,163,184,.18);color:#94a3b8}
+.disc-row .summary{color:#d8e7ff;font-size:13.5px;margin-top:4px}
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:220px}
+.empty-state{padding:30px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">SIJ</span>
+    <div class="brand-text">
+      <span class="brand-title">Southern Indiana Justice Stats</span>
+      <span class="brand-sub">Attorney discipline &middot; Indiana Disciplinary Commission</span>
+    </div>
+  </a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/opinions">Opinions</a>
+    <a href="/judges">Judges</a>
+    <a href="/bills">Bills</a>
+    <a href="/statutes">Statutes</a>
+    <a href="/disciplinary" class="active">Disciplinary</a>
+    <a href="/county-press">County press</a>
+    <a href="/data.html">Data</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Public record &middot; in.gov/courts/iscdca</p>
+  <h1>Indiana attorney disciplinary actions.</h1>
+  <p class="lead">Suspensions, disbarments, reinstatements, and public reprimands published by the Indiana Supreme Court Disciplinary Commission. <span id="dataStatus" class="status-pill stale">checking</span></p>
+
+  <div class="kpis">
+    <div class="kpi"><div id="kpiTotal" class="num">—</div><div class="lbl">Actions in dataset</div></div>
+    <div class="kpi"><div id="kpiShown" class="num">—</div><div class="lbl">Showing now</div></div>
+    <div class="kpi"><div id="kpiRecent" class="num">—</div><div class="lbl">Most recent</div></div>
+  </div>
+
+  <div class="search-row">
+    <input id="search" type="text" placeholder="Filter by attorney name or summary...">
+    <select id="actionFilter">
+      <option value="">All actions</option>
+      <option value="suspension">Suspension</option>
+      <option value="disbarment">Disbarment</option>
+      <option value="reinstatement">Reinstatement</option>
+      <option value="reprimand">Reprimand</option>
+    </select>
+  </div>
+
+  <div id="discList"><div class="empty-state">Loading disciplinary actions&hellip;</div></div>
+
+  <section class="callout" style="margin-top:30px">
+    <strong>Source.</strong> Indiana Supreme Court Disciplinary Commission opinions, scraped from <a href="https://www.in.gov/courts/iscdca/" target="_blank" rel="noopener">in.gov/courts/iscdca/disciplinary-actions</a>. The deep-fill worker (TCG-IndianaJustice-Appellate-Text) parses each newly-published order into a row in <code>ij_disciplinary</code>. We do not editorialize — every row is verbatim from the public record.
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+const API = "https://api.thatcomputerguy26.org/api/public/indiana-justice/deep";
+let allActions = [];
+
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+function setStatus(state){
+  const el = document.getElementById("dataStatus");
+  el.className = "status-pill " + state;
+  el.textContent = state === "live" ? "live" : state === "stale" ? "older than 24h" : "server offline";
+}
+
+function classify(actionType){
+  const t = (actionType || "").toLowerCase();
+  if (t.includes("disbar"))         return "disbarment";
+  if (t.includes("suspend"))        return "suspension";
+  if (t.includes("reinstate"))      return "reinstatement";
+  if (t.includes("reprimand"))      return "reprimand";
+  return "other";
+}
+
+async function load(){
+  try {
+    const r = await fetch(API + "/disciplinary?limit=500", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || "no data");
+    allActions = data.items || [];
+    document.getElementById("kpiTotal").textContent = allActions.length;
+    document.getElementById("kpiRecent").textContent = allActions[0] ? (allActions[0].action_date || "—") : "—";
+    setStatus("live");
+    render();
+  } catch (e) {
+    setStatus("offline");
+    document.getElementById("discList").innerHTML = '<div class="empty-state">Server offline. ' + esc(e.message) + '</div>';
+  }
+}
+
+function render(){
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  const af = document.getElementById("actionFilter").value;
+  let rows = allActions.slice();
+  if (af) rows = rows.filter(r => classify(r.action_type) === af);
+  if (q) rows = rows.filter(r =>
+    (r.attorney_name||"").toLowerCase().includes(q) ||
+    (r.summary||"").toLowerCase().includes(q));
+  document.getElementById("kpiShown").textContent = rows.length;
+  if (rows.length === 0){
+    document.getElementById("discList").innerHTML = '<div class="empty-state">No disciplinary actions yet (worker hasn\'t found new orders this session) or none match your filter.</div>';
+    return;
+  }
+  document.getElementById("discList").innerHTML = rows.slice(0, 300).map(r => `
+    <div class="disc-row">
+      <div class="name">${esc(r.attorney_name || "—")}${r.attorney_id ? ' <span class="muted" style="font-size:13px;font-weight:500"> · #' + esc(r.attorney_id) + '</span>' : ''}</div>
+      <div class="meta">
+        <span class="action-tag ${classify(r.action_type)}">${esc(r.action_type || "Other")}</span>
+        <span>${esc(r.action_date || "—")}</span>
+      </div>
+      ${r.summary ? '<div class="summary">' + esc(r.summary) + '</div>' : ""}
+      ${r.source_url ? '<div style="margin-top:6px"><a href="' + esc(r.source_url) + '" target="_blank" rel="noopener" style="color:var(--accent);font-size:13px;font-weight:600">Open public order &rarr;</a></div>' : ""}
+    </div>
+  `).join("");
+}
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("actionFilter").addEventListener("change", render);
+
+load();
+</script>
+</body>
+</html>

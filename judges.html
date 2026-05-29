@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Judges &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Live roster of Indiana Supreme Court, Court of Appeals, and Tax Court judges with opinion-author counts pulled from the live SIJ dataset.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/judges">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.judge-card{padding:16px 18px;background:linear-gradient(180deg,rgba(20,33,57,.5),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.judge-card .name{font-weight:700;color:#fff;font-size:15.5px}
+.judge-card .court{color:var(--mut);font-size:13px;margin-top:2px}
+.judge-card .num{font-size:22px;font-weight:800;color:var(--accent);text-align:right;line-height:1}
+.judge-card .num-lbl{font-size:11px;color:var(--mut);text-align:right;text-transform:uppercase;letter-spacing:.06em}
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:220px}
+.empty-state{padding:30px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-mark">SIJ</span>
+    <div class="brand-text">
+      <span class="brand-title">Southern Indiana Justice Stats</span>
+      <span class="brand-sub">Indiana judges &middot; Court of Appeals + Supreme Court + Tax Court</span>
+    </div>
+  </a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/opinions">Opinions</a>
+    <a href="/judges" class="active">Judges</a>
+    <a href="/bills">Bills</a>
+    <a href="/statutes">Statutes</a>
+    <a href="/disciplinary">Disciplinary</a>
+    <a href="/county-press">County press</a>
+    <a href="/data.html">Data</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live roster &middot; opinion-author counts</p>
+  <h1>Indiana judges, ranked by published opinions.</h1>
+  <p class="lead">Each judge is grouped by court (Supreme, Court of Appeals, Tax Court). Opinion counts are pulled live from the SIJ appellate database; click a judge to filter the <a href="/opinions">opinions page</a> to that author. <span id="dataStatus" class="status-pill stale">checking</span></p>
+
+  <div class="search-row">
+    <input id="search" type="text" placeholder="Filter by name or court...">
+    <select id="courtFilter">
+      <option value="">All courts</option>
+      <option value="Supreme Court">Supreme Court</option>
+      <option value="Court of Appeals">Court of Appeals</option>
+      <option value="Tax Court">Tax Court</option>
+    </select>
+  </div>
+
+  <div id="judgesList"><div class="empty-state">Loading judges roster from live data&hellip;</div></div>
+
+  <section class="callout">
+    <strong>How this list is built.</strong> The OneSource server (<code>api.thatcomputerguy26.org</code>) aggregates author-judge fields from every published appellate opinion stored in <code>sij.db</code>. Counts refresh whenever the daily appellate scrape (<code>TCG-SIJ-Appellate-Daily</code>) finds a new opinion. We only count opinions where the author is explicitly named in the published header.
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a>
+</footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+const API = "https://api.thatcomputerguy26.org/api/public/indiana-justice/deep";
+let allJudges = [];
+
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
+
+function setStatus(state){
+  const el = document.getElementById("dataStatus");
+  el.className = "status-pill " + state;
+  el.textContent = state === "live" ? "live" : state === "stale" ? "older than 24h" : "server offline";
+}
+
+async function load(){
+  try {
+    const r = await fetch(API + "/judges", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || "no data");
+    allJudges = data.items || [];
+    setStatus("live");
+    render();
+  } catch (e) {
+    setStatus("offline");
+    document.getElementById("judgesList").innerHTML = '<div class="empty-state">Server offline. Try again in a minute. <br><span class="muted">' + esc(e.message) + '</span></div>';
+  }
+}
+
+function render(){
+  const q = document.getElementById("search").value.toLowerCase().trim();
+  const courtFilter = document.getElementById("courtFilter").value;
+  let rows = allJudges.slice();
+  if (courtFilter) rows = rows.filter(j => (j.court || "").toLowerCase().includes(courtFilter.toLowerCase()));
+  if (q) rows = rows.filter(j => (j.name || "").toLowerCase().includes(q) || (j.court || "").toLowerCase().includes(q));
+  if (rows.length === 0) {
+    document.getElementById("judgesList").innerHTML = '<div class="empty-state">No judges match your filter.</div>';
+    return;
+  }
+  document.getElementById("judgesList").innerHTML =
+    '<div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">' +
+    rows.map(j => `
+      <a class="judge-card" href="/opinions?judge=${encodeURIComponent(j.name || "")}" style="text-decoration:none">
+        <div>
+          <div class="name">${esc(j.name)}</div>
+          <div class="court">${esc(j.court || "—")}</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">Most recent: ${esc(j.most_recent_opinion || "—")}</div>
+        </div>
+        <div>
+          <div class="num">${esc(j.opinion_count)}</div>
+          <div class="num-lbl">opinions</div>
+        </div>
+      </a>
+    `).join("") +
+    '</div>';
+}
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("courtFilter").addEventListener("change", render);
+
+load();
+</script>
+</body>
+</html>
