@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Civic Life &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="County council meetings, public hearings, and civic engagement context for the 12 southern Indiana focus counties.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/civic-life.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0 22px}
+.fact{padding:16px 18px;background:linear-gradient(180deg,rgba(20,33,57,.55),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.fact h3{margin:0 0 4px;font-size:15.5px;color:#fff}
+.fact .src{font-size:11px;color:var(--mut);margin-bottom:8px}
+.fact p{margin:0;font-size:13.5px;line-height:1.55;color:#cbd5e1}
+.fact a{color:#67e8f9;text-decoration:none;font-weight:600}
+.pending-banner{padding:14px 18px;background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(168,85,247,.05));border-left:4px solid #fbbf24;border-radius:0 10px 10px 0;margin:16px 0 22px}
+.pending-banner strong{color:#fff}
+.pending-banner p{margin:6px 0 0;font-size:13.5px;line-height:1.55;color:#d8e7ff}
+.schema{padding:14px 16px;background:rgba(15,27,45,.5);border:1px solid var(--ln);border-radius:10px;margin:12px 0;font-family:'JetBrains Mono',Consolas,monospace;font-size:12.5px;color:#a3d4e8;overflow-x:auto}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Civic life &middot; meetings, hearings, engagement</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/county-action.html">County action</a>
+    <a href="/civic-life.html" class="active">Civic life</a>
+    <a href="/county-press.html">County press</a>
+    <a href="/bills.html">Bills</a>
+    <a href="/methodology.html">Methodology</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Civic context &middot; where the decisions get made</p>
+  <h1>Where these numbers get debated &mdash; and decided.</h1>
+  <p class="lead">Justice-system change moves through county councils, sheriff&rsquo;s offices, sheriff&rsquo;s merit boards, the Indiana General Assembly, and the executive agencies (IDOC, DMHA, IDOH). SIJ tracks the civic touchpoints that affect the data on this dashboard.</p>
+
+  <div class="pending-banner">
+    <strong>Data status &mdash; backend in progress.</strong>
+    <p>County council and commissioner meeting agendas are published per-county on county websites with varying formats. Aggregated meeting indexing is queued. Until that lands, this page surfaces the in-fabric resources that already track civic activity statewide.</p>
+  </div>
+
+  <h2>Where to look right now</h2>
+  <div class="fact-grid">
+    <div class="fact">
+      <h3>Indiana General Assembly bills</h3>
+      <div class="src">Source: iga.in.gov</div>
+      <p>Every justice-related bill (criminal code, sentencing, MOUD funding, court funding) is tracked through SIJ&rsquo;s bill index. <a href="/bills.html">/bills &rarr;</a></p>
+    </div>
+    <div class="fact">
+      <h3>Indiana statutes &amp; code</h3>
+      <div class="src">Source: iga.in.gov code</div>
+      <p>Searchable Indiana Code &mdash; the underlying law that all justice numbers operate within. <a href="/statutes.html">/statutes &rarr;</a></p>
+    </div>
+    <div class="fact">
+      <h3>County action tracker</h3>
+      <div class="src">Source: SIJ county-action index</div>
+      <p>Specific decisions and resolutions affecting jail funding, reentry programming, and treatment access in the 12 focus counties. <a href="/county-action.html">/county-action &rarr;</a></p>
+    </div>
+    <div class="fact">
+      <h3>Recent court activity</h3>
+      <div class="src">Source: CourtListener</div>
+      <p>Day-by-day Indiana state and federal court filings &mdash; the same record that drives policy and case-by-case outcomes. <a href="/cases.html">/cases &rarr;</a></p>
+    </div>
+    <div class="fact">
+      <h3>Disciplinary actions</h3>
+      <div class="src">Source: Indiana Supreme Court Disciplinary Commission</div>
+      <p>Public disciplinary orders against attorneys, judges, and judicial officers. <a href="/disciplinary.html">/disciplinary &rarr;</a></p>
+    </div>
+    <div class="fact">
+      <h3>County press &amp; local news</h3>
+      <div class="src">Source: county-press RSS aggregation</div>
+      <p>Local-news headlines for each focus county &mdash; the signal layer for what residents and councils are actually hearing about. <a href="/county-press.html">/county-press &rarr;</a></p>
+    </div>
+  </div>
+
+  <h2>Planned civic-life schema</h2>
+  <pre class="schema">county_id, county_name, year, month,
+  body (council / commissioners / sheriff_merit_board / court),
+  meeting_date, meeting_kind (regular / special / public_hearing),
+  agenda_url, minutes_url,
+  justice_related_items, jail_funding_items, reentry_items,
+  public_comment_speakers, was_public_comment_open</pre>
+
+  <section class="callout">
+    <strong>What lands first.</strong> County council and commissioners meeting indexes for Jackson, Scott, and Jennings (the three highest-leverage focus counties) come first. After that the remaining nine focus counties roll in. Once all 12 are indexed, justice-related agenda items become a sortable filter across the dashboard.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Appellate Opinions &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Live searchable index of every Indiana Supreme Court and Court of Appeals merits opinion in the SIJ database.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/appellate.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0 22px}
+.kpi{padding:14px 16px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.kpi .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.kpi .num{font-size:26px;font-weight:800;color:#fff;line-height:1}
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:240px}
+.op-row{padding:12px 14px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:8px;margin-bottom:8px}
+.op-row .title{font-weight:700;color:#fff;font-size:14.5px;margin-bottom:4px}
+.op-row .meta{color:var(--mut);font-size:12.5px;display:flex;gap:12px;flex-wrap:wrap}
+.op-row .pill{padding:1px 7px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.op-row .pill.sup{background:rgba(168,85,247,.15);color:#c084fc}
+.op-row .pill.coa{background:rgba(34,211,238,.15);color:#67e8f9}
+.op-row a.open{color:var(--accent);font-size:12.5px;font-weight:600;text-decoration:none}
+.empty-state{padding:24px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Indiana appellate opinions &middot; live index</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/appellate.html" class="active">Appellate</a>
+    <a href="/cases.html">Cases</a>
+    <a href="/courts.html">Courts</a>
+    <a href="/opinions.html">Opinions</a>
+    <a href="/judges.html">Judges</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/methodology.html">Methodology</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live appellate index &middot; auto-refreshed daily</p>
+  <h1>Indiana appellate opinions.</h1>
+  <p class="lead">Every merits opinion from the Indiana Supreme Court and Indiana Court of Appeals, sourced daily from <code>public.courts.in.gov</code> and stored in the SIJ database. <span id="status" class="status-pill stale">loading</span></p>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="lbl">Total opinions</div><div class="num" id="kTotal">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">Supreme Court</div><div class="num" id="kSup">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">Court of Appeals</div><div class="num" id="kCoa">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">Latest decided</div><div class="num" id="kLatest" style="font-size:18px">&mdash;</div></div>
+  </div>
+
+  <div class="search-row">
+    <input id="q" type="search" autocomplete="off" placeholder="Search case name, judge, case number, decision&hellip;">
+    <select id="court"><option value="ALL">All courts</option><option value="supreme">Supreme Court</option><option value="coa">Court of Appeals</option></select>
+  </div>
+  <p class="muted" style="font-size:11.5px;margin:-6px 0 10px"><span id="summary">&mdash;</span></p>
+
+  <div id="list"><div class="empty-state">Loading opinions from the SIJ live feed&hellip;</div></div>
+
+  <section class="callout" style="margin-top:22px">
+    <strong>How this list is built.</strong> The OneSource server polls the Indiana Office of Court Services twice daily and stores merits opinions into <code>sij.db</code> table <code>sij_appellate_opinions</code>. Every cell on this page comes from <code>GET /api/public/sij/appellate-opinions</code>; no client-side mocks, no hand-curated rows. Search runs entirely in the browser against the full corpus.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+(function(){
+  const API = "https://api.thatcomputerguy26.org/api/public/sij/appellate-opinions?limit=500";
+  const $ = id => document.getElementById(id);
+  function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));}
+  let items = [], bag = [];
+
+  function badge(c){
+    const lbl = c==='supreme'?'Supreme':(c==='coa'?'COA':esc(c||'?'));
+    const cls = c==='supreme'?'sup':(c==='coa'?'coa':'coa');
+    return `<span class="pill ${cls}">${lbl}</span>`;
+  }
+  function render(){
+    const court = $('court').value;
+    const q = $('q').value.trim().toLowerCase();
+    const toks = q ? q.split(/\s+/).filter(Boolean) : [];
+    const out = [];
+    for (let i=0;i<items.length;i++){
+      const it = items[i];
+      if (court!=='ALL' && it.court!==court) continue;
+      if (toks.length){
+        let hit = true;
+        for (const t of toks){ if (bag[i].indexOf(t)===-1){ hit=false; break; } }
+        if (!hit) continue;
+      }
+      out.push(it);
+      if (out.length>=120) break;
+    }
+    const total = items.length;
+    if (!out.length){
+      $('list').innerHTML = '<div class="empty-state">No opinions match.</div>';
+      $('summary').textContent = `0 of ${total}`;
+      return;
+    }
+    $('list').innerHTML = out.map(it=>{
+      const name = esc((it.case_name||'(untitled)').replace(/\n+/g,' — '));
+      const head = it.full_url ? `<a class="open" href="${esc(it.full_url)}" target="_blank" rel="noopener">${name} ↗</a>` : name;
+      return `<div class="op-row"><div class="title">${badge(it.court)} ${head}</div>
+        <div class="meta">
+          ${it.date_decided?`<span>${esc(it.date_decided)}</span>`:''}
+          ${it.author_judge?`<span>${esc(it.author_judge)}</span>`:''}
+          ${it.case_number?`<span><code>${esc(it.case_number)}</code></span>`:''}
+          ${it.category?`<span>${esc(it.category)}</span>`:''}
+          ${it.decision?`<span><em>${esc(it.decision)}</em></span>`:''}
+        </div></div>`;
+    }).join('');
+    $('summary').textContent = `${out.length} match${out.length===1?'':'es'} of ${total}`;
+  }
+
+  function load(){
+    $('status').className = 'status-pill stale'; $('status').textContent = 'loading';
+    fetch(API, {cache:'no-store'})
+      .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(j=>{
+        if (!j || !Array.isArray(j.items)) throw new Error('bad payload');
+        items = j.items;
+        bag = items.map(it => [it.case_name,it.author_judge,it.case_number,it.decision,it.category,it.court,it.date_decided].filter(Boolean).join(' ').toLowerCase());
+        const t = j.totals||{};
+        $('kTotal').textContent = (t.total_items||items.length).toLocaleString();
+        $('kSup').textContent = (t.supreme_count||0).toLocaleString();
+        $('kCoa').textContent = (t.coa_count||0).toLocaleString();
+        $('kLatest').textContent = t.latest_decided || '—';
+        $('status').className = 'status-pill live'; $('status').textContent = 'live';
+        render();
+      })
+      .catch(e=>{
+        $('list').innerHTML = '<div class="empty-state">Appellate feed temporarily unavailable. The OneSource server may be refreshing.</div>';
+        $('status').className = 'status-pill offline'; $('status').textContent = 'offline';
+      });
+  }
+  $('court').addEventListener('change', render);
+  $('q').addEventListener('input', render);
+  load();
+  setInterval(load, 5*60*1000);
+})();
+</script>
+</body>
+</html>

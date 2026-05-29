@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INDOT Traffic Cameras &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Live INDOT 511IN traffic-camera feed plus partner cameras across Indiana &mdash; aggregated through the TCG home server.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/indot.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0 22px}
+.kpi{padding:14px 16px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.kpi .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.kpi .num{font-size:26px;font-weight:800;color:#fff;line-height:1}
+.search-row{display:flex;gap:10px;margin:14px 0 16px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:240px}
+.cam-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}
+.cam{background:rgba(20,33,57,.45);border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+.cam img{width:100%;height:170px;object-fit:cover;background:#0f1722;display:block}
+.cam .body{padding:9px 11px}
+.cam .title{font-weight:700;color:#fff;font-size:13.5px;line-height:1.35;margin-bottom:4px}
+.cam .meta{font-size:11.5px;color:var(--mut);display:flex;gap:8px;flex-wrap:wrap}
+.cam .pill{padding:1px 6px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(34,211,238,.12);color:#67e8f9}
+.empty-state{padding:24px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">INDOT 511IN cameras &middot; live feed</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/map.html">Map</a>
+    <a href="/indot.html" class="active">INDOT</a>
+    <a href="/feeds.html">Live feeds</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/methodology.html">Methodology</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live cameras &middot; INDOT 511IN + KYTC + partner agencies</p>
+  <h1>INDOT traffic cameras &mdash; Indiana &amp; border crossings.</h1>
+  <p class="lead">Aggregated traffic-camera feed pulled live from INDOT, the 511IN TrafficWise operator API, KYTC (for I-65 / I-64 border crossings), and partner operator agencies. <span id="status" class="status-pill stale">loading</span></p>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="lbl">Total cameras online</div><div class="num" id="kTotal">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">INDOT 511IN</div><div class="num" id="kIndot">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">TrafficWise</div><div class="num" id="kTw">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">KYTC (border)</div><div class="num" id="kKytc">&mdash;</div></div>
+  </div>
+
+  <div class="search-row">
+    <input id="q" type="search" autocomplete="off" placeholder="Filter by camera name, route, or county&hellip;">
+    <select id="route" aria-label="Route filter"><option value="">All routes</option></select>
+    <select id="src" aria-label="Source filter"><option value="">All sources</option></select>
+    <select id="cap"><option value="60" selected>Show 60</option><option value="120">Show 120</option><option value="300">Show 300</option></select>
+  </div>
+  <p class="muted" style="font-size:11.5px;margin:-6px 0 10px"><span id="summary">&mdash;</span></p>
+
+  <div id="grid"><div class="empty-state">Loading INDOT camera feed&hellip;</div></div>
+
+  <section class="callout" style="margin-top:22px">
+    <strong>How the feed works.</strong> Images are proxied through <code>api.thatcomputerguy26.org</code> so the page never hits public CARS-program URLs directly &mdash; that keeps load light on INDOT and avoids cross-origin issues. The OneSource server refreshes the camera index every ~30 minutes; individual image stills update on each render. Source split is reported as <code>indot:N,operator:N,trafficwise:N,kytc:N</code> in the API payload.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+(function(){
+  const API_HOST = "https://api.thatcomputerguy26.org";
+  const API = `${API_HOST}/api/indot/cameras?limit=1500`;
+  const $ = id => document.getElementById(id);
+  function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));}
+  let all = [];
+
+  function parseSourceLine(s){
+    const out = {};
+    if (!s) return out;
+    s.split(',').forEach(pair=>{
+      const [k,v] = pair.split(':');
+      if (k && v) out[k.trim()] = parseInt(v,10)||0;
+    });
+    return out;
+  }
+
+  function fillSelect(id, vals){
+    const sel = $(id);
+    const prev = sel.value;
+    const opts = Array.from(new Set(vals.filter(Boolean))).sort();
+    sel.innerHTML = `<option value="">All</option>` + opts.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');
+    if (prev) sel.value = prev;
+  }
+
+  function render(){
+    const q = $('q').value.trim().toLowerCase();
+    const route = $('route').value;
+    const src = $('src').value;
+    const cap = parseInt($('cap').value,10) || 60;
+    const out = all.filter(c=>{
+      if (route && c.route !== route) return false;
+      if (src && c.source !== src) return false;
+      if (!q) return true;
+      return (`${c.name||''} ${c.route||''} ${c.county||''} ${c.id||''}`).toLowerCase().indexOf(q) !== -1;
+    });
+    const slice = out.slice(0, cap);
+    if (!slice.length){
+      $('grid').innerHTML = '<div class="empty-state">No cameras match your filters.</div>';
+      $('summary').textContent = `0 of ${all.length}`;
+      return;
+    }
+    $('grid').innerHTML = '<div class="cam-grid">' + slice.map(c=>{
+      const img = c.image_url ? (c.image_url.startsWith('http') ? c.image_url : `${API_HOST}${c.image_url}`) : '';
+      return `<div class="cam">
+        ${img?`<img loading="lazy" alt="${esc(c.name||'INDOT camera')}" src="${esc(img)}" onerror="this.style.display='none'">`:''}
+        <div class="body">
+          <div class="title">${esc(c.name||('Camera '+c.id))}</div>
+          <div class="meta">
+            ${c.route?`<span class="pill">${esc(c.route)}</span>`:''}
+            ${c.county?`<span>${esc(c.county)}</span>`:''}
+            ${c.source?`<span>${esc(c.source)}</span>`:''}
+          </div>
+        </div>
+      </div>`;
+    }).join('') + '</div>';
+    const more = out.length - slice.length;
+    $('summary').textContent = `Showing ${slice.length} of ${out.length} matching (${all.length} total)${more>0?` — narrow filter to see more`:''}`;
+  }
+
+  function load(){
+    $('status').className='status-pill stale'; $('status').textContent='loading';
+    fetch(API, {cache:'no-store'})
+      .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(j=>{
+        if (!j || !Array.isArray(j.items)) throw new Error('bad payload');
+        all = j.items;
+        const splits = parseSourceLine(j.source);
+        $('kTotal').textContent = all.length.toLocaleString();
+        $('kIndot').textContent = (splits.indot||0).toLocaleString();
+        $('kTw').textContent = (splits.trafficwise||0).toLocaleString();
+        $('kKytc').textContent = (splits.kytc||0).toLocaleString();
+        fillSelect('route', all.map(c=>c.route));
+        fillSelect('src', all.map(c=>c.source));
+        $('status').className='status-pill live'; $('status').textContent='live';
+        render();
+      })
+      .catch(()=>{
+        $('grid').innerHTML = '<div class="empty-state">INDOT camera feed temporarily unavailable.</div>';
+        $('status').className='status-pill offline'; $('status').textContent='offline';
+      });
+  }
+  ['q','route','src','cap'].forEach(id => $(id).addEventListener(id==='q'?'input':'change', render));
+  load();
+  setInterval(load, 10*60*1000);
+})();
+</script>
+</body>
+</html>

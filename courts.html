@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Courts &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Indiana court directory: state appellate courts, federal districts, and circuit courts that publish into the SIJ live database.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/courts.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0 22px}
+.kpi{padding:14px 16px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.kpi .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.kpi .num{font-size:26px;font-weight:800;color:#fff;line-height:1}
+.court-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0}
+.court{padding:16px 18px;background:linear-gradient(180deg,rgba(20,33,57,.55),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.court h3{margin:0 0 4px;font-size:16px;color:#fff}
+.court .sub{color:var(--mut);font-size:12.5px;margin-bottom:8px}
+.court .stat-row{display:flex;justify-content:space-between;font-size:13px;color:#cbd5e1;padding:5px 0;border-top:1px solid rgba(255,255,255,.05)}
+.court .stat-row strong{color:#fff}
+.court .pill{display:inline-block;padding:1px 7px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:rgba(34,211,238,.12);color:#67e8f9;margin-bottom:6px}
+.court .pill.fed{background:rgba(168,85,247,.15);color:#c084fc}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Indiana court directory</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/appellate.html">Appellate</a>
+    <a href="/cases.html">Cases</a>
+    <a href="/courts.html" class="active">Courts</a>
+    <a href="/opinions.html">Opinions</a>
+    <a href="/judges.html">Judges</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/methodology.html">Methodology</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Court directory &middot; counts derived from live SIJ corpus</p>
+  <h1>The Indiana courts feeding this dashboard.</h1>
+  <p class="lead">SIJ ingests opinions and dockets from five court systems with jurisdiction over Hoosiers. Each card shows total items currently indexed plus the most recent decision date in our database. <span id="status" class="status-pill live">loading</span></p>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="lbl">Appellate opinions indexed</div><div class="num" id="kAppellate">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">Recent activity items</div><div class="num" id="kRecent">&mdash;</div></div>
+    <div class="kpi"><div class="lbl">Court systems tracked</div><div class="num">5</div></div>
+    <div class="kpi"><div class="lbl">Latest appellate decision</div><div class="num" id="kLatest" style="font-size:18px">&mdash;</div></div>
+  </div>
+
+  <h2 style="margin-top:18px">State appellate courts</h2>
+  <div class="court-grid">
+    <div class="court">
+      <span class="pill">State &middot; Appellate</span>
+      <h3>Indiana Supreme Court</h3>
+      <div class="sub">Court of last resort for Indiana state law. Five justices. Direct mandatory review of Indiana Tax Court and certain attorney-discipline matters.</div>
+      <div class="stat-row"><span>Opinions in SIJ</span><strong id="cSupreme">&mdash;</strong></div>
+      <div class="stat-row"><span>Source</span><strong>public.courts.in.gov</strong></div>
+      <div class="stat-row"><span>Browse</span><strong><a href="/appellate.html?c=supreme">/appellate &rarr;</a></strong></div>
+    </div>
+    <div class="court">
+      <span class="pill">State &middot; Appellate</span>
+      <h3>Indiana Court of Appeals</h3>
+      <div class="sub">Intermediate appellate court with general civil and criminal jurisdiction. Fifteen judges sitting in three-judge panels.</div>
+      <div class="stat-row"><span>Opinions in SIJ</span><strong id="cCoa">&mdash;</strong></div>
+      <div class="stat-row"><span>Source</span><strong>public.courts.in.gov</strong></div>
+      <div class="stat-row"><span>Browse</span><strong><a href="/appellate.html?c=coa">/appellate &rarr;</a></strong></div>
+    </div>
+    <div class="court">
+      <span class="pill">State &middot; Specialized</span>
+      <h3>Indiana Tax Court</h3>
+      <div class="sub">Exclusive original jurisdiction over final determinations of the Department of State Revenue and Indiana Board of Tax Review.</div>
+      <div class="stat-row"><span>Status</span><strong>Tracked via CourtListener</strong></div>
+      <div class="stat-row"><span>Browse</span><strong><a href="/cases.html">/cases &rarr;</a></strong></div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:18px">Federal courts with Indiana jurisdiction</h2>
+  <div class="court-grid">
+    <div class="court">
+      <span class="pill fed">Federal &middot; Circuit</span>
+      <h3>U.S. Court of Appeals, 7th Circuit</h3>
+      <div class="sub">Appellate jurisdiction over federal district courts in Indiana, Illinois, and Wisconsin. Decisions on federal constitutional and statutory questions.</div>
+      <div class="stat-row"><span>Activity tracked</span><strong>Opinions + dockets</strong></div>
+      <div class="stat-row"><span>Source</span><strong>CourtListener</strong></div>
+      <div class="stat-row"><span>Browse</span><strong><a href="/cases.html">/cases &rarr;</a></strong></div>
+    </div>
+    <div class="court">
+      <span class="pill fed">Federal &middot; District</span>
+      <h3>U.S. District Court &mdash; Northern District of Indiana</h3>
+      <div class="sub">Trial-level federal court covering 32 northern Indiana counties. Sits in South Bend, Fort Wayne, Hammond, and Lafayette.</div>
+      <div class="stat-row"><span>Activity tracked</span><strong>Dockets</strong></div>
+      <div class="stat-row"><span>Browse</span><strong><a href="/cases.html">/cases &rarr;</a></strong></div>
+    </div>
+    <div class="court">
+      <span class="pill fed">Federal &middot; District</span>
+      <h3>U.S. District Court &mdash; Southern District of Indiana</h3>
+      <div class="sub">Trial-level federal court covering 60 southern Indiana counties &mdash; including Jackson and every county tracked on this dashboard. Sits in Indianapolis, New Albany, Evansville, and Terre Haute.</div>
+      <div class="stat-row"><span>Activity tracked</span><strong>Dockets</strong></div>
+      <div class="stat-row"><span>Browse</span><strong><a href="/cases.html">/cases &rarr;</a></strong></div>
+    </div>
+  </div>
+
+  <section class="callout" style="margin-top:22px">
+    <strong>How this directory is built.</strong> Court structure is static and reflects the Indiana Judicial Branch + 28 U.S.C. &sect;&nbsp;94. Live counts come from <code>GET /api/public/sij/appellate-opinions</code> (state appellate totals) and <code>GET /api/public/civic/sij-recent</code> (recent activity across all five systems). Trial-court coverage (circuit / superior / problem-solving courts) is on the schema-fill roadmap; see <a href="/methodology.html">/methodology</a>.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  function set(id,v){const el=$(id); if(el) el.textContent=v;}
+  Promise.allSettled([
+    fetch('https://api.thatcomputerguy26.org/api/public/sij/appellate-opinions?limit=1',{cache:'no-store'}).then(r=>r.json()),
+    fetch('https://api.thatcomputerguy26.org/api/public/civic/sij-recent?limit=100',{cache:'no-store'}).then(r=>r.json())
+  ]).then(([a,b])=>{
+    let live = true;
+    if (a.status==='fulfilled' && a.value && a.value.totals){
+      const t=a.value.totals;
+      set('kAppellate',(t.total_items||0).toLocaleString());
+      set('cSupreme',(t.supreme_count||0).toLocaleString());
+      set('cCoa',(t.coa_count||0).toLocaleString());
+      set('kLatest', t.latest_decided||'—');
+    } else { live=false; }
+    if (b.status==='fulfilled' && b.value && Array.isArray(b.value.items)){
+      set('kRecent', b.value.items.length.toLocaleString());
+    } else { live=false; }
+    $('status').className = live ? 'status-pill live' : 'status-pill offline';
+    $('status').textContent = live ? 'live' : 'offline';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Schools &amp; Education &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="School-corporation context for the 12 southern Indiana focus counties — discipline, attendance, and post-secondary linkage as it relates to justice outcomes.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/schools.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0 22px}
+.fact{padding:16px 18px;background:linear-gradient(180deg,rgba(20,33,57,.55),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.fact h3{margin:0 0 4px;font-size:15.5px;color:#fff}
+.fact .src{font-size:11px;color:var(--mut);margin-bottom:8px}
+.fact p{margin:0;font-size:13.5px;line-height:1.55;color:#cbd5e1}
+.pending-banner{padding:14px 18px;background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(168,85,247,.05));border-left:4px solid #fbbf24;border-radius:0 10px 10px 0;margin:16px 0 22px}
+.pending-banner strong{color:#fff}
+.pending-banner p{margin:6px 0 0;font-size:13.5px;line-height:1.55;color:#d8e7ff}
+.schema{padding:14px 16px;background:rgba(15,27,45,.5);border:1px solid var(--ln);border-radius:10px;margin:12px 0;font-family:'JetBrains Mono',Consolas,monospace;font-size:12.5px;color:#a3d4e8;overflow-x:auto}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Schools &amp; education context</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/schools.html" class="active">Schools</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/civic-life.html">Civic life</a>
+    <a href="/methodology.html">Methodology</a>
+    <a href="/data.html">Data</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Education context &middot; school corporations across 12 focus counties</p>
+  <h1>How schools connect to justice outcomes.</h1>
+  <p class="lead">The pipeline from school discipline to juvenile justice and downstream adult-system contact is well-documented. SIJ tracks school-corporation level indicators &mdash; not individual student data &mdash; for each of the 12 focus counties.</p>
+
+  <div class="pending-banner">
+    <strong>Data status &mdash; backend in progress.</strong>
+    <p>Indiana Department of Education provides annual reports per school corporation. The SIJ ingest job for IDOE&nbsp;<em>Suspensions &amp; Expulsions</em> and IDOE&nbsp;<em>Attendance / Graduation Rates</em> is queued. Until those land, this page documents what we will publish &mdash; with no fabricated rates.</p>
+  </div>
+
+  <h2>Indicators we publish per school corporation</h2>
+  <div class="fact-grid">
+    <div class="fact">
+      <h3>Out-of-school suspension rate</h3>
+      <div class="src">Source: IDOE Suspensions &amp; Expulsions report</div>
+      <p>Per-1,000-student suspension rate, broken by grade band and offense category. Used as a leading indicator of juvenile-justice referrals 18&ndash;36 months later.</p>
+    </div>
+    <div class="fact">
+      <h3>Chronic absenteeism rate</h3>
+      <div class="src">Source: IDOE attendance file</div>
+      <p>Share of students missing &ge;10% of enrolled school days. Strongly correlated with later contact with truancy court and CHINS petitions.</p>
+    </div>
+    <div class="fact">
+      <h3>Four-year graduation rate</h3>
+      <div class="src">Source: IDOE graduation file</div>
+      <p>Cohort graduation rate per school corp. The single strongest community-level predictor of adult IDOC admission risk in published criminology literature.</p>
+    </div>
+    <div class="fact">
+      <h3>Post-secondary linkage rate</h3>
+      <div class="src">Source: Indiana Commission for Higher Education</div>
+      <p>Share of graduating cohort enrolling in college, career certificate, or military within one year. Connects directly to HIRE / workforce-reentry outcomes published on <a href="/programs.html">/programs</a>.</p>
+    </div>
+    <div class="fact">
+      <h3>School-corp MAT / counseling capacity</h3>
+      <div class="src">Source: Per-corp staffing tables</div>
+      <p>Counselor:student and social-worker:student ratios. Schema field used to gauge in-school capacity to interrupt the discipline-to-justice pipeline.</p>
+    </div>
+    <div class="fact">
+      <h3>Free / reduced meal share</h3>
+      <div class="src">Source: USDA FNS reporting</div>
+      <p>Economic-stress proxy at the school-corp level. Cross-tabbed with overdose, IDOC, and arrest indicators on the <a href="/correlations.html">/correlations</a> page.</p>
+    </div>
+  </div>
+
+  <h2>Schema (planned addition to Schema&nbsp;1)</h2>
+  <pre class="schema">county_id, county_name, year, school_corp_id, school_corp_name,
+  enrolled_students, oss_rate_per_1k, chronic_absentee_rate,
+  four_year_grad_rate, post_secondary_linkage_rate,
+  counselor_per_1k_students, social_worker_per_1k_students,
+  free_reduced_meal_share, idoe_letter_grade</pre>
+
+  <section class="callout">
+    <strong>What lands first.</strong> IDOE publishes the suspensions file in late spring; that file is the highest-load single source for this page. After it lands, the chronic-absenteeism file follows in summer. Cross-correlations with juvenile-justice referrals will appear on <a href="/correlations.html">/correlations</a> the same week.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+</body>
+</html>

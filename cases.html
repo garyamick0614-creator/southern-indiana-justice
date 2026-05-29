@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indiana Court Activity &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Live feed of recent Indiana state and federal court activity: opinions, dockets, and filings from CourtListener / Free Law Project.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/cases.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.search-row{display:flex;gap:10px;margin:14px 0 18px;flex-wrap:wrap}
+.search-row input,.search-row select{background:rgba(20,33,57,.6);color:var(--text);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;font:inherit}
+.search-row input{flex:1;min-width:240px}
+.case-row{padding:11px 13px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:8px;margin-bottom:8px}
+.case-row .title{font-weight:700;color:#fff;font-size:14px;margin-bottom:4px;line-height:1.4}
+.case-row .meta{color:var(--mut);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
+.case-row .pill{padding:1px 7px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.case-row .pill.op{background:rgba(168,85,247,.15);color:#c084fc}
+.case-row .pill.dk{background:rgba(251,191,36,.15);color:#fbbf24}
+.case-row .pill.juris{background:rgba(34,211,238,.12);color:#67e8f9}
+.case-row a{color:var(--accent);font-weight:600;text-decoration:none}
+.empty-state{padding:24px;text-align:center;color:var(--mut);background:rgba(20,33,57,.3);border-radius:10px;border:1px dashed var(--ln)}
+.status-pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.status-pill.live{background:rgba(52,211,153,.18);color:#34d399}
+.status-pill.stale{background:rgba(251,191,36,.18);color:#fbbf24}
+.status-pill.offline{background:rgba(248,113,113,.18);color:#f87171}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Indiana court activity &middot; live feed</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/appellate.html">Appellate</a>
+    <a href="/cases.html" class="active">Cases</a>
+    <a href="/courts.html">Courts</a>
+    <a href="/opinions.html">Opinions</a>
+    <a href="/judges.html">Judges</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/methodology.html">Methodology</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Live court activity &middot; CourtListener / Free Law Project</p>
+  <h1>Recent Indiana court activity.</h1>
+  <p class="lead">Opinions and dockets from the Indiana Supreme Court, Court of Appeals, Tax Court, 7th Circuit, and the Indiana Northern &amp; Southern Federal Districts. Refreshed daily at 04:30 from CourtListener via the OneSource server. <span id="status" class="status-pill stale">loading</span></p>
+
+  <div class="search-row">
+    <input id="q" type="search" autocomplete="off" placeholder="Filter by case name, docket, or jurisdiction&hellip;">
+    <select id="kind"><option value="ALL">All kinds</option><option value="opinion">Opinions</option><option value="docket">Dockets</option></select>
+    <select id="limit"><option value="50">50 most recent</option><option value="100" selected>100 most recent</option><option value="200">200 most recent</option></select>
+  </div>
+  <p class="muted" style="font-size:11.5px;margin:-6px 0 10px"><span id="summary">&mdash;</span></p>
+
+  <div id="list"><div class="empty-state">Loading recent court activity&hellip;</div></div>
+
+  <section class="callout" style="margin-top:22px">
+    <strong>How this list is built.</strong> The OneSource server queries the CourtListener REST API once per day for each Indiana court (state + federal). Results are stored in <code>indiana-justice-deep.db</code> table <code>ij_cases</code> and projected through <code>GET /api/public/civic/sij-recent</code>. Click any case to open the source record on CourtListener.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script>
+(function(){
+  const API = "https://api.thatcomputerguy26.org/api/public/civic/sij-recent";
+  const $ = id => document.getElementById(id);
+  function esc(s){return String(s==null?'':s).replace(/[<>&"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]));}
+  let all = [];
+
+  function badge(k){
+    const lbl = k==='opinion'?'Opinion':(k==='docket'?'Docket':esc(k||'?'));
+    const cls = k==='opinion'?'op':'dk';
+    return `<span class="pill ${cls}">${lbl}</span>`;
+  }
+  function juris(j){ return j ? `<span class="pill juris">${esc(j)}</span>` : ''; }
+
+  function render(){
+    const kind = $('kind').value;
+    const q = $('q').value.trim().toLowerCase();
+    const out = all.filter(it=>{
+      if (kind!=='ALL' && it.kind!==kind) return false;
+      if (!q) return true;
+      return (`${it.case_name||''} ${it.docket_number||''} ${it.jurisdiction||''} ${it.court_id||''}`).toLowerCase().indexOf(q)!==-1;
+    });
+    if (!out.length){
+      $('list').innerHTML = '<div class="empty-state">No matching activity in the current window.</div>';
+      $('summary').textContent = `0 of ${all.length}`;
+      return;
+    }
+    $('list').innerHTML = out.map(it=>{
+      const name = esc(it.case_name||'(untitled)');
+      const url = it.html_url || '';
+      const head = url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${name} ↗</a>` : name;
+      return `<div class="case-row"><div class="title">${badge(it.kind)} ${juris(it.jurisdiction)} ${head}</div>
+        <div class="meta">
+          ${it.date_filed?`<span>${esc(it.date_filed)}</span>`:''}
+          ${it.docket_number?`<span><code>${esc(it.docket_number)}</code></span>`:''}
+          ${it.court_id?`<span>court: ${esc(it.court_id)}</span>`:''}
+          ${it.nature_of_suit?`<span>nature: ${esc(it.nature_of_suit)}</span>`:''}
+        </div></div>`;
+    }).join('');
+    $('summary').textContent = `${out.length} match${out.length===1?'':'es'} of ${all.length}`;
+  }
+
+  function load(){
+    const lim = $('limit').value;
+    $('status').className='status-pill stale'; $('status').textContent='loading';
+    fetch(`${API}?limit=${encodeURIComponent(lim)}`, {cache:'no-store'})
+      .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(j=>{
+        if (!j || !Array.isArray(j.items)) throw new Error('bad payload');
+        all = j.items;
+        $('status').className='status-pill live'; $('status').textContent='live';
+        render();
+      })
+      .catch(()=>{
+        $('list').innerHTML = '<div class="empty-state">Court-activity feed temporarily unavailable.</div>';
+        $('status').className='status-pill offline'; $('status').textContent='offline';
+      });
+  }
+  $('kind').addEventListener('change', render);
+  $('q').addEventListener('input', render);
+  $('limit').addEventListener('change', load);
+  load();
+  setInterval(load, 5*60*1000);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inmate Populations &mdash; Southern Indiana Justice Stats</title>
+<meta name="description" content="Indiana Department of Correction adult-release counts and county-jail snapshots for the 12 focus counties of the SIJ dashboard.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://southern-indiana-justice.netlify.app/inmates.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f1722'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%2322d3ee' font-size='12' font-family='sans-serif' font-weight='800'%3ESIJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0 22px}
+.kpi{padding:14px 16px;background:linear-gradient(180deg,rgba(20,33,57,.6),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.kpi .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.kpi .num{font-size:26px;font-weight:800;color:#fff;line-height:1}
+.kpi .sub{font-size:11.5px;color:var(--mut);margin-top:4px}
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:14px 0 22px}
+.fact{padding:16px 18px;background:linear-gradient(180deg,rgba(20,33,57,.55),rgba(15,27,45,.35));border:1px solid var(--ln);border-radius:10px}
+.fact h3{margin:0 0 4px;font-size:15.5px;color:#fff}
+.fact .src{font-size:11px;color:var(--mut);margin-bottom:8px}
+.fact p{margin:0;font-size:13.5px;line-height:1.55;color:#cbd5e1}
+.pending-banner{padding:14px 18px;background:linear-gradient(135deg,rgba(251,191,36,.10),rgba(168,85,247,.05));border-left:4px solid #fbbf24;border-radius:0 10px 10px 0;margin:16px 0 22px}
+.pending-banner strong{color:#fff}
+.pending-banner p{margin:6px 0 0;font-size:13.5px;line-height:1.55;color:#d8e7ff}
+.schema{padding:14px 16px;background:rgba(15,27,45,.5);border:1px solid var(--ln);border-radius:10px;margin:12px 0;font-family:'JetBrains Mono',Consolas,monospace;font-size:12.5px;color:#a3d4e8;overflow-x:auto}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="/"><span class="brand-mark">SIJ</span><div class="brand-text"><span class="brand-title">Southern Indiana Justice Stats</span><span class="brand-sub">Inmate populations &middot; IDOC + county jails</span></div></a>
+  <nav class="topbar-nav">
+    <a href="/">Overview</a>
+    <a href="/counties.html">Counties</a>
+    <a href="/inmates.html" class="active">Inmates</a>
+    <a href="/facilities.html">Facilities</a>
+    <a href="/corrections.html">Corrections</a>
+    <a href="/rehab.html">Rehab</a>
+    <a href="/programs.html">Programs</a>
+    <a href="/methodology.html">Methodology</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Schema 2 &middot; IDOC releases + county-jail snapshots</p>
+  <h1>Who is held, and where they go.</h1>
+  <p class="lead">The Indiana Department of Correction publishes adult-release counts by county of admission, and individual sheriff&rsquo;s offices publish jail rosters at varying intervals. This page surfaces both for the 12 focus counties.</p>
+
+  <div class="pending-banner">
+    <strong>Data status &mdash; backend in progress.</strong>
+    <p>The IDOC adult-releases PDFs (2020&ndash;2025) are queued for extraction into the SIJ database. County-jail rosters require per-sheriff polling and are being added one county at a time. Until live feeds land, this page presents <em>only</em> the verified facts we have already published in the schema and methodology documents &mdash; no fabricated counts.</p>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="lbl">IDOC operational population</div>
+      <div class="num">~25,800</div>
+      <div class="sub">Stable y/y &middot; source: IDOC monthly report</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">IDOC admissions (Oct 2024)</div>
+      <div class="num">967</div>
+      <div class="sub">Most recent published monthly admissions count</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">Brown Co. IDOC inmates held</div>
+      <div class="num">26</div>
+      <div class="sub">In a 15,200-pop jail &mdash; overflow / cross-county hold</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">Scott Co. Jail substance-use history</div>
+      <div class="num">85%</div>
+      <div class="sub">Source: Scott County Jail Study (2022)</div>
+    </div>
+  </div>
+
+  <h2>What we publish about inmate populations</h2>
+  <div class="fact-grid">
+    <div class="fact">
+      <h3>IDOC adult releases by county</h3>
+      <div class="src">Source: IDOC Adult Releases tables (PDFs)</div>
+      <p>For each of the 12 focus counties, SIJ tracks total releases per year, broken into CTP / probation / parole / discharge. Once the 2020&ndash;2025 PDFs are extracted, every county-year cell fills automatically through Schema&nbsp;2.</p>
+    </div>
+    <div class="fact">
+      <h3>Jail substance-use &amp; mental-health prevalence</h3>
+      <div class="src">Source: Scott County Jail Study (2022) as anchor</div>
+      <p>85% substance-use history, 58% prior mental-health diagnosis. Used as an anchor for proxy estimates in surrounding rural jails until each sheriff&rsquo;s office publishes its own roster study.</p>
+    </div>
+    <div class="fact">
+      <h3>Post-intake overdose risk window</h3>
+      <div class="src">Source: National jail-overdose pattern</div>
+      <p>&gt;1/3 of opioid deaths and &gt;1/2 of other drug deaths in jail occur in the first 24 hours after booking. Post-release weeks 1&ndash;4 are the peak overdose risk window in the community.</p>
+    </div>
+  </div>
+
+  <h2>Schema 2 &mdash; the table this page renders into</h2>
+  <pre class="schema">county_id, county_name, year,
+  idoc_releases_from_county, idoc_releases_per_1k,
+  idoc_releases_types_ctp_probation_parole_discharge,
+  avg_daily_jail_pop, avg_daily_jail_pop_per_1k,
+  total_bookings, total_bookings_drug, total_bookings_violent,
+  total_bookings_low_level, total_releases_from_local_jail</pre>
+
+  <section class="callout">
+    <strong>What fills this page next.</strong> The next data pull is the IDOC <em>Adult Releases 2020&ndash;2025</em> PDF series &mdash; that single source completes the per-county release columns across every focus county. Sheriff-roster aggregation follows. See <a href="/methodology.html">/methodology</a> for the full data plan, or <a href="/facilities.html">/facilities</a> for the facility-level view.
+  </section>
+</main>
+
+<footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
+<script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+</body>
+</html>
