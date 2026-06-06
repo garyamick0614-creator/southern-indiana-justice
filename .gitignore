@@ -1,2 +1,9 @@
 # Local Netlify folder
 .netlify
+
+# ---- Defense-in-depth secret globs (additive, 2026-05-31 Audit-B#14) ----
+*.env
+*.password
+*.key
+*secret*.json
+*-secrets.json

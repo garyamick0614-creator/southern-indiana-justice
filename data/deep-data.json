@@ -1,414 +1,414 @@
 {
-  "generated_at": "2026-05-28T09:06:08.248Z",
+  "generated_at": "2026-06-06T09:07:44.575Z",
   "counts": {
-    "cases": 1623,
-    "news": 77,
+    "cases": 2425,
+    "news": 105,
     "legislators": 150,
     "bills": 742
   },
   "latest": {
     "cases": [
       {
-        "id": 5698,
+        "id": 9338,
         "source": "courtlistener",
-        "source_id": "73402510",
-        "court_id": "insb",
-        "case_name": "Dai Ron Markeith Wade",
-        "docket_number": "26-03403",
-        "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-28",
-        "html_url": null,
-        "fetched_at": "2026-05-28T09:04:20.294Z"
-      },
-      {
-        "id": 5309,
-        "source": "courtlistener",
-        "source_id": "73394963",
-        "court_id": "insd",
-        "case_name": "Jarquin Montenegro v. SWEARINGEN",
-        "docket_number": "2:26-cv-00381",
-        "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
-        "html_url": null,
-        "fetched_at": "2026-05-27T09:04:06.286Z"
-      },
-      {
-        "id": 5511,
-        "source": "courtlistener",
-        "source_id": "73397084",
+        "source_id": "73446284",
         "court_id": "indctapp",
-        "case_name": "Clifford Vance v. State of Indiana",
-        "docket_number": "25A-CR-01741",
+        "case_name": "Dylan L. Burton v. State of Indiana",
+        "docket_number": "25A-CR-02659",
         "jurisdiction": "indiana-state",
-        "date_filed": "2026-05-27",
-        "html_url": "https://www.courtlistener.com/opinion/10864892/clifford-vance-v-state-of-indiana/",
-        "fetched_at": "2026-05-28T09:00:08.885Z"
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870723/dylan-l-burton-v-state-of-indiana/",
+        "fetched_at": "2026-06-05T21:02:00.694Z"
       },
       {
-        "id": 5512,
+        "id": 9339,
         "source": "courtlistener",
-        "source_id": "73397083",
+        "source_id": "73446283",
         "court_id": "indctapp",
-        "case_name": "Daniel Ryan v. State of Indiana",
-        "docket_number": "25A-CR-02839",
+        "case_name": "Jennifer Pennington v. Memorial Hospital of South Bend, Inc. d/b/a Beacon Health and Fitness",
+        "docket_number": "25A-CT-01683",
         "jurisdiction": "indiana-state",
-        "date_filed": "2026-05-27",
-        "html_url": "https://www.courtlistener.com/opinion/10864891/daniel-ryan-v-state-of-indiana/",
-        "fetched_at": "2026-05-28T09:00:08.885Z"
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870722/jennifer-pennington-v-memorial-hospital-of-south-bend-inc-dba-beacon/",
+        "fetched_at": "2026-06-05T21:03:13.635Z"
       },
       {
-        "id": 5546,
+        "id": 9340,
         "source": "courtlistener",
-        "source_id": "69608612",
+        "source_id": "73446282",
+        "court_id": "indctapp",
+        "case_name": "Mykal James Alan Gerou v. State of Indiana",
+        "docket_number": "25A-CR-02601",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870721/mykal-james-alan-gerou-v-state-of-indiana/",
+        "fetched_at": "2026-06-05T21:03:15.609Z"
+      },
+      {
+        "id": 9341,
+        "source": "courtlistener",
+        "source_id": "73446281",
+        "court_id": "indctapp",
+        "case_name": "Patrick Hawkins v. Anonymous Medical Provider A",
+        "docket_number": "25A-CT-00945",
+        "jurisdiction": "indiana-state",
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870720/patrick-hawkins-v-anonymous-medical-provider-a/",
+        "fetched_at": "2026-06-05T21:03:15.609Z"
+      },
+      {
+        "id": 9368,
+        "source": "courtlistener",
+        "source_id": "71421212",
         "court_id": "ca7",
-        "case_name": "Kellie Wilson v. AIM Specialty Health",
-        "docket_number": "23-3418",
+        "case_name": "Unite Here Local 1 v. Magnificent Mile Hotel Management, LLC",
+        "docket_number": "25-1265",
         "jurisdiction": "federal-circuit",
-        "date_filed": "2026-05-27",
-        "html_url": "https://www.courtlistener.com/opinion/10865189/kellie-wilson-v-aim-specialty-health/",
-        "fetched_at": "2026-05-28T09:01:23.220Z"
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870952/unite-here-local-1-v-magnificent-mile-hotel-management-llc/",
+        "fetched_at": "2026-06-05T21:04:38.446Z"
       },
       {
-        "id": 5547,
+        "id": 9369,
         "source": "courtlistener",
-        "source_id": "69539553",
+        "source_id": "72205942",
         "court_id": "ca7",
-        "case_name": "Alma Sanchez v. El Milagro, Inc.",
-        "docket_number": "24-3250",
+        "case_name": "Anqi Liu v. Markwayne Mullin",
+        "docket_number": "25-1652",
         "jurisdiction": "federal-circuit",
-        "date_filed": "2026-05-27",
-        "html_url": "https://www.courtlistener.com/opinion/10864936/alma-sanchez-v-el-milagro-inc/",
-        "fetched_at": "2026-05-28T09:01:23.220Z"
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870787/anqi-liu-v-markwayne-mullin/",
+        "fetched_at": "2026-06-05T21:04:47.296Z"
       },
       {
-        "id": 5578,
+        "id": 9370,
         "source": "courtlistener",
-        "source_id": "73402495",
-        "court_id": "insd",
-        "case_name": "United States v. WYATT",
-        "docket_number": "1:26-po-00058",
-        "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
-        "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.961Z"
+        "source_id": "69634223",
+        "court_id": "ca7",
+        "case_name": "Joshua Harris v. W6LS, Inc.",
+        "docket_number": "24-2056",
+        "jurisdiction": "federal-circuit",
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870786/joshua-harris-v-w6ls-inc/",
+        "fetched_at": "2026-06-05T21:04:47.296Z"
       },
       {
-        "id": 5579,
+        "id": 9372,
         "source": "courtlistener",
-        "source_id": "73402494",
-        "court_id": "insd",
-        "case_name": "United States v. STJOHN",
-        "docket_number": "1:26-po-00056",
-        "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
-        "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.961Z"
+        "source_id": "70562212",
+        "court_id": "ca7",
+        "case_name": "Associated Press v. Ron Neal",
+        "docket_number": "25-2025",
+        "jurisdiction": "federal-circuit",
+        "date_filed": "2026-06-05",
+        "html_url": "https://www.courtlistener.com/opinion/10870731/associated-press-v-ron-neal/",
+        "fetched_at": "2026-06-05T21:04:47.296Z"
       },
       {
-        "id": 5580,
+        "id": 9405,
         "source": "courtlistener",
-        "source_id": "73402493",
+        "source_id": "73448851",
         "court_id": "insd",
-        "case_name": "United States v. TUCKER",
-        "docket_number": "1:26-po-00057",
+        "case_name": "United States v. VIRES",
+        "docket_number": "1:26-mj-00463",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.961Z"
+        "fetched_at": "2026-06-05T21:05:35.518Z"
       },
       {
-        "id": 5581,
+        "id": 9406,
         "source": "courtlistener",
-        "source_id": "73402492",
+        "source_id": "73448712",
         "court_id": "insd",
-        "case_name": "United States v. TUCKER",
-        "docket_number": "1:26-po-00057",
+        "case_name": "Ellis v. Farley",
+        "docket_number": "4:26-cv-00147",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.961Z"
+        "fetched_at": "2026-06-05T21:05:39.694Z"
       },
       {
-        "id": 5582,
+        "id": 9407,
         "source": "courtlistener",
-        "source_id": "73402491",
+        "source_id": "73448711",
         "court_id": "insd",
-        "case_name": "United States v. STJOHN",
-        "docket_number": "1:26-po-00056",
+        "case_name": "United States v. VIRES",
+        "docket_number": "1:26-mj-00463",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.961Z"
+        "fetched_at": "2026-06-05T21:05:39.694Z"
       },
       {
-        "id": 5583,
+        "id": 9408,
         "source": "courtlistener",
-        "source_id": "73402490",
+        "source_id": "73448709",
         "court_id": "insd",
-        "case_name": "United States v. WYATT",
-        "docket_number": "1:26-po-00058",
+        "case_name": "ASTON v. TRUEACCORD CORP.",
+        "docket_number": "1:26-cv-01205",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.961Z"
+        "fetched_at": "2026-06-05T21:05:44.235Z"
       },
       {
-        "id": 5584,
+        "id": 9409,
         "source": "courtlistener",
-        "source_id": "73402489",
+        "source_id": "73448447",
         "court_id": "insd",
-        "case_name": "United States v. SMITH",
-        "docket_number": "1:26-po-00055",
+        "case_name": "SPOTTER LABS, INC. v. FEDERAL INSURANCE COMPANY",
+        "docket_number": "1:26-cv-01204",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:05:44.236Z"
       },
       {
-        "id": 5585,
+        "id": 9410,
         "source": "courtlistener",
-        "source_id": "73402464",
+        "source_id": "73448148",
         "court_id": "insd",
-        "case_name": "United States v. PARKS",
-        "docket_number": "1:26-po-00052",
+        "case_name": "DENTON v. DWD COMPANY, LLC",
+        "docket_number": "1:26-cv-01203",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:05:44.236Z"
       },
       {
-        "id": 5586,
+        "id": 9411,
         "source": "courtlistener",
-        "source_id": "73402463",
+        "source_id": "73448074",
         "court_id": "insd",
-        "case_name": "United States v. POURTEMOUR",
-        "docket_number": "1:26-po-00054",
+        "case_name": "AMERICAN COMMERCIAL BARGE LINE LLC v. Pelican Marine Logistics, LLC",
+        "docket_number": "4:26-cv-00146",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:06:00.579Z"
       },
       {
-        "id": 5587,
+        "id": 9412,
         "source": "courtlistener",
-        "source_id": "73402462",
+        "source_id": "73447793",
         "court_id": "insd",
-        "case_name": "United States v. NOEL",
-        "docket_number": "1:26-po-00050",
+        "case_name": "VANN v. INDIANAPOLIS METROPOLITAN POLICE DEPARTMENT",
+        "docket_number": "1:26-cv-01202",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:06:00.579Z"
       },
       {
-        "id": 5588,
+        "id": 9413,
         "source": "courtlistener",
-        "source_id": "73402461",
+        "source_id": "73447616",
         "court_id": "insd",
-        "case_name": "United States v. POURTEMOUR",
-        "docket_number": "1:26-po-00054",
+        "case_name": "MURRY v. CHIPOTLE MEXICAN GRILL, INC.",
+        "docket_number": "1:26-cv-01201",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:06:00.579Z"
       },
       {
-        "id": 5589,
+        "id": 9414,
         "source": "courtlistener",
-        "source_id": "73402460",
+        "source_id": "73446936",
         "court_id": "insd",
-        "case_name": "United States v. NORICE",
-        "docket_number": "1:26-po-00051",
+        "case_name": "ELEVANCE HEALTH, INC. v. HOCHRADEL",
+        "docket_number": "1:26-cv-01200",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:06:00.579Z"
       },
       {
-        "id": 5590,
+        "id": 9415,
         "source": "courtlistener",
-        "source_id": "73402459",
+        "source_id": "73446600",
         "court_id": "insd",
-        "case_name": "United States v. NOEL",
-        "docket_number": "1:26-po-00050",
+        "case_name": "United States v. GOODWIN",
+        "docket_number": "3:26-mj-00038",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:06:00.580Z"
       },
       {
-        "id": 5591,
+        "id": 9416,
         "source": "courtlistener",
-        "source_id": "73402458",
+        "source_id": "73446597",
         "court_id": "insd",
-        "case_name": "United States v. MONTESGARNICA",
-        "docket_number": "1:26-po-00048",
+        "case_name": "United States v. GOODWIN",
+        "docket_number": "3:26-mj-00038",
         "jurisdiction": "indiana-federal",
-        "date_filed": "2026-05-27",
+        "date_filed": "2026-06-05",
         "html_url": null,
-        "fetched_at": "2026-05-28T09:02:21.962Z"
+        "fetched_at": "2026-06-05T21:06:08.383Z"
       }
     ],
     "news": [
       {
-        "id": 181,
-        "headline": "[The 1991, 2006, and 2016 Indy 500](https://wibc.com/886791/the-1991-2006-and-2016-indy-500/)",
+        "id": 330,
+        "headline": "Sister Fights for Justice in Brother’s 2019 Cold Case",
         "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "Tonight, on Beyond the Bricks with Jake Query and Mike Thomsen, they look back at the 1991 Indianapolis 500, featuring Willy T. Ribbs making his debut and Rick Mears winning his historic fourth win.    In the second segment, they look back at the 2006 Indianapolis 500, with Sam Hornish Jr. passing rookie Marco Andretti \\[…\\]\n[![IMS Museum Restoration and Event Center groundbreaking](https://wibc.c"
-      },
-      {
-        "id": 182,
-        "headline": "[IMS Museum Breaks Ground on Restoration and Event Center](https://wibc.com/886785/ims-museum-breaks-ground-on-restoration-and-event-center/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "INDIANAPOLIS — The Indianapolis Motor Speedway Museum broke ground on its future restoration and event center on Wednesday. The two-floor, 87,000-square-foot center, located at 1111 Polco St., near 10th and North Main streets, will be a “dedicated space for the full-time restoration department to continue preserving and caring for the vehicle collection.” Michael Good, president \\[…\\]\n[![Image of "
-      },
-      {
-        "id": 183,
-        "headline": "[K9 Helps Nab Bank Robbery Suspect in Indy](https://wibc.com/886782/k9-helps-nab-bank-robbery-suspect/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "INDIANAPOLIS — An Indianapolis police K9 is credited with helping officers arrest a bank robbery suspect who led police on a chase into Fishers on Wednesday afternoon. The Indianapolis Metropolitan Police Department said officers were called to the BMO Harris Bank in the 7600 block of N. Shadeland Avenue at around 2:45 p.m. for a \\[…\\]\n[![](https://1075thefan.com/wp-content/uploads/sites/100/2026/"
-      },
-      {
-        "id": 184,
-        "headline": "[Conor Daly Fastest in Practice 2, Katherine Legge Attempting the Double, & Indy 500 Sells Out Again](https://wibc.com/886790/conor-daly-fastest-in-practice-2-katherine-legge-attempting-the-double-indy-500-sells-out-again/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "Trackside recap: Indy 500 sold out, Daly tops practice, Legge attempts double, Malukas impresses as contender.\n[![Carmel and Center Grove](https://wibc.com/wp-content/uploads/sites/99/2025/09/17576322167659-e1778705556696.png?strip=all&quality=80&w=200&crop=0,0,100,200px)](https://wibc.com/886778/detroit-lacrosse-player-charged-with-battery-for-incident-at-carmel/)\n[Local](https://wibc.com/categor"
-      },
-      {
-        "id": 185,
-        "headline": "[Detroit Lacrosse Player Charged With Battery for Incident at Carmel](https://wibc.com/886778/detroit-lacrosse-player-charged-with-battery-for-incident-at-carmel/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "CARMEL, Ind. — An 18-year-old from Michigan has been charged with battery after police said he punched someone at the end of a lacrosse game earlier this month in Carmel. An arrest warrant has been issued for Luke S. Fisher, of Birmingham, Michigan. A Hamilton County court officially charged him this week with one count \\[…\\]\n[![Diego Morales](https://wibc.com/wp-content/uploads/sites/99/2026/05/1"
-      },
-      {
-        "id": 186,
-        "headline": "[Delaney to Diego Morales: Remove Yourself From Deery's Recount](https://wibc.com/886776/delaney-to-diego-morales-remove-yourself-from-deerys-recount/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "INDIANAPOLIS–Democratic State Rep. Ed Delaney (D-Indianapolis) is urging Indiana Secretary of State Diego Morales to remove himself from any recount involving State Senator Spencer Deery (R-West Lafayette). As Indiana’s leading elections officer, Morales would chair the recount commission. Deery is already claiming victory over Paula Copenhaver despite the fact that the margin of votes separating "
-      },
-      {
-        "id": 187,
-        "headline": "[2 Arrested After Fishers Police Seize Over 200 Pounds of Marijuana](https://wibc.com/886761/2-arrested-after-fishers-police-seize-over-200-pounds-of-marijuana/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "FISHERS, Ind. — Two men have been charged in connection with a March drug bust in Fishers, where more than 200 pounds of marijuana and THC products were seized. The Fishers Police Department (FPD) announced on Wednesday that Brenden Grubb and Ian Heath both face a Level 5 felony charge of dealing in marijuana. An \\[…\\]\n[![IRS 2026 Filing Season and IRS Operations](https://wibc.com/wp-content/uploa"
-      },
-      {
-        "id": 188,
-        "headline": "[Sen. Young Encourages President Trump to Prioritize U.S. Shipbuilding](https://wibc.com/886757/sen-young-encourages-president-trump-to-prioritize-u-s-shipbuilding/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "WASHINGTON — U.S. Sen. Todd Young (R-Ind.) is part of a group of senators who have sent a letter to President Donald Trump encouraging him to prioritize the U.S. shipbuilding industry. The Shipbuilding and Harbor Infrastructure for Prosperity and Security (SHIPS) for America Act is a bipartisan bill that was reintroduced in Congress to try \\[…\\]\n[![Braun Bill](https://wibc.com/wp-content/uploads/s"
-      },
-      {
-        "id": 189,
-        "headline": "[Gov. Braun Signs Bill to Keep Indiana Students off Phones in School](https://wibc.com/886748/gov-braun-signs-bill-to-keep-indiana-students-off-phones-in-school/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "INDIANAPOLIS — Indiana Governor Mike Braun signed Senate Enrolled Act 78 on Wednesday, launching a new ‘bell-to-bell’ restriction that changes how schools manage personal devices. Braun says the law clears classroom distractions so students can focus and teachers can teach. “This law supports teachers in the classroom and helps students build better habits at a \\[…\\]\n[![2026 NFL Draft - Previews]("
-      },
-      {
-        "id": 190,
-        "headline": "[NFL: Colts to Play Commanders in London This October](https://wibc.com/886745/nfl-colts-to-play-commanders-in-london-this-october/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "NFL: Colts to Play Commanders in London This October LONDON–The Indianapolis Colts will play the Washington Commanders at Tottenham Stadium in London coming up October 4th. That announcement was made Wednesday morning by the NFL. This will be the Colts third international contest in four years. They played as the away team in Frankfurt, Germany \\[…\\]\n[![Fort Wayne](https://wibc.com/wp-content/uplo"
-      },
-      {
-        "id": 191,
-        "headline": "[Fort Wayne Woman Challenges School Board Seat Switch](https://wibc.com/886737/fort-wayne-woman-challenges-school-board-seat-switch/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "FORT WAYNE, Ind — A Fort Wayne woman says the school board violated its own bylaws this week when Board President Noah Smith resigned his District 3 seat and was immediately sworn into an at-large position. Sheila Curry-Campbell raised the issue during Monday night’s meeting, saying the board should have opened the at-large vacancy to \\[…\\]\n[![](https://1075thefan.com/wp-content/uploads/sites/100/"
-      },
-      {
-        "id": 192,
-        "headline": "[Michael Buffer’s ‘Let’s Get Ready To Rumble’ Was Inspired By This Historic Indy 500 Saying](https://wibc.com/886740/michael-buffers-lets-get-ready-to-rumble-was-inspired-by-this-indy-500-saying/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-14T09:05:30.709Z",
-        "body_excerpt": "Michael Buffer’s ‘Let’s Get Ready To Rumble’ Was Inspired By This Historic Indy 500 Saying Michael Buffer’s famous line, “Let’s get ready to rumble,” was born from a simple but powerful idea: great sports need a great start. Referencing a quote from Buffer he said he looked to American motor racing for inspiration, especially the \\[…\\]\nLoad More"
-      },
-      {
-        "id": 179,
-        "headline": "most recent stories",
-        "publisher": "IndyStar",
-        "source_url": "https://www.indystar.com/news/courts/",
-        "fetched_at": "2026-05-14T09:05:25.616Z",
-        "body_excerpt": "[IU\\\\\nIndiana softball has been 'on mission' to reach fourth straight NCAA regional](https://www.indystar.com/story/sports/college/indiana/2026/05/14/indiana-softball-schedule-results-stats-ncaa-softball-bracket-virginia/90062828007/)[High School\\\\\nCathedral boys volleyball player Quinn Braun is a student of the game](https://www.indystar.com/story/sports/high-school/2026/05/14/cathedral-boys-voll"
-      },
-      {
-        "id": 178,
-        "headline": "news alert",
-        "publisher": "IndyStar",
-        "source_url": "https://www.indystar.com/news/courts/",
-        "fetched_at": "2026-05-14T09:05:25.566Z",
+        "source_url": "https://wibc.com/888999/sister-fights-for-justice-in-brothers-2019-cold-case/",
+        "fetched_at": "2026-06-05T21:01:27.608Z",
         "body_excerpt": null
       },
       {
-        "id": 78,
-        "headline": "[Alex Palou Fastest Late in Day 1 of 110th Indy 500 Practice](https://wibc.com/886653/alex-palou-fastest-late-in-day-1-of-110th-indy-500-practice/)",
+        "id": 329,
+        "headline": "Prosecutor: 14‑Year‑Old Faces Murder, Felony Murder in Scrogham Case",
         "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-13T08:20:32.946Z",
-        "body_excerpt": "Trackside recap of Indy 500 practice: Palou tops charts, Penske & Daly impress, weather a key factor for qualifying.\n[![Indiana State Quarter Coin U.S. America elections Democracy Patriotism](https://wibc.com/wp-content/uploads/sites/99/2026/05/17786297339211.jpg?quality=80&strip=all&w=724&crop=0,0,100,483px)](https://wibc.com/886650/research-more-people-are-moving-to-indiana/)\n[Local](https://wib"
+        "source_url": "https://wibc.com/889022/prosecutor-14%e2%80%91year%e2%80%91old-faces-murder-felony-murder-in-scrogham-case/",
+        "fetched_at": "2026-06-05T21:00:57.527Z",
+        "body_excerpt": null
       },
       {
-        "id": 79,
-        "headline": "[Research: More People Are Moving to Indiana](https://wibc.com/886650/research-more-people-are-moving-to-indiana/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-13T08:20:32.946Z",
-        "body_excerpt": "Research: More People Are Moving to Indiana STATEWIDE–The Indiana Business Research Center at IU’s Kelley School of Business says 39,000 people moved into Indiana last year, which outpaced neighboring states and the national average in population growth. They said the net domestic migration more than doubled from about 6,000 people in 2024 to more than \\[…\\]\n[![Stabbing in Indianapolis](https://wi"
+        "id": 298,
+        "headline": "Indiana Supreme Court hears arguments in nutrition compliance case",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/06/05/indiana-supreme-court-hears-arguments-in-nutrition-compliance-case/",
+        "fetched_at": "2026-06-05T09:00:10.261Z",
+        "body_excerpt": null
       },
       {
-        "id": 80,
-        "headline": "[One Person Dead, Several Others Injured in Stabbing on Indy's Southwest Side](https://wibc.com/886645/one-person-dead-several-others-injured-in-stabbing-on-indys-southwest-side/)",
+        "id": 284,
+        "headline": "Bill Engvall Returning to Indy: Blue Collar Stories & More!",
         "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-13T08:20:32.946Z",
-        "body_excerpt": "INDIANAPOLIS–One person has died and at least three other people were injured in a stabbing on the southwest side of Indianapolis Tuesday afternoon. The incident occurred at around 2:40 pm in the Mars Hill neighborhood on South Lockburn Street, which is near Kentucky Avenue and Holt Road. Four victims were found in varying conditions, with \\[…\\]\n[![Eli Lilly](https://wibc.com/wp-content/uploads/si"
+        "source_url": "https://wibc.com/888947/bill-engvall-returning-to-indy-blue-collar-stories-more/",
+        "fetched_at": "2026-06-05T00:17:50.431Z",
+        "body_excerpt": null
       },
       {
-        "id": 81,
-        "headline": "[Lilly at 150 as CEO Spotlights AI, Brain Science, GLP‑1 Advances](https://wibc.com/886635/lilly-at-150-as-ceo-spotlights-ai-brain-science-glp%e2%80%911-advances/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-13T08:20:32.946Z",
-        "body_excerpt": "INDIANAPOLIS — Eli Lilly and Company celebrated 150 years in medicine Tuesday with a ceremony at its headquarters in downtown Indianapolis. CEO Dave Ricks talked about the company’s ties to Indianapolis, its investment in artificial intelligence and supercomputing, and the future of research into brain diseases and GLP-1 medicines. Ricks said Lilly is working with \\[…\\]\n[![Ephraim Owens](https://w"
+        "id": 275,
+        "headline": "Indiana Supreme Court hears late warrant arguments in child porn case",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/29/indiana-supreme-court-hears-late-warrant-arguments-in-child-porn-case/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
       },
       {
-        "id": 82,
-        "headline": "[Indiana Native to Sing ‘America the Beautiful’ at Indy 500](https://wibc.com/886631/indiana-native-to-sing-america-the-beautiful-at-indy-500/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-13T08:20:32.946Z",
-        "body_excerpt": "INDIANAPOLIS — An Indianapolis native and former competitor on “The Voice” will return to the Indianapolis Motor Speedway to reprise a patriotic performance during the 110th Running of the Indianapolis 500. According to a news release from the Indianapolis Motor Speedway, Ephraim Owens will perform “America the Beautiful” during the pre-race ceremonies on May 24. \\[…\\]\n[![Warm Weather in Indiana]("
+        "id": 276,
+        "headline": "Trump order limiting voting by mail will stand for now, federal judge rules",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/29/repub/trump-order-limiting-voting-by-mail-will-stand-for-now-federal-judge-rules/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
       },
       {
-        "id": 83,
-        "headline": "[NWS: Hotter Temperatures, Storms Possible in Indiana This Weekend](https://wibc.com/886626/nws-hotter-temperatures-storms-possible-in-indiana-this-weekend/)",
-        "publisher": "WIBC",
-        "source_url": "https://www.wibc.com/category/news/",
-        "fetched_at": "2026-05-13T08:20:32.946Z",
-        "body_excerpt": "NWS: Hotter Temperatures, Storms Possible in Indiana This Weekend STATEWIDE–Rain is possible again in Indiana this weekend as temperatures warm up. “It looks like everything is around a 50% chance for rain, but we’ll see those percentages change as we get closer to the timeframe, but we are going to be heating up,” said Cody \\[…\\]\n[![Brandy Moorheard](https://wibc.com/wp-content/uploads/sites/99/2"
+        "id": 277,
+        "headline": "Ball State reaches settlement in Charlie Kirk free speech lawsuit",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/briefs/ball-state-reaches-settlement-in-charlie-kirk-free-speech-lawsuit/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 278,
+        "headline": "Gary’s 27-year lawsuit against gun industry dies with Indiana Supreme Court decision",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/22/garys-27-year-lawsuit-against-gun-industry-dies-with-indiana-supreme-court-decision/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 279,
+        "headline": "NIPSCO, industrial customers split on inflation cost recovery before Indiana Supreme Court",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/22/nipsco-industrial-ratepayers-split-on-inflation-cost-recovery-before-indiana-supreme-court/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 280,
+        "headline": "Indiana abortion ban law stands as state Supreme Court rejects challenge",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/15/indiana-abortion-ban-law-stands-as-state-supreme-court-rejects-challenge/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 281,
+        "headline": "Indiana regulators awaiting final federal marijuana action as lawmaker drafts legalization bill",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/12/indiana-regulators-awaiting-final-federal-marijuana-action-as-lawmaker-drafts-legalization-bill/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 282,
+        "headline": "Feds owe Indiana millions for immigration detention at state prison",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/briefs/feds-owe-indiana-millions-for-immigration-detention-at-state-prison/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 283,
+        "headline": "‘We reap what we sow’: Indiana police training academy chief defends $107 million campus overhaul",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/05/11/we-reap-what-we-sow-indiana-police-training-academy-chief-defends-114-million-campus-overhaul/",
+        "fetched_at": "2026-06-05T00:17:49.855Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 273,
+        "headline": "Indiana attorney general readies new immigration biz enforcement powers",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/06/03/indiana-attorney-general-readies-new-immigration-biz-enforcement-powers/",
+        "fetched_at": "2026-06-05T00:17:49.854Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 274,
+        "headline": "Dems spotlight anti-weaponization fund as US Senate GOP struggles to pass immigration bill",
+        "publisher": "Indiana Capital Chronicle",
+        "source_url": "https://indianacapitalchronicle.com/2026/06/03/repub/dems-spotlight-anti-weaponization-fund-as-us-senate-gop-struggles-to-pass-immigration-bill/",
+        "fetched_at": "2026-06-05T00:17:49.854Z",
+        "body_excerpt": null
+      },
+      {
+        "id": 270,
+        "headline": "Indiana Department of Health denied first-choice attorneys by AG in abortion records lawsuit",
+        "publisher": "Indiana Lawyer",
+        "source_url": "https://www.theindianalawyer.com/blogs/indiana-department-of-health-denied-first-choice-attorneys-by-ag-in-abortion-records-lawsuit?utm_source=rss&utm_medium=rss&utm_campaign=indiana-department-of-health-denied-first-choice-attorneys-by-ag-in-abortion-records-lawsuit",
+        "fetched_at": "2026-06-05T00:17:49.250Z",
+        "body_excerpt": "Amid an ongoing legal battle over abortion-related records, the Indiana Department of Health has clarified its legal representation in the case. At issue is a lawsuit filed last month by anti-abortion group “Voices for Life,” which seeks to regain access to Terminated Pregnancy Reports (TPRs) that are no longer being released by the state health department. Court records […] The post Indiana Depar"
+      },
+      {
+        "id": 271,
+        "headline": "Washington Post said it had the Alito flag story 3 years ago and chose not to publish",
+        "publisher": "Indiana Lawyer",
+        "source_url": "https://www.theindianalawyer.com/blogs/washington-post-said-it-had-the-alito-flag-story-3-years-ago-and-chose-not-to-publish?utm_source=rss&utm_medium=rss&utm_campaign=washington-post-said-it-had-the-alito-flag-story-3-years-ago-and-chose-not-to-publish",
+        "fetched_at": "2026-06-05T00:17:49.250Z",
+        "body_excerpt": "Nine days after The New York Times reported about the political symbolism of an upside-down American flag that flew at U.S. Supreme Court Justice Samuel Alito’s home, the Washington Post acknowledged it had the same story more than three years ago and decided not to publish it. The Post’s story was both an extraordinary example […] The post Washington Post said it had the Alito flag story 3 years "
+      },
+      {
+        "id": 272,
+        "headline": "Opinions April 7, 2020",
+        "publisher": "Indiana Lawyer",
+        "source_url": "https://www.theindianalawyer.com/blogs/opinions-april-7-2020?utm_source=rss&utm_medium=rss&utm_campaign=opinions-april-7-2020",
+        "fetched_at": "2026-06-05T00:17:49.250Z",
+        "body_excerpt": "Indiana Court of Appeals Jody D. Selby v. State of Indiana (mem. dec.) 19A-CR-2584 Criminal. Affirms Jody Selby’s convictions in Vanderburgh Circuit Court of Level 6 felony possession of methamphetamine and Class A misdemeanor possession of a controlled substance. Finds sufficient evidence to support the convictions. Steven E. Ingalls, Jr. v. State of Indiana (mem. […] The post Opinions April 7, 2"
+      },
+      {
+        "id": 261,
+        "headline": "Trump flexes executive power with unprecedented flouting of lower court rulings",
+        "publisher": "Indiana Lawyer",
+        "source_url": "https://www.theindianalawyer.com/articles/trump-flexes-executive-power-with-unprecedented-flouting-of-lower-court-rulings?utm_source=rss&utm_medium=rss&utm_campaign=trump-flexes-executive-power-with-unprecedented-flouting-of-lower-court-rulings",
+        "fetched_at": "2026-06-05T00:17:48.142Z",
+        "body_excerpt": "In the second Trump administration’s first 15 months in office, district court judges ruled it was violating an order in at least 31 lawsuits over a wide range of issues, including mass layoffs, deportations, spending cuts and immigration practices. The post Trump flexes executive power with unprecedented flouting of lower court rulings appeared first on The Indiana Lawyer . ]]>"
+      },
+      {
+        "id": 262,
+        "headline": "Chief Justice Rush describes sad state of civil discourse after presence at correspondents’ dinner",
+        "publisher": "Indiana Lawyer",
+        "source_url": "https://www.theindianalawyer.com/articles/chief-justice-rush-describes-sad-state-of-civil-discourse-after-presence-at-correspondents-dinner?utm_source=rss&utm_medium=rss&utm_campaign=chief-justice-rush-describes-sad-state-of-civil-discourse-after-presence-at-correspondents-dinner",
+        "fetched_at": "2026-06-05T00:17:48.142Z",
+        "body_excerpt": "Indiana Supreme Court Chief Justice Loretta Rush was at the White House Correspondents’ Dinner on Saturday night when gunfire rang out. The post Chief Justice Rush describes sad state of civil discourse after presence at correspondents’ dinner appeared first on The Indiana Lawyer . ]]>"
       }
     ],
     "legislators": [
@@ -1615,40 +1615,13 @@
     ],
     "bills": [
       {
-        "id": 738,
-        "session": "2026",
-        "number": "HB 1456",
-        "title": "Vehicle Bill.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1456",
-        "fetched_at": "2026-05-11T19:56:00.535Z"
-      },
-      {
-        "id": 739,
-        "session": "2026",
-        "number": "HB 1457",
-        "title": "Vehicle Bill.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1457",
-        "fetched_at": "2026-05-11T19:56:00.535Z"
-      },
-      {
-        "id": 740,
-        "session": "2026",
-        "number": "HB 1458",
-        "title": "Vehicle Bill.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1458",
-        "fetched_at": "2026-05-11T19:56:00.535Z"
-      },
-      {
         "id": 741,
         "session": "2026",
         "number": "HB 1459",
         "title": "Vehicle Bill.",
         "status": "inactive",
         "link": "https://iga.in.gov/legislative/2026/bills/house/1459",
-        "fetched_at": "2026-05-11T19:56:00.535Z"
+        "fetched_at": "2026-06-06T09:07:28.388Z"
       },
       {
         "id": 742,
@@ -1657,235 +1630,262 @@
         "title": "Vehicle Bill.",
         "status": "inactive",
         "link": "https://iga.in.gov/legislative/2026/bills/house/1460",
-        "fetched_at": "2026-05-11T19:56:00.535Z"
+        "fetched_at": "2026-06-06T09:07:28.388Z"
       },
       {
-        "id": 611,
+        "id": 724,
         "session": "2026",
-        "number": "HB 1328",
-        "title": "Charges for hospital administered drugs.",
+        "number": "HB 1442",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1328",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1442",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 612,
+        "id": 725,
         "session": "2026",
-        "number": "HB 1329",
-        "title": "Real property assessment.",
+        "number": "HB 1443",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1329",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1443",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 613,
+        "id": 726,
         "session": "2026",
-        "number": "HB 1330",
-        "title": "Elimination of township assessors.",
+        "number": "HB 1444",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1330",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1444",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 614,
+        "id": 727,
         "session": "2026",
-        "number": "HB 1331",
-        "title": "School scholarship tax credits.",
+        "number": "HB 1445",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1331",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1445",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 615,
+        "id": 728,
         "session": "2026",
-        "number": "HB 1332",
-        "title": "Internal Revenue Code conformity.",
+        "number": "HB 1446",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1332",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1446",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 616,
+        "id": 729,
         "session": "2026",
-        "number": "HB 1333",
-        "title": "Land use and development.",
+        "number": "HB 1447",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1333",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1447",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 617,
+        "id": 730,
         "session": "2026",
-        "number": "HB 1334",
-        "title": "Directory of in network providers.",
+        "number": "HB 1448",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1334",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1448",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 618,
+        "id": 731,
         "session": "2026",
-        "number": "HB 1335",
-        "title": "Nonprofit hospitals.",
+        "number": "HB 1449",
+        "title": "Vehicle Bill.",
         "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1335",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1449",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
       },
       {
-        "id": 619,
+        "id": 732,
         "session": "2026",
-        "number": "HB 1336",
-        "title": "Securities and investment adviser representatives.",
+        "number": "HB 1450",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1450",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 733,
+        "session": "2026",
+        "number": "HB 1451",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1451",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 734,
+        "session": "2026",
+        "number": "HB 1452",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1452",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 735,
+        "session": "2026",
+        "number": "HB 1453",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1453",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 736,
+        "session": "2026",
+        "number": "HB 1454",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1454",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 737,
+        "session": "2026",
+        "number": "HB 1455",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1455",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 738,
+        "session": "2026",
+        "number": "HB 1456",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1456",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 739,
+        "session": "2026",
+        "number": "HB 1457",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1457",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 740,
+        "session": "2026",
+        "number": "HB 1458",
+        "title": "Vehicle Bill.",
+        "status": "inactive",
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1458",
+        "fetched_at": "2026-06-06T09:07:28.387Z"
+      },
+      {
+        "id": 706,
+        "session": "2026",
+        "number": "HB 1424",
+        "title": "Farm and homestead food sales.",
         "status": "active",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1336",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
-      },
-      {
-        "id": 620,
-        "session": "2026",
-        "number": "HB 1337",
-        "title": "Property and local income tax.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1337",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
-      },
-      {
-        "id": 621,
-        "session": "2026",
-        "number": "HB 1338",
-        "title": "Physician standards of practice.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1338",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
-      },
-      {
-        "id": 622,
-        "session": "2026",
-        "number": "HB 1339",
-        "title": "Voter identification.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1339",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
-      },
-      {
-        "id": 623,
-        "session": "2026",
-        "number": "HB 1340",
-        "title": "Sales tax exemption for utility service.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1340",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
-      },
-      {
-        "id": 624,
-        "session": "2026",
-        "number": "HB 1341",
-        "title": "Eminent domain.",
-        "status": "inactive",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1341",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
-      },
-      {
-        "id": 625,
-        "session": "2026",
-        "number": "HB 1342",
-        "title": "County commissioner districts.",
-        "status": "active",
-        "link": "https://iga.in.gov/legislative/2026/bills/house/1342",
-        "fetched_at": "2026-05-11T19:56:00.534Z"
+        "link": "https://iga.in.gov/legislative/2026/bills/house/1424",
+        "fetched_at": "2026-06-06T09:07:28.386Z"
       }
     ]
   },
   "recent_runs": [
     {
-      "ts": "2026-05-28T09:05:45.015Z",
+      "ts": "2026-06-06T09:07:44.417Z",
       "source_kind": "in-gov",
       "target": "ij_legislators",
-      "items_inserted": 0,
+      "items_inserted": 150,
       "items_skipped": 0,
       "errors_text": null,
-      "duration_ms": 9457
+      "duration_ms": 14824
     },
     {
-      "ts": "2026-05-28T09:05:35.558Z",
+      "ts": "2026-06-06T09:07:28.852Z",
       "source_kind": "in-gov",
       "target": "ij_bills",
-      "items_inserted": 0,
+      "items_inserted": 742,
       "items_skipped": 0,
       "errors_text": null,
-      "duration_ms": 9989
+      "duration_ms": 95157
     },
     {
-      "ts": "2026-05-28T09:05:25.565Z",
-      "source_kind": "firecrawl",
-      "target": "ij_news",
-      "items_inserted": 0,
-      "items_skipped": 0,
-      "errors_text": "Indiana Lawyer HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. | Indiana Capital Chronicle HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. | IndyStar HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. | WTHR HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. | WIBC HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. | IN Judiciary HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value. | IN Attorney General HTTP 402 :: {\"success\":false,\"error\":\"Insufficient credits to perform this request. For more credits, you can upgrade your plan at https://firecrawl.dev/pricing or try changing the request limit to a lower value.",
-      "duration_ms": 4258
-    },
-    {
-      "ts": "2026-05-28T09:05:21.152Z",
+      "ts": "2026-06-06T09:05:51.367Z",
       "source_kind": "courtlistener",
       "target": "ij_cases",
-      "items_inserted": 162,
-      "items_skipped": 107,
-      "errors_text": "indctapp/r:1 This operation was aborted | innb/r:2 courtlistener_rate_limited_for_1490s_exceeds_120s_cap",
-      "duration_ms": 317091
+      "items_inserted": 12,
+      "items_skipped": 214,
+      "errors_text": "innd/r:1 This operation was aborted | innb/o:1 This operation was aborted | innb/r:3 HTTP 502 :: <!DOCTYPE html>\n<html lang=\"en\"><head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"Content-Language\" content=\"en\">\n  <meta name=\"la",
+      "duration_ms": 320960
     },
     {
-      "ts": "2026-05-28T08:51:15.664Z",
+      "ts": "2026-06-06T09:00:27.459Z",
+      "source_kind": "rss",
+      "target": "ij_news/WIBC",
+      "items_inserted": 0,
+      "items_skipped": 24,
+      "errors_text": null,
+      "duration_ms": 469
+    },
+    {
+      "ts": "2026-06-06T09:00:26.685Z",
+      "source_kind": "rss",
+      "target": "ij_news/Indiana Capital Chronicle",
+      "items_inserted": 0,
+      "items_skipped": 22,
+      "errors_text": null,
+      "duration_ms": 971
+    },
+    {
+      "ts": "2026-06-06T09:00:25.407Z",
+      "source_kind": "rss",
+      "target": "ij_news/Indiana Lawyer",
+      "items_inserted": 0,
+      "items_skipped": 13,
+      "errors_text": null,
+      "duration_ms": 986
+    },
+    {
+      "ts": "2026-06-06T09:00:21.011Z",
+      "source_kind": "rss",
+      "target": "ij_news/Indiana Lawyer",
+      "items_inserted": 0,
+      "items_skipped": 10,
+      "errors_text": null,
+      "duration_ms": 18095
+    },
+    {
+      "ts": "2026-06-06T08:51:37.188Z",
       "source_kind": "in-gov",
       "target": "ij_committee_hearings",
       "items_inserted": 0,
       "items_skipped": 0,
       "errors_text": null,
-      "duration_ms": 7491
+      "duration_ms": 17347
     },
     {
-      "ts": "2026-05-28T08:51:08.171Z",
+      "ts": "2026-06-06T08:51:19.841Z",
       "source_kind": "in-gov",
       "target": "ij_bill_votes",
       "items_inserted": 0,
-      "items_skipped": 125,
+      "items_skipped": 155,
       "errors_text": null,
-      "duration_ms": 1215992
+      "duration_ms": 1250594
     },
     {
-      "ts": "2026-05-28T08:51:08.170Z",
+      "ts": "2026-06-06T08:51:19.530Z",
       "source_kind": "in-gov",
       "target": "ij_bill_actions",
       "items_inserted": 0,
-      "items_skipped": 125,
+      "items_skipped": 155,
       "errors_text": null,
-      "duration_ms": 1215988
-    },
-    {
-      "ts": "2026-05-28T08:30:52.176Z",
-      "source_kind": "in-gov",
-      "target": "ij_committees",
-      "items_inserted": 0,
-      "items_skipped": 40,
-      "errors_text": null,
-      "duration_ms": 46170
-    },
-    {
-      "ts": "2026-05-27T23:01:33.445Z",
-      "source_kind": "iga-votes",
-      "target": "ij_bill_votes",
-      "items_inserted": 0,
-      "items_skipped": 107,
-      "errors_text": null,
-      "duration_ms": 90673
-    },
-    {
-      "ts": "2026-05-27T22:31:25.081Z",
-      "source_kind": "iga-actions",
-      "target": "ij_bill_actions",
-      "items_inserted": 0,
-      "items_skipped": 640,
-      "errors_text": null,
-      "duration_ms": 82735
+      "duration_ms": 1250283
     }
   ]
 }

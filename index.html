@@ -117,6 +117,16 @@
     <a href="/statutes.html">Statutes</a>
     <a href="/disciplinary.html">Disciplinary</a>
     <a href="/county-press.html">County press</a>
+    <a href="/appellate.html">Appellate</a>
+    <a href="/cases.html">Cases</a>
+    <a href="/courts.html">Courts</a>
+    <a href="/corrections.html">Corrections</a>
+    <a href="/inmates.html">Inmates</a>
+    <a href="/rehab.html">Rehab</a>
+    <a href="/health.html">Health</a>
+    <a href="/schools.html">Schools</a>
+    <a href="/indot.html">INDOT</a>
+    <a href="/civic-life.html">Civic life</a>
     <a href="/aydens-hub.html">Ayden's Hub</a>
   </nav>
 </header>
@@ -777,6 +787,7 @@
   &copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a> &middot; <a href="/sources.html">sources</a> &middot; <a href="/methodology.html">methodology</a>
 </footer>
 
+<script src="/assets/js/labels.js?v=20260605"></script>
 <script>
 (function(){
   const COUNTIES={
@@ -916,7 +927,7 @@
       box.innerHTML = items.map(function(it){
         var kind = it.kind === 'opinion' ? 'OPINION' : 'DOCKET';
         var badgeColor = it.kind === 'opinion' ? '#67e8f9' : '#fbbf24';
-        var court = esc(it.court_id || '?');
+        var court = esc(courtLabel(it.court_id, '?'));
         var name  = esc(it.case_name || '(no case name)');
         var date  = esc(it.date_filed || '?');
         var extra = it.kind === 'docket' && it.docket_number

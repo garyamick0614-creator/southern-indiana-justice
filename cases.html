@@ -69,6 +69,7 @@
 <footer>&copy; 2026 Southern Indiana Justice Stats &middot; built by <a href="https://thatcomputerguy26.org">That Computer Guy 26</a></footer>
 
 <script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script src="/assets/js/labels.js?v=20260605"></script>
 <script>
 (function(){
   const API = "https://api.thatcomputerguy26.org/api/public/civic/sij-recent";
@@ -104,7 +105,7 @@
         <div class="meta">
           ${it.date_filed?`<span>${esc(it.date_filed)}</span>`:''}
           ${it.docket_number?`<span><code>${esc(it.docket_number)}</code></span>`:''}
-          ${it.court_id?`<span>court: ${esc(it.court_id)}</span>`:''}
+          ${it.court_id?`<span>court: ${esc(courtLabel(it.court_id))}</span>`:''}
           ${it.nature_of_suit?`<span>nature: ${esc(it.nature_of_suit)}</span>`:''}
         </div></div>`;
     }).join('');

@@ -10,8 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 <style>
-.stat-row{padding:12px 16px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:10px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.stat-row{padding:12px 16px;background:rgba(20,33,57,.4);border:1px solid var(--ln);border-radius:10px;margin-bottom:8px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;cursor:pointer;transition:background .15s}
+.stat-row:hover{background:rgba(20,33,57,.75)}
 .stat-row .cite{font-weight:700;color:#fff;font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.stat-detail{grid-column:1 / -1;margin-top:10px;padding-top:10px;border-top:1px solid var(--ln);display:none}
+.stat-detail.open{display:block}
+.stat-detail .official{margin-bottom:10px;font-size:13px}
+.stat-detail .official a{color:var(--accent);text-decoration:none;font-weight:600}
+.op-cite{padding:8px 10px;background:rgba(15,27,45,.55);border-left:2px solid var(--info);margin-bottom:6px;border-radius:0 6px 6px 0;font-size:13px}
+.op-cite .case{color:#fff;font-weight:600}
+.op-cite .meta{color:var(--mut);font-size:12px;margin:2px 0}
+.op-cite .ctx{color:#d8e7ff;font-style:italic;font-size:12.5px}
+.op-cite a{color:var(--accent);text-decoration:none}
 .stat-row .count{font-size:22px;font-weight:800;color:var(--accent);text-align:right;line-height:1}
 .stat-row .count-lbl{font-size:11px;color:var(--mut);text-align:right;text-transform:uppercase;letter-spacing:.06em}
 .context-card{padding:12px 16px;background:rgba(20,33,57,.3);border-left:3px solid var(--info);border-radius:0 8px 8px 0;margin-bottom:8px}
@@ -61,6 +71,7 @@
   </div>
 
   <h2>Top-cited provisions</h2>
+  <p class="muted">Click any provision to read the statute text and see every opinion that cites it.</p>
   <div class="search-row">
     <input id="search" type="text" placeholder="Filter by citation (e.g. IC 35-42 or USC)...">
   </div>
@@ -118,14 +129,53 @@ function renderTop(){
     return;
   }
   document.getElementById("topList").innerHTML = rows.slice(0, 200).map(s => `
-    <div class="stat-row">
+    <div class="stat-row" data-cite="${esc(s.citation)}" title="Click to see the opinions citing this statute">
       <div class="cite">${esc(s.citation)}</div>
       <div>
         <div class="count">${esc(s.cite_count)}</div>
         <div class="count-lbl">opinions</div>
       </div>
+      <div class="stat-detail" data-detail="${esc(s.citation)}"></div>
     </div>
   `).join("");
+  document.querySelectorAll(".stat-row").forEach(el => el.addEventListener("click", () => toggleStatute(el)));
+}
+
+const statuteCache = new Map();
+async function toggleStatute(rowEl){
+  const cite = rowEl.dataset.cite;
+  const det = rowEl.querySelector(".stat-detail");
+  if (!det) return;
+  if (det.classList.contains("open")) { det.classList.remove("open"); return; }
+  det.classList.add("open");
+  if (statuteCache.has(cite)) { det.innerHTML = statuteCache.get(cite); return; }
+  det.innerHTML = '<div class="muted">Loading opinions citing this statute&hellip;</div>';
+  try {
+    const r = await fetch(API + "/statute-detail?citation=" + encodeURIComponent(cite) + "&limit=200", { cache: "no-store" });
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || "no data");
+    const ops = data.opinions || [];
+    let html = "";
+    if (data.official_url) {
+      html += '<div class="official">Read the statute text: <a href="' + esc(data.official_url) + '" target="_blank" rel="noopener">' + esc(cite) + ' on the official source &rarr;</a></div>';
+    }
+    if (ops.length === 0) {
+      html += '<div class="muted">No linked opinions found for this citation.</div>';
+    } else {
+      html += ops.map(o => `
+        <div class="op-cite">
+          <div class="case">${esc(o.case_name || o.case_number || "—")}</div>
+          <div class="meta">${esc((o.court || "").toUpperCase())}${o.date_decided ? " · " + esc(o.date_decided) : ""}${o.author_judge ? " · " + esc(o.author_judge) : ""}</div>
+          ${o.context ? '<div class="ctx">&ldquo;' + esc(o.context) + '&rdquo;</div>' : ""}
+          ${(o.full_url || o.details_url) ? '<div style="margin-top:4px"><a href="' + esc(o.full_url || o.details_url) + '" target="_blank" rel="noopener">View opinion &rarr;</a></div>' : ""}
+        </div>
+      `).join("");
+    }
+    statuteCache.set(cite, html);
+    det.innerHTML = html;
+  } catch (e) {
+    det.innerHTML = '<div class="muted">Failed to load: ' + esc(e.message) + '</div>';
+  }
 }
 
 function renderRecent(){

@@ -58,9 +58,9 @@
     <input id="search" type="text" placeholder="Filter by name or court...">
     <select id="courtFilter">
       <option value="">All courts</option>
-      <option value="Supreme Court">Supreme Court</option>
-      <option value="Court of Appeals">Court of Appeals</option>
-      <option value="Tax Court">Tax Court</option>
+      <option value="supreme">Supreme Court</option>
+      <option value="coa">Court of Appeals</option>
+      <option value="tax">Tax Court</option>
     </select>
   </div>
 
@@ -76,6 +76,7 @@
 </footer>
 
 <script defer src="https://api.thatcomputerguy26.org/static/tcg-visitor.js"></script>
+<script src="/assets/js/labels.js?v=20260605"></script>
 <script>
 const API = "https://api.thatcomputerguy26.org/api/public/indiana-justice/deep";
 let allJudges = [];
@@ -107,7 +108,12 @@ function render(){
   const q = document.getElementById("search").value.toLowerCase().trim();
   const courtFilter = document.getElementById("courtFilter").value;
   let rows = allJudges.slice();
-  if (courtFilter) rows = rows.filter(j => (j.court || "").toLowerCase().includes(courtFilter.toLowerCase()));
+  if (courtFilter) {
+    // Normalize both sides through the shared decoder so raw codes (coa/supreme/tax)
+    // and pre-decoded labels ("Court of Appeals") compare correctly.
+    const want = courtLabel(courtFilter, courtFilter).toLowerCase();
+    rows = rows.filter(j => courtLabel(j.court, j.court || "").toLowerCase().includes(want));
+  }
   if (q) rows = rows.filter(j => (j.name || "").toLowerCase().includes(q) || (j.court || "").toLowerCase().includes(q));
   if (rows.length === 0) {
     document.getElementById("judgesList").innerHTML = '<div class="empty-state">No judges match your filter.</div>';
@@ -119,7 +125,7 @@ function render(){
       <a class="judge-card" href="/opinions?judge=${encodeURIComponent(j.name || "")}" style="text-decoration:none">
         <div>
           <div class="name">${esc(j.name)}</div>
-          <div class="court">${esc(j.court || "—")}</div>
+          <div class="court">${esc(courtLabel(j.court, "—"))}</div>
           <div class="muted" style="font-size:12px;margin-top:4px">Most recent: ${esc(j.most_recent_opinion || "—")}</div>
         </div>
         <div>

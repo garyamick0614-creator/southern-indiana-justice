@@ -1,0 +1,5 @@
+# 2026-06-02: the old /stats page was retired (its content split into /data, /counties,
+# /judges, /opinions). Redirect any lingering external bookmarks to the data page so
+# /stats no longer 404s. Internal links already point at the live pages.
+/stats       /data   301
+/stats.html  /data   301
